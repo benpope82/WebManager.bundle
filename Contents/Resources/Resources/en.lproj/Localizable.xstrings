@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%d:%02d %@</key>
+	<string>%1$d:%2$d %3$@</string>
+	<key>AM</key>
+	<string>AM</string>
+	<key>Add Section</key>
+	<string>Add Section</string>
+	<key>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</key>
+	<string>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</string>
+	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
+	<string>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</string>
+	<key>Are you sure you want to remove the section named "%@"?</key>
+	<string>Are you sure you want to remove the section named "%@"?</string>
+	<key>Artist</key>
+	<string>Artist</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Choose Background Art</key>
+	<string>Choose Background Art</string>
+	<key>Choose Banner</key>
+	<string>Choose Banner</string>
+	<key>Choose Icon</key>
+	<string>Choose Icon</string>
+	<key>Choose Poster</key>
+	<string>Choose Poster</string>
+	<key>Connecting to Plex Media Server failed with this error: %@.
+
+Are you sure it's running?</key>
+	<string>Connecting to Plex Media Server failed with this error: %@.
+
+Are you sure it's running?</string>
+	<key>Custom Search</key>
+	<string>Custom Search</string>
+	<key>Customize</key>
+	<string>Customize</string>
+	<key>Customize Section</key>
+	<string>Customize Section</string>
+	<key>Drag folders into the list, or click the '+' button to browse.</key>
+	<string>Drag folders into the list, or click the '+' button to browse.</string>
+	<key>Edit Section</key>
+	<string>Edit Section</string>
+	<key>Fix Incorrect Match...</key>
+	<string>Fix Incorrect Match...</string>
+	<key>Fix incorrect match</key>
+	<string>Fix incorrect match</string>
+	<key>Friday</key>
+	<string>Friday</string>
+	<key>Got this error: %@. Are you sure Plex Media Server is running?</key>
+	<string>Got this error: %@. Are you sure Plex Media Server is running?</string>
+	<key>Language:</key>
+	<string>Language:</string>
+	<key>Last refreshed %@ at %@</key>
+	<string>Last refreshed %1$@ at %2$@</string>
+	<key>Media scanner:</key>
+	<string>Media scanner:</string>
+	<key>Monday</key>
+	<string>Monday</string>
+	<key>Movie</key>
+	<string>Movie</string>
+	<key>Movies</key>
+	<string>Movies</string>
+	<key>Music</key>
+	<string>Music</string>
+	<key>My Movies</key>
+	<string>My Movies</string>
+	<key>My Music</key>
+	<string>My Music</string>
+	<key>My TV Shows</key>
+	<string>My TV Shows</string>
+	<key>Name</key>
+	<string>Name</string>
+	<key>Name:</key>
+	<string>Name:</string>
+	<key>PM</key>
+	<string>PM</string>
+	<key>Path to your media folder:</key>
+	<string>Path to your media folder:</string>
+	<key>Primary metadata agent:</key>
+	<string>Primary metadata agent:</string>
+	<key>Refresh Info</key>
+	<string>Refresh Info</string>
+	<key>Remove Section</key>
+	<string>Remove Section</string>
+	<key>Saturday</key>
+	<string>Saturday</string>
+	<key>Search</key>
+	<string>Search</string>
+	<key>Search using:</key>
+	<string>Search using:</string>
+	<key>Section</key>
+	<string>Section</string>
+	<key>Section name:</key>
+	<string>Section name:</string>
+	<key>Section type:</key>
+	<string>Section type:</string>
+	<key>Select</key>
+	<string>Select</string>
+	<key>Select %@</key>
+	<string>Select %@</string>
+	<key>Select Image</key>
+	<string>Select Image</string>
+	<key>Select the correct %@ from the list below:</key>
+	<string>Select the correct %@ from the list below:</string>
+	<key>Show</key>
+	<string>Show</string>
+	<key>Sunday</key>
+	<string>Sunday</string>
+	<key>TV Shows</key>
+	<string>TV Shows</string>
+	<key>Thursday</key>
+	<string>Thursday</string>
+	<key>Tuesday</key>
+	<string>Tuesday</string>
+	<key>Unable to connect to Plex Media Server</key>
+	<string>Unable to connect to Plex Media Server</string>
+	<key>Unable to create library section</key>
+	<string>Unable to create library section</string>
+	<key>Unable to remove section "%@"</key>
+	<string>Unable to remove section "%@"</string>
+	<key>Unable to update library section</key>
+	<string>Unable to update library section</string>
+	<key>Update Section</key>
+	<string>Update Section</string>
+	<key>Wednesday</key>
+	<string>Wednesday</string>
+	<key>Year</key>
+	<string>Year</string>
+	<key>Year:</key>
+	<string>Year:</string>
+	<key>today</key>
+	<string>today</string>
+	<key>tomorrow</key>
+	<string>tomorrow</string>
+	<key>yesterday</key>
+	<string>yesterday</string>
+</dict>
+</plist>
