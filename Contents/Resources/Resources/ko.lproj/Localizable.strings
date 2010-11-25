@@ -1,0 +1,303 @@
+﻿/* Status label value for when there is more than one musical artist */
+"%d artists" = "%d 아티스트";
+
+/* Status label value for when there is more than one movie */
+"%d movies" = "%d 영화";
+
+/* Status label value for when there is more than one TV show */
+"%d TV shows" = "%d TV 쇼";
+
+/* ShortLocalTimeFormat */
+"%d:%02d %@" = "%1$d:%2$d %3$@";
+
+/* Status label value for when there is one musical artist */
+"1 artist" = "1 아티스트";
+
+/* Status label value for when there is one movie */
+"1 movie" = "1 영화";
+
+/* Status label value for when there is one TV show */
+"1 TV show" = "1 TV 쇼";
+
+/* Add section confirm button text */
+"Add Section" = "섹션 추가";
+
+/* Section settings primary informative text */
+"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "해당 섹션에 미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 사용자의 라이브러리로 스캔됩니다.";
+
+/* Advanced */
+"Advanced" = "고급";
+
+/* AnteMeridiem */
+"AM" = "AM";
+
+/* Informative text for removing a section */
+"Any content in this section will no longer be available in your library. The files on your computer will not be removed." = "이 섹션의 모든 컨텐츠는 더 이상 라이브러리에서 사용되지 않습니다. 사용자의 컴퓨터에 있는 파일은 제거되지 않습니다.";
+
+/* Confirmation message for removing a section */
+"Are you sure you want to remove the section named \"%@\"?" = "\"%@\" 섹션을 삭제하시겠습니까?";
+
+/* Artist */
+"Artist" = "아티스트";
+
+/* Cancel */
+"Cancel" = "취소";
+
+/* Choose Background Art */
+"Choose Background Art" = "배경 선택";
+
+/* Choose Banner */
+"Choose Banner" = "배너 선택";
+
+/* Choose Icon */
+"Choose Icon" = "아이콘 선택";
+
+/* Choose Poster */
+"Choose Poster" = "포스터 선택";
+
+/* Collections */
+"Collections" = "컬렉션";
+
+/* Error message for when we cannot connect to PMS or when the response is invalid */
+"Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "다음과 같은 에러로 인하여 Plex Media Server에 접속을 실패하였습니다.: %@.\n\nPlex Media Server가 실행 중인지 확인하세요.";
+
+/* Content Rating */
+"Content Rating" = "컨텐츠 등급";
+
+/* Custom Search */
+"Custom Search" = "맞춤 검색";
+
+/* Customize */
+"Customize" = "사용자 정의";
+
+/* Customize Section */
+"Customize Section" = "사용자 정의 섹션";
+
+/* Directors */
+"Directors" = "감독";
+
+/* Done */
+"Done" = "완료";
+
+/* Section settings secondary informative text */
+"Drag folders into the list, or click the '+' button to browse." = "리스트로 폴더를 드래그하거나 '+' 버튼을 클릭하세요.";
+
+/* Edit Metadata */
+"Edit Metadata" = "메타데이터 편집";
+
+/* Edit Section */
+"Edit Section" = "섹션 편집";
+
+/* Fix incorrect match */
+"Fix incorrect match" = "잘못된 매칭 수정";
+
+/* Fix Incorrect Match... */
+"Fix Incorrect Match..." = "잘못된 매칭 수정...";
+
+/* Friday */
+"Friday" = "금요일";
+
+/* Friendly name label */
+"Friendly name:" = "사용자 정의 이름:";
+
+/* General */
+"General" = "일반";
+
+/* Genres */
+"Genres" = "장르";
+
+/* Error message for when we cannot remove a library section */
+"Got this error: %@. Are you sure Plex Media Server is running?" = "에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.";
+
+/* Language label */
+"Language:" = "언어:";
+
+/* Status label for media items */
+"Last refreshed %@ at %@" = "%1$@ %2$@에 갱신되었습니다";
+
+/* Library */
+"Library" = "라이브러리";
+
+/* Media scanner label */
+"Media scanner:" = "미디어 스캐너:";
+
+/* Monday */
+"Monday" = "월요일";
+
+/* Movie */
+"Movie" = "영화";
+
+/* Movies */
+"Movies" = "영화";
+
+/* Music */
+"Music" = "음악";
+
+/* Movie section name placeholder */
+"My Movies" = "나의 영화";
+
+/* Music section name placeholder */
+"My Music" = "나의 음악";
+
+/* TV Shows section name placeholder */
+"My TV Shows" = "나의 TV 쇼";
+
+/* Name */
+"Name" = "이름";
+
+/* Name label */
+"Name:" = "이름:";
+
+/* Status label value when there are no musical artists */
+"no artists" = "아티스트 없음";
+
+/* Status label value for when there are no movies */
+"no movies" = "영화 없음";
+
+/* Status label value when there are no TV shows */
+"no TV shows" = "TV 쇼 없음";
+
+/* Original Title */
+"Original Title" = "원제";
+
+/* Originally Available */
+"Originally Available" = "상영(방송)일";
+
+/* Path to your media folder: */
+"Path to your media folder:" = "미디어 폴더 경로를 입력하세요:";
+
+/* PostMeridiem */
+"PM" = "PM";
+
+/* Primary metadata agent label */
+"Primary metadata agent:" = "주 메타데이터 에이전트:";
+
+/* Rating */
+"Rating" = "점수";
+
+/* Refresh Info */
+"Refresh Info" = "정보 새로고침";
+
+/* Refresh Section */
+"Refresh Section" = "섹션 새로고침";
+
+/* Refresh Section (force) */
+"Refresh Section (force)" = "섹션 새로고침 (강제)";
+
+/* Remove section confirmation button */
+"Remove Section" = "섹션 삭제";
+
+/* Saturday */
+"Saturday" = "토요일";
+
+/* Save */
+"Save" = "저장";
+
+/* Search */
+"Search" = "검색";
+
+/* Agent label */
+"Search using:" = "검색하기:";
+
+/* Section name label */
+"Section name:" = "섹션 이름:";
+
+/* Section type label */
+"Section type:" = "섹션 타입:";
+
+/* Security */
+"Security" = "보안";
+
+/* Select */
+"Select" = "선택";
+
+/* Confirm button title for selecting */
+"Select %@" = "%@ 선택";
+
+/* Select Image */
+"Select Image" = "이미지 선택";
+
+/* Match picker informative text */
+"Select the correct %@ from the list below:" = "다음 목록에서 일치하는 %@을/를 선택하세요: ";
+
+/* Send anonymous usage data to Plex */
+"Send anonymous usage data to Plex" = "Plex에 익명으로 사용 정보를 보냅니다.";
+
+/* Sharing */
+"Sharing" = "공유";
+
+/* Show */
+"Show" = "쇼";
+
+/* Sort Title */
+"Sort Title" = "타이틀 정렬";
+
+/* Studio */
+"Studio" = "스튜디오";
+
+/* Summary */
+"Summary" = "요약";
+
+/* Sunday */
+"Sunday" = "일요일";
+
+/* Tagline */
+"Tagline" = "태그라인";
+
+/* Summary info for collecting usage data */
+"This helps us improve your experience (for example, to help us match movies and TV shows)." = "이것은 시스템 개선에 도움이 됩니다. (예를 들어, 영화와 TV 쇼를 매칭하는데 도움이 됩니다).";
+
+/* Summary info for friendly name */
+"This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead." = "이 이름은 네트워크 상의 다른 컴퓨터로부터 사용자의 미디어 서버를 구별하는데 사용됩니다. 만약 입력하지 않으면 사용자의 컴퓨터 이름으로 저장됩니다.";
+
+/* Thursday */
+"Thursday" = "목요일";
+
+/* Title */
+"Title" = "제목";
+
+/* today */
+"today" = "오늘";
+
+/* tomorrow */
+"tomorrow" = "내일";
+
+/* Transcoding */
+"Transcoding" = "트랜스코딩";
+
+/* Tuesday */
+"Tuesday" = "화요일";
+
+/* TV Shows */
+"TV Shows" = "TV 쇼";
+
+/* Error title for when we cannot connect to PMS or when the response is invalid */
+"Unable to connect to Plex Media Server" = "Plex Media Server에 연결할 수 없습니다.";
+
+/* Unable to create library section */
+"Unable to create library section" = "라이브러리 섹션을 생성할 수 없습니다.";
+
+/* Error title for when we cannot remove a library section */
+"Unable to remove section \"%@\"" = "\"%@\" 섹션을 삭제할 수 없습니다.";
+
+/* Unable to update library section */
+"Unable to update library section" = "라이브러리 섹션을 업데이트할 수 없습니다.";
+
+/* Update section confirm button text */
+"Update Section" = "섹션 업데이트";
+
+/* Wednesday */
+"Wednesday" = "수요일";
+
+/* Writers */
+"Writers" = "작가";
+
+/* Year */
+"Year" = "연도";
+
+/* Year label */
+"Year:" = "연도:";
+
+/* yesterday */
+"yesterday" = "어제";
+
