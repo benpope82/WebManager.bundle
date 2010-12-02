@@ -16,22 +16,48 @@
 	<string>1 아티스트</string>
 	<key>1 movie</key>
 	<string>1 영화</string>
+	<key>&gt; Creating Movie Collections</key>
+	<string>&gt; Creating Movie Collections</string>
+	<key>&gt; Creating TV Show Collections</key>
+	<string>&gt; Creating TV Show Collections</string>
+	<key>&gt; Home Movie File Naming</key>
+	<string>&gt; Home Movie File Naming</string>
+	<key>&gt; How Plex Scans Music</key>
+	<string>&gt; How Plex Scans Music</string>
+	<key>&gt; Movie File Naming</key>
+	<string>&gt; Movie File Naming</string>
+	<key>&gt; TV Show File Naming</key>
+	<string>&gt; TV Show File Naming</string>
+	<key>&gt; TV Show Themes</key>
+	<string>&gt; TV Show Themes</string>
 	<key>AM</key>
 	<string>AM</string>
+	<key>Add Home Movies Section</key>
+	<string>Add Home Movies Section</string>
+	<key>Add Movies Section</key>
+	<string>Add Movies Section</string>
+	<key>Add Music Section</key>
+	<string>Add Music Section</string>
 	<key>Add Section</key>
 	<string>섹션 추가</string>
+	<key>Add TV Shows Section</key>
+	<string>Add TV Shows Section</string>
 	<key>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</key>
 	<string>해당 섹션에 미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 사용자의 라이브러리로 스캔됩니다.</string>
 	<key>Advanced</key>
 	<string>고급</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
 	<string>이 섹션의 모든 컨텐츠는 더 이상 라이브러리에서 사용되지 않습니다. 사용자의 컴퓨터에 있는 파일은 제거되지 않습니다.</string>
+	<key>Aperture Sharing Enabled</key>
+	<string>Aperture Sharing Enabled</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
 	<string>"%@" 섹션을 삭제하시겠습니까?</string>
 	<key>Artist</key>
 	<string>아티스트</string>
 	<key>Cancel</key>
 	<string>취소</string>
+	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
+	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
 	<key>Choose Background Art</key>
 	<string>배경 선택</string>
 	<key>Choose Banner</key>
@@ -40,6 +66,8 @@
 	<string>아이콘 선택</string>
 	<key>Choose Poster</key>
 	<string>포스터 선택</string>
+	<key>Click the titles below to create sections for your content and have it served to your Plex-enabled devices.</key>
+	<string>Click the titles below to create sections for your content and have it served to your Plex-enabled devices.</string>
 	<key>Collections</key>
 	<string>컬렉션</string>
 	<key>Connecting to Plex Media Server failed with this error: %@.
@@ -80,8 +108,12 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>장르</string>
 	<key>Got this error: %@. Are you sure Plex Media Server is running?</key>
 	<string>에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.</string>
+	<key>Include music sections in automatic updates</key>
+	<string>Include music sections in automatic updates</string>
 	<key>Language:</key>
 	<string>언어:</string>
+	<key>Large music sections may take a long time to scan</key>
+	<string>Large music sections may take a long time to scan</string>
 	<key>Last refreshed %@ at %@</key>
 	<string>%1$@ %2$@에 갱신되었습니다</string>
 	<key>Library</key>
@@ -106,14 +138,14 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>이름</string>
 	<key>Name:</key>
 	<string>이름:</string>
+	<key>Offer higher bitrates over 3G connections</key>
+	<string>Offer higher bitrates over 3G connections</string>
 	<key>Original Title</key>
 	<string>원제</string>
 	<key>Originally Available</key>
 	<string>상영(방송)일</string>
 	<key>PM</key>
 	<string>PM</string>
-	<key>Path to your media folder:</key>
-	<string>미디어 폴더 경로를 입력하세요:</string>
 	<key>Primary metadata agent:</key>
 	<string>주 메타데이터 에이전트:</string>
 	<key>Rating</key>
@@ -144,8 +176,12 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>선택</string>
 	<key>Select %@</key>
 	<string>%@ 선택</string>
+	<key>Select Folder</key>
+	<string>Select Folder</string>
 	<key>Select Image</key>
 	<string>이미지 선택</string>
+	<key>Select a directory for this section:</key>
+	<string>Select a directory for this section:</string>
 	<key>Select the correct %@ from the list below:</key>
 	<string>다음 목록에서 일치하는 %@을/를 선택하세요: </string>
 	<key>Send anonymous usage data to Plex</key>
@@ -188,6 +224,10 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>라이브러리 섹션을 업데이트할 수 없습니다.</string>
 	<key>Update Section</key>
 	<string>섹션 업데이트</string>
+	<key>Update my library</key>
+	<string>Update my library</string>
+	<key>Update my library when changes to my folders are detected</key>
+	<string>Update my library when changes to my folders are detected</string>
 	<key>Wednesday</key>
 	<string>수요일</string>
 	<key>Writers</key>
@@ -196,6 +236,10 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>연도</string>
 	<key>Year:</key>
 	<string>연도:</string>
+	<key>iPhoto Sharing Enabled</key>
+	<string>iPhoto Sharing Enabled</string>
+	<key>iTunes Sharing Enabled</key>
+	<string>iTunes Sharing Enabled</string>
 	<key>no TV shows</key>
 	<string>TV 쇼 없음</string>
 	<key>no artists</key>

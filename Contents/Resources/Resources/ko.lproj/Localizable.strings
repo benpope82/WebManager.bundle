@@ -19,11 +19,44 @@
 /* Status label value for when there is one TV show */
 "1 TV show" = "1 TV 쇼";
 
+/* First-run help item */
+"> Creating Movie Collections" = "> Creating Movie Collections";
+
+/* First-run help item */
+"> Creating TV Show Collections" = "> Creating TV Show Collections";
+
+/* First-run help item */
+"> Home Movie File Naming" = "> Home Movie File Naming";
+
+/* First-run help item */
+"> How Plex Scans Music" = "> How Plex Scans Music";
+
+/* First-run help item */
+"> Movie File Naming" = "> Movie File Naming";
+
+/* First-run help item */
+"> TV Show File Naming" = "> TV Show File Naming";
+
+/* First-run help item */
+"> TV Show Themes" = "> TV Show Themes";
+
+/* First-run title for adding home movies */
+"Add Home Movies Section" = "Add Home Movies Section";
+
+/* First-run title for adding movies */
+"Add Movies Section" = "Add Movies Section";
+
+/* First-run title for adding music */
+"Add Music Section" = "Add Music Section";
+
 /* Add section confirm button text */
 "Add Section" = "섹션 추가";
 
 /* Section settings primary informative text */
 "Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "해당 섹션에 미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 사용자의 라이브러리로 스캔됩니다.";
+
+/* First-run title for adding TV shows */
+"Add TV Shows Section" = "Add TV Shows Section";
 
 /* Advanced */
 "Advanced" = "고급";
@@ -34,6 +67,9 @@
 /* Informative text for removing a section */
 "Any content in this section will no longer be available in your library. The files on your computer will not be removed." = "이 섹션의 모든 컨텐츠는 더 이상 라이브러리에서 사용되지 않습니다. 사용자의 컴퓨터에 있는 파일은 제거되지 않습니다.";
 
+/* Preference window setting */
+"Aperture Sharing Enabled" = "Aperture Sharing Enabled";
+
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "\"%@\" 섹션을 삭제하시겠습니까?";
 
@@ -42,6 +78,9 @@
 
 /* Cancel */
 "Cancel" = "취소";
+
+/* Preference window setting detail */
+"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.";
 
 /* Choose Background Art */
 "Choose Background Art" = "배경 선택";
@@ -54,6 +93,9 @@
 
 /* Choose Poster */
 "Choose Poster" = "포스터 선택";
+
+/* First-run help title */
+"Click the titles below to create sections for your content and have it served to your Plex-enabled devices." = "Click the titles below to create sections for your content and have it served to your Plex-enabled devices.";
 
 /* Collections */
 "Collections" = "컬렉션";
@@ -109,8 +151,20 @@
 /* Error message for when we cannot remove a library section */
 "Got this error: %@. Are you sure Plex Media Server is running?" = "에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.";
 
+/* Preference window setting */
+"Include music sections in automatic updates" = "Include music sections in automatic updates";
+
+/* Preference window setting */
+"iPhoto Sharing Enabled" = "iPhoto Sharing Enabled";
+
+/* Preference window setting */
+"iTunes Sharing Enabled" = "iTunes Sharing Enabled";
+
 /* Language label */
 "Language:" = "언어:";
+
+/* Preference window setting */
+"Large music sections may take a long time to scan" = "Large music sections may take a long time to scan";
 
 /* Status label for media items */
 "Last refreshed %@ at %@" = "%1$@ %2$@에 갱신되었습니다";
@@ -157,14 +211,14 @@
 /* Status label value when there are no TV shows */
 "no TV shows" = "TV 쇼 없음";
 
+/* Preference window setting */
+"Offer higher bitrates over 3G connections" = "Offer higher bitrates over 3G connections";
+
 /* Original Title */
 "Original Title" = "원제";
 
 /* Originally Available */
 "Originally Available" = "상영(방송)일";
-
-/* Path to your media folder: */
-"Path to your media folder:" = "미디어 폴더 경로를 입력하세요:";
 
 /* PostMeridiem */
 "PM" = "PM";
@@ -213,6 +267,12 @@
 
 /* Confirm button title for selecting */
 "Select %@" = "%@ 선택";
+
+/* Directory-browser title when adding/editing sections */
+"Select a directory for this section:" = "Select a directory for this section:";
+
+/* Select Folder */
+"Select Folder" = "Select Folder";
 
 /* Select Image */
 "Select Image" = "이미지 선택";
@@ -282,6 +342,12 @@
 
 /* Unable to update library section */
 "Unable to update library section" = "라이브러리 섹션을 업데이트할 수 없습니다.";
+
+/* Preference window setting - will have frequencies after it e.g. Update my library every two hours */
+"Update my library" = "Update my library";
+
+/* Preference window setting */
+"Update my library when changes to my folders are detected" = "Update my library when changes to my folders are detected";
 
 /* Update section confirm button text */
 "Update Section" = "섹션 업데이트";

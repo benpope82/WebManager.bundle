@@ -16,22 +16,48 @@
 	<string>1 artist</string>
 	<key>1 movie</key>
 	<string>1 movie</string>
+	<key>&gt; Creating Movie Collections</key>
+	<string>&gt; Creating Movie Collections</string>
+	<key>&gt; Creating TV Show Collections</key>
+	<string>&gt; Creating TV Show Collections</string>
+	<key>&gt; Home Movie File Naming</key>
+	<string>&gt; Home Movie File Naming</string>
+	<key>&gt; How Plex Scans Music</key>
+	<string>&gt; How Plex Scans Music</string>
+	<key>&gt; Movie File Naming</key>
+	<string>&gt; Movie File Naming</string>
+	<key>&gt; TV Show File Naming</key>
+	<string>&gt; TV Show File Naming</string>
+	<key>&gt; TV Show Themes</key>
+	<string>&gt; TV Show Themes</string>
 	<key>AM</key>
 	<string>AM</string>
+	<key>Add Home Movies Section</key>
+	<string>Add Home Movies Section</string>
+	<key>Add Movies Section</key>
+	<string>Add Movies Section</string>
+	<key>Add Music Section</key>
+	<string>Add Music Section</string>
 	<key>Add Section</key>
 	<string>Add Section</string>
+	<key>Add TV Shows Section</key>
+	<string>Add TV Shows Section</string>
 	<key>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</key>
 	<string>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</string>
 	<key>Advanced</key>
 	<string>Advanced</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
 	<string>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</string>
+	<key>Aperture Sharing Enabled</key>
+	<string>Aperture Sharing Enabled</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
 	<string>Are you sure you want to remove the section named "%@"?</string>
 	<key>Artist</key>
 	<string>Artist</string>
 	<key>Cancel</key>
 	<string>Cancel</string>
+	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
+	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
 	<key>Choose Background Art</key>
 	<string>Choose Background Art</string>
 	<key>Choose Banner</key>
@@ -40,6 +66,8 @@
 	<string>Choose Icon</string>
 	<key>Choose Poster</key>
 	<string>Choose Poster</string>
+	<key>Click the titles below to create sections for your content and have it served to your Plex-enabled devices.</key>
+	<string>Click the titles below to create sections for your content and have it served to your Plex-enabled devices.</string>
 	<key>Collections</key>
 	<string>Collections</string>
 	<key>Connecting to Plex Media Server failed with this error: %@.
@@ -80,8 +108,12 @@ Are you sure it's running?</string>
 	<string>Genres</string>
 	<key>Got this error: %@. Are you sure Plex Media Server is running?</key>
 	<string>Got this error: %@. Are you sure Plex Media Server is running?</string>
+	<key>Include music sections in automatic updates</key>
+	<string>Include music sections in automatic updates</string>
 	<key>Language:</key>
 	<string>Language:</string>
+	<key>Large music sections may take a long time to scan</key>
+	<string>Large music sections may take a long time to scan</string>
 	<key>Last refreshed %@ at %@</key>
 	<string>Last refreshed %1$@ at %2$@</string>
 	<key>Library</key>
@@ -106,14 +138,14 @@ Are you sure it's running?</string>
 	<string>Name</string>
 	<key>Name:</key>
 	<string>Name:</string>
+	<key>Offer higher bitrates over 3G connections</key>
+	<string>Offer higher bitrates over 3G connections</string>
 	<key>Original Title</key>
 	<string>Original Title</string>
 	<key>Originally Available</key>
 	<string>Originally Available</string>
 	<key>PM</key>
 	<string>PM</string>
-	<key>Path to your media folder:</key>
-	<string>Path to your media folder:</string>
 	<key>Primary metadata agent:</key>
 	<string>Primary metadata agent:</string>
 	<key>Rating</key>
@@ -144,8 +176,12 @@ Are you sure it's running?</string>
 	<string>Select</string>
 	<key>Select %@</key>
 	<string>Select %@</string>
+	<key>Select Folder</key>
+	<string>Select Folder</string>
 	<key>Select Image</key>
 	<string>Select Image</string>
+	<key>Select a directory for this section:</key>
+	<string>Select a directory for this section:</string>
 	<key>Select the correct %@ from the list below:</key>
 	<string>Select the correct %@ from the list below:</string>
 	<key>Send anonymous usage data to Plex</key>
@@ -188,6 +224,10 @@ Are you sure it's running?</string>
 	<string>Unable to update library section</string>
 	<key>Update Section</key>
 	<string>Update Section</string>
+	<key>Update my library</key>
+	<string>Update my library</string>
+	<key>Update my library when changes to my folders are detected</key>
+	<string>Update my library when changes to my folders are detected</string>
 	<key>Wednesday</key>
 	<string>Wednesday</string>
 	<key>Writers</key>
@@ -196,6 +236,10 @@ Are you sure it's running?</string>
 	<string>Year</string>
 	<key>Year:</key>
 	<string>Year:</string>
+	<key>iPhoto Sharing Enabled</key>
+	<string>iPhoto Sharing Enabled</string>
+	<key>iTunes Sharing Enabled</key>
+	<string>iTunes Sharing Enabled</string>
 	<key>no TV shows</key>
 	<string>no TV shows</string>
 	<key>no artists</key>
