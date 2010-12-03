@@ -1477,12 +1477,9 @@ _a4.range.length=_a5-_a3;
 _a4.attributes=objj_msgSend(_a4.attributes,"copy");
 return [_a2,_a4];
 };
-p;10;CPBundle.jt;4159;@STATIC;1.0;i;14;CPDictionary.ji;10;CPObject.ji;16;CPNotification.ji;22;CPNotificationCenter.jt;4058;
+p;10;CPBundle.jt;3820;@STATIC;1.0;i;14;CPDictionary.ji;10;CPObject.jt;3767;
 objj_executeFile("CPDictionary.j",YES);
 objj_executeFile("CPObject.j",YES);
-objj_executeFile("CPNotification.j",YES);
-objj_executeFile("CPNotificationCenter.j",YES);
-CPBundleDidLoadNotification="CPBundleDidLoadNotification";
 var _1={};
 var _2=objj_allocateClassPair(CPObject,"CPBundle"),_3=_2.isa;
 class_addIvars(_2,[new objj_ivar("_bundle"),new objj_ivar("_delegate")]);
@@ -1554,7 +1551,6 @@ with(_26){
 _delegate=_28;
 _bundle.addEventListener("load",function(){
 objj_msgSend(_delegate,"bundleDidFinishLoading:",_26);
-objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPBundleDidLoadNotification,_26,nil);
 });
 _bundle.addEventListener("error",function(){
 CPLog.error("Could not find bundle: "+_26);
@@ -2260,7 +2256,7 @@ objj_msgSend(_4f,"encodeInt:forKey:",_4d.getTime(),_49);
 }
 })]);
 Date.prototype.isa=CPDate;
-p;11;CPDecimal.jt;17241;@STATIC;1.0;i;9;CPArray.ji;10;CPNumber.jt;17193;
+p;11;CPDecimal.jt;17286;@STATIC;1.0;i;9;CPArray.ji;10;CPNumber.jt;17238;
 objj_executeFile("CPArray.j",YES);
 objj_executeFile("CPNumber.j",YES);
 CPDecimalMaxDigits=38;
@@ -2603,61 +2599,63 @@ if(CPDecimalIsZero(_2c)){
 _CPDecimalSet(_2a,_2b);
 return CPCalculationNoError;
 }
-var n1=CPDecimalCopy(_2b),n2=CPDecimalCopy(_2c),_2e=CPCalculationNoError;
+var n1=CPDecimalCopy(_2b),n2=CPDecimalCopy(_2c);
+error1=CPCalculationNoError;
 if(_2b._isNegative!=_2c._isNegative){
 if(_2b._isNegative){
 n1._isNegative=NO;
-_2e=CPDecimalAdd(_2a,n1,_2c,_2d);
+error1=CPDecimalAdd(_2a,n1,_2c,_2d);
 _2a._isNegative=YES;
-if(_2e==CPCalculationUnderflow){
-_2e=CPCalculationOverflow;
+if(error1==CPCalculationUnderflow){
+error1=CPCalculationOverflow;
 }else{
-if(_2e==CPCalculationOverflow){
-_2e=CPCalculationUnderflow;
+if(error1==CPCalculationOverflow){
+error1=CPCalculationUnderflow;
 }
 }
-return _2e;
+return error1;
 }else{
 n2._isNegative=NO;
 return CPDecimalAdd(_2a,_2b,n2,_2d);
 }
 }
-var _2f=CPDecimalNormalize(n1,n2,_2d),_30=CPDecimalCompare(_2b,_2c);
-if(_30==CPOrderedSame){
+var _2e=CPDecimalNormalize(n1,n2,_2d);
+var _2f=CPDecimalCompare(_2b,_2c);
+if(_2f==CPOrderedSame){
 _CPDecimalSetZero(_2a);
 return CPCalculationNoError;
 }
 if(_2b._isNegative){
 n1._isNegative=NO;
 n2._isNegative=NO;
-if(_30==CPOrderedAscending){
-_2e=_SimpleSubtract(_2a,n1,n2,_2d);
+if(_2f==CPOrderedAscending){
+error1=_SimpleSubtract(_2a,n1,n2,_2d);
 _2a._isNegative=YES;
 }else{
-_2e=_SimpleSubtract(_2a,n2,n1,_2d);
+error1=_SimpleSubtract(_2a,n2,n1,_2d);
 }
 }else{
-if(_30==CPOrderedAscending){
-_2e=_SimpleSubtract(_2a,n2,n1,_2d);
+if(_2f==CPOrderedAscending){
+error1=_SimpleSubtract(_2a,n2,n1,_2d);
 _2a._isNegative=YES;
 }else{
-_2e=_SimpleSubtract(_2a,n1,n2,_2d);
+error1=_SimpleSubtract(_2a,n1,n2,_2d);
 }
 }
 CPDecimalCompact(_2a);
-if(_2e==CPCalculationNoError){
-return _2f;
-}else{
+if(error1==CPCalculationNoError){
 return _2e;
+}else{
+return error1;
 }
 };
-_SimpleDivide=function(_31,_32,_33,_34){
-var _35=CPCalculationNoError,n1=CPDecimalMakeZero(),k=0,_36=YES,_37=CPDecimalMaxDigits+1,_38=0;
-_CPDecimalSetZero(_31);
+_SimpleDivide=function(_30,_31,_32,_33){
+var _34=CPCalculationNoError,n1=CPDecimalMakeZero(),k=0,_35=YES,_36=CPDecimalMaxDigits+1,_37=0;
+_CPDecimalSetZero(_30);
 n1._mantissa=objj_msgSend(CPArray,"array");
-while((k<objj_msgSend(_32._mantissa,"count"))||(objj_msgSend(n1._mantissa,"count")&&!((objj_msgSend(n1._mantissa,"count")==1)&&(n1._mantissa[0]==0)))){
-while(CPOrderedAscending==CPDecimalCompare(n1,_33)){
-if(_37==k){
+while((k<objj_msgSend(_31._mantissa,"count"))||(objj_msgSend(n1._mantissa,"count")&&!((objj_msgSend(n1._mantissa,"count")==1)&&(n1._mantissa[0]==0)))){
+while(CPOrderedAscending==CPDecimalCompare(n1,_32)){
+if(_36==k){
 break;
 }
 if(n1._exponent){
@@ -2665,236 +2663,236 @@ objj_msgSend(n1._mantissa,"addObject:",0);
 n1._exponent--;
 n1._isCompact=NO;
 }else{
-if(_38<objj_msgSend(_32._mantissa,"count")){
-if(objj_msgSend(n1._mantissa,"count")||_32._mantissa[_38]){
-objj_msgSend(n1._mantissa,"addObject:",(_32._mantissa[_38]));
+if(_37<objj_msgSend(_31._mantissa,"count")){
+if(objj_msgSend(n1._mantissa,"count")||_31._mantissa[_37]){
+objj_msgSend(n1._mantissa,"addObject:",(_31._mantissa[_37]));
 n1._isCompact=NO;
 }
-_38++;
+_37++;
 }else{
-if(_31._exponent==CPDecimalMinExponent){
-k=_37;
+if(_30._exponent==CPDecimalMinExponent){
+k=_36;
 break;
 }
 objj_msgSend(n1._mantissa,"addObject:",0);
-_31._exponent--;
+_30._exponent--;
 }
-if(!_36){
+if(!_35){
 k++;
-_31._mantissa[k-1]=0;
+_30._mantissa[k-1]=0;
 }
 }
 }
-if(_37==k){
-_35=CPCalculationLossOfPrecision;
+if(_36==k){
+_34=CPCalculationLossOfPrecision;
 break;
 }
-if(_36){
-_36=NO;
+if(_35){
+_35=NO;
 k++;
 }
-error1=CPDecimalSubtract(n1,n1,_33,_34);
+error1=CPDecimalSubtract(n1,n1,_32,_33);
 if(error1!=CPCalculationNoError){
-_35=error1;
+_34=error1;
 }
-_31._mantissa[k-1]++;
+_30._mantissa[k-1]++;
 }
-return _35;
+return _34;
 };
-CPDecimalDivide=function(_39,_3a,_3b,_3c){
-var _3d=CPCalculationNoError,exp=_3a._exponent-_3b._exponent,neg=(_3a._isNegative!=_3b._isNegative);
-if(_3a._isNaN||_3b._isNaN){
-_39._isNaN=YES;
+CPDecimalDivide=function(_38,_39,_3a,_3b){
+var _3c=CPCalculationNoError,exp=_39._exponent-_3a._exponent,neg=(_39._isNegative!=_3a._isNegative);
+if(_39._isNaN||_3a._isNaN){
+_38._isNaN=YES;
 return CPCalculationNoError;
-}
-if(CPDecimalIsZero(_3b)){
-_39._isNaN=YES;
-return CPCalculationDivideByZero;
 }
 if(CPDecimalIsZero(_3a)){
-_CPDecimalSetZero(_39);
+_38._isNaN=YES;
+return CPCalculationDivideByZero;
+}
+if(CPDecimalIsZero(_39)){
+_CPDecimalSetZero(_38);
 return CPCalculationNoError;
 }
-var n1=CPDecimalCopy(_3a),n2=CPDecimalCopy(_3b);
+var n1=CPDecimalCopy(_39),n2=CPDecimalCopy(_3a);
 n1._exponent=0;
 n1._isNegative=NO;
 n2._exponent=0;
 n2._isNegative=NO;
-_3d=_SimpleDivide(_39,n1,n2,_3c);
-CPDecimalCompact(_39);
-if(_39._exponent+exp>CPDecimalMaxExponent){
-_39._isNaN=YES;
+_3c=_SimpleDivide(_38,n1,n2,_3b);
+CPDecimalCompact(_38);
+if(_38._exponent+exp>CPDecimalMaxExponent){
+_38._isNaN=YES;
 if(neg){
 return CPCalculationUnderflow;
 }else{
 return CPCalculationOverflow;
 }
 }else{
-if(_39._exponent+exp<CPDecimalMinExponent){
-CPDecimalRound(_39,_39,exp+CPDecimalMaxExponent+1,_3c);
-_3d=CPCalculationLossOfPrecision;
-if(_39._exponent+exp<CPDecimalMinExponent){
-CPDecimalSetZero(_39);
-return _3d;
+if(_38._exponent+exp<CPDecimalMinExponent){
+CPDecimalRound(_38,_38,exp+CPDecimalMaxExponent+1,_3b);
+_3c=CPCalculationLossOfPrecision;
+if(_38._exponent+exp<CPDecimalMinExponent){
+CPDecimalSetZero(_38);
+return _3c;
 }
 }
 }
-_39._exponent+=exp;
-_39._isNegative=neg;
-return _3d;
+_38._exponent+=exp;
+_38._isNegative=neg;
+return _3c;
 };
-_SimpleMultiply=function(_3e,_3f,_40,_41,_42){
-var _43=CPCalculationNoError,_44=0,exp=0,n=CPDecimalMakeZero();
-_CPDecimalSetZero(_3e);
+_SimpleMultiply=function(_3d,_3e,_3f,_40,_41){
+var _42=CPCalculationNoError,_43=0,exp=0,n=CPDecimalMakeZero();
+_CPDecimalSetZero(_3d);
 var i=0;
-for(;i<objj_msgSend(_40._mantissa,"count");i++){
+for(;i<objj_msgSend(_3f._mantissa,"count");i++){
 _CPDecimalSetZero(n);
-n._exponent=objj_msgSend(_40._mantissa,"count")-i-1;
-_44=0;
-d=_40._mantissa[i];
+n._exponent=objj_msgSend(_3f._mantissa,"count")-i-1;
+_43=0;
+d=_3f._mantissa[i];
 if(d==0){
 continue;
 }
 var j=0;
-for(j=objj_msgSend(_3f._mantissa,"count")-1;j>=0;j--){
-e=_3f._mantissa[j]*d+_44;
+for(j=objj_msgSend(_3e._mantissa,"count")-1;j>=0;j--){
+e=_3e._mantissa[j]*d+_43;
 if(e>=10){
-_44=FLOOR(e/10);
+_43=FLOOR(e/10);
 e=e%10;
 }else{
-_44=0;
+_43=0;
 }
 n._mantissa[j+1]=e;
 }
-n._mantissa[0]=_44;
+n._mantissa[0]=_43;
 CPDecimalCompact(n);
-error1=CPDecimalAdd(_3e,_3e,n,_41,YES);
+error1=CPDecimalAdd(_3d,_3d,n,_40,YES);
 if(error1!=CPCalculationNoError){
-_43=error1;
+_42=error1;
 }
 }
-if(_3e._exponent+exp>CPDecimalMaxExponent){
-_3e._isNaN=YES;
+if(_3d._exponent+exp>CPDecimalMaxExponent){
+_3d._isNaN=YES;
 return CPCalculationOverflow;
 }
-_3e._exponent+=exp;
-if(objj_msgSend(_3e._mantissa,"count")>CPDecimalMaxDigits&&!_42){
-_3e._isCompact=NO;
-var _45=CPDecimalMaxDigits-(objj_msgSend(_3e._mantissa,"count")+_3e._exponent);
-CPDecimalRound(_3e,_3e,_45,_41);
-_43=CPCalculationLossOfPrecision;
+_3d._exponent+=exp;
+if(objj_msgSend(_3d._mantissa,"count")>CPDecimalMaxDigits&&!_41){
+_3d._isCompact=NO;
+var _44=CPDecimalMaxDigits-(objj_msgSend(_3d._mantissa,"count")+_3d._exponent);
+CPDecimalRound(_3d,_3d,_44,_40);
+_42=CPCalculationLossOfPrecision;
 }
-return _43;
+return _42;
 };
-CPDecimalMultiply=function(_46,_47,_48,_49,_4a){
-var _4b=CPCalculationNoError,exp=_47._exponent+_48._exponent,neg=(_47._isNegative!=_48._isNegative);
-if(_47._isNaN||_48._isNaN){
-_46._isNaN=YES;
+CPDecimalMultiply=function(_45,_46,_47,_48,_49){
+var _4a=CPCalculationNoError,exp=_46._exponent+_47._exponent,neg=(_46._isNegative!=_47._isNegative);
+if(_46._isNaN||_47._isNaN){
+_45._isNaN=YES;
 return CPCalculationNoError;
 }
-if(CPDecimalIsZero(_48)||CPDecimalIsZero(_47)){
-_CPDecimalSetZero(_46);
+if(CPDecimalIsZero(_47)||CPDecimalIsZero(_46)){
+_CPDecimalSetZero(_45);
 return CPCalculationNoError;
 }
 if(exp>CPDecimalMaxExponent){
-_46._isNaN=YES;
+_45._isNaN=YES;
 if(neg){
 return CPCalculationUnderflow;
 }else{
 return CPCalculationOverflow;
 }
 }
-var n1=CPDecimalCopy(_47),n2=CPDecimalCopy(_48);
+var n1=CPDecimalCopy(_46),n2=CPDecimalCopy(_47);
 n1._exponent=0;
 n2._exponent=0;
 n1._isNegative=NO;
 n2._isNegative=NO;
-var _4c=0,ll=objj_msgSend(n1._mantissa,"count"),lr=objj_msgSend(n2._mantissa,"count");
+var _4b=0,ll=objj_msgSend(n1._mantissa,"count"),lr=objj_msgSend(n2._mantissa,"count");
 if(ll==lr){
-_4c=CPOrderedSame;
+_4b=CPOrderedSame;
 }else{
 if(ll>lr){
-_4c=CPOrderedDescending;
+_4b=CPOrderedDescending;
 }else{
-_4c=CPOrderedAscending;
+_4b=CPOrderedAscending;
 }
 }
-if(_4c==CPOrderedDescending){
-_4b=_SimpleMultiply(_46,n1,n2,_49,_4a);
+if(_4b==CPOrderedDescending){
+_4a=_SimpleMultiply(_45,n1,n2,_48,_49);
 }else{
-_4b=_SimpleMultiply(_46,n2,n1,_49,_4a);
+_4a=_SimpleMultiply(_45,n2,n1,_48,_49);
 }
-CPDecimalCompact(_46);
-if(_46._exponent+exp>CPDecimalMaxExponent){
-_46._isNaN=YES;
+CPDecimalCompact(_45);
+if(_45._exponent+exp>CPDecimalMaxExponent){
+_45._isNaN=YES;
 if(neg){
 return CPCalculationUnderflow;
 }else{
 return CPCalculationOverflow;
 }
 }else{
-if(_46._exponent+exp<CPDecimalMinExponent){
-CPDecimalRound(_46,_46,exp+CPDecimalMaxExponent+1,_49);
-_4b=CPCalculationLossOfPrecision;
-if(_46._exponent+exp<CPDecimalMinExponent){
-_CPDecimalSetZero(_46);
-return _4b;
+if(_45._exponent+exp<CPDecimalMinExponent){
+CPDecimalRound(_45,_45,exp+CPDecimalMaxExponent+1,_48);
+_4a=CPCalculationLossOfPrecision;
+if(_45._exponent+exp<CPDecimalMinExponent){
+_CPDecimalSetZero(_45);
+return _4a;
 }
 }
 }
-_46._exponent+=exp;
-_46._isNegative=neg;
-return _4b;
+_45._exponent+=exp;
+_45._isNegative=neg;
+return _4a;
 };
-CPDecimalMultiplyByPowerOf10=function(_4d,dcm,_4e,_4f){
-_CPDecimalSet(_4d,dcm);
-var p=_4d._exponent+_4e;
+CPDecimalMultiplyByPowerOf10=function(_4c,dcm,_4d,_4e){
+_CPDecimalSet(_4c,dcm);
+var p=_4c._exponent+_4d;
 if(p>CPDecimalMaxExponent){
-_4d._isNaN=YES;
+_4c._isNaN=YES;
 return CPCalculationOverflow;
 }
 if(p<CPDecimalMinExponent){
-_4d._isNaN=YES;
+_4c._isNaN=YES;
 return CPCalculationUnderflow;
 }
-_4d._exponent+=_4e;
+_4c._exponent+=_4d;
 return CPCalculationNoError;
 };
-CPDecimalPower=function(_50,dcm,_51,_52){
-var _53=CPCalculationNoError,neg=(dcm._isNegative&&(_51%2)),n1=CPDecimalCopy(dcm);
+CPDecimalPower=function(_4f,dcm,_50,_51){
+var _52=CPCalculationNoError,neg=(dcm._isNegative&&(_50%2)),n1=CPDecimalCopy(dcm);
 n1._isNegative=NO;
-_CPDecimalSetOne(_50);
-var e=_51;
+_CPDecimalSetOne(_4f);
+var e=_50;
 while(e){
 if(e&1){
-_53=CPDecimalMultiply(_50,_50,n1,_52);
+_52=CPDecimalMultiply(_4f,_4f,n1,_51);
 }
-_53=CPDecimalMultiply(n1,n1,n1,_52);
+_52=CPDecimalMultiply(n1,n1,n1,_51);
 e>>=1;
-if(_53>CPCalculationLossOfPrecision){
+if(_52>CPCalculationLossOfPrecision){
 break;
 }
 }
-_50._isNegative=neg;
-CPDecimalCompact(_50);
-return _53;
+_4f._isNegative=neg;
+CPDecimalCompact(_4f);
+return _52;
 };
-CPDecimalNormalize=function(_54,_55,_56,_57){
-var _58=(_57)?2:1;
-if(_54._isNaN||_55._isNaN){
+CPDecimalNormalize=function(_53,_54,_55,_56){
+var _57=(_56)?2:1;
+if(_53._isNaN||_54._isNaN){
 return CPCalculationNoError;
+}
+if(!_53._isCompact){
+CPDecimalCompact(_53);
 }
 if(!_54._isCompact){
 CPDecimalCompact(_54);
 }
-if(!_55._isCompact){
-CPDecimalCompact(_55);
-}
-if(_54._exponent==_55._exponent){
+if(_53._exponent==_54._exponent){
 return CPCalculationNoError;
 }
-var e1=_54._exponent,e2=_55._exponent;
-var l2=objj_msgSend(_55._mantissa,"count"),l1=objj_msgSend(_54._mantissa,"count"),l=0;
+var e1=_53._exponent,e2=_54._exponent;
+var l2=objj_msgSend(_54._mantissa,"count"),l1=objj_msgSend(_53._mantissa,"count"),l=0;
 var e=0;
 if(e2>e1&&e1>=0&&e2>=0){
 e=e2-e1;
@@ -2920,89 +2918,89 @@ e=e1-e2;
 }
 }
 if(e2>e1){
-l=MIN((CPDecimalMaxDigits*_58)-l2,e);
+l=MIN((CPDecimalMaxDigits*_57)-l2,e);
 }else{
-l=MIN((CPDecimalMaxDigits*_58)-l1,e);
+l=MIN((CPDecimalMaxDigits*_57)-l1,e);
 }
 for(var i=0;i<l;i++){
 if(e2>e1){
-objj_msgSend(_55._mantissa,"addObject:",0);
-}else{
 objj_msgSend(_54._mantissa,"addObject:",0);
+}else{
+objj_msgSend(_53._mantissa,"addObject:",0);
 }
 }
 if(e2>e1){
-_55._exponent-=l;
-_55._isCompact=NO;
-}else{
 _54._exponent-=l;
 _54._isCompact=NO;
+}else{
+_53._exponent-=l;
+_53._isCompact=NO;
 }
 if(l!=ABS(e2-e1)){
 if(e2>e1){
-CPDecimalRound(_54,_54,-_55._exponent,_56);
-l1=CPDecimalIsZero(_54);
+CPDecimalRound(_53,_53,-_54._exponent,_55);
+l1=CPDecimalIsZero(_53);
 }else{
-CPDecimalRound(_55,_55,-_54._exponent,_56);
-l2=CPDecimalIsZero(_55);
+CPDecimalRound(_54,_54,-_53._exponent,_55);
+l2=CPDecimalIsZero(_54);
 }
-if((_54._exponent!=_55._exponent)&&((!l1)||(!l2))){
+if((_53._exponent!=_54._exponent)&&((!l1)||(!l2))){
 if(e2>e1){
-l1=objj_msgSend(_54._mantissa,"count");
-l=MIN((CPDecimalMaxDigits*_58)-l1,ABS(_54._exponent-_55._exponent));
+l1=objj_msgSend(_53._mantissa,"count");
+l=MIN((CPDecimalMaxDigits*_57)-l1,ABS(_53._exponent-_54._exponent));
 for(var i=0;i<l;i++){
-_54._mantissa[i+l1]=0;
+_53._mantissa[i+l1]=0;
 }
-_54._isCompact=NO;
-_54._exponent=_55._exponent;
+_53._isCompact=NO;
+_53._exponent=_54._exponent;
 }else{
-l2=objj_msgSend(_55._mantissa,"count");
-l=MIN((CPDecimalMaxDigits*_58)-l2,ABS(_55._exponent-_54._exponent));
+l2=objj_msgSend(_54._mantissa,"count");
+l=MIN((CPDecimalMaxDigits*_57)-l2,ABS(_54._exponent-_53._exponent));
 for(var i=0;i<l;i++){
-_55._mantissa[i+l2]=0;
+_54._mantissa[i+l2]=0;
 }
-_55._exponent=_54._exponent;
-_55._isCompact=NO;
+_54._exponent=_53._exponent;
+_54._isCompact=NO;
 }
 }
 return CPCalculationLossOfPrecision;
 }
 return CPCalculationNoError;
 };
-CPDecimalRound=function(_59,dcm,_5a,_5b){
+CPDecimalRound=function(_58,dcm,_59,_5a){
 if(dcm._isNaN){
 return;
 }
 if(!dcm._isCompact){
 CPDecimalCompact(dcm);
 }
-if(_5a==CPDecimalNoScale){
+if(_59==CPDecimalNoScale){
 return;
 }
-_CPDecimalSet(_59,dcm);
-var mc=objj_msgSend(_59._mantissa,"count"),l=mc+_5a+_59._exponent;
+_CPDecimalSet(_58,dcm);
+var mc=objj_msgSend(_58._mantissa,"count"),l=mc+_59+_58._exponent;
 if(mc<=l){
 return;
 }else{
 if(l<=0){
-_CPDecimalSetZero(_59);
+_CPDecimalSetZero(_58);
 return;
 }else{
 var c=0,n=0,up=0;
-_59._exponent+=mc-l;
-switch(_5b){
+_58._exponent+=mc-l;
+switch(_5a){
 case CPRoundDown:
-up=_59._isNegative;
+up=_58._isNegative;
 break;
 case CPRoundUp:
-up=!_59._isNegative;
+up=!_58._isNegative;
 break;
 case CPRoundPlain:
-n=_59._mantissa[l];
+n=_58._mantissa[l];
 up=(n>=5);
 break;
 case CPRoundBankers:
-n=_59._mantissa[l];
+n=_58._mantissa[l];
 if(n>5){
 up=YES;
 }else{
@@ -3012,7 +3010,7 @@ up=NO;
 if(l==0){
 c=0;
 }else{
-c=_59._mantissa[l-1];
+c=_58._mantissa[l-1];
 }
 up=((c%2)!=0);
 }
@@ -3022,27 +3020,27 @@ default:
 up=NO;
 break;
 }
-_59._mantissa=objj_msgSend(_59._mantissa,"subarrayWithRange:",CPMakeRange(0,l));
+_58._mantissa=objj_msgSend(_58._mantissa,"subarrayWithRange:",CPMakeRange(0,l));
 if(up){
 for(var i=l-1;i>=0;i--){
-if(_59._mantissa[i]!=9){
-_59._mantissa[i]++;
+if(_58._mantissa[i]!=9){
+_58._mantissa[i]++;
 break;
 }
-_59._mantissa[i]=0;
+_58._mantissa[i]=0;
 }
 if(i==-1){
-_59._mantissa[0]=1;
-if(_59._exponent>=CPDecimalMaxExponent){
-objj_msgSend(_59._mantissa,"addObject:",0);
+_58._mantissa[0]=1;
+if(_58._exponent>=CPDecimalMaxExponent){
+objj_msgSend(_58._mantissa,"addObject:",0);
 }else{
-_59._exponent++;
+_58._exponent++;
 }
 }
 }
 }
 }
-CPDecimalCompact(_59);
+CPDecimalCompact(_58);
 };
 CPDecimalCompact=function(dcm){
 if(!dcm||objj_msgSend(dcm._mantissa,"count")==0||CPDecimalIsNotANumber(dcm)){
@@ -3064,36 +3062,36 @@ break;
 }
 dcm._isCompact=YES;
 };
-CPDecimalString=function(dcm,_5c){
-var _5d="",i=0;
+CPDecimalString=function(dcm,_5b){
+var _5c="",i=0;
 if(dcm._isNegative){
-_5d+="-";
+_5c+="-";
 }
 var k=objj_msgSend(dcm._mantissa,"count"),l=((dcm._exponent<0)?dcm._exponent:0)+k;
 if(l<0){
-_5d+="0.";
+_5c+="0.";
 for(i=0;i<ABS(l);i++){
-_5d+="0";
+_5c+="0";
 }
 l=k;
 }else{
 if(l==0){
-_5d+="0";
+_5c+="0";
 }
 }
 for(i=0;i<l;i++){
-_5d+=dcm._mantissa[i];
+_5c+=dcm._mantissa[i];
 }
 if(l<k){
-_5d+=".";
+_5c+=".";
 for(i=l;i<k;i++){
-_5d+=dcm._mantissa[i];
+_5c+=dcm._mantissa[i];
 }
 }
 for(i=0;i<dcm._exponent;i++){
-_5d+="0";
+_5c+="0";
 }
-return _5d;
+return _5c;
 };
 p;17;CPDecimalNumber.jt;19285;@STATIC;1.0;i;10;CPObject.ji;11;CPDecimal.ji;13;CPException.jt;19216;
 objj_executeFile("CPObject.j",YES);
@@ -4040,108 +4038,6 @@ with(_e){
 functionOp=objj_msgSend(objj_msgSend(CPFunctionOperation,"alloc"),"init");
 objj_msgSend(functionOp,"addExecutionFunction:",_10);
 return functionOp;
-}
-})]);
-p;13;CPIndexPath.jt;3394;@STATIC;1.0;i;10;CPObject.ji;9;CPArray.ji;9;CPRange.ji;18;CPSortDescriptor.ji;13;CPException.jt;3293;
-objj_executeFile("CPObject.j",YES);
-objj_executeFile("CPArray.j",YES);
-objj_executeFile("CPRange.j",YES);
-objj_executeFile("CPSortDescriptor.j",YES);
-objj_executeFile("CPException.j",YES);
-var _1=objj_allocateClassPair(CPObject,"CPIndexPath"),_2=_1.isa;
-class_addIvars(_1,[new objj_ivar("_indexes")]);
-objj_registerClassPair(_1);
-class_addMethods(_1,[new objj_method(sel_getUid("indexes"),function(_3,_4){
-with(_3){
-return _indexes;
-}
-}),new objj_method(sel_getUid("setIndexes:"),function(_5,_6,_7){
-with(_5){
-_indexes=_7;
-}
-}),new objj_method(sel_getUid("initWithIndexes:length:"),function(_8,_9,_a,_b){
-with(_8){
-_8=objj_msgSendSuper({receiver:_8,super_class:objj_getClass("CPIndexPath").super_class},"init");
-if(_8){
-_indexes=objj_msgSend(_a,"subarrayWithRange:",CPMakeRange(0,_b));
-}
-return _8;
-}
-}),new objj_method(sel_getUid("initWithIndexes:"),function(_c,_d,_e){
-with(_c){
-_c=objj_msgSendSuper({receiver:_c,super_class:objj_getClass("CPIndexPath").super_class},"init");
-if(_c){
-_indexes=objj_msgSend(_e,"copy");
-}
-return _c;
-}
-}),new objj_method(sel_getUid("description"),function(_f,_10){
-with(_f){
-return objj_msgSendSuper({receiver:_f,super_class:objj_getClass("CPIndexPath").super_class},"description")+" "+_indexes;
-}
-}),new objj_method(sel_getUid("length"),function(_11,_12){
-with(_11){
-return objj_msgSend(_indexes,"count");
-}
-}),new objj_method(sel_getUid("indexAtPosition:"),function(_13,_14,_15){
-with(_13){
-return objj_msgSend(_indexes,"objectAtIndex:",_15);
-}
-}),new objj_method(sel_getUid("indexPathByAddingIndex:"),function(_16,_17,_18){
-with(_16){
-return objj_msgSend(CPIndexPath,"indexPathWithIndexes:",objj_msgSend(_indexes,"arrayByAddingObject:",_18));
-}
-}),new objj_method(sel_getUid("indexPathByRemovingLastIndex"),function(_19,_1a){
-with(_19){
-return objj_msgSend(CPIndexPath,"indexPathWithIndexes:length:",_indexes,objj_msgSend(_19,"length"));
-}
-}),new objj_method(sel_getUid("isEqual:"),function(_1b,_1c,_1d){
-with(_1b){
-if(_1d===_1b){
-return YES;
-}
-if(objj_msgSend(_1d,"class")!==objj_msgSend(CPIndexPath,"class")){
-return NO;
-}
-return objj_msgSend(_indexes,"isEqualToArray:",objj_msgSend(_1d,"indexes"));
-}
-}),new objj_method(sel_getUid("compare:"),function(_1e,_1f,_20){
-with(_1e){
-if(!_20){
-objj_msgSend(CPException,"raise:reason:",CPInvalidArgumentException,"indexPath to "+_1e+" was nil");
-}
-var _21=objj_msgSend(_1e,"indexes"),_22=objj_msgSend(_20,"indexes"),_23=objj_msgSend(_21,"count"),_24=objj_msgSend(_22,"count");
-var _25=0,_26=MIN(_23,_24);
-for(;_25<_26;++_25){
-var lhs=_21[_25],rhs=_22[_25];
-if(lhs<rhs){
-return CPOrderedAscending;
-}else{
-if(lhs>rhs){
-return CPOrderedDescending;
-}
-}
-}
-if(_23===_24){
-return CPOrderedSame;
-}
-if(_23===_26){
-return CPOrderedAscending;
-}
-return CPOrderedDescending;
-}
-})]);
-class_addMethods(_2,[new objj_method(sel_getUid("indexPathWithIndex:"),function(_27,_28,_29){
-with(_27){
-return objj_msgSend(objj_msgSend(_27,"alloc"),"initWithIndexes:length:",[_29],1);
-}
-}),new objj_method(sel_getUid("indexPathWithIndexes:length:"),function(_2a,_2b,_2c,_2d){
-with(_2a){
-return objj_msgSend(objj_msgSend(_2a,"alloc"),"initWithIndexes:length:",_2c,_2d);
-}
-}),new objj_method(sel_getUid("indexPathWithIndexes:"),function(_2e,_2f,_30){
-with(_2e){
-return objj_msgSend(objj_msgSend(_2e,"alloc"),"initWithIndexes:",_30);
 }
 })]);
 p;12;CPIndexSet.jt;12198;@STATIC;1.0;i;10;CPObject.ji;9;CPRange.jt;12150;
@@ -8758,7 +8654,7 @@ window.clearInterval=function(_5c){
 window.clearTimeout(_5c);
 };
 }
-p;15;CPUndoManager.jt;17405;@STATIC;1.0;i;14;CPInvocation.ji;10;CPObject.ji;9;CPProxy.ji;11;CPRunLoop.jt;17322;
+p;15;CPUndoManager.jt;17286;@STATIC;1.0;i;14;CPInvocation.ji;10;CPObject.ji;9;CPProxy.ji;11;CPRunLoop.jt;17203;
 objj_executeFile("CPInvocation.j",YES);
 objj_executeFile("CPObject.j",YES);
 objj_executeFile("CPProxy.j",YES);
@@ -9076,11 +8972,6 @@ return _state===_3;
 }
 }),new objj_method(sel_getUid("removeAllActions"),function(_74,_75){
 with(_74){
-while(_currentGrouping){
-objj_msgSend(_74,"endUndoGrouping");
-}
-objj_msgSend(_74,"_unregisterWithRunLoop");
-_state=_1;
 _redoStack=[];
 _undoStack=[];
 _disableCount=0;

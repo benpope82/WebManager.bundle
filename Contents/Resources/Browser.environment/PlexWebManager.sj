@@ -7647,7 +7647,7 @@ return objj_msgSend(_11,"stringByReplacingOccurrencesOfString:withString:","/","
 return _11;
 }
 })]);
-p;22;Views/MMFirstRunView.jt;9762;@STATIC;1.0;I;15;AppKit/CPView.jI;22;LPKit/LPAnchorButton.ji;13;MMImageView.ji;17;MMSelectionView.jt;9656;
+p;22;Views/MMFirstRunView.jt;10293;@STATIC;1.0;I;15;AppKit/CPView.jI;22;LPKit/LPAnchorButton.ji;13;MMImageView.ji;17;MMSelectionView.jt;10186;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("LPKit/LPAnchorButton.j",NO);
 objj_executeFile("MMImageView.j",YES);
@@ -7662,7 +7662,7 @@ var _7=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMake(0,0
 objj_msgSend(_7,"setAutoresizingMask:",CPViewMinXMargin|CPViewMaxXMargin|CPViewMinYMargin|CPViewMaxYMargin);
 objj_msgSend(_7,"setCenter:",objj_msgSend(_4,"center"));
 objj_msgSend(_4,"addSubview:",_7);
-var _8=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Click the titles below to create sections for your content and have it served to your Plex-enabled devices.","First-run help title"));
+var _8=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.","First-run help title"));
 objj_msgSend(_8,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_7,"frame")),0));
 objj_msgSend(_8,"setTextColor:",objj_msgSend(CPColor,"whiteColor"));
 objj_msgSend(_8,"setLineBreakMode:",CPLineBreakByWordWrapping);
@@ -7676,31 +7676,34 @@ objj_msgSend(_a,"setImage:",objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWith
 objj_msgSend(_a,"setTitle:",CPLocalizedString("Add Movies Section","First-run title for adding movies"));
 objj_msgSend(_a,"setTarget:",_4);
 objj_msgSend(_a,"setAction:",sel_getUid("addMovieSection:"));
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Movie File Naming","First-run help item"),nil);
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Creating Movie Collections","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Movie posters and art","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Organize movies into collections","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Customize every detail of each movie","First-run help item"),nil);
 objj_msgSend(_7,"addSubview:",_a);
 _a=objj_msgSend(objj_msgSend(_MMFirstRunSectionView,"alloc"),"initWithFrame:",CGRectOffset(_9,CGRectGetWidth(objj_msgSend(_a,"frame")),0));
 objj_msgSend(_a,"setImage:",objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","tv_100x100.png"),CGSizeMake(100,100)));
 objj_msgSend(_a,"setTitle:",CPLocalizedString("Add TV Shows Section","First-run title for adding TV shows"));
 objj_msgSend(_a,"setTarget:",_4);
 objj_msgSend(_a,"setAction:",sel_getUid("addTVSection:"));
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> TV Show File Naming","First-run help item"),nil);
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Creating TV Show Collections","First-run help item"),nil);
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> TV Show Themes","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> TV show posters and art","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Thumbnails for every episode","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Automatic theme music for TV shows","First-run help item"),nil);
 objj_msgSend(_7,"addSubview:",_a);
 _a=objj_msgSend(objj_msgSend(_MMFirstRunSectionView,"alloc"),"initWithFrame:",CGRectOffset(_9,0,CGRectGetHeight(objj_msgSend(_a,"frame"))));
 objj_msgSend(_a,"setImage:",objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","video_100x100.png"),CGSizeMake(100,100)));
 objj_msgSend(_a,"setTitle:",CPLocalizedString("Add Home Movies Section","First-run title for adding home movies"));
 objj_msgSend(_a,"setTarget:",_4);
 objj_msgSend(_a,"setAction:",sel_getUid("addHomeMovieSection:"));
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Home Movie File Naming","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Great for your personal media","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Add posters, custom genres and more","First-run help item"),nil);
 objj_msgSend(_7,"addSubview:",_a);
 _a=objj_msgSend(objj_msgSend(_MMFirstRunSectionView,"alloc"),"initWithFrame:",CGRectOffset(_9,CGRectGetWidth(objj_msgSend(_a,"frame")),CGRectGetHeight(objj_msgSend(_a,"frame"))));
 objj_msgSend(_a,"setImage:",objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","music_100x100.png"),CGSizeMake(100,100)));
 objj_msgSend(_a,"setTitle:",CPLocalizedString("Add Music Section","First-run title for adding music"));
 objj_msgSend(_a,"setTarget:",_4);
 objj_msgSend(_a,"setAction:",sel_getUid("addMusicSection:"));
-objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> How Plex Scans Music","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Artist biographies and artwork","First-run help item"),nil);
+objj_msgSend(_a,"addSubtitle:action:",CPLocalizedString("> Album reviews","First-run help item"),nil);
 objj_msgSend(_7,"addSubview:",_a);
 }
 objj_msgSend(_4,"setBackgroundColor:",MMClipViewDefaultBackgroundColor);
@@ -7717,6 +7720,7 @@ objj_msgSend(_b,"addSectionWithDefaults:",_e);
 with(_f){
 var _12=objj_msgSend(objj_msgSend(MMLibrarySection,"alloc"),"init");
 objj_msgSend(_12,"setType:",MMLibrarySectionTypeTV);
+objj_msgSend(_12,"setAgent:","com.plexapp.agents.thetvdb");
 objj_msgSend(_f,"addSectionWithDefaults:",_12);
 }
 }),new objj_method(sel_getUid("addHomeMovieSection:"),function(_13,_14,_15){
@@ -7730,6 +7734,7 @@ objj_msgSend(_13,"addSectionWithDefaults:",_16);
 with(_17){
 var _1a=objj_msgSend(objj_msgSend(MMLibrarySection,"alloc"),"init");
 objj_msgSend(_1a,"setType:",MMLibrarySectionTypeArtist);
+objj_msgSend(_1a,"setAgent:","com.plexapp.agents.lastfm");
 objj_msgSend(_17,"addSectionWithDefaults:",_1a);
 }
 }),new objj_method(sel_getUid("addSectionWithDefaults:"),function(_1b,_1c,_1d){
