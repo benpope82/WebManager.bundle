@@ -1,4 +1,4 @@
-@STATIC;1.0;p;15;AppController.jt;28615;@STATIC;1.0;I;21;Foundation/CPObject.jI;28;LPKit/LPLocationController.ji;27;CPCheckBox+ObjectValueFix.ji;29;CPURLConnection+XMLResponse.ji;49;Controllers/MMLibrarySectionTableViewController.ji;31;Controllers/MMPrefsController.ji;31;DataSources/MMAgentDataSource.ji;38;DataSources/MMLibraryMediaDataSource.ji;38;DataSources/MMMetadataItemDataSource.ji;41;DataSources/MMLibrarySectionsDataSource.ji;41;DataSources/MMLibraryTimelineDataSource.ji;23;Models/LanguageConfig.ji;23;Models/MMMetadataItem.ji;27;Views/MMActionPopUpButton.ji;24;Views/MMCollectionView.ji;19;Views/MMContainer.ji;22;Views/MMFirstRunView.ji;23;Views/MMMediaItemCell.ji;29;Views/MMMediaItemDetailView.ji;33;Views/MMMediaItemCollectionView.ji;20;Views/MMScrollView.ji;30;Views/MMSectionSettingsSheet.ji;25;Views/MMViewWithToolbar.ji;26;Views/MMPreferencesPanel.ji;17;Views/MMToolbar.jt;27755;
+@STATIC;1.0;p;15;AppController.jt;28179;@STATIC;1.0;I;21;Foundation/CPObject.jI;28;LPKit/LPLocationController.ji;27;CPCheckBox+ObjectValueFix.ji;29;CPURLConnection+XMLResponse.ji;49;Controllers/MMLibrarySectionTableViewController.ji;31;Controllers/MMPrefsController.ji;31;DataSources/MMAgentDataSource.ji;38;DataSources/MMLibraryMediaDataSource.ji;38;DataSources/MMMetadataItemDataSource.ji;41;DataSources/MMLibrarySectionsDataSource.ji;41;DataSources/MMLibraryTimelineDataSource.ji;23;Models/LanguageConfig.ji;23;Models/MMMetadataItem.ji;27;Views/MMActionPopUpButton.ji;24;Views/MMCollectionView.ji;19;Views/MMContainer.ji;22;Views/MMFirstRunView.ji;23;Views/MMMediaItemCell.ji;29;Views/MMMediaItemDetailView.ji;33;Views/MMMediaItemCollectionView.ji;20;Views/MMScrollView.ji;30;Views/MMSectionSettingsSheet.ji;25;Views/MMViewWithToolbar.ji;26;Views/MMPreferencesPanel.ji;17;Views/MMToolbar.jt;27319;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("LPKit/LPLocationController.j",NO);
 objj_executeFile("CPCheckBox+ObjectValueFix.j",YES);
@@ -129,8 +129,6 @@ objj_msgSend(mediaGridView,"setItemPrototype:",_19);
 objj_msgSend(mediaGridView,"setMinItemSize:",objj_msgSend(_1a,"frame").size);
 objj_msgSend(mediaGridView,"setMaxItemSize:",objj_msgSend(_1a,"frame").size);
 objj_msgSend(mediaGridView,"setAutoresizingMask:",CPViewWidthSizable|CPViewHeightSizable);
-objj_msgSend(mediaGridView,"bind:toObject:withKeyPath:options:","content",_mediaItemsController,"arrangedObjects",nil);
-objj_msgSend(mediaGridView,"bind:toObject:withKeyPath:options:","selectionIndexes",_mediaItemsController,"selectionIndexes",nil);
 objj_msgSend(mediaGridView,"bind:toObject:withKeyPath:options:","librarySection",_selectedLibrarySectionController,"content",nil);
 objj_msgSend(statusLabel,"bind:toObject:withKeyPath:options:",CPValueBinding,mediaGridView,"status",nil);
 objj_msgSend(_6,"bind:toObject:withKeyPath:options:","librarySections",objj_msgSend(_librarySectionController,"librarySectionsController"),"selectedObjects",nil);
@@ -166,42 +164,38 @@ var _28=objj_msgSend(objj_msgSend(mediaGridView,"content"),"indexOfObject:",_26)
 if(_28==CPNotFound){
 CPLog.info("[%@ _recordWasUpdated:] we haven't seen %@ before, add it",objj_msgSend(_22,"class"),_26);
 objj_msgSend(_22,"_recordWasCreated:",_24);
-}else{
-CPLog.info("[%@ _recordWasUpdated:] updating record %@",objj_msgSend(_22,"class"),_26);
-var _29=objj_msgSend(objj_msgSend(mediaGridView,"items"),"objectAtIndex:",_28);
-objj_msgSend(_29,"setRepresentedObject:",_26);
 }
 }
-}),new objj_method(sel_getUid("_recordWasDeleted:"),function(_2a,_2b,_2c){
-with(_2a){
-var _2d=objj_msgSend(_2c,"userInfo"),_2e=objj_msgSend(_2d,"objectForKey:","record");
-if(objj_msgSend(_2e,"isKindOfClass:",MMLibraryMediaItem)){
-CPLog.info("[%@ _recordWasDeleted:] removing record with id=%@",objj_msgSend(_2a,"class"),objj_msgSend(_2e,"id"));
-objj_msgSend(_mediaItemsController,"removeObject:",_2e);
+}),new objj_method(sel_getUid("_recordWasDeleted:"),function(_29,_2a,_2b){
+with(_29){
+var _2c=objj_msgSend(_2b,"userInfo"),_2d=objj_msgSend(_2c,"objectForKey:","record");
+if(objj_msgSend(_2d,"isKindOfClass:",MMLibraryMediaItem)){
+CPLog.info("[%@ _recordWasDeleted:] removing record with id=%@",objj_msgSend(_29,"class"),objj_msgSend(_2d,"id"));
+objj_msgSend(mediaGridView,"removeObject:",_2d);
 }
 }
-}),new objj_method(sel_getUid("_recordWasCreated:"),function(_2f,_30,_31){
-with(_2f){
-var _32=objj_msgSend(_31,"userInfo"),_33=objj_msgSend(_32,"objectForKey:","record");
-if(objj_msgSend(_33,"isKindOfClass:",MMLibraryMediaItem)){
-CPLog.info("[%@ _recordWasCreated:] adding record %@",objj_msgSend(_2f,"class"),_33);
-objj_msgSend(_mediaItemsController,"addObject:",_33);
+}),new objj_method(sel_getUid("_recordWasCreated:"),function(_2e,_2f,_30){
+with(_2e){
+var _31=objj_msgSend(_30,"userInfo"),_32=objj_msgSend(_31,"objectForKey:","record");
+if(objj_msgSend(_32,"isKindOfClass:",MMLibraryMediaItem)){
+CPLog.info("[%@ _recordWasCreated:] adding record %@",objj_msgSend(_2e,"class"),_32);
+objj_msgSend(mediaGridView,"insertObject:inArraySortedByDescriptors:",_32,objj_msgSend(_mediaItemsController,"sortDescriptors"));
 }
 }
-}),new objj_method(sel_getUid("titleForContentView:inViewWithToolbar:"),function(_34,_35,_36,_37){
-with(_34){
-switch(_36){
+}),new objj_method(sel_getUid("titleForContentView:inViewWithToolbar:"),function(_33,_34,_35,_36){
+with(_33){
+switch(_35){
 case mediaItemsScrollView:
-return objj_msgSend(objj_msgSend(_34,"selectedLibrarySection"),"title")||"";
+return objj_msgSend(objj_msgSend(_33,"selectedLibrarySection"),"title")||"";
 case _mediaItemView:
 return objj_msgSend(objj_msgSend(_mediaItemView,"mediaItem"),"title");
 default:
 return nil;
 }
 }
-}),new objj_method(sel_getUid("locationHashForContentView:inViewWithToolbar:"),function(_38,_39,_3a,_3b){
-with(_38){
-switch(_3a){
+}),new objj_method(sel_getUid("locationHashForContentView:inViewWithToolbar:"),function(_37,_38,_39,_3a){
+with(_37){
+switch(_39){
 case mediaItemsScrollView:
 return _librarySectionLocationHash;
 case _mediaItemView:
@@ -210,80 +204,80 @@ default:
 return nil;
 }
 }
-}),new objj_method(sel_getUid("locationDidChange:"),function(_3c,_3d,_3e){
-with(_3c){
+}),new objj_method(sel_getUid("locationDidChange:"),function(_3b,_3c,_3d){
+with(_3b){
 if(_preventUpdates){
 return;
 }
-var _3f=objj_msgSend(_librarySectionController,"librarySectionsController");
+var _3e=objj_msgSend(_librarySectionController,"librarySectionsController");
 _librarySection=nil;
 _mediaItem=nil;
-var _40=objj_msgSend(_3e,"componentsSeparatedByString:","/");
-objj_msgSend(_40,"removeObjectIdenticalTo:","");
-if(objj_msgSend(_40,"count")>=2&&objj_msgSend(objj_msgSend(_40,"objectAtIndex:",0),"isEqualToString:","sections")){
-var _41=objj_msgSend(_40,"objectAtIndex:",1);
-if(_41){
-var _42=objj_msgSend(_3f,"arrangedObjects");
-for(var i=0,_43=objj_msgSend(_42,"count");i<_43;i++){
-var _44=objj_msgSend(_42,"objectAtIndex:",i);
-if(objj_msgSend(objj_msgSend(_44,"id"),"isEqual:",_41)){
-_librarySection=_44;
+var _3f=objj_msgSend(_3d,"componentsSeparatedByString:","/");
+objj_msgSend(_3f,"removeObjectIdenticalTo:","");
+if(objj_msgSend(_3f,"count")>=2&&objj_msgSend(objj_msgSend(_3f,"objectAtIndex:",0),"isEqualToString:","sections")){
+var _40=objj_msgSend(_3f,"objectAtIndex:",1);
+if(_40){
+var _41=objj_msgSend(_3e,"arrangedObjects");
+for(var i=0,_42=objj_msgSend(_41,"count");i<_42;i++){
+var _43=objj_msgSend(_41,"objectAtIndex:",i);
+if(objj_msgSend(objj_msgSend(_43,"id"),"isEqual:",_40)){
+_librarySection=_43;
 break;
 }
 }
-objj_msgSend(_librarySectionController,"selectSectionWithId:",_41);
+objj_msgSend(_librarySectionController,"selectSectionWithId:",_40);
 }
-if(objj_msgSend(_40,"count")>=4&&objj_msgSend(objj_msgSend(_40,"objectAtIndex:",2),"isEqualToString:","media")){
-var _45=objj_msgSend(_40,"objectAtIndex:",3);
-if(_45){
-var _46=objj_msgSend(_mediaItemsController,"arrangedObjects");
-for(var i=0,_43=objj_msgSend(_46,"count");i<_43;i++){
-var _47=objj_msgSend(_46,"objectAtIndex:",i);
-if(objj_msgSend(objj_msgSend(_47,"id"),"isEqual:",_45)){
-_mediaItem=_47;
+if(objj_msgSend(_3f,"count")>=4&&objj_msgSend(objj_msgSend(_3f,"objectAtIndex:",2),"isEqualToString:","media")){
+var _44=objj_msgSend(_3f,"objectAtIndex:",3);
+if(_44){
+var _45=objj_msgSend(mediaGridView,"content");
+for(var i=0,_42=objj_msgSend(_45,"count");i<_42;i++){
+var _46=objj_msgSend(_45,"objectAtIndex:",i);
+if(objj_msgSend(objj_msgSend(_46,"id"),"isEqual:",_44)){
+_mediaItem=_46;
 break;
 }
 }
-_wantedMediaItemId=_mediaItem?nil:_45;
+_wantedMediaItemId=_mediaItem?nil:_44;
 }
 }
 }
 _preventUpdates=YES;
 if(_mediaItem){
-objj_msgSend(_3c,"presentMediaItem:",_mediaItem);
+objj_msgSend(_3b,"presentMediaItem:",_mediaItem);
 }else{
 if(!_wantedMediaItemId&&_librarySection){
-objj_msgSend(_3f,"setSelectedObjects:",[_librarySection]);
+objj_msgSend(_3e,"setSelectedObjects:",[_librarySection]);
 }
 }
 _preventUpdates=NO;
 }
-}),new objj_method(sel_getUid("setLibrarySections:"),function(_48,_49,_4a){
-with(_48){
-var _4b=(objj_msgSend(_4a,"count")>0)?objj_msgSend(_4a,"objectAtIndex:",0):nil,_4c=!objj_msgSend(_librarySection,"isEqual:",_4b);
-_librarySection=_4b;
-objj_msgSend(plusMinusSegments,"setEnabled:forSegment:",_4b!=nil,_2);
-if(_4c){
+}),new objj_method(sel_getUid("setLibrarySections:"),function(_47,_48,_49){
+with(_47){
+var _4a=(objj_msgSend(_49,"count")>0)?objj_msgSend(_49,"objectAtIndex:",0):nil,_4b=!objj_msgSend(_librarySection,"isEqual:",_4a);
+_librarySection=_4a;
+objj_msgSend(plusMinusSegments,"setEnabled:forSegment:",_4a!=nil,_2);
+if(_4b){
 objj_msgSend(objj_msgSend(MMLibraryTimelineDataSource,"sharedDataSource"),"stopWatchingTimeline");
 }
-if(_4c&&_4b){
-objj_msgSend(objj_msgSend(MMLibraryTimelineDataSource,"sharedDataSource"),"watchTimelineForLibrarySection:",_4b);
+if(_4b&&_4a){
+objj_msgSend(objj_msgSend(MMLibraryTimelineDataSource,"sharedDataSource"),"watchTimelineForLibrarySection:",_4a);
 }
-if(_4c){
-objj_msgSend(_selectedLibrarySectionController,"setContent:",_4b);
+if(_4b){
+objj_msgSend(_selectedLibrarySectionController,"setContent:",_4a);
 }
-if(_4b&&_4c){
-objj_msgSend(mediaDataSource,"refreshRecordsWithContextInfo:",_4b);
+if(_4a&&_4b){
+objj_msgSend(mediaDataSource,"refreshRecordsWithContextInfo:",_4a);
 }
-_librarySectionLocationHash=_4b&&objj_msgSend(CPString,"stringWithFormat:","/sections/%@",objj_msgSend(_4b,"id"));
-if(!_wantedMediaItemId&&_4b&&_4c){
+_librarySectionLocationHash=_4a&&objj_msgSend(CPString,"stringWithFormat:","/sections/%@",objj_msgSend(_4a,"id"));
+if(!_wantedMediaItemId&&_4a&&_4b){
 objj_msgSend(objj_msgSend(LPLocationController,"sharedLocationController"),"setLocation:",_librarySectionLocationHash);
 }
-if(objj_msgSend(_4a,"count")!=0&&_4c){
-objj_msgSend(_48,"dismissHelp");
+if(objj_msgSend(_49,"count")!=0&&_4b){
+objj_msgSend(_47,"dismissHelp");
 }else{
-if(objj_msgSend(_4a,"count")==0&&objj_msgSend(_librarySectionController,"hasLoadedSections")){
-objj_msgSend(_48,"showHelp");
+if(objj_msgSend(_49,"count")==0&&objj_msgSend(_librarySectionController,"hasLoadedSections")){
+objj_msgSend(_47,"showHelp");
 }
 }
 if(_preventUpdates||_wantedMediaItemId){
@@ -295,8 +289,8 @@ objj_msgSend(_viewWithToolbar,"popToolbarsUntil:",_librarySectionToolbar);
 objj_msgSend(window,"makeFirstResponder:",mediaGridView);
 }
 }
-}),new objj_method(sel_getUid("showHelp"),function(_4d,_4e){
-with(_4d){
+}),new objj_method(sel_getUid("showHelp"),function(_4c,_4d){
+with(_4c){
 _showingHelp=YES;
 if(!_firstRunView){
 _firstRunView=objj_msgSend(objj_msgSend(MMFirstRunView,"alloc"),"initWithFrame:",objj_msgSend(_viewWithToolbar,"frame"));
@@ -308,8 +302,8 @@ return;
 objj_msgSend(_firstRunView,"setFrame:",objj_msgSend(_viewWithToolbar,"frame"));
 objj_msgSend(objj_msgSend(_viewWithToolbar,"superview"),"replaceSubview:with:",_viewWithToolbar,_firstRunView);
 }
-}),new objj_method(sel_getUid("dismissHelp"),function(_4f,_50){
-with(_4f){
+}),new objj_method(sel_getUid("dismissHelp"),function(_4e,_4f){
+with(_4e){
 _showingHelp=NO;
 if(!objj_msgSend(_firstRunView,"superview")){
 return;
@@ -317,138 +311,138 @@ return;
 objj_msgSend(_viewWithToolbar,"setFrame:",objj_msgSend(_firstRunView,"frame"));
 objj_msgSend(objj_msgSend(_firstRunView,"superview"),"replaceSubview:with:",_firstRunView,_viewWithToolbar);
 }
-}),new objj_method(sel_getUid("help:"),function(_51,_52,_53){
-with(_51){
+}),new objj_method(sel_getUid("help:"),function(_50,_51,_52){
+with(_50){
 if(_showingHelp){
-objj_msgSend(_51,"dismissHelp");
+objj_msgSend(_50,"dismissHelp");
 }else{
-objj_msgSend(_51,"showHelp");
+objj_msgSend(_50,"showHelp");
 }
 }
-}),new objj_method(sel_getUid("_librarySectionsDataSourceDidFailToCreateRecord:"),function(_54,_55,_56){
-with(_54){
-objj_msgSend(objj_msgSend(_54,"class"),"notifyUserOfError:withTitle:",objj_msgSend(objj_msgSend(_56,"userInfo"),"objectForKey:","error"),CPLocalizedString("Unable to create library section","Unable to create library section"));
+}),new objj_method(sel_getUid("_librarySectionsDataSourceDidFailToCreateRecord:"),function(_53,_54,_55){
+with(_53){
+objj_msgSend(objj_msgSend(_53,"class"),"notifyUserOfError:withTitle:",objj_msgSend(objj_msgSend(_55,"userInfo"),"objectForKey:","error"),CPLocalizedString("Unable to create library section","Unable to create library section"));
 }
-}),new objj_method(sel_getUid("dataSource:didReceiveRecords:contextInfo:"),function(_57,_58,_59,_5a,_5b){
-with(_57){
-if(_59!=mediaDataSource){
+}),new objj_method(sel_getUid("dataSource:didReceiveRecords:contextInfo:"),function(_56,_57,_58,_59,_5a){
+with(_56){
+if(_58!=mediaDataSource){
 return;
 }
-if(!objj_msgSend(objj_msgSend(_57,"selectedLibrarySection"),"isEqual:",_5b)){
+if(!objj_msgSend(objj_msgSend(_56,"selectedLibrarySection"),"isEqual:",_5a)){
 return;
 }
-var _5c=_5b;
-objj_msgSend(_mediaItemsController,"setSelectionIndexes:",objj_msgSend(CPIndexSet,"indexSet"));
-objj_msgSend(_mediaItemsController,"setContent:",_5a);
-objj_msgSend(objj_msgSend(MMLibraryTimelineDataSource,"sharedDataSource"),"watchTimelineForLibrarySection:",_5c);
-objj_msgSend(_57,"locationDidChange:",objj_msgSend(objj_msgSend(LPLocationController,"sharedLocationController"),"formattedHash"));
+var _5b=_5a;
+objj_msgSend(mediaGridView,"setSelectionIndexes:",objj_msgSend(CPIndexSet,"indexSet"));
+objj_msgSend(mediaGridView,"setContent:",_59);
+objj_msgSend(objj_msgSend(MMLibraryTimelineDataSource,"sharedDataSource"),"watchTimelineForLibrarySection:",_5b);
+objj_msgSend(_56,"locationDidChange:",objj_msgSend(objj_msgSend(LPLocationController,"sharedLocationController"),"formattedHash"));
 }
-}),new objj_method(sel_getUid("dataSource:didFailToReceiveRecordsWithError:contextInfo:"),function(_5d,_5e,_5f,_60,_61){
-with(_5d){
-objj_msgSend(objj_msgSend(_5d,"class"),"notifyUserOfConnectionError:",_60);
+}),new objj_method(sel_getUid("dataSource:didFailToReceiveRecordsWithError:contextInfo:"),function(_5c,_5d,_5e,_5f,_60){
+with(_5c){
+objj_msgSend(objj_msgSend(_5c,"class"),"notifyUserOfConnectionError:",_5f);
 }
-}),new objj_method(sel_getUid("dataSource:didFailToDeleteRecord:withError:contextInfo:"),function(_62,_63,_64,_65,_66,_67){
-with(_62){
-var _68=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
-objj_msgSend(_68,"setAlertStyle:",CPCriticalAlertStyle);
-objj_msgSend(_68,"setTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Unable to remove section \"%@\"","Error title for when we cannot remove a library section"),objj_msgSend(_65,"title")));
-objj_msgSend(_68,"setMessageText:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Got this error: %@. Are you sure Plex Media Server is running?","Error message for when we cannot remove a library section"),_66));
-objj_msgSend(_68,"runModal");
+}),new objj_method(sel_getUid("dataSource:didFailToDeleteRecord:withError:contextInfo:"),function(_61,_62,_63,_64,_65,_66){
+with(_61){
+var _67=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
+objj_msgSend(_67,"setAlertStyle:",CPCriticalAlertStyle);
+objj_msgSend(_67,"setTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Unable to remove section \"%@\"","Error title for when we cannot remove a library section"),objj_msgSend(_64,"title")));
+objj_msgSend(_67,"setMessageText:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Got this error: %@. Are you sure Plex Media Server is running?","Error message for when we cannot remove a library section"),_65));
+objj_msgSend(_67,"runModal");
 }
-}),new objj_method(sel_getUid("selectedLibrarySection"),function(_69,_6a){
-with(_69){
+}),new objj_method(sel_getUid("selectedLibrarySection"),function(_68,_69){
+with(_68){
 return objj_msgSend(_librarySectionController,"selectedLibrarySection");
 }
-}),new objj_method(sel_getUid("librarySectionWasActivated:"),function(_6b,_6c,_6d){
-with(_6b){
-objj_msgSend(_6b,"_beginEditingSection:",_6d);
+}),new objj_method(sel_getUid("librarySectionWasActivated:"),function(_6a,_6b,_6c){
+with(_6a){
+objj_msgSend(_6a,"_beginEditingSection:",_6c);
 }
-}),new objj_method(sel_getUid("collectionView:didDoubleClickOnItemAtIndex:"),function(_6e,_6f,_70,_71){
-with(_6e){
-objj_msgSend(_6e,"presentMediaItem:",objj_msgSend(objj_msgSend(mediaGridView,"content"),"objectAtIndex:",_71));
+}),new objj_method(sel_getUid("collectionView:didDoubleClickOnItemAtIndex:"),function(_6d,_6e,_6f,_70){
+with(_6d){
+objj_msgSend(_6d,"presentMediaItem:",objj_msgSend(objj_msgSend(mediaGridView,"content"),"objectAtIndex:",_70));
 }
-}),new objj_method(sel_getUid("presentMediaItem:"),function(_72,_73,_74){
-with(_72){
-_mediaItem=_74;
+}),new objj_method(sel_getUid("presentMediaItem:"),function(_71,_72,_73){
+with(_71){
+_mediaItem=_73;
 if(!_mediaItemView){
 _mediaItemView=objj_msgSend(objj_msgSend(MMMediaItemDetailView,"alloc"),"initWithFrame:",objj_msgSend(_viewWithToolbar,"contentRect"));
 objj_msgSend(_mediaItemView,"setAutoresizingMask:",CPViewWidthSizable|CPViewHeightSizable);
 }
-objj_msgSend(_mediaItemView,"setMediaItem:",_74);
+objj_msgSend(_mediaItemView,"setMediaItem:",_73);
 objj_msgSend(_viewWithToolbar,"pushContentView:toolbar:",_mediaItemView,objj_msgSend(_mediaItemView,"toolbar"));
-_mediaItemLocationHash=objj_msgSend(CPString,"stringWithFormat:","/sections/%@/media/%@",objj_msgSend(objj_msgSend(_selectedLibrarySectionController,"content"),"id"),objj_msgSend(_74,"id"));
+_mediaItemLocationHash=objj_msgSend(CPString,"stringWithFormat:","/sections/%@/media/%@",objj_msgSend(objj_msgSend(_selectedLibrarySectionController,"content"),"id"),objj_msgSend(_73,"id"));
 objj_msgSend(objj_msgSend(LPLocationController,"sharedLocationController"),"setLocation:",_mediaItemLocationHash);
 }
-}),new objj_method(sel_getUid("addOrRemoveSection:"),function(_75,_76,_77){
-with(_75){
-switch(objj_msgSend(_77,"selectedSegment")){
+}),new objj_method(sel_getUid("addOrRemoveSection:"),function(_74,_75,_76){
+with(_74){
+switch(objj_msgSend(_76,"selectedSegment")){
 case _1:
-var _78=objj_msgSend(objj_msgSend(MMSectionSettingsSheet,"alloc"),"initWithDataSource:",objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"));
-objj_msgSend(_78,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",window,_75,sel_getUid("_addDidEnd:returnCode:contextInfo:"),objj_msgSend(objj_msgSend(MMLibrarySection,"alloc"),"init"));
+var _77=objj_msgSend(objj_msgSend(MMSectionSettingsSheet,"alloc"),"initWithDataSource:",objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"));
+objj_msgSend(_77,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",window,_74,sel_getUid("_addDidEnd:returnCode:contextInfo:"),objj_msgSend(objj_msgSend(MMLibrarySection,"alloc"),"init"));
 break;
 case _2:
-var _79=objj_msgSend(_75,"selectedLibrarySection"),_7a=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
-objj_msgSend(_7a,"setAlertStyle:",CPWarningAlertStyle);
-objj_msgSend(_7a,"setMessageText:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Are you sure you want to remove the section named \"%@\"?","Confirmation message for removing a section"),objj_msgSend(_79,"title")));
-objj_msgSend(_7a,"setInformativeText:",CPLocalizedString("Any content in this section will no longer be available in your library. The files on your computer will not be removed.","Informative text for removing a section"));
-objj_msgSend(_7a,"setDelegate:",_75);
-objj_msgSend(_7a,"addButtonWithTitle:",CPLocalizedString("Remove Section","Remove section confirmation button"));
-objj_msgSend(_7a,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
-objj_msgSend(_7a,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",window,_75,sel_getUid("removeSectionConfirmationDidEnd:returnCode:contextInfo:"),_79);
+var _78=objj_msgSend(_74,"selectedLibrarySection"),_79=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
+objj_msgSend(_79,"setAlertStyle:",CPWarningAlertStyle);
+objj_msgSend(_79,"setMessageText:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Are you sure you want to remove the section named \"%@\"?","Confirmation message for removing a section"),objj_msgSend(_78,"title")));
+objj_msgSend(_79,"setInformativeText:",CPLocalizedString("Any content in this section will no longer be available in your library. The files on your computer will not be removed.","Informative text for removing a section"));
+objj_msgSend(_79,"setDelegate:",_74);
+objj_msgSend(_79,"addButtonWithTitle:",CPLocalizedString("Remove Section","Remove section confirmation button"));
+objj_msgSend(_79,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(_79,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",window,_74,sel_getUid("removeSectionConfirmationDidEnd:returnCode:contextInfo:"),_78);
 break;
 }
 }
-}),new objj_method(sel_getUid("_addDidEnd:returnCode:contextInfo:"),function(_7b,_7c,_7d,_7e,_7f){
-with(_7b){
+}),new objj_method(sel_getUid("_addDidEnd:returnCode:contextInfo:"),function(_7a,_7b,_7c,_7d,_7e){
+with(_7a){
 }
-}),new objj_method(sel_getUid("_editDidEnd:returnCode:contextInfo:"),function(_80,_81,_82,_83,_84){
-with(_80){
+}),new objj_method(sel_getUid("_editDidEnd:returnCode:contextInfo:"),function(_7f,_80,_81,_82,_83){
+with(_7f){
 }
-}),new objj_method(sel_getUid("editSection:"),function(_85,_86,_87){
-with(_85){
-objj_msgSend(_85,"_beginEditingSection:",objj_msgSend(_85,"selectedLibrarySection"));
+}),new objj_method(sel_getUid("editSection:"),function(_84,_85,_86){
+with(_84){
+objj_msgSend(_84,"_beginEditingSection:",objj_msgSend(_84,"selectedLibrarySection"));
 }
-}),new objj_method(sel_getUid("refreshSection:"),function(_88,_89,_8a){
-with(_88){
-objj_msgSend(objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"),"refreshSection:force:",objj_msgSend(_88,"selectedLibrarySection"),false);
+}),new objj_method(sel_getUid("refreshSection:"),function(_87,_88,_89){
+with(_87){
+objj_msgSend(objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"),"refreshSection:force:",objj_msgSend(_87,"selectedLibrarySection"),false);
 }
-}),new objj_method(sel_getUid("forceRefreshSection:"),function(_8b,_8c,_8d){
-with(_8b){
-objj_msgSend(objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"),"refreshSection:force:",objj_msgSend(_8b,"selectedLibrarySection"),true);
+}),new objj_method(sel_getUid("forceRefreshSection:"),function(_8a,_8b,_8c){
+with(_8a){
+objj_msgSend(objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"),"refreshSection:force:",objj_msgSend(_8a,"selectedLibrarySection"),true);
 }
-}),new objj_method(sel_getUid("editSectionButtonClicked:"),function(_8e,_8f,_90){
-with(_8e){
-objj_msgSend(_8e,"_beginEditingSection:",objj_msgSend(_8e,"selectedLibrarySection"));
+}),new objj_method(sel_getUid("editSectionButtonClicked:"),function(_8d,_8e,_8f){
+with(_8d){
+objj_msgSend(_8d,"_beginEditingSection:",objj_msgSend(_8d,"selectedLibrarySection"));
 }
-}),new objj_method(sel_getUid("_beginEditingSection:"),function(_91,_92,_93){
-with(_91){
-var _94=objj_msgSend(objj_msgSend(MMSectionSettingsSheet,"alloc"),"initWithDataSource:",objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"));
-objj_msgSend(_94,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",window,_91,sel_getUid("_editDidEnd:returnCode:contextInfo:"),_93);
+}),new objj_method(sel_getUid("_beginEditingSection:"),function(_90,_91,_92){
+with(_90){
+var _93=objj_msgSend(objj_msgSend(MMSectionSettingsSheet,"alloc"),"initWithDataSource:",objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"));
+objj_msgSend(_93,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",window,_90,sel_getUid("_editDidEnd:returnCode:contextInfo:"),_92);
 }
-}),new objj_method(sel_getUid("_settingsButtonWasClicked:"),function(_95,_96,_97){
-with(_95){
-var _98=objj_msgSend(objj_msgSend(MMPreferencesPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,500,200));
-objj_msgSend(_98,"sizeToFit");
-objj_msgSend(_98,"presentSheetInWindow:",window);
+}),new objj_method(sel_getUid("_settingsButtonWasClicked:"),function(_94,_95,_96){
+with(_94){
+var _97=objj_msgSend(objj_msgSend(MMPreferencesPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,500,200));
+objj_msgSend(_97,"sizeToFit");
+objj_msgSend(_97,"presentSheetInWindow:",window);
 }
-}),new objj_method(sel_getUid("removeSectionConfirmationDidEnd:returnCode:contextInfo:"),function(_99,_9a,_9b,_9c,_9d){
-with(_99){
-if(_9c===0){
-objj_msgSend(objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"),"deleteRecord:",_9d);
+}),new objj_method(sel_getUid("removeSectionConfirmationDidEnd:returnCode:contextInfo:"),function(_98,_99,_9a,_9b,_9c){
+with(_98){
+if(_9b===0){
+objj_msgSend(objj_msgSend(MMLibrarySectionsDataSource,"sharedDataSource"),"deleteRecord:",_9c);
 }
 }
 })]);
-class_addMethods(_5,[new objj_method(sel_getUid("notifyUserOfError:withTitle:"),function(_9e,_9f,_a0,_a1){
-with(_9e){
-var _a2=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
-objj_msgSend(_a2,"setAlertStyle:",CPCriticalAlertStyle);
-objj_msgSend(_a2,"setTitle:",_a1);
-objj_msgSend(_a2,"setMessageText:",_a0);
-objj_msgSend(_a2,"runModal");
+class_addMethods(_5,[new objj_method(sel_getUid("notifyUserOfError:withTitle:"),function(_9d,_9e,_9f,_a0){
+with(_9d){
+var _a1=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
+objj_msgSend(_a1,"setAlertStyle:",CPCriticalAlertStyle);
+objj_msgSend(_a1,"setTitle:",_a0);
+objj_msgSend(_a1,"setMessageText:",_9f);
+objj_msgSend(_a1,"runModal");
 }
-}),new objj_method(sel_getUid("notifyUserOfConnectionError:"),function(_a3,_a4,_a5){
-with(_a3){
-objj_msgSend(_a3,"notifyUserOfError:withTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?","Error message for when we cannot connect to PMS or when the response is invalid"),_a5),CPLocalizedString("Unable to connect to Plex Media Server","Error title for when we cannot connect to PMS or when the response is invalid"));
+}),new objj_method(sel_getUid("notifyUserOfConnectionError:"),function(_a2,_a3,_a4){
+with(_a2){
+objj_msgSend(_a2,"notifyUserOfError:withTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?","Error message for when we cannot connect to PMS or when the response is invalid"),_a4),CPLocalizedString("Unable to connect to Plex Media Server","Error title for when we cannot connect to PMS or when the response is invalid"));
 }
 })]);
 p;10;CPBundle.jt;2896;@STATIC;1.0;I;22;AppKit/CPApplication.jt;2850;
@@ -2628,7 +2622,7 @@ objj_msgSend(_2f,"setLocations:",_30);
 return _2f;
 }
 })]);
-p;41;DataSources/MMLibraryTimelineDataSource.jt;3927;@STATIC;1.0;I;19;Foundation/CPDate.jI;20;Foundation/CPTimer.ji;26;MMLibraryMediaDataSource.ji;28;../Models/MMLibrarySection.jt;3795;
+p;41;DataSources/MMLibraryTimelineDataSource.jt;4107;@STATIC;1.0;I;19;Foundation/CPDate.jI;20;Foundation/CPTimer.ji;26;MMLibraryMediaDataSource.ji;28;../Models/MMLibrarySection.jt;3975;
 objj_executeFile("Foundation/CPDate.j",NO);
 objj_executeFile("Foundation/CPTimer.j",NO);
 objj_executeFile("MMLibraryMediaDataSource.j",YES);
@@ -2643,53 +2637,58 @@ class_addMethods(_2,[new objj_method(sel_getUid("watchTimelineForLibrarySection:
 with(_4){
 objj_msgSend(_refreshTimer,"invalidate");
 _librarySection=_6;
-_latestEntryTime=objj_msgSend(CPDate,"date");
-_refreshTimer=objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",_1,_4,sel_getUid("loadTimelineSinceLastLoad"),nil,YES);
+_latestEntryTime=objj_msgSend(_6,"updatedAt")||objj_msgSend(CPDate,"date");
+objj_msgSend(_4,"_scheduleTimer");
 }
-}),new objj_method(sel_getUid("stopWatchingTimeline"),function(_7,_8){
+}),new objj_method(sel_getUid("_scheduleTimer"),function(_7,_8){
 with(_7){
+_refreshTimer=objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",_1,_7,sel_getUid("loadTimelineSinceLastLoad"),nil,NO);
+}
+}),new objj_method(sel_getUid("stopWatchingTimeline"),function(_9,_a){
+with(_9){
 objj_msgSend(_refreshTimer,"invalidate");
 }
-}),new objj_method(sel_getUid("isWatchingTimeline"),function(_9,_a){
-with(_9){
+}),new objj_method(sel_getUid("isWatchingTimeline"),function(_b,_c){
+with(_b){
 return !!_refreshTimer;
 }
-}),new objj_method(sel_getUid("loadTimelineSinceLastLoad"),function(_b,_c){
-with(_b){
-objj_msgSend(_b,"loadTimelineForLibrarySection:since:",_librarySection,_latestEntryTime);
-}
-}),new objj_method(sel_getUid("loadTimelineForLibrarySection:since:"),function(_d,_e,_f,_10){
+}),new objj_method(sel_getUid("loadTimelineSinceLastLoad"),function(_d,_e){
 with(_d){
-objj_msgSend(_d,"refreshRecordsWithContextInfo:",objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_f,_10],[MMLibrarySectionContextInfoKey,MMSinceContextInfoKey]));
+objj_msgSend(_d,"loadTimelineForLibrarySection:since:",_librarySection,_latestEntryTime);
 }
-}),new objj_method(sel_getUid("URLForRecordsWithContextInfo:"),function(_11,_12,_13){
-with(_11){
-var _14=objj_msgSend(_13,"objectForKey:",MMLibrarySectionContextInfoKey),_15=objj_msgSend(_13,"objectForKey:",MMSinceContextInfoKey);
-return objj_msgSend(PMSURL,"URLWithPath:params:",objj_msgSend(CPString,"stringWithFormat:","%@/timeline",objj_msgSend(_14,"URL")),objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",FLOOR(objj_msgSend(_15,"timeIntervalSince1970")),"start"));
+}),new objj_method(sel_getUid("loadTimelineForLibrarySection:since:"),function(_f,_10,_11,_12){
+with(_f){
+objj_msgSend(_f,"refreshRecordsWithContextInfo:",objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_11,_12],[MMLibrarySectionContextInfoKey,MMSinceContextInfoKey]));
 }
-}),new objj_method(sel_getUid("didReceiveRecordsAsData:connection:contextInfo:"),function(_16,_17,_18,_19,_1a){
-with(_16){
-var _1b=objj_msgSend(_19,"responseXML"),_1c=_1b.documentElement,_1d=objj_msgSend(_1a,"isKindOfClass:",MMLibrarySection)?_1a:objj_msgSend(_1a,"objectForKey:",MMLibrarySectionContextInfoKey);
-_latestEntryTime=objj_msgSend(CPDate,"dateWithTimeIntervalSince1970:",Number(_1c.getAttribute("latestEntryTime")));
-objj_msgSendSuper({receiver:_16,super_class:objj_getClass("MMLibraryTimelineDataSource").super_class},"didReceiveRecordsAsData:connection:contextInfo:",_18,_19,_1d);
+}),new objj_method(sel_getUid("URLForRecordsWithContextInfo:"),function(_13,_14,_15){
+with(_13){
+var _16=objj_msgSend(_15,"objectForKey:",MMLibrarySectionContextInfoKey),_17=objj_msgSend(_15,"objectForKey:",MMSinceContextInfoKey);
+return objj_msgSend(PMSURL,"URLWithPath:params:",objj_msgSend(CPString,"stringWithFormat:","%@/timeline",objj_msgSend(_16,"URL")),objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",FLOOR(objj_msgSend(_17,"timeIntervalSince1970")),"start"));
 }
-}),new objj_method(sel_getUid("didReceiveRecords:connection:contextInfo:"),function(_1e,_1f,_20,_21,_22){
-with(_1e){
-var _23=objj_msgSend(_22,"isKindOfClass:",MMLibrarySection)?_22:objj_msgSend(_22,"objectForKey:",MMLibrarySectionContextInfoKey);
-objj_msgSendSuper({receiver:_1e,super_class:objj_getClass("MMLibraryTimelineDataSource").super_class},"didReceiveRecords:connection:contextInfo:",_20,_21,_23);
-for(var i=0;i<objj_msgSend(_20,"count");i++){
-var _24=objj_msgSend(_20,"objectAtIndex:",i),_25=objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_22,_24],["contextInfo","record"]),_26=MMDataSourceDidUpdateRecord;
-CPLog.debug("%@ changed to %d (%@)",objj_msgSend(_24,"title")||"(no title)",objj_msgSend(_24,"state"),objj_msgSend(_24,"stateString"));
-switch(objj_msgSend(_24,"state")){
+}),new objj_method(sel_getUid("didReceiveRecordsAsData:connection:contextInfo:"),function(_18,_19,_1a,_1b,_1c){
+with(_18){
+var _1d=objj_msgSend(_1b,"responseXML"),_1e=_1d.documentElement,_1f=objj_msgSend(_1c,"isKindOfClass:",MMLibrarySection)?_1c:objj_msgSend(_1c,"objectForKey:",MMLibrarySectionContextInfoKey);
+_latestEntryTime=objj_msgSend(CPDate,"dateWithTimeIntervalSince1970:",Number(_1e.getAttribute("latestEntryTime")));
+objj_msgSendSuper({receiver:_18,super_class:objj_getClass("MMLibraryTimelineDataSource").super_class},"didReceiveRecordsAsData:connection:contextInfo:",_1a,_1b,_1f);
+}
+}),new objj_method(sel_getUid("didReceiveRecords:connection:contextInfo:"),function(_20,_21,_22,_23,_24){
+with(_20){
+var _25=objj_msgSend(_24,"isKindOfClass:",MMLibrarySection)?_24:objj_msgSend(_24,"objectForKey:",MMLibrarySectionContextInfoKey);
+objj_msgSendSuper({receiver:_20,super_class:objj_getClass("MMLibraryTimelineDataSource").super_class},"didReceiveRecords:connection:contextInfo:",_22,_23,_25);
+for(var i=0;i<objj_msgSend(_22,"count");i++){
+var _26=objj_msgSend(_22,"objectAtIndex:",i),_27=objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_24,_26],["contextInfo","record"]),_28=MMDataSourceDidUpdateRecord;
+CPLog.debug("%@ changed to %d (%@)",objj_msgSend(_26,"title")||"(no title)",objj_msgSend(_26,"state"),objj_msgSend(_26,"stateString"));
+switch(objj_msgSend(_26,"state")){
 case MMLibraryMediaItemStateDeleted:
-_26=MMDataSourceDidDeleteRecord;
+_28=MMDataSourceDidDeleteRecord;
 break;
 case MMLibraryMediaItemStateCreated:
-_26=MMDataSourceDidCreateRecord;
+_28=MMDataSourceDidCreateRecord;
 break;
 }
-objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",_26,_1e,_25);
+objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",_28,_20,_27);
 }
+objj_msgSend(_20,"_scheduleTimer");
 }
 })]);
 p;38;DataSources/MMMediaMatchesDataSource.jt;2890;@STATIC;1.0;i;14;MMDataSource.ji;26;../Models/MMSearchResult.ji;30;../Models/MMLibraryMediaItem.ji;19;../Models/MMAgent.ji;18;../Models/PMSURL.ji;27;../CPDictionary+URLParams.jt;2707;
@@ -8323,11 +8322,11 @@ with(_4e){
 objj_msgSend(objj_msgSend(MMMediaMatchesDataSource,"sharedDataSource"),"refreshMatchForMediaItem:",_mediaItem);
 }
 })]);
-p;33;Views/MMMediaItemCollectionView.jt;2144;@STATIC;1.0;i;18;MMCollectionView.ji;28;../Models/MMLibrarySection.jt;2069;
+p;33;Views/MMMediaItemCollectionView.jt;4159;@STATIC;1.0;i;18;MMCollectionView.ji;28;../Models/MMLibrarySection.jt;4084;
 objj_executeFile("MMCollectionView.j",YES);
 objj_executeFile("../Models/MMLibrarySection.j",YES);
 var _1=objj_allocateClassPair(MMCollectionView,"MMMediaItemCollectionView"),_2=_1.isa;
-class_addIvars(_1,[new objj_ivar("_librarySection")]);
+class_addIvars(_1,[new objj_ivar("_librarySection"),new objj_ivar("_updateTimer")]);
 objj_registerClassPair(_1);
 class_addMethods(_1,[new objj_method(sel_getUid("librarySection"),function(_3,_4){
 with(_3){
@@ -8386,9 +8385,54 @@ break;
 }
 return objj_msgSend(CPString,"stringWithFormat:",_b,_c);
 }
-})]);
-class_addMethods(_2,[new objj_method(sel_getUid("keyPathsForValuesAffectingStatus"),function(_d,_e){
+}),new objj_method(sel_getUid("insertObject:inArraySortedByDescriptors:"),function(_d,_e,_f,_10){
 with(_d){
+objj_msgSend(_d,"_insertItem:atIndex:",objj_msgSend(_d,"_detachedItemForObject:",_f),objj_msgSend(objj_msgSend(_d,"content"),"insertObject:inArraySortedByDescriptors:",_f,_10));
+objj_msgSend(_d,"tileAfterDelay");
+}
+}),new objj_method(sel_getUid("insertObject:atIndex:"),function(_11,_12,_13,_14){
+with(_11){
+objj_msgSend(_11,"_insertItem:atIndex:",objj_msgSend(_11,"_detachedItemForObject:",_13),_14);
+objj_msgSend(objj_msgSend(_11,"content"),"insertObject:atIndex:",_13,_14);
+objj_msgSend(_11,"tileAfterDelay");
+}
+}),new objj_method(sel_getUid("removeObject:"),function(_15,_16,_17){
+with(_15){
+var _18=objj_msgSend(_15,"content"),_19=objj_msgSend(_18,"indexOfObject:",_17);
+if(_19==CPNotFound){
+return;
+}
+var _1a=objj_msgSend(_15,"items"),_1b=_1a[_19];
+objj_msgSend(objj_msgSend(_1b,"view"),"removeToSuperview");
+objj_msgSend(_1b,"setSelected:",NO);
+_cachedItems.push(_1b);
+objj_msgSend(_18,"removeObjectAtIndex:",_19);
+objj_msgSend(_1a,"removeObjectAtIndex:",_19);
+}
+}),new objj_method(sel_getUid("_detachedItemForObject:"),function(_1c,_1d,_1e){
+with(_1c){
+var _1f=objj_msgSend(_1c,"items"),_20=objj_msgSend(_1c,"content"),_21=objj_msgSend(_20,"indexOfObject:",_1e);
+if(_21==CPNotFound){
+return objj_msgSend(_1c,"newItemForRepresentedObject:",_1e);
+}
+var _22=_1f[anIndex];
+objj_msgSend(_1f,"removeObjectAtIndex:",anIndex);
+objj_msgSend(_20,"removeObjectAtIndex:",anIndex);
+return _22;
+}
+}),new objj_method(sel_getUid("_insertItem:atIndex:"),function(_23,_24,_25,_26){
+with(_23){
+objj_msgSend(objj_msgSend(_23,"items"),"insertObject:atIndex:",_25,_26);
+objj_msgSend(_23,"addSubview:",objj_msgSend(_25,"view"));
+}
+}),new objj_method(sel_getUid("tileAfterDelay"),function(_27,_28){
+with(_27){
+objj_msgSend(_updateTimer,"invalidate");
+_updateTimer=objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",0.1,_27,sel_getUid("tile"),nil,NO);
+}
+})]);
+class_addMethods(_2,[new objj_method(sel_getUid("keyPathsForValuesAffectingStatus"),function(_29,_2a){
+with(_29){
 return objj_msgSend(CPSet,"setWithObjects:","content","librarySection");
 }
 })]);
