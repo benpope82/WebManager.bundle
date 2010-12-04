@@ -20,25 +20,34 @@
 "1 TV show" = "1 TV 쇼";
 
 /* First-run help item */
-"> Creating Movie Collections" = "> Creating Movie Collections";
+"> Add posters, custom genres and more" = "> Add posters, custom genres and more";
 
 /* First-run help item */
-"> Creating TV Show Collections" = "> Creating TV Show Collections";
+"> Album reviews" = "> Album reviews";
 
 /* First-run help item */
-"> Home Movie File Naming" = "> Home Movie File Naming";
+"> Artist biographies and artwork" = "> Artist biographies and artwork";
 
 /* First-run help item */
-"> How Plex Scans Music" = "> How Plex Scans Music";
+"> Automatic theme music for TV shows" = "> Automatic theme music for TV shows";
 
 /* First-run help item */
-"> Movie File Naming" = "> Movie File Naming";
+"> Customize every detail of each movie" = "> Customize every detail of each movie";
 
 /* First-run help item */
-"> TV Show File Naming" = "> TV Show File Naming";
+"> Great for your personal media" = "> Great for your personal media";
 
 /* First-run help item */
-"> TV Show Themes" = "> TV Show Themes";
+"> Movie posters and art" = "> Movie posters and art";
+
+/* First-run help item */
+"> Organize movies into collections" = "> Organize movies into collections";
+
+/* First-run help item */
+"> Thumbnails for every episode" = "> Thumbnails for every episode";
+
+/* First-run help item */
+"> TV show posters and art" = "> TV show posters and art";
 
 /* First-run title for adding home movies */
 "Add Home Movies Section" = "Add Home Movies Section";
@@ -95,7 +104,7 @@
 "Choose Poster" = "포스터 선택";
 
 /* First-run help title */
-"Click the titles below to create sections for your content and have it served to your Plex-enabled devices." = "Click the titles below to create sections for your content and have it served to your Plex-enabled devices.";
+"Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.";
 
 /* Collections */
 "Collections" = "컬렉션";
@@ -115,6 +124,9 @@
 /* Customize Section */
 "Customize Section" = "사용자 정의 섹션";
 
+/* Library scan interval (i.e. Update my library daily */
+"daily" = "daily";
+
 /* Directors */
 "Directors" = "감독";
 
@@ -129,6 +141,21 @@
 
 /* Edit Section */
 "Edit Section" = "섹션 편집";
+
+/* Library scan interval (i.e. Update my library every 12 hours) */
+"every 12 hours" = "every 12 hours";
+
+/* Library scan interval (i.e. Update my library every 15 minutes) */
+"every 15 minutes" = "every 15 minutes";
+
+/* Library scan interval (i.e. Update my library every 2 hours) */
+"every 2 hours" = "every 2 hours";
+
+/* Library scan interval (i.e. Update my library every 30 minutes) */
+"every 30 minutes" = "every 30 minutes";
+
+/* Library scan interval (i.e. Update my library every 6 hours) */
+"every 6 hours" = "every 6 hours";
 
 /* Fix incorrect match */
 "Fix incorrect match" = "잘못된 매칭 수정";
@@ -150,6 +177,9 @@
 
 /* Error message for when we cannot remove a library section */
 "Got this error: %@. Are you sure Plex Media Server is running?" = "에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.";
+
+/* Library scan interval (i.e. Update my library hourly) */
+"hourly" = "hourly";
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Include music sections in automatic updates";

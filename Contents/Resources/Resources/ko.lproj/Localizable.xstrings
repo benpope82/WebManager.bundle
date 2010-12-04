@@ -16,20 +16,26 @@
 	<string>1 아티스트</string>
 	<key>1 movie</key>
 	<string>1 영화</string>
-	<key>&gt; Creating Movie Collections</key>
-	<string>&gt; Creating Movie Collections</string>
-	<key>&gt; Creating TV Show Collections</key>
-	<string>&gt; Creating TV Show Collections</string>
-	<key>&gt; Home Movie File Naming</key>
-	<string>&gt; Home Movie File Naming</string>
-	<key>&gt; How Plex Scans Music</key>
-	<string>&gt; How Plex Scans Music</string>
-	<key>&gt; Movie File Naming</key>
-	<string>&gt; Movie File Naming</string>
-	<key>&gt; TV Show File Naming</key>
-	<string>&gt; TV Show File Naming</string>
-	<key>&gt; TV Show Themes</key>
-	<string>&gt; TV Show Themes</string>
+	<key>&gt; Add posters, custom genres and more</key>
+	<string>&gt; Add posters, custom genres and more</string>
+	<key>&gt; Album reviews</key>
+	<string>&gt; Album reviews</string>
+	<key>&gt; Artist biographies and artwork</key>
+	<string>&gt; Artist biographies and artwork</string>
+	<key>&gt; Automatic theme music for TV shows</key>
+	<string>&gt; Automatic theme music for TV shows</string>
+	<key>&gt; Customize every detail of each movie</key>
+	<string>&gt; Customize every detail of each movie</string>
+	<key>&gt; Great for your personal media</key>
+	<string>&gt; Great for your personal media</string>
+	<key>&gt; Movie posters and art</key>
+	<string>&gt; Movie posters and art</string>
+	<key>&gt; Organize movies into collections</key>
+	<string>&gt; Organize movies into collections</string>
+	<key>&gt; TV show posters and art</key>
+	<string>&gt; TV show posters and art</string>
+	<key>&gt; Thumbnails for every episode</key>
+	<string>&gt; Thumbnails for every episode</string>
 	<key>AM</key>
 	<string>AM</string>
 	<key>Add Home Movies Section</key>
@@ -66,8 +72,8 @@
 	<string>아이콘 선택</string>
 	<key>Choose Poster</key>
 	<string>포스터 선택</string>
-	<key>Click the titles below to create sections for your content and have it served to your Plex-enabled devices.</key>
-	<string>Click the titles below to create sections for your content and have it served to your Plex-enabled devices.</string>
+	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
+	<string>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</string>
 	<key>Collections</key>
 	<string>컬렉션</string>
 	<key>Connecting to Plex Media Server failed with this error: %@.
@@ -236,6 +242,20 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>연도</string>
 	<key>Year:</key>
 	<string>연도:</string>
+	<key>daily</key>
+	<string>daily</string>
+	<key>every 12 hours</key>
+	<string>every 12 hours</string>
+	<key>every 15 minutes</key>
+	<string>every 15 minutes</string>
+	<key>every 2 hours</key>
+	<string>every 2 hours</string>
+	<key>every 30 minutes</key>
+	<string>every 30 minutes</string>
+	<key>every 6 hours</key>
+	<string>every 6 hours</string>
+	<key>hourly</key>
+	<string>hourly</string>
 	<key>iPhoto Sharing Enabled</key>
 	<string>iPhoto Sharing Enabled</string>
 	<key>iTunes Sharing Enabled</key>
