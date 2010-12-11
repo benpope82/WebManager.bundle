@@ -6,6 +6,8 @@
 	<string>%d TV 쇼</string>
 	<key>%d artists</key>
 	<string>%d 아티스트</string>
+	<key>%d episodes</key>
+	<string>%d episodes</string>
 	<key>%d movies</key>
 	<string>%d 영화</string>
 	<key>%d:%02d %@</key>
@@ -14,6 +16,8 @@
 	<string>1 TV 쇼</string>
 	<key>1 artist</key>
 	<string>1 아티스트</string>
+	<key>1 episode</key>
+	<string>1 episode</string>
 	<key>1 movie</key>
 	<string>1 영화</string>
 	<key>&gt; Add posters, custom genres and more</key>
@@ -64,6 +68,8 @@
 	<string>취소</string>
 	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
 	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
+	<key>Change Artwork</key>
+	<string>Change Artwork</string>
 	<key>Choose Background Art</key>
 	<string>배경 선택</string>
 	<key>Choose Banner</key>
@@ -86,8 +92,6 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>컨텐츠 등급</string>
 	<key>Custom Search</key>
 	<string>맞춤 검색</string>
-	<key>Customize</key>
-	<string>사용자 정의</string>
 	<key>Customize Section</key>
 	<string>사용자 정의 섹션</string>
 	<key>Directors</key>
@@ -264,6 +268,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>TV 쇼 없음</string>
 	<key>no artists</key>
 	<string>아티스트 없음</string>
+	<key>no episodes</key>
+	<string>no episodes</string>
 	<key>no movies</key>
 	<string>영화 없음</string>
 	<key>today</key>

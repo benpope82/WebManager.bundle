@@ -6,6 +6,8 @@
 	<string>%d TV shows</string>
 	<key>%d artists</key>
 	<string>%d artists</string>
+	<key>%d episodes</key>
+	<string>%d episodes</string>
 	<key>%d movies</key>
 	<string>%d movies</string>
 	<key>%d:%02d %@</key>
@@ -14,6 +16,8 @@
 	<string>1 TV show</string>
 	<key>1 artist</key>
 	<string>1 artist</string>
+	<key>1 episode</key>
+	<string>1 episode</string>
 	<key>1 movie</key>
 	<string>1 movie</string>
 	<key>&gt; Add posters, custom genres and more</key>
@@ -64,6 +68,8 @@
 	<string>Cancel</string>
 	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
 	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
+	<key>Change Artwork</key>
+	<string>Change Artwork</string>
 	<key>Choose Background Art</key>
 	<string>Choose Background Art</string>
 	<key>Choose Banner</key>
@@ -86,8 +92,6 @@ Are you sure it's running?</string>
 	<string>Content Rating</string>
 	<key>Custom Search</key>
 	<string>Custom Search</string>
-	<key>Customize</key>
-	<string>Customize</string>
 	<key>Customize Section</key>
 	<string>Customize Section</string>
 	<key>Directors</key>
@@ -264,6 +268,8 @@ Are you sure it's running?</string>
 	<string>no TV shows</string>
 	<key>no artists</key>
 	<string>no artists</string>
+	<key>no episodes</key>
+	<string>no episodes</string>
 	<key>no movies</key>
 	<string>no movies</string>
 	<key>today</key>

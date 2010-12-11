@@ -1,6 +1,9 @@
 ﻿/* Status label value for when there is more than one musical artist */
 "%d artists" = "%d 아티스트";
 
+/* Subtitle for a season thumbnail on a TV Show detail view */
+"%d episodes" = "%d episodes";
+
 /* Status label value for when there is more than one movie */
 "%d movies" = "%d 영화";
 
@@ -12,6 +15,9 @@
 
 /* Status label value for when there is one musical artist */
 "1 artist" = "1 아티스트";
+
+/* Subtitle for a season thumbnail on a TV Show detail view */
+"1 episode" = "1 episode";
 
 /* Status label value for when there is one movie */
 "1 movie" = "1 영화";
@@ -91,6 +97,9 @@
 /* Preference window setting detail */
 "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.";
 
+/* Change Artwork */
+"Change Artwork" = "Change Artwork";
+
 /* Choose Background Art */
 "Choose Background Art" = "배경 선택";
 
@@ -117,9 +126,6 @@
 
 /* Custom Search */
 "Custom Search" = "맞춤 검색";
-
-/* Customize */
-"Customize" = "사용자 정의";
 
 /* Customize Section */
 "Customize Section" = "사용자 정의 섹션";
@@ -234,6 +240,9 @@
 
 /* Status label value when there are no musical artists */
 "no artists" = "아티스트 없음";
+
+/* Subtitle for a season thumbnail on a TV Show detail view */
+"no episodes" = "no episodes";
 
 /* Status label value for when there are no movies */
 "no movies" = "영화 없음";
