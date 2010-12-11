@@ -5980,7 +5980,7 @@ with(_1a){
 return _identifier;
 }
 })]);
-p;20;Models/MMDirectory.jt;2445;@STATIC;1.0;I;21;Foundation/CPObject.jt;2400;
+p;20;Models/MMDirectory.jt;2280;@STATIC;1.0;I;21;Foundation/CPObject.jt;2235;
 objj_executeFile("Foundation/CPObject.j",NO);
 var _1=objj_allocateClassPair(CPObject,"MMDirectory"),_2=_1.isa;
 class_addIvars(_1,[new objj_ivar("title"),new objj_ivar("key"),new objj_ivar("path"),new objj_ivar("children")]);
@@ -6029,30 +6029,28 @@ objj_msgSend(_19,"didChangeValueForKey:","title");
 }
 }),new objj_method(sel_getUid("setPath:"),function(_1c,_1d,_1e){
 with(_1c){
-objj_msgSend(_1c,"willChangeValueForKey:","key");
-key=CFData.encodeBase64String(_1e);
-objj_msgSend(_1c,"didChangeValueForKey:","key");
+objj_msgSend(_1c,"willChangeValueForKey:","path");
+path=_1e;
+objj_msgSend(_1c,"didChangeValueForKey:","path");
 }
 }),new objj_method(sel_getUid("setKey:"),function(_1f,_20,_21){
 with(_1f){
-objj_msgSend(_1f,"willChangeValueForKey:","path");
+objj_msgSend(_1f,"willChangeValueForKey:","key");
 key=_21;
-var _22=objj_msgSend(key,"substringFromIndex:",objj_msgSend("/services/browse/","length"));
-path=CFData.decodeBase64ToString(_22);
-objj_msgSend(_1f,"didChangeValueForKey:","path");
+objj_msgSend(_1f,"didChangeValueForKey:","key");
 }
-}),new objj_method(sel_getUid("description"),function(_23,_24){
-with(_23){
-return path||objj_msgSendSuper({receiver:_23,super_class:objj_getClass("MMDirectory").super_class},"description");
+}),new objj_method(sel_getUid("description"),function(_22,_23){
+with(_22){
+return path||objj_msgSendSuper({receiver:_22,super_class:objj_getClass("MMDirectory").super_class},"description");
 }
 })]);
-class_addMethods(_2,[new objj_method(sel_getUid("keyPathsForValuesAffectingTitle"),function(_25,_26){
-with(_25){
+class_addMethods(_2,[new objj_method(sel_getUid("keyPathsForValuesAffectingTitle"),function(_24,_25){
+with(_24){
 return objj_msgSend(CPSet,"setWithObjects:","path","key","title");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingKey"),function(_27,_28){
-with(_27){
-return objj_msgSend(CPSet,"setWithObjects:","title","path","title");
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingKey"),function(_26,_27){
+with(_26){
+return objj_msgSend(CPSet,"setWithObjects:","title","path");
 }
 })]);
 p;27;Models/MMLibraryMediaItem.jt;11954;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPSet.ji;10;MMRecord.ji;18;MMLibrarySection.ji;8;PMSURL.jt;11835;
