@@ -9708,7 +9708,7 @@ objj_msgSend(_yearField,"setHidden:",YES);
 with(_63){
 }
 })]);
-p;28;Views/MMMediatypeTableCell.jt;2999;@STATIC;1.0;I;20;AppKit/CPTableView.jI;20;AppKit/CPTextField.ji;13;MMImageView.jt;2912;
+p;28;Views/MMMediaTypeTableCell.jt;2999;@STATIC;1.0;I;20;AppKit/CPTableView.jI;20;AppKit/CPTextField.ji;13;MMImageView.jt;2912;
 objj_executeFile("AppKit/CPTableView.j",NO);
 objj_executeFile("AppKit/CPTextField.j",NO);
 objj_executeFile("MMImageView.j",YES);
