@@ -154,6 +154,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>원제</string>
 	<key>Originally Available</key>
 	<string>상영(방송)일</string>
+	<key>PLEX MEDIA MANAGER</key>
+	<string>PLEX MEDIA MANAGER</string>
 	<key>PM</key>
 	<string>PM</string>
 	<key>Primary metadata agent:</key>
@@ -196,6 +198,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>다음 목록에서 일치하는 %@을/를 선택하세요: </string>
 	<key>Send anonymous usage data to Plex</key>
 	<string>Plex에 익명으로 사용 정보를 보냅니다.</string>
+	<key>Settings</key>
+	<string>Settings</string>
 	<key>Sharing</key>
 	<string>공유</string>
 	<key>Show</key>

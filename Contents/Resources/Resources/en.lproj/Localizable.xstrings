@@ -154,6 +154,8 @@ Are you sure it's running?</string>
 	<string>Original Title</string>
 	<key>Originally Available</key>
 	<string>Originally Available</string>
+	<key>PLEX MEDIA MANAGER</key>
+	<string>PLEX MEDIA MANAGER</string>
 	<key>PM</key>
 	<string>PM</string>
 	<key>Primary metadata agent:</key>
@@ -196,6 +198,8 @@ Are you sure it's running?</string>
 	<string>Select the correct %@ from the list below:</string>
 	<key>Send anonymous usage data to Plex</key>
 	<string>Send anonymous usage data to Plex</string>
+	<key>Settings</key>
+	<string>Settings</string>
 	<key>Sharing</key>
 	<string>Sharing</string>
 	<key>Show</key>
