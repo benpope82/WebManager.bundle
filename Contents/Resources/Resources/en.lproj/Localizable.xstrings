@@ -11,7 +11,7 @@
 	<key>%d movies</key>
 	<string>%d movies</string>
 	<key>%d:%02d %@</key>
-	<string>%1$d:%2$d %3$@</string>
+	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
 	<string>1 TV show</string>
 	<key>1 artist</key>
@@ -104,6 +104,8 @@ Are you sure it's running?</string>
 	<string>Edit Metadata</string>
 	<key>Edit Section</key>
 	<string>Edit Section</string>
+	<key>Episode %d: %@</key>
+	<string>Episode %1$d: %2$@</string>
 	<key>Fix Incorrect Match...</key>
 	<string>Fix Incorrect Match...</string>
 	<key>Fix incorrect match</key>

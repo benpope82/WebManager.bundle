@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>%d TV shows</key>
-	<string>%d TV 쇼</string>
+	<string>TV 쇼 %d개</string>
 	<key>%d artists</key>
-	<string>%d 아티스트</string>
+	<string>아티스트 %d명</string>
 	<key>%d episodes</key>
-	<string>%d episodes</string>
+	<string>에피소드 %d개</string>
 	<key>%d movies</key>
-	<string>%d 영화</string>
+	<string>영화 %d개</string>
 	<key>%d:%02d %@</key>
-	<string>%1$d:%2$d %3$@</string>
+	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
-	<string>1 TV 쇼</string>
+	<string>TV 쇼 1개</string>
 	<key>1 artist</key>
-	<string>1 아티스트</string>
+	<string>아티스트 1명</string>
 	<key>1 episode</key>
-	<string>1 episode</string>
+	<string>에피소드 1개</string>
 	<key>1 movie</key>
-	<string>1 영화</string>
+	<string>영화 1개</string>
 	<key>&gt; Add posters, custom genres and more</key>
 	<string>&gt; Add posters, custom genres and more</string>
 	<key>&gt; Album reviews</key>
@@ -53,7 +53,7 @@
 	<key>Add TV Shows Section</key>
 	<string>Add TV Shows Section</string>
 	<key>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</key>
-	<string>해당 섹션에 미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 사용자의 라이브러리로 스캔됩니다.</string>
+	<string>미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 자동으로 사용자의 라이브러리에 추가됩니다.</string>
 	<key>Advanced</key>
 	<string>고급</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
@@ -69,15 +69,15 @@
 	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
 	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
 	<key>Change Artwork</key>
-	<string>Change Artwork</string>
+	<string>이미지 변경</string>
 	<key>Choose Background Art</key>
-	<string>배경 선택</string>
+	<string>배경 변경</string>
 	<key>Choose Banner</key>
-	<string>배너 선택</string>
+	<string>배너 변경</string>
 	<key>Choose Icon</key>
-	<string>아이콘 선택</string>
+	<string>아이콘 변경</string>
 	<key>Choose Poster</key>
-	<string>포스터 선택</string>
+	<string>포스터 변경</string>
 	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
 	<string>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</string>
 	<key>Collections</key>
@@ -89,9 +89,9 @@ Are you sure it's running?</key>
 
 Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Content Rating</key>
-	<string>컨텐츠 등급</string>
+	<string>등급</string>
 	<key>Custom Search</key>
-	<string>맞춤 검색</string>
+	<string>상세 검색</string>
 	<key>Customize Section</key>
 	<string>사용자 정의 섹션</string>
 	<key>Directors</key>
@@ -99,15 +99,17 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Done</key>
 	<string>완료</string>
 	<key>Drag folders into the list, or click the '+' button to browse.</key>
-	<string>리스트로 폴더를 드래그하거나 '+' 버튼을 클릭하세요.</string>
+	<string>'+' 버튼을 클릭하여 폴더를 추가하세요.</string>
 	<key>Edit Metadata</key>
 	<string>메타데이터 편집</string>
 	<key>Edit Section</key>
 	<string>섹션 편집</string>
+	<key>Episode %d: %@</key>
+	<string>Episode %1$d: %2$@</string>
 	<key>Fix Incorrect Match...</key>
-	<string>잘못된 매칭 수정...</string>
+	<string>메타데이터 재선택...</string>
 	<key>Fix incorrect match</key>
-	<string>잘못된 매칭 수정</string>
+	<string>메타데이터 재선택</string>
 	<key>Friday</key>
 	<string>금요일</string>
 	<key>Friendly name:</key>
@@ -123,7 +125,7 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Language:</key>
 	<string>언어:</string>
 	<key>Large music sections may take a long time to scan</key>
-	<string>Large music sections may take a long time to scan</string>
+	<string>용량이 큰 음악 섹션은 탐색 시간이 오래 걸릴 수 있습니다</string>
 	<key>Last refreshed %@ at %@</key>
 	<string>%1$@ %2$@에 갱신되었습니다</string>
 	<key>Library</key>
@@ -145,23 +147,23 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>My TV Shows</key>
 	<string>나의 TV 쇼</string>
 	<key>Name</key>
-	<string>이름</string>
+	<string>제목</string>
 	<key>Name:</key>
-	<string>이름:</string>
+	<string>제목:</string>
 	<key>Offer higher bitrates over 3G connections</key>
 	<string>Offer higher bitrates over 3G connections</string>
 	<key>Original Title</key>
 	<string>원제</string>
 	<key>Originally Available</key>
-	<string>상영(방송)일</string>
+	<string>개봉(첫방송)일</string>
 	<key>PLEX MEDIA MANAGER</key>
 	<string>PLEX MEDIA MANAGER</string>
 	<key>PM</key>
 	<string>PM</string>
 	<key>Primary metadata agent:</key>
-	<string>주 메타데이터 에이전트:</string>
+	<string>메타데이터 에이전트:</string>
 	<key>Rating</key>
-	<string>점수</string>
+	<string>평점</string>
 	<key>Refresh Info</key>
 	<string>정보 새로고침</string>
 	<key>Refresh Section</key>
@@ -177,7 +179,7 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Search</key>
 	<string>검색</string>
 	<key>Search using:</key>
-	<string>검색하기:</string>
+	<string>에이전트:</string>
 	<key>Section name:</key>
 	<string>섹션 이름:</string>
 	<key>Section type:</key>
@@ -189,13 +191,13 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Select %@</key>
 	<string>%@ 선택</string>
 	<key>Select Folder</key>
-	<string>Select Folder</string>
+	<string>폴더 선택</string>
 	<key>Select Image</key>
-	<string>이미지 선택</string>
+	<string>이미지 변경</string>
 	<key>Select a directory for this section:</key>
-	<string>Select a directory for this section:</string>
+	<string>해당 섹션의 폴더 선택:</string>
 	<key>Select the correct %@ from the list below:</key>
-	<string>다음 목록에서 일치하는 %@을/를 선택하세요: </string>
+	<string>다음 목록에서 일치하는 %@을(를) 선택하세요: </string>
 	<key>Send anonymous usage data to Plex</key>
 	<string>Plex에 익명으로 사용 정보를 보냅니다.</string>
 	<key>Settings</key>
@@ -205,9 +207,9 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Show</key>
 	<string>쇼</string>
 	<key>Sort Title</key>
-	<string>타이틀 정렬</string>
+	<string>기타 제목</string>
 	<key>Studio</key>
-	<string>스튜디오</string>
+	<string>제작사</string>
 	<key>Summary</key>
 	<string>요약</string>
 	<key>Sunday</key>
@@ -239,7 +241,7 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Update Section</key>
 	<string>섹션 업데이트</string>
 	<key>Update my library</key>
-	<string>Update my library</string>
+	<string>라이브러리 업데이트</string>
 	<key>Update my library when changes to my folders are detected</key>
 	<string>Update my library when changes to my folders are detected</string>
 	<key>Wednesday</key>
@@ -251,19 +253,19 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Year:</key>
 	<string>연도:</string>
 	<key>daily</key>
-	<string>daily</string>
+	<string>매일</string>
 	<key>every 12 hours</key>
-	<string>every 12 hours</string>
+	<string>12시간 마다</string>
 	<key>every 15 minutes</key>
-	<string>every 15 minutes</string>
+	<string>15분 마다</string>
 	<key>every 2 hours</key>
-	<string>every 2 hours</string>
+	<string>2시간 마다</string>
 	<key>every 30 minutes</key>
-	<string>every 30 minutes</string>
+	<string>30분 마다</string>
 	<key>every 6 hours</key>
-	<string>every 6 hours</string>
+	<string>6시간 마다</string>
 	<key>hourly</key>
-	<string>hourly</string>
+	<string>매시간</string>
 	<key>iPhoto Sharing Enabled</key>
 	<string>iPhoto Sharing Enabled</string>
 	<key>iTunes Sharing Enabled</key>
@@ -273,7 +275,7 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>no artists</key>
 	<string>아티스트 없음</string>
 	<key>no episodes</key>
-	<string>no episodes</string>
+	<string>에피소드 없음</string>
 	<key>no movies</key>
 	<string>영화 없음</string>
 	<key>today</key>
