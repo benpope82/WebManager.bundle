@@ -1,29 +1,31 @@
 ﻿/* Status label value for when there is more than one musical artist */
-"%d artists" = "%d 아티스트";
+"%d artists" = "아티스트 %d명";
 
-/* Subtitle for a season thumbnail on a TV Show detail view */
-"%d episodes" = "%d episodes";
+/* Status for list of episodes when there is more than one
+   Subtitle for a season thumbnail on a TV Show detail view */
+"%d episodes" = "에피소드 %d개";
 
 /* Status label value for when there is more than one movie */
-"%d movies" = "%d 영화";
+"%d movies" = "영화 %d개";
 
 /* Status label value for when there is more than one TV show */
-"%d TV shows" = "%d TV 쇼";
+"%d TV shows" = "TV 쇼 %d개";
 
 /* ShortLocalTimeFormat */
-"%d:%02d %@" = "%1$d:%2$d %3$@";
+"%d:%02d %@" = "%1$d:%2$02d %3$@";
 
 /* Status label value for when there is one musical artist */
-"1 artist" = "1 아티스트";
+"1 artist" = "아티스트 1명";
 
-/* Subtitle for a season thumbnail on a TV Show detail view */
-"1 episode" = "1 episode";
+/* Status for list of episodes when there is one
+   Subtitle for a season thumbnail on a TV Show detail view */
+"1 episode" = "에피소드 1개";
 
 /* Status label value for when there is one movie */
-"1 movie" = "1 영화";
+"1 movie" = "영화 1개";
 
 /* Status label value for when there is one TV show */
-"1 TV show" = "1 TV 쇼";
+"1 TV show" = "TV 쇼 1개";
 
 /* First-run help item */
 "> Add posters, custom genres and more" = "> Add posters, custom genres and more";
@@ -68,7 +70,7 @@
 "Add Section" = "섹션 추가";
 
 /* Section settings primary informative text */
-"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "해당 섹션에 미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 사용자의 라이브러리로 스캔됩니다.";
+"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "미디어를 포함하는 폴더를 추가하세요. 해당 폴더 내의 미디어 파일들은 위의 설정에 따라 자동으로 사용자의 라이브러리에 추가됩니다.";
 
 /* First-run title for adding TV shows */
 "Add TV Shows Section" = "Add TV Shows Section";
@@ -98,19 +100,19 @@
 "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.";
 
 /* Change Artwork */
-"Change Artwork" = "Change Artwork";
+"Change Artwork" = "이미지 변경";
 
 /* Choose Background Art */
-"Choose Background Art" = "배경 선택";
+"Choose Background Art" = "배경 변경";
 
 /* Choose Banner */
-"Choose Banner" = "배너 선택";
+"Choose Banner" = "배너 변경";
 
 /* Choose Icon */
-"Choose Icon" = "아이콘 선택";
+"Choose Icon" = "아이콘 변경";
 
 /* Choose Poster */
-"Choose Poster" = "포스터 선택";
+"Choose Poster" = "포스터 변경";
 
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.";
@@ -122,16 +124,16 @@
 "Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "다음과 같은 에러로 인하여 Plex Media Server에 접속을 실패하였습니다.: %@.\n\nPlex Media Server가 실행 중인지 확인하세요.";
 
 /* Content Rating */
-"Content Rating" = "컨텐츠 등급";
+"Content Rating" = "등급";
 
 /* Custom Search */
-"Custom Search" = "맞춤 검색";
+"Custom Search" = "상세 검색";
 
 /* Customize Section */
 "Customize Section" = "사용자 정의 섹션";
 
 /* Library scan interval (i.e. Update my library daily */
-"daily" = "daily";
+"daily" = "매일";
 
 /* Directors */
 "Directors" = "감독";
@@ -140,7 +142,7 @@
 "Done" = "완료";
 
 /* Section settings secondary informative text */
-"Drag folders into the list, or click the '+' button to browse." = "리스트로 폴더를 드래그하거나 '+' 버튼을 클릭하세요.";
+"Drag folders into the list, or click the '+' button to browse." = "'+' 버튼을 클릭하여 폴더를 추가하세요.";
 
 /* Edit Metadata */
 "Edit Metadata" = "메타데이터 편집";
@@ -148,26 +150,29 @@
 /* Edit Section */
 "Edit Section" = "섹션 편집";
 
+/* Full episode title (e.g. Episode 1: Pilot */
+"Episode %d: %@" = "Episode %1$d: %2$@";
+
 /* Library scan interval (i.e. Update my library every 12 hours) */
-"every 12 hours" = "every 12 hours";
+"every 12 hours" = "12시간 마다";
 
 /* Library scan interval (i.e. Update my library every 15 minutes) */
-"every 15 minutes" = "every 15 minutes";
+"every 15 minutes" = "15분 마다";
 
 /* Library scan interval (i.e. Update my library every 2 hours) */
-"every 2 hours" = "every 2 hours";
+"every 2 hours" = "2시간 마다";
 
 /* Library scan interval (i.e. Update my library every 30 minutes) */
-"every 30 minutes" = "every 30 minutes";
+"every 30 minutes" = "30분 마다";
 
 /* Library scan interval (i.e. Update my library every 6 hours) */
-"every 6 hours" = "every 6 hours";
+"every 6 hours" = "6시간 마다";
 
 /* Fix incorrect match */
-"Fix incorrect match" = "잘못된 매칭 수정";
+"Fix incorrect match" = "메타데이터 재선택";
 
 /* Fix Incorrect Match... */
-"Fix Incorrect Match..." = "잘못된 매칭 수정...";
+"Fix Incorrect Match..." = "메타데이터 재선택...";
 
 /* Friday */
 "Friday" = "금요일";
@@ -185,7 +190,7 @@
 "Got this error: %@. Are you sure Plex Media Server is running?" = "에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.";
 
 /* Library scan interval (i.e. Update my library hourly) */
-"hourly" = "hourly";
+"hourly" = "매시간";
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Include music sections in automatic updates";
@@ -200,7 +205,7 @@
 "Language:" = "언어:";
 
 /* Preference window setting */
-"Large music sections may take a long time to scan" = "Large music sections may take a long time to scan";
+"Large music sections may take a long time to scan" = "용량이 큰 음악 섹션은 탐색 시간이 오래 걸릴 수 있습니다";
 
 /* Status label for media items */
 "Last refreshed %@ at %@" = "%1$@ %2$@에 갱신되었습니다";
@@ -233,16 +238,17 @@
 "My TV Shows" = "나의 TV 쇼";
 
 /* Name */
-"Name" = "이름";
+"Name" = "제목";
 
 /* Name label */
-"Name:" = "이름:";
+"Name:" = "제목:";
 
 /* Status label value when there are no musical artists */
 "no artists" = "아티스트 없음";
 
-/* Subtitle for a season thumbnail on a TV Show detail view */
-"no episodes" = "no episodes";
+/* Status for list of episodes when there are none
+   Subtitle for a season thumbnail on a TV Show detail view */
+"no episodes" = "에피소드 없음";
 
 /* Status label value for when there are no movies */
 "no movies" = "영화 없음";
@@ -257,7 +263,7 @@
 "Original Title" = "원제";
 
 /* Originally Available */
-"Originally Available" = "상영(방송)일";
+"Originally Available" = "개봉(첫방송)일";
 
 /* Header title */
 "PLEX MEDIA MANAGER" = "PLEX MEDIA MANAGER";
@@ -266,10 +272,10 @@
 "PM" = "PM";
 
 /* Primary metadata agent label */
-"Primary metadata agent:" = "주 메타데이터 에이전트:";
+"Primary metadata agent:" = "메타데이터 에이전트:";
 
 /* Rating */
-"Rating" = "점수";
+"Rating" = "평점";
 
 /* Refresh Info */
 "Refresh Info" = "정보 새로고침";
@@ -293,7 +299,7 @@
 "Search" = "검색";
 
 /* Agent label */
-"Search using:" = "검색하기:";
+"Search using:" = "에이전트:";
 
 /* Section name label */
 "Section name:" = "섹션 이름:";
@@ -311,16 +317,16 @@
 "Select %@" = "%@ 선택";
 
 /* Directory-browser title when adding/editing sections */
-"Select a directory for this section:" = "Select a directory for this section:";
+"Select a directory for this section:" = "해당 섹션의 폴더 선택:";
 
 /* Select Folder */
-"Select Folder" = "Select Folder";
+"Select Folder" = "폴더 선택";
 
 /* Select Image */
-"Select Image" = "이미지 선택";
+"Select Image" = "이미지 변경";
 
 /* Match picker informative text */
-"Select the correct %@ from the list below:" = "다음 목록에서 일치하는 %@을/를 선택하세요: ";
+"Select the correct %@ from the list below:" = "다음 목록에서 일치하는 %@을(를) 선택하세요: ";
 
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Plex에 익명으로 사용 정보를 보냅니다.";
@@ -335,10 +341,10 @@
 "Show" = "쇼";
 
 /* Sort Title */
-"Sort Title" = "타이틀 정렬";
+"Sort Title" = "기타 제목";
 
 /* Studio */
-"Studio" = "스튜디오";
+"Studio" = "제작사";
 
 /* Summary */
 "Summary" = "요약";
@@ -389,7 +395,7 @@
 "Unable to update library section" = "라이브러리 섹션을 업데이트할 수 없습니다.";
 
 /* Preference window setting - will have frequencies after it e.g. Update my library every two hours */
-"Update my library" = "Update my library";
+"Update my library" = "라이브러리 업데이트";
 
 /* Preference window setting */
 "Update my library when changes to my folders are detected" = "Update my library when changes to my folders are detected";

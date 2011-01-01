@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>%@, Episode %d</key>
+	<string>%1$@, Episode %2$d</string>
 	<key>%d TV shows</key>
 	<string>%d TV shows</string>
 	<key>%d artists</key>
@@ -11,7 +13,7 @@
 	<key>%d movies</key>
 	<string>%d movies</string>
 	<key>%d:%02d %@</key>
-	<string>%1$d:%2$d %3$@</string>
+	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
 	<string>1 TV show</string>
 	<key>1 artist</key>
@@ -74,10 +76,14 @@
 	<string>Choose Background Art</string>
 	<key>Choose Banner</key>
 	<string>Choose Banner</string>
+	<key>Choose Episode Thumbnail</key>
+	<string>Choose Episode Thumbnail</string>
 	<key>Choose Icon</key>
 	<string>Choose Icon</string>
 	<key>Choose Poster</key>
 	<string>Choose Poster</string>
+	<key>Choose Season Thumbnail</key>
+	<string>Choose Season Thumbnail</string>
 	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
 	<string>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</string>
 	<key>Collections</key>
@@ -104,6 +110,8 @@ Are you sure it's running?</string>
 	<string>Edit Metadata</string>
 	<key>Edit Section</key>
 	<string>Edit Section</string>
+	<key>Episode %d: %@</key>
+	<string>Episode %1$d: %2$@</string>
 	<key>Fix Incorrect Match...</key>
 	<string>Fix Incorrect Match...</string>
 	<key>Fix incorrect match</key>
@@ -168,6 +176,10 @@ Are you sure it's running?</string>
 	<string>Refresh Section</string>
 	<key>Refresh Section (force)</key>
 	<string>Refresh Section (force)</string>
+	<key>Refreshing info for %d items</key>
+	<string>Refreshing info for %d items</string>
+	<key>Refreshing info for one item</key>
+	<string>Refreshing info for one item</string>
 	<key>Remove Section</key>
 	<string>Remove Section</string>
 	<key>Saturday</key>
@@ -220,6 +232,8 @@ Are you sure it's running?</string>
 	<string>This helps us improve your experience (for example, to help us match movies and TV shows).</string>
 	<key>This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead.</key>
 	<string>This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead.</string>
+	<key>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</key>
+	<string>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</string>
 	<key>Thursday</key>
 	<string>Thursday</string>
 	<key>Title</key>
