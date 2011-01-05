@@ -13,7 +13,7 @@
 	<key>%d movies</key>
 	<string>%d movies</string>
 	<key>%d:%02d %@</key>
-	<string>%1$d:%2$d %3$@</string>
+	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
 	<string>1 TV show</string>
 	<key>1 artist</key>
@@ -102,6 +102,8 @@ Are you sure it's running?</string>
 	<string>Customize Section</string>
 	<key>Directors</key>
 	<string>Directors</string>
+	<key>Disable capability checking</key>
+	<string>Disable capability checking</string>
 	<key>Done</key>
 	<string>Done</string>
 	<key>Drag folders into the list, or click the '+' button to browse.</key>
@@ -206,8 +208,12 @@ Are you sure it's running?</string>
 	<string>Select Image</string>
 	<key>Select a directory for this section:</key>
 	<string>Select a directory for this section:</string>
-	<key>Select the correct %@ from the list below:</key>
-	<string>Select the correct %@ from the list below:</string>
+	<key>Select the correct TV show from the list below:</key>
+	<string>Select the correct TV show from the list below:</string>
+	<key>Select the correct artist from the list below:</key>
+	<string>Select the correct artist from the list below:</string>
+	<key>Select the correct movie from the list below:</key>
+	<string>Select the correct movie from the list below:</string>
 	<key>Send anonymous usage data to Plex</key>
 	<string>Send anonymous usage data to Plex</string>
 	<key>Settings</key>

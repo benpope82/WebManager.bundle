@@ -15,7 +15,7 @@
 "%d TV shows" = "%d TV shows";
 
 /* ShortLocalTimeFormat */
--"%d:%02d %@" = "%1$d:%2$02d %3$@";
+"%d:%02d %@" = "%1$d:%2$02d %3$@";
 
 /* Status label value for when there is one musical artist */
 "1 artist" = "1 artist";
@@ -152,6 +152,9 @@
 
 /* Directors */
 "Directors" = "Directors";
+
+/* Preference window setting */
+"Disable capability checking" = "Disable capability checking";
 
 /* Done */
 "Done" = "Done";
@@ -355,8 +358,14 @@
 /* Select Image */
 "Select Image" = "Select Image";
 
-/* Match picker informative text */
-"Select the correct %@ from the list below:" = "Select the correct %@ from the list below:";
+/* Fix Incorrect Match title for music sections */
+"Select the correct artist from the list below:" = "Select the correct artist from the list below:";
+
+/* Fix Incorrect Match title for movie sections */
+"Select the correct movie from the list below:" = "Select the correct movie from the list below:";
+
+/* Fix Incorrect Match title for TV show sections */
+"Select the correct TV show from the list below:" = "Select the correct TV show from the list below:";
 
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Send anonymous usage data to Plex";
