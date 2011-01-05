@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>%@, Episode %d</key>
+	<string>%1$@, Episode %2$d</string>
 	<key>%d TV shows</key>
 	<string>TV 쇼 %d개</string>
 	<key>%d artists</key>
@@ -74,10 +76,14 @@
 	<string>배경 변경</string>
 	<key>Choose Banner</key>
 	<string>배너 변경</string>
+	<key>Choose Episode Thumbnail</key>
+	<string>Choose Episode Thumbnail</string>
 	<key>Choose Icon</key>
 	<string>아이콘 변경</string>
 	<key>Choose Poster</key>
 	<string>포스터 변경</string>
+	<key>Choose Season Thumbnail</key>
+	<string>Choose Season Thumbnail</string>
 	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
 	<string>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</string>
 	<key>Collections</key>
@@ -170,6 +176,10 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>섹션 새로고침</string>
 	<key>Refresh Section (force)</key>
 	<string>섹션 새로고침 (강제)</string>
+	<key>Refreshing info for %d items</key>
+	<string>Refreshing info for %d items</string>
+	<key>Refreshing info for one item</key>
+	<string>Refreshing info for one item</string>
 	<key>Remove Section</key>
 	<string>섹션 삭제</string>
 	<key>Saturday</key>
@@ -222,6 +232,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>이것은 시스템 개선에 도움이 됩니다. (예를 들어, 영화와 TV 쇼를 매칭하는데 도움이 됩니다).</string>
 	<key>This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead.</key>
 	<string>이 이름은 네트워크 상의 다른 컴퓨터로부터 사용자의 미디어 서버를 구별하는데 사용됩니다. 만약 입력하지 않으면 사용자의 컴퓨터 이름으로 저장됩니다.</string>
+	<key>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</key>
+	<string>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</string>
 	<key>Thursday</key>
 	<string>목요일</string>
 	<key>Title</key>
@@ -252,8 +264,14 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>연도</string>
 	<key>Year:</key>
 	<string>연도:</string>
+	<key>album</key>
+	<string>앨범</string>
+	<key>artist</key>
+	<string>아티스트</string>
 	<key>daily</key>
 	<string>매일</string>
+	<key>episode</key>
+	<string>에피소드</string>
 	<key>every 12 hours</key>
 	<string>12시간 마다</string>
 	<key>every 15 minutes</key>
@@ -270,6 +288,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>iPhoto Sharing Enabled</string>
 	<key>iTunes Sharing Enabled</key>
 	<string>iTunes Sharing Enabled</string>
+	<key>movie</key>
+	<string>영화</string>
 	<key>no TV shows</key>
 	<string>TV 쇼 없음</string>
 	<key>no artists</key>
@@ -278,6 +298,10 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>에피소드 없음</string>
 	<key>no movies</key>
 	<string>영화 없음</string>
+	<key>season</key>
+	<string>시즌</string>
+	<key>show</key>
+	<string>쇼</string>
 	<key>today</key>
 	<string>오늘</string>
 	<key>tomorrow</key>

@@ -13,7 +13,7 @@
 	<key>%d movies</key>
 	<string>%d movies</string>
 	<key>%d:%02d %@</key>
-	<string>%1$d:%2$02d %3$@</string>
+	<string>%1$d:%2$d %3$@</string>
 	<key>1 TV show</key>
 	<string>1 TV show</string>
 	<key>1 artist</key>
@@ -264,8 +264,14 @@ Are you sure it's running?</string>
 	<string>Year</string>
 	<key>Year:</key>
 	<string>Year:</string>
+	<key>album</key>
+	<string>album</string>
+	<key>artist</key>
+	<string>artist</string>
 	<key>daily</key>
 	<string>daily</string>
+	<key>episode</key>
+	<string>episode</string>
 	<key>every 12 hours</key>
 	<string>every 12 hours</string>
 	<key>every 15 minutes</key>
@@ -282,6 +288,8 @@ Are you sure it's running?</string>
 	<string>iPhoto Sharing Enabled</string>
 	<key>iTunes Sharing Enabled</key>
 	<string>iTunes Sharing Enabled</string>
+	<key>movie</key>
+	<string>movie</string>
 	<key>no TV shows</key>
 	<string>no TV shows</string>
 	<key>no artists</key>
@@ -290,6 +298,10 @@ Are you sure it's running?</string>
 	<string>no episodes</string>
 	<key>no movies</key>
 	<string>no movies</string>
+	<key>season</key>
+	<string>season</string>
+	<key>show</key>
+	<string>show</string>
 	<key>today</key>
 	<string>today</string>
 	<key>tomorrow</key>

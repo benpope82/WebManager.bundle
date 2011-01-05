@@ -1,4 +1,7 @@
-﻿/* Status label value for when there is more than one musical artist */
+﻿/* Season plus full episode title (e.g. Season 4, Episode 1 */
+"%@, Episode %d" = "%1$@, Episode %2$d";
+
+/* Status label value for when there is more than one musical artist */
 "%d artists" = "아티스트 %d명";
 
 /* Status for list of episodes when there is more than one
@@ -78,6 +81,9 @@
 /* Advanced */
 "Advanced" = "고급";
 
+/* A recording album */
+"album" = "앨범";
+
 /* AnteMeridiem */
 "AM" = "AM";
 
@@ -89,6 +95,9 @@
 
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "\"%@\" 섹션을 삭제하시겠습니까?";
+
+/* A musical artist */
+"artist" = "아티스트";
 
 /* Artist */
 "Artist" = "아티스트";
@@ -108,11 +117,17 @@
 /* Choose Banner */
 "Choose Banner" = "배너 변경";
 
+/* Choose Episode Thumbnail menu item */
+"Choose Episode Thumbnail" = "Choose Episode Thumbnail";
+
 /* Choose Icon */
 "Choose Icon" = "아이콘 변경";
 
 /* Choose Poster */
 "Choose Poster" = "포스터 변경";
+
+/* Choose Season Thumbnail menu item */
+"Choose Season Thumbnail" = "Choose Season Thumbnail";
 
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.";
@@ -149,6 +164,9 @@
 
 /* Edit Section */
 "Edit Section" = "섹션 편집";
+
+/* A TV Show episode */
+"episode" = "에피소드";
 
 /* Full episode title (e.g. Episode 1: Pilot */
 "Episode %d: %@" = "Episode %1$d: %2$@";
@@ -219,6 +237,9 @@
 /* Monday */
 "Monday" = "월요일";
 
+/* A movie */
+"movie" = "영화";
+
 /* Movie */
 "Movie" = "영화";
 
@@ -286,6 +307,12 @@
 /* Refresh Section (force) */
 "Refresh Section (force)" = "섹션 새로고침 (강제)";
 
+/* Status label for refreshing sections */
+"Refreshing info for %d items" = "Refreshing info for %d items";
+
+/* Status label for refreshing sections with one remaining item */
+"Refreshing info for one item" = "Refreshing info for one item";
+
 /* Remove section confirmation button */
 "Remove Section" = "섹션 삭제";
 
@@ -300,6 +327,9 @@
 
 /* Agent label */
 "Search using:" = "에이전트:";
+
+/* A TV Show season */
+"season" = "시즌";
 
 /* Section name label */
 "Section name:" = "섹션 이름:";
@@ -340,6 +370,9 @@
 /* Show */
 "Show" = "쇼";
 
+/* A TV Show */
+"show" = "쇼";
+
 /* Sort Title */
 "Sort Title" = "기타 제목";
 
@@ -360,6 +393,9 @@
 
 /* Summary info for friendly name */
 "This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead." = "이 이름은 네트워크 상의 다른 컴퓨터로부터 사용자의 미디어 서버를 구별하는데 사용됩니다. 만약 입력하지 않으면 사용자의 컴퓨터 이름으로 저장됩니다.";
+
+/* Warning for IE users */
+"This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame." = "This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.";
 
 /* Thursday */
 "Thursday" = "목요일";

@@ -1559,7 +1559,7 @@ with(_42){
 return objj_msgSend(CPSet,"setWithObject:","librarySectionsController.selectionIndex");
 }
 })]);
-p;37;Controllers/MMMatchPickerController.jt;29890;@STATIC;1.0;I;20;Foundation/CPArray.jI;21;Foundation/CPString.jI;22;Foundation/CPRunLoop.jI;33;Foundation/CPNotificationCenter.jI;20;AppKit/CPAnimation.jI;22;AppKit/CPApplication.jI;17;AppKit/CPButton.jI;16;AppKit/CPImage.jI;22;AppKit/CPPopUpButton.jI;21;AppKit/CPScrollView.jI;20;AppKit/CPTableView.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.jI;25;AppKit/CPViewController.ji;30;../Models/MMLibraryMediaItem.ji;41;../DataSources/MMMediaMatchesDataSource.ji;34;../DataSources/MMAgentDataSource.jt;29386;
+p;37;Controllers/MMMatchPickerController.jt;29932;@STATIC;1.0;I;20;Foundation/CPArray.jI;21;Foundation/CPString.jI;22;Foundation/CPRunLoop.jI;33;Foundation/CPNotificationCenter.jI;20;AppKit/CPAnimation.jI;22;AppKit/CPApplication.jI;17;AppKit/CPButton.jI;16;AppKit/CPImage.jI;22;AppKit/CPPopUpButton.jI;21;AppKit/CPScrollView.jI;20;AppKit/CPTableView.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.jI;25;AppKit/CPViewController.ji;30;../Models/MMLibraryMediaItem.ji;41;../DataSources/MMMediaMatchesDataSource.ji;34;../DataSources/MMAgentDataSource.jt;29428;
 objj_executeFile("Foundation/CPArray.j",NO);
 objj_executeFile("Foundation/CPString.j",NO);
 objj_executeFile("Foundation/CPRunLoop.j",NO);
@@ -1650,7 +1650,7 @@ objj_msgSend(_1e,"view");
 _searchResults=objj_msgSend(CPArray,"array");
 objj_msgSend(_matchesTableView,"reloadData");
 objj_msgSend(_matchesDataSource,"refreshRecordsWithContextInfo:",_mediaItem);
-objj_msgSend(_descriptiveLabel,"setStringValue:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Select the correct %@ from the list below:","Match picker informative text"),objj_msgSend(objj_msgSend(_mediaItem,"librarySection"),"type")));
+objj_msgSend(_descriptiveLabel,"setStringValue:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Select the correct %@ from the list below:","Match picker informative text"),CPLocalizedString(objj_msgSend(objj_msgSend(_mediaItem,"librarySection"),"type"),"Library section type")));
 objj_msgSend(_descriptiveLabel,"sizeToFit");
 objj_msgSend(_titleField,"setStringValue:",objj_msgSend(_mediaItem,"title"));
 objj_msgSend(_yearField,"setStringValue:",objj_msgSend(_mediaItem,"year"));
@@ -2033,7 +2033,7 @@ with(_a9){
 return objj_msgSend(CPSet,"setWithObjects:","mediaItemWithFilePart","mediaItemWithFilePart.mainPart","mediaItemWithFilePart.mainPart.file");
 }
 })]);
-p;49;Controllers/MMMediaItemCollectionViewController.jt;12592;@STATIC;1.0;I;25;AppKit/CPViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;36;../Views/MMMediaItemCollectionView.ji;23;../Views/MMScrollView.jt;12345;
+p;49;Controllers/MMMediaItemCollectionViewController.jt;12806;@STATIC;1.0;I;25;AppKit/CPViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;36;../Views/MMMediaItemCollectionView.ji;23;../Views/MMScrollView.jt;12559;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("../DataSources/MMLibraryMediaDataSource.j",YES);
 objj_executeFile("../DataSources/MMLibraryTimelineDataSource.j",YES);
@@ -2128,7 +2128,9 @@ if(!objj_msgSend(_25,"isKindOfClass:",MMLibraryMediaItem)||!objj_msgSend(objj_ms
 return;
 }
 CPLog.info("[%@ _recordWasDeleted:] removing record with id=%@",objj_msgSend(_21,"class"),objj_msgSend(_25,"id"));
+objj_msgSend(_21,"willChangeValueForKey:","content");
 objj_msgSend(_collectionView,"removeObject:",_25);
+objj_msgSend(_21,"didChangeValueForKey:","content");
 }
 }),new objj_method(sel_getUid("_recordWasCreated:"),function(_26,_27,_28){
 with(_26){
@@ -2137,7 +2139,9 @@ if(!objj_msgSend(_2a,"isKindOfClass:",MMLibraryMediaItem)||!objj_msgSend(objj_ms
 return;
 }
 CPLog.info("[%@ _recordWasCreated:] adding record %@",objj_msgSend(_26,"class"),_2a);
+objj_msgSend(_26,"willChangeValueForKey:","content");
 objj_msgSend(_collectionView,"insertObject:inArraySortedByDescriptors:",_2a,[_sortDescriptor]);
+objj_msgSend(_26,"didChangeValueForKey:","content");
 }
 }),new objj_method(sel_getUid("status"),function(_2b,_2c){
 with(_2b){
@@ -2507,7 +2511,7 @@ var _f=objj_msgSend(objj_msgSend(MMToolbar,"alloc"),"initWithFrame:style:",CGRec
 var _10=objj_msgSend(CPTextField,"labelWithTitle:","");
 objj_msgSend(_10,"setTextColor:",objj_msgSend(CPColor,"whiteColor"));
 objj_msgSend(_10,"setAutoresizingMask:",CPViewMinYMargin|CPViewMaxYMargin);
-objj_msgSend(_10,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",10));
+objj_msgSend(_10,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",12));
 objj_msgSend(_10,"setFrame:",CGRectMake(10,(CGRectGetHeight(objj_msgSend(_f,"frame"))-CGRectGetHeight(objj_msgSend(_10,"frame")))/2,CGRectGetWidth(objj_msgSend(_f,"frame")),CGRectGetHeight(objj_msgSend(_10,"frame"))));
 objj_msgSend(_10,"bind:toObject:withKeyPath:options:",CPValueBinding,_d,"status",nil);
 objj_msgSend(_f,"addSubview:",_10);
@@ -7310,7 +7314,7 @@ with(_26){
 return objj_msgSend(CPSet,"setWithObjects:","title","path");
 }
 })]);
-p;27;Models/MMLibraryMediaItem.jt;13423;@STATIC;1.0;I;18;Foundation/CPSet.ji;10;MMRecord.ji;18;MMLibrarySection.ji;17;MMMediaItemPart.ji;8;PMSURL.jt;13308;
+p;27;Models/MMLibraryMediaItem.jt;13694;@STATIC;1.0;I;18;Foundation/CPSet.ji;10;MMRecord.ji;18;MMLibrarySection.ji;17;MMMediaItemPart.ji;8;PMSURL.jt;13579;
 objj_executeFile("Foundation/CPSet.j",NO);
 objj_executeFile("MMRecord.j",YES);
 objj_executeFile("MMLibrarySection.j",YES);
@@ -7324,6 +7328,12 @@ MMLibraryMediaItemTypeArtist="artist";
 MMLibraryMediaItemTypeAlbum="album";
 MMLibraryMediaItemTypeSeason="season";
 MMLibraryMediaItemTypeEpisode="episode";
+CPLocalizedString("show","A TV Show");
+CPLocalizedString("movie","A movie");
+CPLocalizedString("artist","A musical artist");
+CPLocalizedString("album","A recording album");
+CPLocalizedString("season","A TV Show season");
+CPLocalizedString("episode","A TV Show episode");
 MMLibraryMediaItemStateCreated=0;
 MMLibraryMediaItemStateProgress=1;
 MMLibraryMediaItemStateMatching=2;
