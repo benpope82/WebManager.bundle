@@ -1522,7 +1522,7 @@ objj_msgSend(_delegate,"imagePickerDidCancel:",_6e);
 objj_msgSend(_parentViewController,"popViewControllerAnimated:",YES);
 }
 })]);
-p;45;Controllers/MMLibrarySectionsViewController.jt;11382;@STATIC;1.0;I;25;AppKit/CPViewController.jI;26;AppKit/CPArrayController.jI;22;AppKit/CPOutlineView.ji;28;../Models/MMLibrarySection.ji;44;../DataSources/MMLibrarySectionsDataSource.ji;39;../Views/MMLibrarySectionTableRowView.jt;11148;
+p;45;Controllers/MMLibrarySectionsViewController.jt;11436;@STATIC;1.0;I;25;AppKit/CPViewController.jI;26;AppKit/CPArrayController.jI;22;AppKit/CPOutlineView.ji;28;../Models/MMLibrarySection.ji;44;../DataSources/MMLibrarySectionsDataSource.ji;39;../Views/MMLibrarySectionTableRowView.jt;11202;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("AppKit/CPArrayController.j",NO);
 objj_executeFile("AppKit/CPOutlineView.j",NO);
@@ -1629,7 +1629,9 @@ objj_msgSend(_librarySectionsController,"setContent:",_2f);
 objj_msgSend(outlineView,"reloadData");
 objj_msgSend(outlineView,"expandItem:expandChildren:",nil,YES);
 }
-if(desiredLibrarySectionIdSelection){
+if(!desiredLibrarySectionIdSelection){
+objj_msgSend(_2c,"selectSectionWithId:",nil);
+}else{
 CPLog.debug("[%@ _dataSourceDidReceiveRecords:] attempting to restore desired id=%@",objj_msgSend(_2c,"class"),desiredLibrarySectionIdSelection);
 objj_msgSend(_2c,"selectSectionWithId:",desiredLibrarySectionIdSelection);
 }
