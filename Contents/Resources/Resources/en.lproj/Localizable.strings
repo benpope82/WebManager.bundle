@@ -234,6 +234,9 @@
 /* Library */
 "Library" = "Library";
 
+/* Label for the path to the file whose match is being fixed */
+"Media file: " = "Media file: ";
+
 /* Media scanner label */
 "Media scanner:" = "Media scanner:";
 

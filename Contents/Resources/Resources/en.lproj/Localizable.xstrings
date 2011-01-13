@@ -138,6 +138,8 @@ Are you sure it's running?</string>
 	<string>Last refreshed %1$@ at %2$@</string>
 	<key>Library</key>
 	<string>Library</string>
+	<key>Media file: </key>
+	<string>Media file: </string>
 	<key>Media scanner:</key>
 	<string>Media scanner:</string>
 	<key>Monday</key>

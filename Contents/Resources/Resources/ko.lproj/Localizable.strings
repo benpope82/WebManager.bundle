@@ -106,7 +106,8 @@
 "Cancel" = "취소";
 
 /* Preference window setting detail */
-"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.";
+/* Preference window setting detail */
+"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "이 옵션을 선택 하면 서버의 버전과 호환되지 않는 플러그 인이나 클라이언트 응용 프로그램도 보여줍니다. 이 옵션은 개발 중일 때 유용하지만, 플러그 인의 접근이 클라이언트 응용 프로그램에 대해 신뢰할 수 없는 동작을 야기할 수 있습니다.";
 
 /* Change Artwork */
 "Change Artwork" = "이미지 변경";
@@ -154,7 +155,7 @@
 "Directors" = "감독";
 
 /* Preference window setting */
-"Disable capability checking" = "Disable capability checking";
+"Disable capability checking" = "호환성 체크 비활성화";
 
 /* Done */
 "Done" = "완료";
@@ -233,6 +234,9 @@
 
 /* Library */
 "Library" = "라이브러리";
+
+/* Label for the path to the file whose match is being fixed */
+"Media file: " = "파일 위치: ";
 
 /* Media scanner label */
 "Media scanner:" = "미디어 스캐너:";
