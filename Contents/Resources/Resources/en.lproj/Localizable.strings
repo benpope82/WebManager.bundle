@@ -11,6 +11,12 @@
 /* Status label value for when there is more than one movie */
 "%d movies" = "%d movies";
 
+/* Subtitle for a album thumbnail on an artist detail view */
+"%d tracks" = "%d tracks";
+
+/* Status label for when there are more than one track (e.g. 11 tracks, 47:34 total time, 91.2 MB) */
+"%d tracks, %@ total time, %@" = "%1$d tracks, %2$@ total time, %3$@";
+
 /* Status label value for when there is more than one TV show */
 "%d TV shows" = "%d TV shows";
 
@@ -26,6 +32,12 @@
 
 /* Status label value for when there is one movie */
 "1 movie" = "1 movie";
+
+/* Subtitle for a album thumbnail on an artist detail view */
+"1 track" = "1 track";
+
+/* Status label for when there is one track in an album (e.g. 1 track, 4:28 total time, 5.6 MB) */
+"1 track, %@ total time, %@" = "1 track, %1$@ total time, %2$@";
 
 /* Status label value for when there is one TV show */
 "1 TV show" = "1 TV show";
@@ -110,6 +122,9 @@
 
 /* Change Artwork */
 "Change Artwork" = "Change Artwork";
+
+/* Choose Album Thumbnail menu item */
+"Choose Album Thumbnail" = "Choose Album Thumbnail";
 
 /* Choose Background Art */
 "Choose Background Art" = "Choose Background Art";
@@ -234,6 +249,9 @@
 /* Library */
 "Library" = "Library";
 
+/* Sidebar group title for library sections */
+"LIBRARY SECTIONS" = "LIBRARY SECTIONS";
+
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "Media file: ";
 
@@ -279,6 +297,10 @@
 
 /* Status label value for when there are no movies */
 "no movies" = "no movies";
+
+/* Status label for when there are no tracks in an album
+   Subtitle for a album thumbnail on an artist detail view */
+"no tracks" = "no tracks";
 
 /* Status label value when there are no TV shows */
 "no TV shows" = "no TV shows";
@@ -379,11 +401,11 @@
 /* Sharing */
 "Sharing" = "Sharing";
 
-/* Show */
-"Show" = "Show";
-
 /* A TV Show */
 "show" = "show";
+
+/* Show */
+"Show" = "Show";
 
 /* Sort Title */
 "Sort Title" = "Sort Title";

@@ -12,6 +12,10 @@
 	<string>%d episodes</string>
 	<key>%d movies</key>
 	<string>%d movies</string>
+	<key>%d tracks</key>
+	<string>%d tracks</string>
+	<key>%d tracks, %@ total time, %@</key>
+	<string>%1$d tracks, %2$@ total time, %3$@</string>
 	<key>%d:%02d %@</key>
 	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
@@ -22,6 +26,10 @@
 	<string>1 episode</string>
 	<key>1 movie</key>
 	<string>1 movie</string>
+	<key>1 track</key>
+	<string>1 track</string>
+	<key>1 track, %@ total time, %@</key>
+	<string>1 track, %1$@ total time, %2$@</string>
 	<key>&gt; Add posters, custom genres and more</key>
 	<string>&gt; Add posters, custom genres and more</string>
 	<key>&gt; Album reviews</key>
@@ -72,6 +80,8 @@
 	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
 	<key>Change Artwork</key>
 	<string>Change Artwork</string>
+	<key>Choose Album Thumbnail</key>
+	<string>Choose Album Thumbnail</string>
 	<key>Choose Background Art</key>
 	<string>Choose Background Art</string>
 	<key>Choose Banner</key>
@@ -130,6 +140,8 @@ Are you sure it's running?</string>
 	<string>Got this error: %@. Are you sure Plex Media Server is running?</string>
 	<key>Include music sections in automatic updates</key>
 	<string>Include music sections in automatic updates</string>
+	<key>LIBRARY SECTIONS</key>
+	<string>LIBRARY SECTIONS</string>
 	<key>Language:</key>
 	<string>Language:</string>
 	<key>Large music sections may take a long time to scan</key>
@@ -306,6 +318,8 @@ Are you sure it's running?</string>
 	<string>no episodes</string>
 	<key>no movies</key>
 	<string>no movies</string>
+	<key>no tracks</key>
+	<string>no tracks</string>
 	<key>season</key>
 	<string>season</string>
 	<key>show</key>
