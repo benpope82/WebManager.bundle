@@ -871,7 +871,7 @@ _isLocalFileConnection=NO;
 return _8;
 }
 })]);
-p;31;Controllers/MMAlbumController.jt;4973;@STATIC;1.0;I;25;AppKit/CPViewController.ji;33;MMMetadataItemToolbarController.ji;28;../Views/MMAlbumDetailView.jt;4853;
+p;31;Controllers/MMAlbumController.jt;4976;@STATIC;1.0;I;25;AppKit/CPViewController.ji;33;MMMetadataItemToolbarController.ji;28;../Views/MMAlbumDetailView.jt;4856;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("MMMetadataItemToolbarController.j",YES);
 objj_executeFile("../Views/MMAlbumDetailView.j",YES);
@@ -904,7 +904,7 @@ return _d;
 }
 }),new objj_method(sel_getUid("loadView"),function(_f,_10){
 with(_f){
-toolbarController=objj_msgSend(objj_msgSend(MMMediaItemToolbarController,"alloc"),"init");
+toolbarController=objj_msgSend(objj_msgSend(MMMetadataItemToolbarController,"alloc"),"init");
 var _11=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMake(0,0,800,800)),_12=objj_msgSend(toolbarController,"view"),_13=CGRectGetHeight(objj_msgSend(_12,"frame")),_14=objj_msgSend(objj_msgSend(MMAlbumDetailView,"alloc"),"initWithFrame:",CGRectMakeZero());
 objj_msgSend(_12,"setFrame:",CGRectMake(0,CGRectGetHeight(objj_msgSend(_11,"frame"))-_13,CGRectGetWidth(objj_msgSend(_11,"frame")),_13));
 objj_msgSend(_14,"setFrame:",CGRectMake(0,0,CGRectGetWidth(objj_msgSend(_11,"frame")),CGRectGetMinY(objj_msgSend(_12,"frame"))));
@@ -4284,24 +4284,24 @@ objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificatio
 objj_msgSend(_24,"_scheduleTimer");
 }
 })]);
-p;38;DataSources/MMMediaMatchesDataSource.jt;2878;@STATIC;1.0;i;14;MMDataSource.ji;26;../Models/MMSearchResult.ji;23;../Models/MMMediaItem.ji;19;../Models/MMAgent.ji;18;../Models/PMSURL.ji;27;../CPDictionary+URLParams.jt;2702;
+p;38;DataSources/MMMediaMatchesDataSource.jt;2896;@STATIC;1.0;i;14;MMDataSource.ji;26;../Models/MMSearchResult.ji;26;../Models/MMMetadataItem.ji;19;../Models/MMAgent.ji;18;../Models/PMSURL.ji;27;../CPDictionary+URLParams.jt;2717;
 objj_executeFile("MMDataSource.j",YES);
 objj_executeFile("../Models/MMSearchResult.j",YES);
-objj_executeFile("../Models/MMMediaItem.j",YES);
+objj_executeFile("../Models/MMMetadataItem.j",YES);
 objj_executeFile("../Models/MMAgent.j",YES);
 objj_executeFile("../Models/PMSURL.j",YES);
 objj_executeFile("../CPDictionary+URLParams.j",YES);
 var _1=objj_allocateClassPair(MMDataSource,"MMMediaMatchesDataSource"),_2=_1.isa;
 objj_registerClassPair(_1);
-class_addMethods(_1,[new objj_method(sel_getUid("refreshRecordsForMediaItem:title:agent:language:year:"),function(_3,_4,_5,_6,_7,_8,_9){
+class_addMethods(_1,[new objj_method(sel_getUid("refreshRecordsForMetadataItem:title:agent:language:year:"),function(_3,_4,_5,_6,_7,_8,_9){
 with(_3){
-objj_msgSend(_3,"refreshRecordsWithContextInfo:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_5,"mediaItem",_6,"title",_9,"year",_7,"agent",_8,"language"));
+objj_msgSend(_3,"refreshRecordsWithContextInfo:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_5,"metadataItem",_6,"title",_9,"year",_7,"agent",_8,"language"));
 }
-}),new objj_method(sel_getUid("selectMatch:forMediaItem:"),function(_a,_b,_c,_d){
+}),new objj_method(sel_getUid("selectMatch:forMetadataItem:"),function(_a,_b,_c,_d){
 with(_a){
 objj_msgSend(_a,"updateRecord:contextInfo:",_c,_d);
 }
-}),new objj_method(sel_getUid("refreshMatchForMediaItem:"),function(_e,_f,_10){
+}),new objj_method(sel_getUid("refreshMatchForMetadataItem:"),function(_e,_f,_10){
 with(_e){
 objj_msgSend(_e,"updateRecord:contextInfo:",nil,_10);
 }
@@ -9141,11 +9141,13 @@ with(_8){
 return objj_msgSend(CPSet,"setWithObject:","representedObject");
 }
 })]);
-p;25;Views/MMAlbumDetailView.jt;10108;@STATIC;1.0;I;15;AppKit/CPView.jt;10068;
+p;25;Views/MMAlbumDetailView.jt;9155;@STATIC;1.0;I;15;AppKit/CPView.ji;13;MMImageView.ji;21;MMTitleAndYearLabel.jt;9072;
 objj_executeFile("AppKit/CPView.j",NO);
+objj_executeFile("MMImageView.j",YES);
+objj_executeFile("MMTitleAndYearLabel.j",YES);
 var _1=CGSizeMake(512,512);
 var _2=objj_allocateClassPair(CPView,"MMAlbumDetailView"),_3=_2.isa;
-class_addIvars(_2,[new objj_ivar("_titleLabel"),new objj_ivar("_yearLabel"),new objj_ivar("_summaryLabel"),new objj_ivar("_thumbView"),new objj_ivar("_trackTableView"),new objj_ivar("_trackTitleColumn"),new objj_ivar("_title"),new objj_ivar("_year"),new objj_ivar("_summary"),new objj_ivar("_thumbImage"),new objj_ivar("_tracksController")]);
+class_addIvars(_2,[new objj_ivar("titleAndYearLabel"),new objj_ivar("_summaryLabel"),new objj_ivar("_thumbView"),new objj_ivar("_trackTableView"),new objj_ivar("_trackTitleColumn"),new objj_ivar("_title"),new objj_ivar("_year"),new objj_ivar("_summary"),new objj_ivar("_thumbImage"),new objj_ivar("_tracksController")]);
 objj_registerClassPair(_2);
 class_addMethods(_2,[new objj_method(sel_getUid("title"),function(_4,_5){
 with(_4){
@@ -9196,20 +9198,11 @@ objj_msgSend(_thumbView,"setSizeConstraint:",_1);
 objj_msgSend(_thumbView,"addObserver:forKeyPath:options:context:",_18,"imageRect",CPKeyValueChangeNewKey,nil);
 objj_msgSend(_thumbView,"bind:toObject:withKeyPath:options:","image",_18,"thumbImage",nil);
 objj_msgSend(_18,"addSubview:",_thumbView);
-_titleLabel=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_titleLabel,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",32));
-objj_msgSend(_titleLabel,"setStringValue:","Album Title");
-objj_msgSend(_titleLabel,"setAutoresizingMask:",CPViewMaxXMargin);
-objj_msgSend(_titleLabel,"setLineBreakMode:",CPLineBreakByTruncatingTail);
-objj_msgSend(_titleLabel,"sizeToFit");
-objj_msgSend(_titleLabel,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(_thumbView,"frame"))+_1b,CGRectGetMinY(objj_msgSend(_thumbView,"frame"))));
-objj_msgSend(_18,"addSubview:",_titleLabel);
-_yearLabel=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_yearLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",24));
-objj_msgSend(_yearLabel,"setStringValue:","(2010)");
-objj_msgSend(_yearLabel,"sizeToFit");
-objj_msgSend(_18,"addSubview:",_yearLabel);
-_summaryLabel=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMake(CGRectGetMinX(objj_msgSend(_titleLabel,"frame")),CGRectGetMaxY(objj_msgSend(_titleLabel,"frame")),CGRectGetWidth(_1a)-CGRectGetMinX(objj_msgSend(_titleLabel,"frame"))-_1b,CGRectGetHeight(_1a)-CGRectGetMaxY(objj_msgSend(_titleLabel,"frame"))-_1b*2));
+titleAndYearLabel=objj_msgSend(objj_msgSend(MMTitleAndYearLabel,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(titleAndYearLabel,"sizeToFit");
+objj_msgSend(titleAndYearLabel,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(_thumbView,"frame"))+_1b,CGRectGetMinY(objj_msgSend(_thumbView,"frame"))));
+objj_msgSend(_18,"addSubview:",titleAndYearLabel);
+_summaryLabel=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMake(CGRectGetMinX(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetMaxY(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetWidth(_1a)-CGRectGetMinX(objj_msgSend(titleAndYearLabel,"frame"))-_1b,CGRectGetHeight(_1a)-CGRectGetMaxY(objj_msgSend(titleAndYearLabel,"frame"))-_1b*2));
 objj_msgSend(_summaryLabel,"bind:toObject:withKeyPath:options:",CPValueBinding,_18,"summary",nil);
 objj_msgSend(_summaryLabel,"setAutoresizingMask:",CPViewWidthSizable|CPViewHeightSizable);
 objj_msgSend(_summaryLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
@@ -9254,14 +9247,12 @@ objj_msgSend(_tracksController,"setContent:",_25);
 }),new objj_method(sel_getUid("setTitle:"),function(_26,_27,_28){
 with(_26){
 _title=_28;
-objj_msgSend(_titleLabel,"setStringValue:",_title);
-objj_msgSend(_26,"setNeedsLayout");
+objj_msgSend(titleAndYearLabel,"setTitle:",_title);
 }
 }),new objj_method(sel_getUid("setYear:"),function(_29,_2a,_2b){
 with(_29){
 _year=_2b;
-objj_msgSend(_yearLabel,"setStringValue:",_year?objj_msgSend(CPString,"stringWithFormat:","(%@)",_year):"");
-objj_msgSend(_29,"setNeedsLayout");
+objj_msgSend(titleAndYearLabel,"setYear:",_year);
 }
 }),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_2c,_2d,_2e,_2f,_30,_31){
 with(_2c){
@@ -9272,62 +9263,56 @@ objj_msgSend(_2c,"setNeedsLayout");
 }),new objj_method(sel_getUid("layoutSubviews"),function(_32,_33){
 with(_32){
 objj_msgSendSuper({receiver:_32,super_class:objj_getClass("MMAlbumDetailView").super_class},"layoutSubviews");
-objj_msgSend(_yearLabel,"sizeToFit");
-objj_msgSend(_titleLabel,"sizeToFit");
-var _34=CGRectGetWidth(objj_msgSend(_32,"frame"))-CGRectGetMinX(objj_msgSend(_titleLabel,"frame"))-20-CGRectGetWidth(objj_msgSend(_yearLabel,"frame"));
-if(CGRectGetWidth(objj_msgSend(_titleLabel,"frame"))>_34){
-objj_msgSend(_titleLabel,"setFrameSize:",CGSizeMake(_34,CGRectGetHeight(objj_msgSend(_titleLabel,"frame"))));
-}
-objj_msgSend(_yearLabel,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(_titleLabel,"frame")),CGRectGetMidY(objj_msgSend(_titleLabel,"frame"))-CGRectGetHeight(objj_msgSend(_yearLabel,"frame"))/2));
+objj_msgSend(titleAndYearLabel,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_32,"frame"))-20-CGRectGetMinX(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetHeight(objj_msgSend(titleAndYearLabel,"frame"))));
 objj_msgSend(_trackTableView,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_thumbView,"frame")),CGRectGetHeight(objj_msgSend(_trackTableView,"frame"))));
-var _35=CGRectGetWidth(objj_msgSend(_trackTableView,"frame")),_36=objj_msgSend(_trackTableView,"tableColumns");
-for(var i=0,_37=objj_msgSend(_36,"count");i<_37;i++){
-var _38=_36[i];
-if(_38!=_trackTitleColumn){
-_35-=objj_msgSend(_38,"width");
+var _34=CGRectGetWidth(objj_msgSend(_trackTableView,"frame")),_35=objj_msgSend(_trackTableView,"tableColumns");
+for(var i=0,_36=objj_msgSend(_35,"count");i<_36;i++){
+var _37=_35[i];
+if(_37!=_trackTitleColumn){
+_34-=objj_msgSend(_37,"width");
 }
 }
-_35-=(objj_msgSend(_36,"count")-1)*objj_msgSend(_trackTableView,"intercellSpacing").width+1;
-objj_msgSend(_trackTitleColumn,"setWidth:",_35);
+_34-=(objj_msgSend(_35,"count")-1)*objj_msgSend(_trackTableView,"intercellSpacing").width+1;
+objj_msgSend(_trackTitleColumn,"setWidth:",_34);
 }
-}),new objj_method(sel_getUid("tableView:shouldSelectRow:"),function(_39,_3a,_3b,_3c){
-with(_39){
+}),new objj_method(sel_getUid("tableView:shouldSelectRow:;"),function(_38,_39,_3a,_3b){
+with(_38){
 return NO;
 }
 })]);
 var _2=objj_allocateClassPair(CPValueTransformer,"MMAlbumIndexTransformer"),_3=_2.isa;
 objj_registerClassPair(_2);
-class_addMethods(_2,[new objj_method(sel_getUid("transformedValue:"),function(_3d,_3e,_3f){
-with(_3d){
-return objj_msgSend(CPString,"stringWithFormat:","%d.",_3f);
+class_addMethods(_2,[new objj_method(sel_getUid("transformedValue:"),function(_3c,_3d,_3e){
+with(_3c){
+return objj_msgSend(CPString,"stringWithFormat:","%d.",_3e);
 }
 })]);
 var _2=objj_allocateClassPair(CPValueTransformer,"MMAlbumDurationTransformer"),_3=_2.isa;
 objj_registerClassPair(_2);
-class_addMethods(_2,[new objj_method(sel_getUid("transformedValue:"),function(_40,_41,_42){
-with(_40){
-if(objj_msgSend(_42,"isKindOfClass:",CPArray)){
-_42=objj_msgSend(_42,"count")?objj_msgSend(_42,"objectAtIndex:",0):nil;
+class_addMethods(_2,[new objj_method(sel_getUid("transformedValue:"),function(_3f,_40,_41){
+with(_3f){
+if(objj_msgSend(_41,"isKindOfClass:",CPArray)){
+_41=objj_msgSend(_41,"count")?objj_msgSend(_41,"objectAtIndex:",0):nil;
 }
-return objj_msgSend((_42/1000),"timeString");
+return objj_msgSend((_41/1000),"timeString");
 }
 })]);
 var _2=objj_allocateClassPair(CPTableView,"MMTrackTableView"),_3=_2.isa;
 objj_registerClassPair(_2);
-class_addMethods(_2,[new objj_method(sel_getUid("initWithFrame:"),function(_43,_44,_45){
-with(_43){
-if(_43=objj_msgSendSuper({receiver:_43,super_class:objj_getClass("MMTrackTableView").super_class},"initWithFrame:",_45)){
-objj_msgSend(_43,"setSelectionHighlightStyle:",CPTableViewSelectionHighlightStyleNone);
-objj_msgSend(_43,"setBackgroundColor:",nil);
+class_addMethods(_2,[new objj_method(sel_getUid("initWithFrame:"),function(_42,_43,_44){
+with(_42){
+if(_42=objj_msgSendSuper({receiver:_42,super_class:objj_getClass("MMTrackTableView").super_class},"initWithFrame:",_44)){
+objj_msgSend(_42,"setSelectionHighlightStyle:",CPTableViewSelectionHighlightStyleNone);
+objj_msgSend(_42,"setBackgroundColor:",nil);
 }
-return _43;
+return _42;
 }
-}),new objj_method(sel_getUid("isOpaque"),function(_46,_47){
-with(_46){
+}),new objj_method(sel_getUid("isOpaque"),function(_45,_46){
+with(_45){
 return NO;
 }
-}),new objj_method(sel_getUid("drawBackgroundInClipRect:"),function(_48,_49,_4a){
-with(_48){
+}),new objj_method(sel_getUid("drawBackgroundInClipRect:"),function(_47,_48,_49){
+with(_47){
 }
 })]);
 p;18;Views/MMClipView.jt;4388;@STATIC;1.0;I;33;Foundation/CPNotificationCenter.jI;19;AppKit/CPClipView.jt;4307;
@@ -11132,7 +11117,7 @@ return YES;
 return objj_msgSendSuper({receiver:_1f,super_class:objj_getClass("MMMetadataItemCollectionView").super_class},"performKeyEquivalent:",_21);
 }
 })]);
-p;32;Views/MMMetadataItemDetailView.jt;14732;@STATIC;1.0;I;20;AppKit/CPImageView.jI;15;AppKit/CPMenu.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.ji;22;../CPDate+Formatting.ji;43;../DataSources/MMPosterMetadataDataSource.ji;41;../DataSources/MMLibraryMediaDataSource.ji;43;../DataSources/MMBannerMetadataDataSource.ji;50;../DataSources/MMBackgroundArtMetadataDataSource.ji;26;../Models/MMMetadataItem.ji;11;HUDButton.jt;14351;
+p;32;Views/MMMetadataItemDetailView.jt;13679;@STATIC;1.0;I;20;AppKit/CPImageView.jI;15;AppKit/CPMenu.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.ji;22;../CPDate+Formatting.ji;43;../DataSources/MMPosterMetadataDataSource.ji;41;../DataSources/MMLibraryMediaDataSource.ji;43;../DataSources/MMBannerMetadataDataSource.ji;50;../DataSources/MMBackgroundArtMetadataDataSource.ji;26;../Models/MMMetadataItem.ji;11;HUDButton.ji;21;MMTitleAndYearLabel.jt;13272;
 objj_executeFile("AppKit/CPImageView.j",NO);
 objj_executeFile("AppKit/CPMenu.j",NO);
 objj_executeFile("AppKit/CPTextField.j",NO);
@@ -11144,10 +11129,11 @@ objj_executeFile("../DataSources/MMBannerMetadataDataSource.j",YES);
 objj_executeFile("../DataSources/MMBackgroundArtMetadataDataSource.j",YES);
 objj_executeFile("../Models/MMMetadataItem.j",YES);
 objj_executeFile("HUDButton.j",YES);
+objj_executeFile("MMTitleAndYearLabel.j",YES);
 var _1=CGSizeMake(512,512);
 var _2=CGSizeMake(1280,720);
 var _3=objj_allocateClassPair(CPView,"MMMetadataItemDetailView"),_4=_3.isa;
-class_addIvars(_3,[new objj_ivar("_delegate"),new objj_ivar("_titleField"),new objj_ivar("_yearField"),new objj_ivar("_taglineField"),new objj_ivar("_summaryField"),new objj_ivar("_thumbView"),new objj_ivar("_artView"),new objj_ivar("_title"),new objj_ivar("_year"),new objj_ivar("_tagline"),new objj_ivar("_summary"),new objj_ivar("_thumbImage"),new objj_ivar("_artImage"),new objj_ivar("artOverlay"),new objj_ivar("artOverlayView"),new objj_ivar("_containerView"),new objj_ivar("_childrenCollectionView"),new objj_ivar("_childrenController")]);
+class_addIvars(_3,[new objj_ivar("_delegate"),new objj_ivar("titleAndYearLabel"),new objj_ivar("_taglineField"),new objj_ivar("_summaryField"),new objj_ivar("_thumbView"),new objj_ivar("_artView"),new objj_ivar("_title"),new objj_ivar("_year"),new objj_ivar("_tagline"),new objj_ivar("_summary"),new objj_ivar("_thumbImage"),new objj_ivar("_artImage"),new objj_ivar("artOverlay"),new objj_ivar("artOverlayView"),new objj_ivar("_containerView"),new objj_ivar("_childrenCollectionView"),new objj_ivar("_childrenController")]);
 objj_registerClassPair(_3);
 class_addMethods(_3,[new objj_method(sel_getUid("delegate"),function(_5,_6){
 with(_5){
@@ -11242,26 +11228,18 @@ objj_msgSend(_thumbView,"setSizeConstraint:",_1);
 objj_msgSend(_thumbView,"addObserver:forKeyPath:options:context:",_28,"imageRect",CPKeyValueChangeNewKey,nil);
 objj_msgSend(_thumbView,"bind:toObject:withKeyPath:options:","image",_28,"thumbImage",nil);
 objj_msgSend(_containerView,"addSubview:",_thumbView);
-_titleField=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_titleField,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",32));
-objj_msgSend(_titleField,"setStringValue:","Movie Title");
-objj_msgSend(_titleField,"setAutoresizingMask:",CPViewMaxXMargin);
-objj_msgSend(_titleField,"setLineBreakMode:",CPLineBreakByTruncatingTail);
-objj_msgSend(_titleField,"sizeToFit");
-objj_msgSend(_titleField,"bind:toObject:withKeyPath:options:",CPValueBinding,_28,"title",nil);
-objj_msgSend(_titleField,"setFrame:",CGRectMake(CGRectGetWidth(objj_msgSend(_thumbView,"frame"))+_2b*2,CGRectGetMinY(objj_msgSend(_thumbView,"frame")),CGRectGetMaxX(_2c)+_2b-CGRectGetWidth(objj_msgSend(_thumbView,"frame")),CGRectGetHeight(objj_msgSend(_titleField,"frame"))));
-objj_msgSend(_containerView,"addSubview:",_titleField);
-_yearField=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_yearField,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",24));
-objj_msgSend(_yearField,"setStringValue:","(2010)");
-objj_msgSend(_yearField,"sizeToFit");
-objj_msgSend(_containerView,"addSubview:",_yearField);
+titleAndYearLabel=objj_msgSend(objj_msgSend(MMTitleAndYearLabel,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(titleAndYearLabel,"sizeToFit");
+objj_msgSend(titleAndYearLabel,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(_thumbView,"frame"))+_2b,CGRectGetMinY(objj_msgSend(_thumbView,"frame"))));
+objj_msgSend(titleAndYearLabel,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_containerView,"frame"))-_2b-CGRectGetMinX(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetHeight(objj_msgSend(titleAndYearLabel,"frame"))));
+objj_msgSend(titleAndYearLabel,"setAutoresizingMask:",CPViewWidthSizable);
+objj_msgSend(_containerView,"addSubview:",titleAndYearLabel);
 _taglineField=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
 objj_msgSend(_taglineField,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",16));
 objj_msgSend(_taglineField,"setStringValue:","Tagline");
 objj_msgSend(_taglineField,"sizeToFit");
 objj_msgSend(_taglineField,"bind:toObject:withKeyPath:options:",CPValueBinding,_28,"tagline",nil);
-objj_msgSend(_taglineField,"setFrame:",CGRectMake(CGRectGetMinX(objj_msgSend(_titleField,"frame")),CGRectGetMaxY(objj_msgSend(_titleField,"frame")),CGRectGetMaxX(_2c)-_2b-CGRectGetMinX(objj_msgSend(_titleField,"frame")),CGRectGetHeight(objj_msgSend(_taglineField,"frame"))));
+objj_msgSend(_taglineField,"setFrame:",CGRectMake(CGRectGetMinX(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetMaxY(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetMaxX(_2c)-_2b-CGRectGetMinX(objj_msgSend(titleAndYearLabel,"frame")),CGRectGetHeight(objj_msgSend(_taglineField,"frame"))));
 objj_msgSend(_taglineField,"setAutoresizingMask:",CPViewMaxXMargin);
 objj_msgSend(_taglineField,"setLineBreakMode:",CPLineBreakByTruncatingTail);
 objj_msgSend(_containerView,"addSubview:",_taglineField);
@@ -11280,20 +11258,13 @@ return _28;
 }
 }),new objj_method(sel_getUid("setTitle:"),function(_2e,_2f,_30){
 with(_2e){
-if(_title===_30){
-return;
-}
 _title=_30;
-objj_msgSend(_2e,"setNeedsLayout");
+objj_msgSend(titleAndYearLabel,"setTitle:",_30);
 }
 }),new objj_method(sel_getUid("setYear:"),function(_31,_32,_33){
 with(_31){
-if(_year===_33){
-return;
-}
 _year=_33;
-objj_msgSend(_yearField,"setStringValue:",_33?objj_msgSend(CPString,"stringWithFormat:","(%@)",_33):nil);
-objj_msgSend(_31,"setNeedsLayout");
+objj_msgSend(titleAndYearLabel,"setYear:",_33);
 }
 }),new objj_method(sel_getUid("setThumbImage:"),function(_34,_35,_36){
 with(_34){
@@ -11357,7 +11328,6 @@ CGContextDrawLinearGradient(_47,_4a,_4f,_50,0);
 with(_51){
 objj_msgSend(_51,"layoutArtView");
 objj_msgSend(_51,"layoutThumbView");
-objj_msgSend(_51,"refreshView");
 objj_msgSendSuper({receiver:_51,super_class:objj_getClass("MMMetadataItemDetailView").super_class},"layoutSubviews");
 }
 }),new objj_method(sel_getUid("layoutArtView"),function(_53,_54){
@@ -11422,21 +11392,10 @@ objj_msgSend(_summaryField,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSen
 }
 _childrenController=_6f;
 }
-}),new objj_method(sel_getUid("refreshView"),function(_70,_71){
+}),new objj_method(sel_getUid("collectionView:didDoubleClickOnItemAtIndex:"),function(_70,_71,_72,_73){
 with(_70){
-objj_msgSend(_titleField,"sizeToFit");
-if(_year){
-objj_msgSend(_yearField,"sizeToFit");
-objj_msgSend(_yearField,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(_titleField,"frame"))+5,CGRectGetMidY(objj_msgSend(_titleField,"frame"))-CGRectGetHeight(objj_msgSend(_yearField,"frame"))/2));
-objj_msgSend(_yearField,"setHidden:",NO);
-}else{
-objj_msgSend(_yearField,"setHidden:",YES);
-}
-}
-}),new objj_method(sel_getUid("collectionView:didDoubleClickOnItemAtIndex:"),function(_72,_73,_74,_75){
-with(_72){
 if(objj_msgSend(_delegate,"respondsToSelector:",sel_getUid("metadataItemDetailView:didSelectChild:"))){
-objj_msgSend(_delegate,"metadataItemDetailView:didSelectChild:",_72,objj_msgSend(objj_msgSend(_74,"content"),"objectAtIndex:",_75));
+objj_msgSend(_delegate,"metadataItemDetailView:didSelectChild:",_70,objj_msgSend(objj_msgSend(_72,"content"),"objectAtIndex:",_73));
 }
 }
 })]);
@@ -11822,7 +11781,7 @@ with(_8){
 return objj_msgSend(CPSet,"setWithObject:","representedObject");
 }
 })]);
-p;26;Views/MMSeasonDetailView.jt;5973;@STATIC;1.0;I;15;AppKit/CPView.jt;5934;
+p;26;Views/MMSeasonDetailView.jt;6278;@STATIC;1.0;I;15;AppKit/CPView.jt;6239;
 objj_executeFile("AppKit/CPView.j",NO);
 var _1=objj_allocateClassPair(CPView,"MMSeasonDetailView"),_2=_1.isa;
 class_addIvars(_1,[new objj_ivar("_title"),new objj_ivar("_subtitle"),new objj_ivar("_thumbImage"),new objj_ivar("_childrenCollectionView"),new objj_ivar("_delegate")]);
@@ -11882,6 +11841,9 @@ _titleLabel=objj_msgSend(CPTextField,"labelWithTitle:","Season 1");
 objj_msgSend(_titleLabel,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",28));
 objj_msgSend(_titleLabel,"sizeToFit");
 objj_msgSend(_titleLabel,"setFrameOrigin:",CGPointMake(80,18));
+objj_msgSend(_titleLabel,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_1b,"frame"))-CGRectGetMinX(objj_msgSend(_titleLabel,"frame"))-20,CGRectGetHeight(objj_msgSend(_titleLabel,"frame"))));
+objj_msgSend(_titleLabel,"setLineBreakMode:",CPLineBreakByTruncatingTail);
+objj_msgSend(_titleLabel,"setAutoresizingMask:",CPViewWidthSizable);
 objj_msgSend(_titleLabel,"bind:toObject:withKeyPath:options:",CPValueBinding,_17,"title",nil);
 objj_msgSend(_1b,"addSubview:",_titleLabel);
 _subtitleLabel=objj_msgSend(CPTextField,"labelWithTitle:","10 episodes");
@@ -11934,7 +11896,6 @@ objj_msgSend(_childrenCollectionView,"unbind:","content");
 }),new objj_method(sel_getUid("layoutSubviews"),function(_2a,_2b){
 with(_2a){
 objj_msgSendSuper({receiver:_2a,super_class:objj_getClass("MMSeasonDetailView").super_class},"layoutSubviews");
-objj_msgSend(_titleLabel,"sizeToFit");
 objj_msgSend(_subtitleLabel,"sizeToFit");
 }
 }),new objj_method(sel_getUid("collectionView:didDoubleClickOnItemAtIndex:"),function(_2c,_2d,_2e,_2f){
@@ -12647,6 +12608,73 @@ objj_registerClassPair(_1);
 class_addMethods(_2,[new objj_method(sel_getUid("themeAttributes"),function(_3,_4){
 with(_3){
 return objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",CGInsetMake(15,15,15,15),"content-inset");
+}
+})]);
+p;27;Views/MMTitleAndYearLabel.jt;3147;@STATIC;1.0;I;15;AppKit/CPView.jt;3108;
+objj_executeFile("AppKit/CPView.j",NO);
+var _1=objj_allocateClassPair(CPView,"MMTitleAndYearLabel"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("titleLabel"),new objj_ivar("yearLabel"),new objj_ivar("title"),new objj_ivar("year")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("title"),function(_3,_4){
+with(_3){
+return title;
+}
+}),new objj_method(sel_getUid("setTitle:"),function(_5,_6,_7){
+with(_5){
+title=_7;
+}
+}),new objj_method(sel_getUid("year"),function(_8,_9){
+with(_8){
+return year;
+}
+}),new objj_method(sel_getUid("setYear:"),function(_a,_b,_c){
+with(_a){
+year=_c;
+}
+}),new objj_method(sel_getUid("initWithFrame:"),function(_d,_e,_f){
+with(_d){
+if(_d=objj_msgSendSuper({receiver:_d,super_class:objj_getClass("MMTitleAndYearLabel").super_class},"initWithFrame:",_f)){
+titleLabel=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(titleLabel,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",32));
+objj_msgSend(titleLabel,"sizeToFit");
+objj_msgSend(titleLabel,"setLineBreakMode:",CPLineBreakByTruncatingTail);
+objj_msgSend(_d,"addSubview:",titleLabel);
+yearLabel=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(yearLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",24));
+objj_msgSend(yearLabel,"sizeToFit");
+objj_msgSend(_d,"addSubview:",yearLabel);
+}
+return _d;
+}
+}),new objj_method(sel_getUid("setTitle:"),function(_10,_11,_12){
+with(_10){
+title=_12;
+objj_msgSend(titleLabel,"setStringValue:",title);
+objj_msgSend(_10,"setNeedsLayout");
+}
+}),new objj_method(sel_getUid("setYear:"),function(_13,_14,_15){
+with(_13){
+year=_15;
+objj_msgSend(yearLabel,"setStringValue:",year?objj_msgSend(CPString,"stringWithFormat:","(%@)",year):"");
+objj_msgSend(_13,"setNeedsLayout");
+}
+}),new objj_method(sel_getUid("sizeToFit"),function(_16,_17){
+with(_16){
+objj_msgSend(titleLabel,"sizeToFit");
+objj_msgSend(yearLabel,"sizeToFit");
+objj_msgSend(_16,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(titleLabel,"frame"))+CGRectGetWidth(objj_msgSend(yearLabel,"frame")),MAX(CGRectGetMaxY(objj_msgSend(titleLabel,"frame")),CGRectGetMaxY(objj_msgSend(yearLabel,"frame")))));
+}
+}),new objj_method(sel_getUid("layoutSubviews"),function(_18,_19){
+with(_18){
+objj_msgSendSuper({receiver:_18,super_class:objj_getClass("MMTitleAndYearLabel").super_class},"layoutSubviews");
+objj_msgSend(titleLabel,"sizeToFit");
+objj_msgSend(yearLabel,"sizeToFit");
+var _1a=CGRectGetWidth(objj_msgSend(_18,"frame"))-CGRectGetWidth(objj_msgSend(yearLabel,"frame"));
+if(CGRectGetWidth(objj_msgSend(titleLabel,"frame"))>_1a){
+objj_msgSend(titleLabel,"setFrameSize:",CGSizeMake(_1a,CGRectGetHeight(objj_msgSend(titleLabel,"frame"))));
+}
+objj_msgSend(titleLabel,"setFrameOrigin:",CGPointMake(0,(CGRectGetHeight(objj_msgSend(_18,"frame"))-CGRectGetHeight(objj_msgSend(titleLabel,"frame")))/2));
+objj_msgSend(yearLabel,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(titleLabel,"frame")),(CGRectGetHeight(objj_msgSend(_18,"frame"))-CGRectGetHeight(objj_msgSend(yearLabel,"frame")))/2));
 }
 })]);
 p;17;Views/MMToolbar.jt;5847;@STATIC;1.0;I;15;AppKit/CPView.jt;5808;
