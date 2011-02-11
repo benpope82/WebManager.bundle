@@ -9,7 +9,7 @@
 	<key>%d artists</key>
 	<string>%d artistes</string>
 	<key>%d episodes</key>
-	<string>%d episodes</string>
+	<string>%d épisodes</string>
 	<key>%d movies</key>
 	<string>%d films</string>
 	<key>%d tracks</key>
@@ -23,7 +23,7 @@
 	<key>1 artist</key>
 	<string>1 artiste</string>
 	<key>1 episode</key>
-	<string>1 episode</string>
+	<string>1 épisode</string>
 	<key>1 movie</key>
 	<string>1 film</string>
 	<key>1 track</key>
@@ -39,7 +39,7 @@
 	<key>&gt; Automatic theme music for TV shows</key>
 	<string>&gt; Téléchargement automatique des génériques pour séries télés</string>
 	<key>&gt; Customize every detail of each movie</key>
-	<string>&gt; Personalisation de tous les details, pour tous les films</string>
+	<string>&gt; Personnalisation de tous les détails, pour tous les films</string>
 	<key>&gt; Great for your personal media</key>
 	<string>&gt; Génial pour vos médias perso</string>
 	<key>&gt; Movie posters and art</key>
@@ -77,23 +77,23 @@
 	<key>Cancel</key>
 	<string>Annuler</string>
 	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
-	<string>La verification de compatibilité s'assure que les plug-ins incompatibles avec cette version du serveur ou avec la version actuelle de l'application client que vous utilisez demeurent cachés.</string>
+	<string>La vérification de compatibilité s'assure que les plug-ins incompatibles avec cette version du serveur ou avec la version actuelle de l'application client que vous utilisez demeurent cachés.</string>
 	<key>Change Artwork</key>
 	<string>Changer Images</string>
 	<key>Choose Album Thumbnail</key>
-	<string>Selectionner Vignette Album</string>
+	<string>Sélectionner Vignette Album</string>
 	<key>Choose Background Art</key>
-	<string>Selectionner Image fond d'écran</string>
+	<string>Sélectionner Image fond d'écran</string>
 	<key>Choose Banner</key>
-	<string>Selectionner Bannière</string>
+	<string>Sélectionner Bannière</string>
 	<key>Choose Episode Thumbnail</key>
-	<string>Selectionner Vignette Episode</string>
+	<string>Sélectionner Vignette Episode</string>
 	<key>Choose Icon</key>
-	<string>Selectionner Icone</string>
+	<string>Sélectionner Icône</string>
 	<key>Choose Poster</key>
-	<string>Selectionner Affiche</string>
+	<string>Sélectionner Affiche</string>
 	<key>Choose Season Thumbnail</key>
-	<string>Selectionner Vignette Saison</string>
+	<string>Sélectionner Vignette Saison</string>
 	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
 	<string>Cliquez sur les titres ci-dessous pour créer des sections dans la librairie pour vos médias et les partager avec vos clients Plex.</string>
 	<key>Collections</key>
@@ -101,7 +101,7 @@
 	<key>Connecting to Plex Media Server failed with this error: %@.
 
 Are you sure it's running?</key>
-	<string>La Connection au Plex Media Server a échoué avec cause: %@.
+	<string>La Connexion au Plex Media Server a échoué avec cause: %@.
 
 Le Serveur est-il disponible?</string>
 	<key>Content Rating</key>
@@ -113,7 +113,7 @@ Le Serveur est-il disponible?</string>
 	<key>Directors</key>
 	<string>Réalisateurs</string>
 	<key>Disable capability checking</key>
-	<string>Désactiver La Verification de Compatibilité</string>
+	<string>Désactiver La Vérification de Compatibilité</string>
 	<key>Done</key>
 	<string>Terminé</string>
 	<key>Drag folders into the list, or click the '+' button to browse.</key>
@@ -125,9 +125,9 @@ Le Serveur est-il disponible?</string>
 	<key>Episode %d: %@</key>
 	<string>Episode %1$d: %2$@</string>
 	<key>Fix Incorrect Match...</key>
-	<string>Reparer infos incorrectes...</string>
+	<string>Réparer infos incorrectes...</string>
 	<key>Fix incorrect match</key>
-	<string>Reparer infos incorrectes</string>
+	<string>Réparer infos incorrectes</string>
 	<key>Friday</key>
 	<string>Vendredi</string>
 	<key>Friendly name:</key>
@@ -181,7 +181,7 @@ Le Serveur est-il disponible?</string>
 	<key>Name:</key>
 	<string>Nom:</string>
 	<key>Offer higher bitrates over 3G connections</key>
-	<string>Activer haut débit en connection 3G</string>
+	<string>Activer haut débit en connexion 3G</string>
 	<key>Original Title</key>
 	<string>Titre Original</string>
 	<key>Originally Available</key>
@@ -225,7 +225,7 @@ Le Serveur est-il disponible?</string>
 	<key>Section type:</key>
 	<string>Type section:</string>
 	<key>Security</key>
-	<string>Securité</string>
+	<string>Sécurité</string>
 	<key>Select</key>
 	<string>Sélectionner</string>
 	<key>Select %@</key>
@@ -263,7 +263,7 @@ Le Serveur est-il disponible?</string>
 	<key>Tagline</key>
 	<string>Slogan</string>
 	<key>This helps us improve your experience (for example, to help us match movies and TV shows).</key>
-	<string>Ceci nous aide à améliorer votre expérience (par exemple, en nous aidant à associer vos fichiers aux boons films et series).</string>
+	<string>Ceci nous aide à améliorer votre expérience (par exemple, en nous aidant à associer vos fichiers aux bons films et séries).</string>
 	<key>This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead.</key>
 	<string>Ce nom sera utilisé pour identifier ce serveur aux autres ordinateurs de votre réseau. Si vous le laissez vide, le nom de votre ordinateur sera utilisé.</string>
 	<key>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</key>
@@ -329,9 +329,9 @@ Le Serveur est-il disponible?</string>
 	<key>no artists</key>
 	<string>aucuns artistes</string>
 	<key>no episodes</key>
-	<string>auncuns episodes</string>
+	<string>aucuns episodes</string>
 	<key>no movies</key>
-	<string>auncuns films</string>
+	<string>aucuns films</string>
 	<key>no tracks</key>
 	<string>aucunes pistes</string>
 	<key>season</key>
@@ -339,7 +339,7 @@ Le Serveur est-il disponible?</string>
 	<key>show</key>
 	<string>série</string>
 	<key>today</key>
-	<string>auourd'hui</string>
+	<string>aujourd'hui</string>
 	<key>tomorrow</key>
 	<string>demain</string>
 	<key>yesterday</key>

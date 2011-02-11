@@ -6,7 +6,7 @@
 
 /* Status for list of episodes when there is more than one
    Subtitle for a season thumbnail on a TV Show detail view */
-"%d episodes" = "%d episodes";
+"%d episodes" = "%d épisodes";
 
 /* Status label value for when there is more than one movie */
 "%d movies" = "%d films";
@@ -28,7 +28,7 @@
 
 /* Status for list of episodes when there is one
    Subtitle for a season thumbnail on a TV Show detail view */
-"1 episode" = "1 episode";
+"1 episode" = "1 épisode";
 
 /* Status label value for when there is one movie */
 "1 movie" = "1 film";
@@ -55,7 +55,7 @@
 "> Automatic theme music for TV shows" = "> Téléchargement automatique des génériques pour séries télés";
 
 /* First-run help item */
-"> Customize every detail of each movie" = "> Personalisation de tous les details, pour tous les films";
+"> Customize every detail of each movie" = "> Personnalisation de tous les détails, pour tous les films";
 
 /* First-run help item */
 "> Great for your personal media" = "> Génial pour vos médias perso";
@@ -118,31 +118,31 @@
 "Cancel" = "Annuler";
 
 /* Preference window setting detail */
-"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "La verification de compatibilité s'assure que les plug-ins incompatibles avec cette version du serveur ou avec la version actuelle de l'application client que vous utilisez demeurent cachés.";
+"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "La vérification de compatibilité s'assure que les plug-ins incompatibles avec cette version du serveur ou avec la version actuelle de l'application client que vous utilisez demeurent cachés.";
 
 /* Change Artwork */
 "Change Artwork" = "Changer Images";
 
 /* Choose Album Thumbnail menu item */
-"Choose Album Thumbnail" = "Selectionner Vignette Album";
+"Choose Album Thumbnail" = "Sélectionner Vignette Album";
 
 /* Choose Background Art */
-"Choose Background Art" = "Selectionner Image fond d'écran";
+"Choose Background Art" = "Sélectionner Image fond d'écran";
 
 /* Choose Banner */
-"Choose Banner" = "Selectionner Bannière";
+"Choose Banner" = "Sélectionner Bannière";
 
 /* Choose Episode Thumbnail menu item */
-"Choose Episode Thumbnail" = "Selectionner Vignette Episode";
+"Choose Episode Thumbnail" = "Sélectionner Vignette Episode";
 
 /* Choose Icon */
-"Choose Icon" = "Selectionner Icone";
+"Choose Icon" = "Sélectionner Icône";
 
 /* Choose Poster menu item */
-"Choose Poster" = "Selectionner Affiche";
+"Choose Poster" = "Sélectionner Affiche";
 
 /* Choose Season Thumbnail menu item */
-"Choose Season Thumbnail" = "Selectionner Vignette Saison";
+"Choose Season Thumbnail" = "Sélectionner Vignette Saison";
 
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Cliquez sur les titres ci-dessous pour créer des sections dans la librairie pour vos médias et les partager avec vos clients Plex.";
@@ -151,7 +151,7 @@
 "Collections" = "Collections";
 
 /* Error message for when we cannot connect to PMS or when the response is invalid */
-"Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "La Connection au Plex Media Server a échoué avec cause: %@.\n\nLe Serveur est-il disponible?";
+"Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "La Connexion au Plex Media Server a échoué avec cause: %@.\n\nLe Serveur est-il disponible?";
 
 /* Content Rating */
 "Content Rating" = "Classement Contenu";
@@ -169,7 +169,7 @@
 "Directors" = "Réalisateurs";
 
 /* Preference window setting */
-"Disable capability checking" = "Désactiver La Verification de Compatibilité";
+"Disable capability checking" = "Désactiver La Vérification de Compatibilité";
 
 /* Done */
 "Done" = "Terminé";
@@ -205,10 +205,10 @@
 "every 6 hours" = "toutes les 6 heures";
 
 /* Fix incorrect match */
-"Fix incorrect match" = "Reparer infos incorrectes";
+"Fix incorrect match" = "Réparer infos incorrectes";
 
 /* Fix Incorrect Match... */
-"Fix Incorrect Match..." = "Reparer infos incorrectes...";
+"Fix Incorrect Match..." = "Réparer infos incorrectes...";
 
 /* Friday */
 "Friday" = "Vendredi";
@@ -305,10 +305,10 @@
 
 /* Status for list of episodes when there are none
    Subtitle for a season thumbnail on a TV Show detail view */
-"no episodes" = "auncuns episodes";
+"no episodes" = "aucuns episodes";
 
 /* Status label value for when there are no movies */
-"no movies" = "auncuns films";
+"no movies" = "aucuns films";
 
 /* Status label for when there are no tracks in an album
    Subtitle for a album thumbnail on an artist detail view */
@@ -318,7 +318,7 @@
 "no TV shows" = "aucunes séries";
 
 /* Preference window setting */
-"Offer higher bitrates over 3G connections" = "Activer haut débit en connection 3G";
+"Offer higher bitrates over 3G connections" = "Activer haut débit en connexion 3G";
 
 /* Original Title */
 "Original Title" = "Titre Original";
@@ -387,7 +387,7 @@
 "Section type:" = "Type section:";
 
 /* Security */
-"Security" = "Securité";
+"Security" = "Sécurité";
 
 /* Select */
 "Select" = "Sélectionner";
@@ -444,7 +444,7 @@
 "Tagline" = "Slogan";
 
 /* Summary info for collecting usage data */
-"This helps us improve your experience (for example, to help us match movies and TV shows)." = "Ceci nous aide à améliorer votre expérience (par exemple, en nous aidant à associer vos fichiers aux boons films et series).";
+"This helps us improve your experience (for example, to help us match movies and TV shows)." = "Ceci nous aide à améliorer votre expérience (par exemple, en nous aidant à associer vos fichiers aux bons films et séries).";
 
 /* Summary info for friendly name */
 "This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead." = "Ce nom sera utilisé pour identifier ce serveur aux autres ordinateurs de votre réseau. Si vous le laissez vide, le nom de votre ordinateur sera utilisé.";
@@ -459,7 +459,7 @@
 "Title" = "Titre";
 
 /* today */
-"today" = "auourd'hui";
+"today" = "aujourd'hui";
 
 /* tomorrow */
 "tomorrow" = "demain";

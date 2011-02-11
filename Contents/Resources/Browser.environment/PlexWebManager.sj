@@ -2549,7 +2549,7 @@ objj_msgSend(_delegate,"metadataEditorDidCancel:",_51);
 }
 }
 })]);
-p;52;Controllers/MMMetadataItemCollectionViewController.jt;14225;@STATIC;1.0;I;25;AppKit/CPViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;13941;
+p;52;Controllers/MMMetadataItemCollectionViewController.jt;14244;@STATIC;1.0;I;25;AppKit/CPViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;13960;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("../DataSources/MMLibraryMediaDataSource.j",YES);
 objj_executeFile("../DataSources/MMLibraryTimelineDataSource.j",YES);
@@ -2560,7 +2560,7 @@ objj_executeFile("../Views/MMScrollView.j",YES);
 MMMetadataItemCollectionViewControllerStateInitialized=0;
 MMMetadataItemCollectionViewControllerStateLoading=1;
 MMMetadataItemCollectionViewControllerStateLoaded=2;
-var _1=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",CPLocalizedString("Scanning '%@'","Metadata item status message when it is newly scanned/created"),MMMetadataItemStateCreated,CPLocalizedString("Media analysis on '%@'","Metadata item status message when it is being read"),MMMetadataItemStateProgress,CPLocalizedString("Matching '%@'","Metadata item status message when it is being matched to a canonical item"),MMMetadataItemStateMatching,CPLocalizedString("Requesting metadata for '%@'","Metadata item status message when its info is downloading"),MMMetadataItemStateDownloadingMetadata,CPLocalizedString("Loading metadata for '%@'","Metadata item status message when its data is importing"),MMMetadataItemStateLoadingMetadata);
+var _1=nil;
 var _2=objj_allocateClassPair(CPViewController,"MMMetadataItemCollectionViewController"),_3=_2.isa;
 class_addIvars(_2,[new objj_ivar("_librarySection"),new objj_ivar("_dataSource"),new objj_ivar("_collectionView"),new objj_ivar("_sortDescriptor"),new objj_ivar("_title"),new objj_ivar("updateStatus"),new objj_ivar("_readyState")]);
 objj_registerClassPair(_2);
@@ -2737,6 +2737,9 @@ updateStatus=_37;
 }
 }),new objj_method(sel_getUid("showUpdateStatusForItem:"),function(_38,_39,_3a){
 with(_38){
+if(!_1){
+_1=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",CPLocalizedString("Scanning '%@'","Metadata item status message when it is newly scanned/created"),MMMetadataItemStateCreated,CPLocalizedString("Media analysis on '%@'","Metadata item status message when it is being read"),MMMetadataItemStateProgress,CPLocalizedString("Matching '%@'","Metadata item status message when it is being matched to a canonical item"),MMMetadataItemStateMatching,CPLocalizedString("Requesting metadata for '%@'","Metadata item status message when its info is downloading"),MMMetadataItemStateDownloadingMetadata,CPLocalizedString("Loading metadata for '%@'","Metadata item status message when its data is importing"),MMMetadataItemStateLoadingMetadata);
+}
 var _3b=objj_msgSend(_1,"objectForKey:",objj_msgSend(_3a,"state"));
 objj_msgSend(_38,"setUpdateStatus:",_3b&&objj_msgSend(CPString,"stringWithFormat:",_3b,objj_msgSend(_3a,"title")));
 }
