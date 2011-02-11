@@ -150,6 +150,14 @@ Are you sure it's running?</string>
 	<string>Last refreshed %1$@ at %2$@</string>
 	<key>Library</key>
 	<string>Library</string>
+	<key>Loading metadata for '%@'</key>
+	<string>Loading metadata for '%@'</string>
+	<key>Manual Entry</key>
+	<string>Manual Entry</string>
+	<key>Matching '%@'</key>
+	<string>Matching '%@'</string>
+	<key>Media analysis on '%@'</key>
+	<string>Media analysis on '%@'</string>
 	<key>Media file: </key>
 	<string>Media file: </string>
 	<key>Media scanner:</key>
@@ -182,6 +190,8 @@ Are you sure it's running?</string>
 	<string>PLEX MEDIA MANAGER</string>
 	<key>PM</key>
 	<string>PM</string>
+	<key>Path of the directory you'd like to add:</key>
+	<string>Path of the directory you'd like to add:</string>
 	<key>Primary metadata agent:</key>
 	<string>Primary metadata agent:</string>
 	<key>Rating</key>
@@ -198,10 +208,14 @@ Are you sure it's running?</string>
 	<string>Refreshing info for one item</string>
 	<key>Remove Section</key>
 	<string>Remove Section</string>
+	<key>Requesting metadata for '%@'</key>
+	<string>Requesting metadata for '%@'</string>
 	<key>Saturday</key>
 	<string>Saturday</string>
 	<key>Save</key>
 	<string>Save</string>
+	<key>Scanning '%@'</key>
+	<string>Scanning '%@'</string>
 	<key>Search</key>
 	<string>Search</string>
 	<key>Search using:</key>

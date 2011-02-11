@@ -12,6 +12,10 @@
 	<string>에피소드 %d개</string>
 	<key>%d movies</key>
 	<string>영화 %d개</string>
+	<key>%d tracks</key>
+	<string>트랙 %d개</string>
+	<key>%d tracks, %@ total time, %@</key>
+	<string>트랙 %1$d개, 재생시간 %2$@, %3$@</string>
 	<key>%d:%02d %@</key>
 	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
@@ -22,6 +26,10 @@
 	<string>에피소드 1개</string>
 	<key>1 movie</key>
 	<string>영화 1개</string>
+	<key>1 track</key>
+	<string>트랙 1개</string>
+	<key>1 track, %@ total time, %@</key>
+	<string>트랙 1개, 재생시간 %1$@, %2$@</string>
 	<key>&gt; Add posters, custom genres and more</key>
 	<string>&gt; Add posters, custom genres and more</string>
 	<key>&gt; Album reviews</key>
@@ -72,6 +80,8 @@
 	<string>이 옵션을 선택 하면 서버의 버전과 호환되지 않는 플러그 인이나 클라이언트 응용 프로그램도 보여줍니다. 이 옵션은 개발 중일 때 유용하지만, 플러그 인의 접근이 클라이언트 응용 프로그램에 대해 신뢰할 수 없는 동작을 야기할 수 있습니다.</string>
 	<key>Change Artwork</key>
 	<string>이미지 변경</string>
+	<key>Choose Album Thumbnail</key>
+	<string>앨범 썸네일 선택</string>
 	<key>Choose Background Art</key>
 	<string>배경 변경</string>
 	<key>Choose Banner</key>
@@ -130,6 +140,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.</string>
 	<key>Include music sections in automatic updates</key>
 	<string>자동 업데이트에 음악 섹션 포함</string>
+	<key>LIBRARY SECTIONS</key>
+	<string>라이브러리 섹션</string>
 	<key>Language:</key>
 	<string>언어:</string>
 	<key>Large music sections may take a long time to scan</key>
@@ -138,6 +150,14 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>%1$@ %2$@에 갱신되었습니다</string>
 	<key>Library</key>
 	<string>라이브러리</string>
+	<key>Loading metadata for '%@'</key>
+	<string>Loading metadata for '%@'</string>
+	<key>Manual Entry</key>
+	<string>Manual Entry</string>
+	<key>Matching '%@'</key>
+	<string>Matching '%@'</string>
+	<key>Media analysis on '%@'</key>
+	<string>Media analysis on '%@'</string>
 	<key>Media file: </key>
 	<string>파일 위치: </string>
 	<key>Media scanner:</key>
@@ -170,6 +190,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>PLEX 미디어 매니저</string>
 	<key>PM</key>
 	<string>PM</string>
+	<key>Path of the directory you'd like to add:</key>
+	<string>Path of the directory you'd like to add:</string>
 	<key>Primary metadata agent:</key>
 	<string>메타데이터 에이전트:</string>
 	<key>Rating</key>
@@ -186,10 +208,14 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>아이템의 정보를 갱신하고 있습니다.</string>
 	<key>Remove Section</key>
 	<string>섹션 삭제</string>
+	<key>Requesting metadata for '%@'</key>
+	<string>Requesting metadata for '%@'</string>
 	<key>Saturday</key>
 	<string>토요일</string>
 	<key>Save</key>
 	<string>저장</string>
+	<key>Scanning '%@'</key>
+	<string>Scanning '%@'</string>
 	<key>Search</key>
 	<string>검색</string>
 	<key>Search using:</key>
@@ -306,6 +332,8 @@ Plex Media Server가 실행 중인지 확인하세요.</string>
 	<string>에피소드 없음</string>
 	<key>no movies</key>
 	<string>영화 없음</string>
+	<key>no tracks</key>
+	<string>트랙 없음</string>
 	<key>season</key>
 	<string>시즌</string>
 	<key>show</key>

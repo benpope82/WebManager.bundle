@@ -11,6 +11,12 @@
 /* Status label value for when there is more than one movie */
 "%d movies" = "영화 %d개";
 
+/* Subtitle for a album thumbnail on an artist detail view */
+"%d tracks" = "트랙 %d개";
+
+/* Status label for when there are more than one track (e.g. 11 tracks, 47:34 total time, 91.2 MB) */
+"%d tracks, %@ total time, %@" = "트랙 %1$d개, 재생시간 %2$@, %3$@";
+
 /* Status label value for when there is more than one TV show */
 "%d TV shows" = "TV 쇼 %d개";
 
@@ -26,6 +32,12 @@
 
 /* Status label value for when there is one movie */
 "1 movie" = "영화 1개";
+
+/* Subtitle for a album thumbnail on an artist detail view */
+"1 track" = "트랙 1개";
+
+/* Status label for when there is one track in an album (e.g. 1 track, 4:28 total time, 5.6 MB) */
+"1 track, %@ total time, %@" = "트랙 1개, 재생시간 %1$@, %2$@";
 
 /* Status label value for when there is one TV show */
 "1 TV show" = "TV 쇼 1개";
@@ -106,11 +118,13 @@
 "Cancel" = "취소";
 
 /* Preference window setting detail */
-/* Preference window setting detail */
 "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "이 옵션을 선택 하면 서버의 버전과 호환되지 않는 플러그 인이나 클라이언트 응용 프로그램도 보여줍니다. 이 옵션은 개발 중일 때 유용하지만, 플러그 인의 접근이 클라이언트 응용 프로그램에 대해 신뢰할 수 없는 동작을 야기할 수 있습니다.";
 
 /* Change Artwork */
 "Change Artwork" = "이미지 변경";
+
+/* Choose Album Thumbnail menu item */
+"Choose Album Thumbnail" = "앨범 썸네일 선택";
 
 /* Choose Background Art */
 "Choose Background Art" = "배경 변경";
@@ -235,6 +249,21 @@
 /* Library */
 "Library" = "라이브러리";
 
+/* Sidebar group title for library sections */
+"LIBRARY SECTIONS" = "라이브러리 섹션";
+
+/* Metadata item status message when its data is importing */
+"Loading metadata for '%@'" = "Loading metadata for '%@'";
+
+/* Button text for the directory browser to allow the user to type in a path manually */
+"Manual Entry" = "Manual Entry";
+
+/* Metadata item status message when it is being matched to a canonical item */
+"Matching '%@'" = "Matching '%@'";
+
+/* Metadata item status message when it is being read */
+"Media analysis on '%@'" = "Media analysis on '%@'";
+
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "파일 위치: ";
 
@@ -244,11 +273,11 @@
 /* Monday */
 "Monday" = "월요일";
 
-/* A movie */
-"movie" = "영화";
-
 /* Movie */
 "Movie" = "영화";
+
+/* A movie */
+"movie" = "영화";
 
 /* Movies */
 "Movies" = "영화";
@@ -281,6 +310,10 @@
 /* Status label value for when there are no movies */
 "no movies" = "영화 없음";
 
+/* Status label for when there are no tracks in an album
+   Subtitle for a album thumbnail on an artist detail view */
+"no tracks" = "트랙 없음";
+
 /* Status label value when there are no TV shows */
 "no TV shows" = "TV 쇼 없음";
 
@@ -292,6 +325,9 @@
 
 /* Originally Available */
 "Originally Available" = "개봉(첫방송)일";
+
+/* Instruction text for the prompt to add directories manually */
+"Path of the directory you'd like to add:" = "Path of the directory you'd like to add:";
 
 /* Header title */
 "PLEX MEDIA MANAGER" = "PLEX 미디어 매니저";
@@ -323,11 +359,17 @@
 /* Remove section confirmation button */
 "Remove Section" = "섹션 삭제";
 
+/* Metadata item status message when its info is downloading */
+"Requesting metadata for '%@'" = "Requesting metadata for '%@'";
+
 /* Saturday */
 "Saturday" = "토요일";
 
 /* Save */
 "Save" = "저장";
+
+/* Metadata item status message when it is newly scanned/created */
+"Scanning '%@'" = "Scanning '%@'";
 
 /* Search */
 "Search" = "검색";

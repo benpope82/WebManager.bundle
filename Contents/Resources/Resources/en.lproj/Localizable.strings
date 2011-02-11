@@ -252,6 +252,18 @@
 /* Sidebar group title for library sections */
 "LIBRARY SECTIONS" = "LIBRARY SECTIONS";
 
+/* Metadata item status message when its data is importing */
+"Loading metadata for '%@'" = "Loading metadata for '%@'";
+
+/* Button text for the directory browser to allow the user to type in a path manually */
+"Manual Entry" = "Manual Entry";
+
+/* Metadata item status message when it is being matched to a canonical item */
+"Matching '%@'" = "Matching '%@'";
+
+/* Metadata item status message when it is being read */
+"Media analysis on '%@'" = "Media analysis on '%@'";
+
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "Media file: ";
 
@@ -314,6 +326,9 @@
 /* Originally Available */
 "Originally Available" = "Originally Available";
 
+/* Instruction text for the prompt to add directories manually */
+"Path of the directory you'd like to add:" = "Path of the directory you'd like to add:";
+
 /* Header title */
 "PLEX MEDIA MANAGER" = "PLEX MEDIA MANAGER";
 
@@ -344,11 +359,17 @@
 /* Remove section confirmation button */
 "Remove Section" = "Remove Section";
 
+/* Metadata item status message when its info is downloading */
+"Requesting metadata for '%@'" = "Requesting metadata for '%@'";
+
 /* Saturday */
 "Saturday" = "Saturday";
 
 /* Save */
 "Save" = "Save";
+
+/* Metadata item status message when it is newly scanned/created */
+"Scanning '%@'" = "Scanning '%@'";
 
 /* Search */
 "Search" = "Search";
@@ -401,11 +422,11 @@
 /* Sharing */
 "Sharing" = "Sharing";
 
-/* A TV Show */
-"show" = "show";
-
 /* Show */
 "Show" = "Show";
+
+/* A TV Show */
+"show" = "show";
 
 /* Sort Title */
 "Sort Title" = "Sort Title";
