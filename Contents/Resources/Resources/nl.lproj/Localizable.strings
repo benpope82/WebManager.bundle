@@ -49,31 +49,31 @@
 "> Album reviews" = "> Album reviews";
 
 /* First-run help item */
-"> Artist biographies and artwork" = "> Artiestenbiografiën en artwork";
+"> Artist biographies and artwork" = "> Artiestenbiografieën en artwork";
 
 /* First-run help item */
-"> Automatic theme music for TV shows" = "> Automatische theme muziek voor TV series";
+"> Automatic theme music for TV shows" = "> Automatische titelsong voor TV series";
 
 /* First-run help item */
-"> Customize every detail of each movie" = "> Pas ieder detail van een film aan";
+"> Customize every detail of each movie" = "> Personaliseer ieder detail van een film";
 
 /* First-run help item */
 "> Great for your personal media" = "> Fantastisch voor je persoonlijke media";
 
 /* First-run help item */
-"> Movie posters and art" = "> Filmposters en art";
+"> Movie posters and art" = "> Filmposters en achtergronden";
 
 /* First-run help item */
-"> Organize movies into collections" = "> Organize movies into collections";
+"> Organize movies into collections" = "> Stel filmcollecties samen";
 
 /* First-run help item */
 "> Thumbnails for every episode" = "> Thumbnails voor iedere aflevering";
 
 /* First-run help item */
-"> TV show posters and art" = "> TV serie posters en art";
+"> TV show posters and art" = "> Posters en achtergronden voor TV series";
 
 /* First-run title for adding home movies */
-"Add Home Movies Section" = "Voeg Home Movies sectie toe";
+"Add Home Movies Section" = "Voeg Homevideosectie toe";
 
 /* First-run title for adding movies */
 "Add Movies Section" = "Voeg Filmsectie toe";
@@ -85,10 +85,10 @@
 "Add Section" = "Voeg sectie toe";
 
 /* Section settings primary informative text */
-"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "Voeg de mappen met media voor deze sectie beneden toe. Mediabestanden die gevonden worden in deze mappen worden naar de bibliotheek gescand met bovenstaande instellingen.";
+"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "Voeg hieronder mappen met media toe voor deze sectie. De mediabestanden die gevonden worden in deze mappen zullen met bovenstaande instellingen gescand en toegevoegd worden aan de bibliotheek.";
 
 /* First-run title for adding TV shows */
-"Add TV Shows Section" = "Voeg TV Serie sectie toe";
+"Add TV Shows Section" = "Voeg sectie voor TV Series toe";
 
 /* Advanced */
 "Advanced" = "Geavanceerd";
@@ -103,7 +103,7 @@
 "Any content in this section will no longer be available in your library. The files on your computer will not be removed." = "Alle inhoud van deze sectie zal niet langer beschikbaar zijn in de bibliotheek. De bestanden zelf worden niet verwijderd.";
 
 /* Preference window setting */
-"Aperture Sharing Enabled" = "Aperture delen ingeschakeld";
+"Aperture Sharing Enabled" = "Aperture Delen ingeschakeld";
 
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "Weet je zeker dat je de sectie  \"%@\" wilt verwijderen?";
@@ -118,7 +118,7 @@
 "Cancel" = "Annuleer";
 
 /* Preference window setting detail */
-"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Compatibiliteitscontrole zorgt ervoor dat plug-ins die niet compatibel zijn met deze versie van de server of de huidige client applicatie die je gebruikt verborgen zijn.";
+"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.";
 
 /* Change Artwork */
 "Change Artwork" = "Verander Artwork";
@@ -127,37 +127,37 @@
 "Choose Album Thumbnail" = "Kies Album Thumbnail";
 
 /* Choose Background Art */
-"Choose Background Art" = "Kies Achtergrond Art";
+"Choose Background Art" = "Kies Background Art";
 
 /* Choose Banner */
 "Choose Banner" = "Kies Banner";
 
 /* Choose Episode Thumbnail menu item */
-"Choose Episode Thumbnail" = "Kies Afleverings Thumbnail";
+"Choose Episode Thumbnail" = "Kies Afleveringsthumbnail";
 
 /* Choose Icon */
-"Choose Icon" = "Kies Icoon";
+"Choose Icon" = "Kies Icon";
 
 /* Choose Poster menu item */
 "Choose Poster" = "Kies Poster";
 
 /* Choose Season Thumbnail menu item */
-"Choose Season Thumbnail" = "Kies Seizoens Thumbnail";
+"Choose Season Thumbnail" = "Kies Seizoensthumbnail";
 
 /* First-run help title */
-"Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Klik op de titels hieronder om de bibliotheeksecties voor je media aan te maken en deze beschikbaar te stellen aan je Plex apparaten.";
+"Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Klik op de titels hieronder om de bibliotheeksecties voor je media aan te maken en deze toegankelijk te maken voor je Plex apparaten.";
 
 /* Collections */
 "Collections" = "Collecties";
 
 /* Error message for when we cannot connect to PMS or when the response is invalid */
-"Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "Verbinden naar de Plex Media Server is mislukt met fout: %@.\n\nWeet je zeker dat hij draait?";
+"Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "Verbinding met de Plex Media Server is mislukt met deze foutmelding: %@.\n\nWeet je zeker dat PMS aan staat?";
 
 /* Content Rating */
-"Content Rating" = "Inhoud Waardering";
+"Content Rating" = "Beoordeling";
 
 /* Custom Search */
-"Custom Search" = "Aangepast Zoeken";
+"Custom Search" = "Aangepast zoeken";
 
 /* Customize Section */
 "Customize Section" = "Pas Sectie aan";
@@ -175,7 +175,7 @@
 "Done" = "Klaar";
 
 /* Section settings secondary informative text */
-"Drag folders into the list, or click the '+' button to browse." = "Sleep mappen naar de lijst of klik op de '+' knop om te zoeken.";
+"Drag folders into the list, or click the '+' button to browse." = "Sleep mappen naar de lijst of klik op de '+' knop om te bladeren.";
 
 /* Edit Metadata */
 "Edit Metadata" = "Bewerk Metadata";
@@ -205,10 +205,10 @@
 "every 6 hours" = "iedere 6 uur";
 
 /* Fix incorrect match */
-"Fix incorrect match" = "Corrigeer incorrecte combinatie";
+"Fix incorrect match" = "Corrigeer incorrecte match";
 
 /* Fix Incorrect Match... */
-"Fix Incorrect Match..." = "Corrigeer Incorrecte Combinatie…";
+"Fix Incorrect Match..." = "Corrigeer Incorrecte Match...";
 
 /* Friday */
 "Friday" = "Vrijdag";
@@ -223,7 +223,7 @@
 "Genres" = "Genres";
 
 /* Error message for when we cannot remove a library section */
-"Got this error: %@. Are you sure Plex Media Server is running?" = "Krijg je deze foutmelding: %@. Weet je zeker dat de Plex Media Server aan staat?";
+"Got this error: %@. Are you sure Plex Media Server is running?" = "Krijg deze foutmelding: %@. Weet je zeker dat de Plex Media Server aan staat?";
 
 /* Library scan interval (i.e. Update my library hourly) */
 "hourly" = "ieder uur";
@@ -232,16 +232,16 @@
 "Include music sections in automatic updates" = "Update ook muzieksecties tijdens automatische updates";
 
 /* Preference window setting */
-"iPhoto Sharing Enabled" = "iPhoto Delen Ingeschakeld";
+"iPhoto Sharing Enabled" = "iPhoto Delen ingeschakeld";
 
 /* Preference window setting */
-"iTunes Sharing Enabled" = "iTunes Delen Ingeschakeld";
+"iTunes Sharing Enabled" = "iTunes Delen ingeschakeld";
 
 /* Language label */
 "Language:" = "Taal:";
 
 /* Preference window setting */
-"Large music sections may take a long time to scan" = "Het scannen van grote muzieksecties kan lang duren";
+"Large music sections may take a long time to scan" = "Een scan van grote muzieksecties kan geruime tijd duren";
 
 /* Status label for media items */
 "Last refreshed %@ at %@" = "Laatste update %1$@ om %2$@";
@@ -250,7 +250,7 @@
 "Library" = "Bibliotheek";
 
 /* Sidebar group title for library sections */
-"LIBRARY SECTIONS" = "BIBLIOTHEEK SECTIES";
+"LIBRARY SECTIONS" = "BIBLIOTHEEKSECTIES";
 
 /* Metadata item status message when its data is importing */
 "Loading metadata for '%@'" = "Laden van metadata voor '%@'";
@@ -262,13 +262,16 @@
 "Matching '%@'" = "Matching '%@'";
 
 /* Metadata item status message when it is being read */
-"Media analysis on '%@'" = "Media analyse van '%@'";
+"Media analysis on '%@'" = "Media-analyse van '%@'";
 
 /* Label for the path to the file whose match is being fixed */
-"Media file: " = "Media bestand: ";
+"Media file: " = "Mediabestand: ";
+
+/* Header title */
+"MEDIA MANAGER" = "MEDIA MANAGER";
 
 /* Media scanner label */
-"Media scanner:" = "Media scanner:";
+"Media scanner:" = "Mediascanner:";
 
 /* Monday */
 "Monday" = "Maandag";
@@ -324,16 +327,16 @@
 "Original Title" = "Originele Titel";
 
 /* Originally Available */
-"Originally Available" = "Oorspronkelijk Beschikbaar";
+"Originally Available" = "Originally Available";
 
 /* Instruction text for the prompt to add directories manually */
-"Path of the directory you'd like to add:" = "Pad van de directory die je wil toevoegen:";
-
-/* Header title */
-"PLEX MEDIA MANAGER" = "PLEX MEDIA MANAGER";
+"Path of the directory you'd like to add:" = "Pad van de directory die je wilt toevoegen:";
 
 /* PostMeridiem */
 "PM" = "PM";
+
+/* Preferences button in top-right */
+"Preferences" = "Instellingen";
 
 /* Primary metadata agent label */
 "Primary metadata agent:" = "Primaire metadata agent:";
@@ -360,7 +363,7 @@
 "Remove Section" = "Verwijder Sectie";
 
 /* Metadata item status message when its info is downloading */
-"Requesting metadata for '%@'" = "Aanvragen van metadata voor '%@'";
+"Requesting metadata for '%@'" = "Metadata opvragen voor '%@'";
 
 /* Saturday */
 "Saturday" = "Zaterdag";
@@ -369,7 +372,7 @@
 "Save" = "Opslaan";
 
 /* Metadata item status message when it is newly scanned/created */
-"Scanning '%@'" = "Scannen '%@'";
+"Scanning '%@'" = "'%@' wordt gescand.";
 
 /* Search */
 "Search" = "Zoek";
@@ -402,7 +405,7 @@
 "Select Folder" = "Selecteer Map";
 
 /* Select Image */
-"Select Image" = "Select Afbeelding";
+"Select Image" = "Selecteer Afbeelding";
 
 /* Fix Incorrect Match title for music sections */
 "Select the correct artist from the list below:" = "Selecteer de juiste artiest uit onderstaande lijst:";
@@ -416,9 +419,6 @@
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Stuur anonieme gebruikersdata naar Plex";
 
-/* Settings button at the top-right */
-"Settings" = "Instellingen";
-
 /* Sharing */
 "Sharing" = "Delen";
 
@@ -429,7 +429,7 @@
 "show" = "serie";
 
 /* Sort Title */
-"Sort Title" = "Sort Title";
+"Sort Title" = "Sorteer Titel";
 
 /* Studio */
 "Studio" = "Studio";
@@ -444,13 +444,13 @@
 "Tagline" = "Tagline";
 
 /* Summary info for collecting usage data */
-"This helps us improve your experience (for example, to help us match movies and TV shows)." = "Dit helpt ons om jou ervaring (bijvoorbeeld, help ons om films en TV shows te koppelen.";
+"This helps us improve your experience (for example, to help us match movies and TV shows)." = "Dit helpt ons de gebruikerservaring te verbeteren (bv. bij het matchen van films en TV series).";
 
 /* Summary info for friendly name */
-"This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead." = "Deze naam wordt gebruikt om deze media server te identificeren naar andere computers in je netwerk. Als je hem leeg laat wordt je computernaam gebruikt.";
+"This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead." = "Deze naam zal gebruikt worden om deze media server te identificeren op je netwerk. Wanneer je niks invult zal je computernaam worden gebruikt.";
 
 /* Warning for IE users */
-"This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame." = "Deze site ondersteung geen Internet Explorer. Voor de beste ervaring, klik hier om Google Chrome Frame te installeren.";
+"This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame." = "Deze site ondersteunt geen Internet Explorer. Voor de beste ervaring, klik hier om Google Chrome Frame te installeren.";
 
 /* Thursday */
 "Thursday" = "Donderdag";
@@ -474,7 +474,7 @@
 "TV Shows" = "TV Series";
 
 /* Error title for when we cannot connect to PMS or when the response is invalid */
-"Unable to connect to Plex Media Server" = "Kan geen verbinding maken met Plex Media Server";
+"Unable to connect to Plex Media Server" = "Kan geen verbinding maken met de Plex Media Server";
 
 /* Unable to create library section */
 "Unable to create library section" = "Kan geen bibliotheeksectie aanmaken";
@@ -483,13 +483,13 @@
 "Unable to remove section \"%@\"" = "Kan \"%@\" niet verwijderen";
 
 /* Unable to update library section */
-"Unable to update library section" = "Kan de bibliotheeksectie niet updaten";
+"Unable to update library section" = "Kan de bibliotheeksectie niet bijwerken";
 
 /* Preference window setting - will have frequencies after it e.g. Update my library every two hours */
 "Update my library" = "Werk mijn bibliotheek bij";
 
 /* Preference window setting */
-"Update my library when changes to my folders are detected" = "Werk mijn bibliotheek bij wanneer veranderingen aan de mappen worden gedetecteerd";
+"Update my library when changes to my folders are detected" = "Werk mijn bibliotheek bij wanneer wijzigingen in deze mappen worden gedetecteerd";
 
 /* Update section confirm button text */
 "Update Section" = "Sectie bijwerken";

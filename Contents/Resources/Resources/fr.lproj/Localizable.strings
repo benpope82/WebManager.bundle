@@ -46,7 +46,7 @@
 "> Add posters, custom genres and more" = "> Ajouter affiches, genres personnalisés et plus";
 
 /* First-run help item */
-"> Album reviews" = "> Revue d'Albums";
+"> Album reviews" = "> Revues d'Albums";
 
 /* First-run help item */
 "> Artist biographies and artwork" = "> Biographies d'artistes et images";
@@ -67,7 +67,7 @@
 "> Organize movies into collections" = "> Organisation des films en collections";
 
 /* First-run help item */
-"> Thumbnails for every episode" = "> Vignettes pour tous les episodes";
+"> Thumbnails for every episode" = "> Vignettes pour tous les épisodes";
 
 /* First-run help item */
 "> TV show posters and art" = "> Affiches séries télés et images";
@@ -85,7 +85,7 @@
 "Add Section" = "Ajouter une Section";
 
 /* Section settings primary informative text */
-"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "Ajouter les dossiers contenant les médias pour cette section. Tous les fichiers médias trouves dans ces dossiers seront rajoutés dans votre librairie avec les paramètres ci-dessus.";
+"Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings." = "Ajouter les dossiers contenant les médias pour cette section. Tous les fichiers médias trouvés dans ces dossiers seront rajoutés dans votre librairie avec les paramètres ci-dessus.";
 
 /* First-run title for adding TV shows */
 "Add TV Shows Section" = "Ajouter une section Séries";
@@ -267,6 +267,9 @@
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "Fichier média: ";
 
+/* Header title */
+"MEDIA MANAGER" = "MEDIA MANAGER";
+
 /* Media scanner label */
 "Media scanner:" = "Scanner Médias:";
 
@@ -329,11 +332,11 @@
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "Chemin du répertoire que vous souhaitez ajouter:";
 
-/* Header title */
-"PLEX MEDIA MANAGER" = "PLEX MEDIA MANAGER";
-
 /* PostMeridiem */
 "PM" = "PM";
+
+/* Preferences button in top-right */
+"Preferences" = "Paramètres";
 
 /* Primary metadata agent label */
 "Primary metadata agent:" = "Agent metadata prioritaire:";
@@ -415,9 +418,6 @@
 
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Envoi anonyme des données d'utilisations a Plex";
-
-/* Settings button at the top-right */
-"Settings" = "Paramètres";
 
 /* Sharing */
 "Sharing" = "Partage";

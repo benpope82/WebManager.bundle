@@ -3,293 +3,291 @@
 <plist version="1.0">
 <dict>
 	<key>%@, Episode %d</key>
-	<string>%1$@, Episode %2$d</string>
+	<string>%1$@, Story %2$d</string>
 	<key>%d TV shows</key>
-	<string>%d TV shows</string>
+	<string>%d troupes</string>
 	<key>%d artists</key>
-	<string>%d artists</string>
+	<string>%d arrrtists</string>
 	<key>%d episodes</key>
-	<string>%d episodes</string>
+	<string>%d stories</string>
 	<key>%d movies</key>
-	<string>%d movies</string>
+	<string>%d long stories</string>
 	<key>%d tracks</key>
-	<string>%d tracks</string>
+	<string>%d ditties</string>
 	<key>%d tracks, %@ total time, %@</key>
-	<string>%1$d tracks, %2$@ total time, %3$@</string>
+	<string>%1$d ditties, %2$@ 'till yer done, %3$@</string>
 	<key>%d:%02d %@</key>
 	<string>%1$d:%2$02d %3$@</string>
 	<key>1 TV show</key>
-	<string>1 TV show</string>
+	<string>1 troupes</string>
 	<key>1 artist</key>
-	<string>1 artist</string>
+	<string>1 arrrtist</string>
 	<key>1 episode</key>
-	<string>1 episode</string>
+	<string>1 story</string>
 	<key>1 movie</key>
-	<string>1 movie</string>
+	<string>1 long story</string>
 	<key>1 track</key>
-	<string>1 track</string>
+	<string>1 ditty</string>
 	<key>1 track, %@ total time, %@</key>
-	<string>1 track, %1$@ total time, %2$@</string>
+	<string>1 ditty, %1$@ 'till yer done, %2$@</string>
 	<key>&gt; Add posters, custom genres and more</key>
-	<string>&gt; Add posters, custom genres and more</string>
+	<string>&gt; More portraits, tailored genres and more</string>
 	<key>&gt; Album reviews</key>
 	<string>&gt; Album reviews</string>
 	<key>&gt; Artist biographies and artwork</key>
-	<string>&gt; Artist biographies and artwork</string>
+	<string>&gt; Arrrtist biographies and paint</string>
 	<key>&gt; Automatic theme music for TV shows</key>
-	<string>&gt; Automatic theme music for TV shows</string>
+	<string>&gt; Troupe ditties play like magic</string>
 	<key>&gt; Customize every detail of each movie</key>
-	<string>&gt; Customize every detail of each movie</string>
+	<string>&gt; Fix up yer long stories with spit &amp; polish</string>
 	<key>&gt; Great for your personal media</key>
-	<string>&gt; Great for your personal media</string>
+	<string>&gt; Tell yer own stories</string>
 	<key>&gt; Movie posters and art</key>
-	<string>&gt; Movie posters and art</string>
+	<string>&gt; Portraits and murals</string>
 	<key>&gt; Organize movies into collections</key>
-	<string>&gt; Organize movies into collections</string>
+	<string>&gt; Split the booty into lovely groups</string>
 	<key>&gt; TV show posters and art</key>
-	<string>&gt; TV show posters and art</string>
+	<string>&gt; Troupe portraits and murals</string>
 	<key>&gt; Thumbnails for every episode</key>
-	<string>&gt; Thumbnails for every episode</string>
+	<string>&gt; Tiny portraits for yer stories</string>
 	<key>AM</key>
-	<string>AM</string>
+	<string>o' the morn</string>
 	<key>Add Home Movies Section</key>
-	<string>Add Home Movies Section</string>
+	<string>Tell yer own stories</string>
 	<key>Add Movies Section</key>
-	<string>Add Movies Section</string>
+	<string>Tell the long stories of the world</string>
 	<key>Add Music Section</key>
-	<string>Add Music Section</string>
+	<string>Ditties for yer ears</string>
 	<key>Add Section</key>
-	<string>Add Section</string>
+	<string>Be it so!</string>
 	<key>Add TV Shows Section</key>
-	<string>Add TV Shows Section</string>
+	<string>Yer favorite troupes</string>
 	<key>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</key>
-	<string>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</string>
+	<string>Tell us where ye keep yer booty that we may plunder it!</string>
 	<key>Advanced</key>
-	<string>Advanced</string>
+	<string>Skilled</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
-	<string>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</string>
+	<string>Yer booty will be buried and hidden from the view of man and the gods!</string>
 	<key>Aperture Sharing Enabled</key>
-	<string>Aperture Sharing Enabled</string>
+	<string>Let Aperture be seen</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
-	<string>Are you sure you want to remove the section named "%@"?</string>
+	<string>Forever hide your booty in "%@"?</string>
 	<key>Artist</key>
-	<string>Artist</string>
+	<string>Arrrtist</string>
 	<key>Cancel</key>
-	<string>Cancel</string>
+	<string>Belay that!</string>
 	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
-	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
+	<string>Yer plug-ins will be shown, no matter the cost, no matter whether they'll work. Ye developers can use this to check yer codes. But beware, here be tigers.</string>
 	<key>Change Artwork</key>
-	<string>Change Artwork</string>
+	<string>Change Portraits</string>
 	<key>Choose Album Thumbnail</key>
-	<string>Choose Album Thumbnail</string>
+	<string>Choose Musical Story Portrait</string>
 	<key>Choose Background Art</key>
-	<string>Choose Background Art</string>
+	<string>Choose Mural</string>
 	<key>Choose Banner</key>
-	<string>Choose Banner</string>
+	<string>Choose Horizon Portrait</string>
 	<key>Choose Episode Thumbnail</key>
-	<string>Choose Episode Thumbnail</string>
+	<string>Choose Story Portrait</string>
 	<key>Choose Icon</key>
-	<string>Choose Icon</string>
+	<string>Choose Emblem</string>
 	<key>Choose Poster</key>
-	<string>Choose Poster</string>
+	<string>Choose Portrait</string>
 	<key>Choose Season Thumbnail</key>
-	<string>Choose Season Thumbnail</string>
+	<string>Choose Season Portrait</string>
 	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
-	<string>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</string>
+	<string>Choose well yer booty to be puttin' on display, be it on yer wall portrait or pocket portrait.</string>
 	<key>Collections</key>
 	<string>Collections</string>
 	<key>Connecting to Plex Media Server failed with this error: %@.
 
 Are you sure it's running?</key>
-	<string>Connecting to Plex Media Server failed with this error: %@.
-
-Are you sure it's running?</string>
+	<string>Plex Media Server has gone to sleep with the fishes, or mayhap we have: %@</string>
 	<key>Content Rating</key>
-	<string>Content Rating</string>
+	<string>Allowed personages</string>
 	<key>Custom Search</key>
-	<string>Custom Search</string>
+	<string>Telescope Findin'</string>
 	<key>Customize Section</key>
-	<string>Customize Section</string>
+	<string>Have it yer way</string>
 	<key>Directors</key>
-	<string>Directors</string>
+	<string>Captains</string>
 	<key>Disable capability checking</key>
-	<string>Disable capability checking</string>
+	<string>Stop yer checkin'</string>
 	<key>Done</key>
-	<string>Done</string>
+	<string>No more</string>
 	<key>Drag folders into the list, or click the '+' button to browse.</key>
-	<string>Drag folders into the list, or click the '+' button to browse.</string>
+	<string>Walk yer folders off the plank into the list with the '+'.</string>
 	<key>Edit Metadata</key>
-	<string>Edit Metadata</string>
+	<string>Change yer infos</string>
 	<key>Edit Section</key>
-	<string>Edit Section</string>
+	<string>Change yer infos</string>
 	<key>Episode %d: %@</key>
-	<string>Episode %1$d: %2$@</string>
+	<string>Story %1$d: %2$@</string>
 	<key>Fix Incorrect Match...</key>
-	<string>Fix Incorrect Match...</string>
+	<string>That be wrong...</string>
 	<key>Fix incorrect match</key>
-	<string>Fix incorrect match</string>
+	<string>That be wrong</string>
 	<key>Friday</key>
 	<string>Friday</string>
 	<key>Friendly name:</key>
-	<string>Friendly name:</string>
+	<string>What it be called:</string>
 	<key>General</key>
 	<string>General</string>
 	<key>Genres</key>
 	<string>Genres</string>
 	<key>Got this error: %@. Are you sure Plex Media Server is running?</key>
-	<string>Got this error: %@. Are you sure Plex Media Server is running?</string>
+	<string>We've run aground: %@.</string>
 	<key>Include music sections in automatic updates</key>
-	<string>Include music sections in automatic updates</string>
+	<string>Plunder musical booty regularly</string>
 	<key>LIBRARY SECTIONS</key>
-	<string>LIBRARY SECTIONS</string>
+	<string>BOOTY</string>
 	<key>Language:</key>
-	<string>Language:</string>
+	<string>Tongue:</string>
 	<key>Large music sections may take a long time to scan</key>
-	<string>Large music sections may take a long time to scan</string>
+	<string>Large musical booty may keep you until ye be old</string>
 	<key>Last refreshed %@ at %@</key>
 	<string>Last refreshed %1$@ at %2$@</string>
 	<key>Library</key>
 	<string>Library</string>
 	<key>Loading metadata for '%@'</key>
-	<string>Loading metadata for '%@'</string>
+	<string>Plundering infos for '%@'</string>
 	<key>MEDIA MANAGER</key>
-	<string>MEDIA MANAGER</string>
+	<string>BOOTY KEEPER</string>
 	<key>Manual Entry</key>
-	<string>Manual Entry</string>
+	<string>Take the wheel</string>
 	<key>Matching '%@'</key>
-	<string>Matching '%@'</string>
+	<string>Identifyin' '%@'</string>
 	<key>Media analysis on '%@'</key>
-	<string>Media analysis on '%@'</string>
+	<string>Eyein' '%@'</string>
 	<key>Media file: </key>
-	<string>Media file: </string>
+	<string>X marks it: </string>
 	<key>Media scanner:</key>
-	<string>Media scanner:</string>
+	<string>Booty monkey:</string>
 	<key>Monday</key>
 	<string>Monday</string>
 	<key>Movie</key>
-	<string>Movie</string>
+	<string>Long Story</string>
 	<key>Movies</key>
-	<string>Movies</string>
+	<string>Long Stories</string>
 	<key>Music</key>
 	<string>Music</string>
 	<key>My Movies</key>
-	<string>My Movies</string>
+	<string>Me own long stories</string>
 	<key>My Music</key>
-	<string>My Music</string>
+	<string>Me own ditties</string>
 	<key>My TV Shows</key>
-	<string>My TV Shows</string>
+	<string>Me own stories</string>
 	<key>Name</key>
 	<string>Name</string>
 	<key>Name:</key>
 	<string>Name:</string>
 	<key>Offer higher bitrates over 3G connections</key>
-	<string>Offer higher bitrates over 3G connections</string>
+	<string>Give 'em more pixels on the high seas of 3G</string>
 	<key>Original Title</key>
-	<string>Original Title</string>
+	<string>What 'twas called</string>
 	<key>Originally Available</key>
-	<string>Originally Available</string>
+	<string>When 'twas known</string>
 	<key>PM</key>
-	<string>PM</string>
+	<string>o' the eve</string>
 	<key>Path of the directory you'd like to add:</key>
-	<string>Path of the directory you'd like to add:</string>
+	<string>Where d'ye keep yer booty, matey?</string>
 	<key>Preferences</key>
-	<string>Preferences</string>
+	<string>Dock</string>
 	<key>Primary metadata agent:</key>
-	<string>Primary metadata agent:</string>
+	<string>First mate:</string>
 	<key>Rating</key>
 	<string>Rating</string>
 	<key>Refresh Info</key>
-	<string>Refresh Info</string>
+	<string>Plunder again</string>
 	<key>Refresh Section</key>
-	<string>Refresh Section</string>
+	<string>Plunder again</string>
 	<key>Refresh Section (force)</key>
-	<string>Refresh Section (force)</string>
+	<string>Plunder again (with swords slashing)</string>
 	<key>Refreshing info for %d items</key>
-	<string>Refreshing info for %d items</string>
+	<string>Plundering info for %d pieces of booty</string>
 	<key>Refreshing info for one item</key>
-	<string>Refreshing info for one item</string>
+	<string>Plundering info for one piece of booty</string>
 	<key>Remove Section</key>
-	<string>Remove Section</string>
+	<string>Throw overboard</string>
 	<key>Requesting metadata for '%@'</key>
-	<string>Requesting metadata for '%@'</string>
+	<string>Askin' about '%@'</string>
 	<key>Saturday</key>
 	<string>Saturday</string>
 	<key>Save</key>
-	<string>Save</string>
+	<string>So be it!</string>
 	<key>Scanning '%@'</key>
-	<string>Scanning '%@'</string>
+	<string>Plundering '%@'</string>
 	<key>Search</key>
-	<string>Search</string>
+	<string>Scour</string>
 	<key>Search using:</key>
-	<string>Search using:</string>
+	<string>Scour using:</string>
 	<key>Section name:</key>
-	<string>Section name:</string>
+	<string>Booty name:</string>
 	<key>Section type:</key>
-	<string>Section type:</string>
+	<string>Booty type:</string>
 	<key>Security</key>
-	<string>Security</string>
+	<string>Pirate's Code</string>
 	<key>Select</key>
-	<string>Select</string>
+	<string>Appoint</string>
 	<key>Select %@</key>
-	<string>Select %@</string>
+	<string>Appoint %@</string>
 	<key>Select Folder</key>
-	<string>Select Folder</string>
+	<string>Appoint Location</string>
 	<key>Select Image</key>
-	<string>Select Image</string>
+	<string>Appoint Portrait</string>
 	<key>Select a directory for this section:</key>
-	<string>Select a directory for this section:</string>
+	<string>Mark the X for this booty:</string>
 	<key>Select the correct TV show from the list below:</key>
-	<string>Select the correct TV show from the list below:</string>
+	<string>Appoint the troupe being the most true:</string>
 	<key>Select the correct artist from the list below:</key>
-	<string>Select the correct artist from the list below:</string>
+	<string>Appoint the arrrtist being the most true:</string>
 	<key>Select the correct movie from the list below:</key>
-	<string>Select the correct movie from the list below:</string>
+	<string>Appoint the long story being the most true:</string>
 	<key>Send anonymous usage data to Plex</key>
-	<string>Send anonymous usage data to Plex</string>
+	<string>Let yet usage be known, but not who ye are</string>
 	<key>Sharing</key>
-	<string>Sharing</string>
+	<string>Divvy</string>
 	<key>Show</key>
-	<string>Show</string>
+	<string>Troupe</string>
 	<key>Sort Title</key>
-	<string>Sort Title</string>
+	<string>Placement name</string>
 	<key>Studio</key>
-	<string>Studio</string>
+	<string>House of the maker</string>
 	<key>Summary</key>
-	<string>Summary</string>
+	<string>About this tale</string>
 	<key>Sunday</key>
 	<string>Sunday</string>
 	<key>TV Shows</key>
-	<string>TV Shows</string>
+	<string>Troupes</string>
 	<key>Tagline</key>
-	<string>Tagline</string>
+	<string>Quip</string>
 	<key>This helps us improve your experience (for example, to help us match movies and TV shows).</key>
-	<string>This helps us improve your experience (for example, to help us match movies and TV shows).</string>
+	<string>This be helping us identify yer booty with deadly precision.</string>
 	<key>This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead.</key>
-	<string>This name will be used to identify this media server to other computers on your network. If you leave it blank, your computer's name will be used instead.</string>
+	<string>What to be callin' yer vessel on the open sea. Without a name, we'll use the name of yer computer.</string>
 	<key>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</key>
-	<string>This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.</string>
+	<string>Internet Explorer is a landlubber. Ye best be sailing a ship meant for the open sea, so make yer mark here to get aboard Google Chrome Frame.</string>
 	<key>Thursday</key>
 	<string>Thursday</string>
 	<key>Title</key>
-	<string>Title</string>
+	<string>What 'tis called</string>
 	<key>Transcoding</key>
-	<string>Transcoding</string>
+	<string>Transmogrifying</string>
 	<key>Tuesday</key>
 	<string>Tuesday</string>
 	<key>Unable to connect to Plex Media Server</key>
-	<string>Unable to connect to Plex Media Server</string>
+	<string>'Twere impossible to signal land</string>
 	<key>Unable to create library section</key>
-	<string>Unable to create library section</string>
+	<string>'Twere impossible to plunder yer booty</string>
 	<key>Unable to remove section "%@"</key>
-	<string>Unable to remove section "%@"</string>
+	<string>'Twere impossible to hide yer plunder "%@"</string>
 	<key>Unable to update library section</key>
-	<string>Unable to update library section</string>
+	<string>'Twere impossible to plunder yer booty again</string>
 	<key>Update Section</key>
-	<string>Update Section</string>
+	<string>Plunder me booty</string>
 	<key>Update my library</key>
-	<string>Update my library</string>
+	<string>Plunder me booty</string>
 	<key>Update my library when changes to my folders are detected</key>
-	<string>Update my library when changes to my folders are detected</string>
+	<string>Plunder me booty when something begins to stir</string>
 	<key>Wednesday</key>
 	<string>Wednesday</string>
 	<key>Writers</key>
@@ -299,49 +297,49 @@ Are you sure it's running?</string>
 	<key>Year:</key>
 	<string>Year:</string>
 	<key>album</key>
-	<string>album</string>
+	<string>musical story</string>
 	<key>artist</key>
-	<string>artist</string>
+	<string>arrrtist</string>
 	<key>daily</key>
-	<string>daily</string>
+	<string>with the sunrise</string>
 	<key>episode</key>
-	<string>episode</string>
+	<string>story</string>
 	<key>every 12 hours</key>
-	<string>every 12 hours</string>
+	<string>with the change of the tides</string>
 	<key>every 15 minutes</key>
-	<string>every 15 minutes</string>
+	<string>a hundred times a day</string>
 	<key>every 2 hours</key>
-	<string>every 2 hours</string>
+	<string>with the change of lookout</string>
 	<key>every 30 minutes</key>
-	<string>every 30 minutes</string>
+	<string>fifty times a day</string>
 	<key>every 6 hours</key>
-	<string>every 6 hours</string>
+	<string>every meal</string>
 	<key>hourly</key>
-	<string>hourly</string>
+	<string>on the chime of the hour</string>
 	<key>iPhoto Sharing Enabled</key>
-	<string>iPhoto Sharing Enabled</string>
+	<string>Let iPhoto be seen</string>
 	<key>iTunes Sharing Enabled</key>
-	<string>iTunes Sharing Enabled</string>
+	<string>Let iTunes be seen</string>
 	<key>movie</key>
-	<string>movie</string>
+	<string>long story</string>
 	<key>no TV shows</key>
-	<string>no TV shows</string>
+	<string>no troupes</string>
 	<key>no artists</key>
-	<string>no artists</string>
+	<string>no arrrtists</string>
 	<key>no episodes</key>
-	<string>no episodes</string>
+	<string>no stories</string>
 	<key>no movies</key>
-	<string>no movies</string>
+	<string>no long stories</string>
 	<key>no tracks</key>
-	<string>no tracks</string>
+	<string>no ditties</string>
 	<key>season</key>
 	<string>season</string>
 	<key>show</key>
-	<string>show</string>
+	<string>troupe</string>
 	<key>today</key>
-	<string>today</string>
+	<string>this day</string>
 	<key>tomorrow</key>
-	<string>tomorrow</string>
+	<string>the morrow</string>
 	<key>yesterday</key>
 	<string>yesterday</string>
 </dict>

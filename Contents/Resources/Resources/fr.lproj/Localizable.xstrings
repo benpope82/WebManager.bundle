@@ -33,7 +33,7 @@
 	<key>&gt; Add posters, custom genres and more</key>
 	<string>&gt; Ajouter affiches, genres personnalisés et plus</string>
 	<key>&gt; Album reviews</key>
-	<string>&gt; Revue d'Albums</string>
+	<string>&gt; Revues d'Albums</string>
 	<key>&gt; Artist biographies and artwork</key>
 	<string>&gt; Biographies d'artistes et images</string>
 	<key>&gt; Automatic theme music for TV shows</key>
@@ -49,7 +49,7 @@
 	<key>&gt; TV show posters and art</key>
 	<string>&gt; Affiches séries télés et images</string>
 	<key>&gt; Thumbnails for every episode</key>
-	<string>&gt; Vignettes pour tous les episodes</string>
+	<string>&gt; Vignettes pour tous les épisodes</string>
 	<key>AM</key>
 	<string>AM</string>
 	<key>Add Home Movies Section</key>
@@ -63,7 +63,7 @@
 	<key>Add TV Shows Section</key>
 	<string>Ajouter une section Séries</string>
 	<key>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</key>
-	<string>Ajouter les dossiers contenant les médias pour cette section. Tous les fichiers médias trouves dans ces dossiers seront rajoutés dans votre librairie avec les paramètres ci-dessus.</string>
+	<string>Ajouter les dossiers contenant les médias pour cette section. Tous les fichiers médias trouvés dans ces dossiers seront rajoutés dans votre librairie avec les paramètres ci-dessus.</string>
 	<key>Advanced</key>
 	<string>Expert</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
@@ -152,6 +152,8 @@ Le Serveur est-il disponible?</string>
 	<string>Librairie</string>
 	<key>Loading metadata for '%@'</key>
 	<string>Chargement metadata pour '%@'</string>
+	<key>MEDIA MANAGER</key>
+	<string>MEDIA MANAGER</string>
 	<key>Manual Entry</key>
 	<string>Saisie Manuelle</string>
 	<key>Matching '%@'</key>
@@ -186,12 +188,12 @@ Le Serveur est-il disponible?</string>
 	<string>Titre Original</string>
 	<key>Originally Available</key>
 	<string>Disponible Originellement</string>
-	<key>PLEX MEDIA MANAGER</key>
-	<string>PLEX MEDIA MANAGER</string>
 	<key>PM</key>
 	<string>PM</string>
 	<key>Path of the directory you'd like to add:</key>
 	<string>Chemin du répertoire que vous souhaitez ajouter:</string>
+	<key>Preferences</key>
+	<string>Paramètres</string>
 	<key>Primary metadata agent:</key>
 	<string>Agent metadata prioritaire:</string>
 	<key>Rating</key>
@@ -244,8 +246,6 @@ Le Serveur est-il disponible?</string>
 	<string>Sélectionnez le film recherché dans la liste ci-dessous:</string>
 	<key>Send anonymous usage data to Plex</key>
 	<string>Envoi anonyme des données d'utilisations a Plex</string>
-	<key>Settings</key>
-	<string>Paramètres</string>
 	<key>Sharing</key>
 	<string>Partage</string>
 	<key>Show</key>
