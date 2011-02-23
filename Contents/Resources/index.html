@@ -16,7 +16,17 @@
         <title>Plex Media Manager</title>
 
         <script type="text/javascript">
-            OBJJ_MAIN_FILE = "main.j";
+          OBJJ_MAIN_FILE = "main.j";
+
+          window.OBJJ_PROGRESS_CALLBACK = function(percent) {
+            var progressElement = document.getElementById('progress'),
+                totalHeight = 256,
+                progressHeight = FLOOR(totalHeight*percent),
+                progressTop = totalHeight-progressHeight;
+
+            progressElement.style.top = ''+progressTop+'px';
+            progressElement.style.height = ''+progressHeight+'px';
+          };
         </script>
 
         <script type="text/javascript" src="Frameworks/Objective-J/Objective-J.js" charset="UTF-8"></script>
@@ -24,10 +34,11 @@
 
         <style type="text/css">
             body{margin:0; padding:0;}
-            #container {position: absolute; top:50%; left:50%;}
-            #content {width:800px; text-align:center; margin-left: -400px; height:50px; margin-top:-25px; line-height: 50px;}
+            #container {position:absolute; top:50%; left:50%;}
+            /*
+            #content {width:800px; text-align:center; margin-left: -400px; height:50px; margin-top:-128px; line-height: 50px;}
             #content {font-family: "Helvetica", "Arial", sans-serif; font-size: 18px; color: black; text-shadow: 0px 1px 0px white; }
-            #loadgraphic {margin-right: 0.2em; margin-bottom:-2px;}
+            */
         </style>
 
         <!--[if lt IE 7]>
@@ -41,11 +52,12 @@
 
     <body style="">
         <div id="cappuccino-body">
-            <div id="loadingcontainer" style="background-color: #eeeeee; overflow:hidden; width:100%; height:100%; position: absolute; top: 0; left: 0;">
+            <div id="loadingcontainer" style="background-color: #222; overflow:hidden; width:100%; height:100%; position: absolute; top: 0; left: 0;">
                 <script type="text/javascript">
-                    document.write("<div id='container'><p id='content'>" +
-                                   "<img id='loadgraphic' width='16' height='16' src='Resources/spinner.gif' /> " +
-                                   "Loading Plex Media Manager...</p></div>");
+                  document.write("<div style='position:absolute; top:50%; left:50%; width:256px; height:256px; margin:-128px 0 0 -128px'>" +
+                                   "<div style='opacity:0.3; background-image:url(Resources/logo_256.png); width:256px; height:256px; position:absolute; top:0px; left:0px'></div>" +
+                                   "<div id='progress' style='background-image:url(Resources/logo_256.png); background-position:bottom; width:256px; height:0; position:absolute; top:256px; left:0px'></div>" +
+                                 "</div>");
                 </script>
 
                 <noscript>
