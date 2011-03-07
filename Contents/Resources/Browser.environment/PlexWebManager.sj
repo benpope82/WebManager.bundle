@@ -10870,7 +10870,7 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesLibraryPanel,"alloc"),"initWithFrame:",CGRectMakeZero()));
 }
 })]);
-p;33;Views/MMPreferencesLibraryPanel.jt;4632;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;4561;
+p;33;Views/MMPreferencesLibraryPanel.jt;5101;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;5030;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Models/PMSCapabilities.j",YES);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesLibraryPanel"),_2=_1.isa;
@@ -10908,26 +10908,32 @@ objj_msgSend(_9,"bind:toObject:withKeyPath:options:","selectedTag",objj_msgSend(
 objj_msgSend(_3,"addSubview:",_9);
 _6=CGRectGetMaxY(objj_msgSend(_8,"frame"))+10;
 }
-if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryChangeWatchingSupported")||objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryTimedUpdatesSupported")){
-var _e=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Include music sections in automatic updates","Preference window setting"));
+var _e=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Empty trash automatically after every scan","Preference window setting"));
 objj_msgSend(_e,"sizeToFit");
 objj_msgSend(_e,"setFrameOrigin:",CGPointMake(0,_6));
-objj_msgSend(_e,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoScanMusicSections",nil);
+objj_msgSend(_e,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoEmptyTrash",nil);
 objj_msgSend(_3,"addSubview:",_e);
-var _f=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Large music sections may take a long time to scan","Preference window setting"));
-objj_msgSend(_f,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(_e,"frame"))));
+_6=CGRectGetMaxY(objj_msgSend(_e,"frame"))+10;
+if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryChangeWatchingSupported")||objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryTimedUpdatesSupported")){
+var _f=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Include music sections in automatic updates","Preference window setting"));
+objj_msgSend(_f,"sizeToFit");
+objj_msgSend(_f,"setFrameOrigin:",CGPointMake(0,_6));
+objj_msgSend(_f,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoScanMusicSections",nil);
 objj_msgSend(_3,"addSubview:",_f);
+var _10=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Large music sections may take a long time to scan","Preference window setting"));
+objj_msgSend(_10,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(_f,"frame"))));
+objj_msgSend(_3,"addSubview:",_10);
 }
 objj_msgSend(_3,"sizeToFit");
 }
 return _3;
 }
-}),new objj_method(sel_getUid("_periodTitles"),function(_10,_11){
-with(_10){
+}),new objj_method(sel_getUid("_periodTitles"),function(_11,_12){
+with(_11){
 return [CPLocalizedString("every 15 minutes","Library scan interval (i.e. Update my library every 15 minutes)"),CPLocalizedString("every 30 minutes","Library scan interval (i.e. Update my library every 30 minutes)"),CPLocalizedString("hourly","Library scan interval (i.e. Update my library hourly)"),CPLocalizedString("every 2 hours","Library scan interval (i.e. Update my library every 2 hours)"),CPLocalizedString("every 6 hours","Library scan interval (i.e. Update my library every 6 hours)"),CPLocalizedString("every 12 hours","Library scan interval (i.e. Update my library every 12 hours)"),CPLocalizedString("daily","Library scan interval (i.e. Update my library daily")];
 }
-}),new objj_method(sel_getUid("_periodValues"),function(_12,_13){
-with(_12){
+}),new objj_method(sel_getUid("_periodValues"),function(_13,_14){
+with(_13){
 return [15*60,30*60,60*60,2*60*60,6*60*60,12*60*60,24*60*60];
 }
 })]);
@@ -11034,7 +11040,7 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,500,120)));
 }
 })]);
-p;34;Views/MMPreferencesAdvancedPanel.jt;2541;@STATIC;1.0;I;15;AppKit/CPView.jt;2502;
+p;34;Views/MMPreferencesAdvancedPanel.jt;4635;@STATIC;1.0;I;15;AppKit/CPView.jt;4596;
 objj_executeFile("AppKit/CPView.j",NO);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesAdvancedPanel"),_2=_1.isa;
 class_addIvars(_1,[new objj_ivar("disableCapabilityCheckingCheckBox"),new objj_ivar("disableCapabilityCheckingLabel")]);
@@ -11048,20 +11054,40 @@ objj_msgSend(disableCapabilityCheckingCheckBox,"bind:toObject:withKeyPath:option
 objj_msgSend(_3,"addSubview:",disableCapabilityCheckingCheckBox);
 disableCapabilityCheckingLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.","Preference window setting detail"));
 objj_msgSend(disableCapabilityCheckingLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
-objj_msgSend(disableCapabilityCheckingLabel,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingCheckBox,"frame"))));
 objj_msgSend(_3,"addSubview:",disableCapabilityCheckingLabel);
+enableDolbyDigitalDuringAirPlayCheckBox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Enable Dolby® Digital during AirPlay","Preference window setting"));
+objj_msgSend(enableDolbyDigitalDuringAirPlayCheckBox,"sizeToFit");
+objj_msgSend(enableDolbyDigitalDuringAirPlayCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.enableAirplayDolbyDigital",nil);
+objj_msgSend(_3,"addSubview:",enableDolbyDigitalDuringAirPlayCheckBox);
+enableDolbyDigitalDuringAirPlayLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu.","Preference window setting detail"));
+objj_msgSend(enableDolbyDigitalDuringAirPlayLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(_3,"addSubview:",enableDolbyDigitalDuringAirPlayLabel);
 objj_msgSend(_3,"sizeToFit");
 }
 return _3;
 }
-}),new objj_method(sel_getUid("sizeToFit"),function(_6,_7){
+}),new objj_method(sel_getUid("targetWidth"),function(_6,_7){
 with(_6){
+return MAX(CGRectGetMaxX(objj_msgSend(disableCapabilityCheckingCheckBox,"frame")),CGRectGetMaxX(objj_msgSend(enableDolbyDigitalDuringAirPlayCheckBox,"frame")),CGRectGetWidth(objj_msgSend(_6,"frame")));
+}
+}),new objj_method(sel_getUid("sizeToFit"),function(_8,_9){
+with(_8){
+objj_msgSend(_8,"layoutSubviews");
+objj_msgSend(_8,"setFrameSize:",CGSizeMake(objj_msgSend(_8,"targetWidth"),CGRectGetMaxY(objj_msgSend(enableDolbyDigitalDuringAirPlayLabel,"frame"))));
+}
+}),new objj_method(sel_getUid("layoutSubviews"),function(_a,_b){
+with(_a){
 objj_msgSend(disableCapabilityCheckingCheckBox,"sizeToFit");
-var _8=MAX(CGRectGetMaxX(objj_msgSend(disableCapabilityCheckingCheckBox,"frame")),CGRectGetWidth(objj_msgSend(_6,"frame"))),_9=_8-CGRectGetMinX(objj_msgSend(disableCapabilityCheckingLabel,"frame"));
-var _a=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(disableCapabilityCheckingLabel,"stringValue"),objj_msgSend(disableCapabilityCheckingLabel,"font"),_9);
-_a.height+=5;
-objj_msgSend(disableCapabilityCheckingLabel,"setFrameSize:",_a);
-var _b=CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingLabel,"frame"));
-objj_msgSend(_6,"setFrameSize:",CGSizeMake(_8,_b));
+objj_msgSend(enableDolbyDigitalDuringAirPlayCheckBox,"sizeToFit");
+var _c=objj_msgSend(_a,"targetWidth"),_d=17,_e=_c-_d,_f=_c-_d;
+var _10=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(disableCapabilityCheckingLabel,"stringValue"),objj_msgSend(disableCapabilityCheckingLabel,"font"),_e);
+_10.height+=5;
+objj_msgSend(disableCapabilityCheckingLabel,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingCheckBox,"frame"))));
+objj_msgSend(disableCapabilityCheckingLabel,"setFrameSize:",_10);
+objj_msgSend(enableDolbyDigitalDuringAirPlayCheckBox,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(disableCapabilityCheckingCheckBox,"frame")),CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingLabel,"frame"))+10));
+var _11=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(enableDolbyDigitalDuringAirPlayLabel,"stringValue"),objj_msgSend(enableDolbyDigitalDuringAirPlayLabel,"font"),_f);
+_11.height+=5;
+objj_msgSend(enableDolbyDigitalDuringAirPlayLabel,"setFrameSize:",_11);
+objj_msgSend(enableDolbyDigitalDuringAirPlayLabel,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(disableCapabilityCheckingLabel,"frame")),CGRectGetMaxY(objj_msgSend(enableDolbyDigitalDuringAirPlayCheckBox,"frame"))));
 }
 })]);
