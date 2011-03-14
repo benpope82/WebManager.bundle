@@ -146,8 +146,11 @@ if(_1d.substring(_1f,_1f+t.length)!=t){
 return _20;
 }
 _1f+=t.length;
-if(t.charAt(0)!="%"){
+if(t.charAt(0)!=="%"){
 _20+=t;
+}else{
+if(t==="%%"){
+_20+="%";
 }else{
 var _21=t.match(_1c);
 if(_21.length!=8||_21[0]!=t){
@@ -246,6 +249,7 @@ _2e="";
 _2e=_31("","",_2e,"",_2a,_2c,false);
 }
 _20+=_2e;
+}
 }
 }
 return _20;
