@@ -1902,7 +1902,7 @@ with(self){
 return objj_msgSend(CPSet,"setWithObject:","parent");
 }
 })]);
-p;17;Models/MMRecord.jt;4320;@STATIC;1.0;I;21;Foundation/CPObject.jt;4275;
+p;17;Models/MMRecord.jt;4476;@STATIC;1.0;I;21;Foundation/CPObject.jt;4431;
 objj_executeFile("Foundation/CPObject.j",NO);
 var _1=objj_msgSend(CPDictionary,"dictionary");
 var _2=objj_allocateClassPair(CPObject,"MMRecord"),_3=_2.isa;
@@ -1969,57 +1969,61 @@ objj_msgSend(_20,"setObject:forKey:",objj_msgSend(_1e,"valueForKey:",key),key);
 }
 return _20;
 }
-}),new objj_method(sel_getUid("parseDate:"),function(_22,_23,_24){
+}),new objj_method(sel_getUid("attributeForKeyHasChanged:"),function(_22,_23,key){
 with(_22){
-if(objj_msgSend(_24,"isKindOfClass:",CPString)){
-var _25;
-if(/^\d+$/.test(_24)){
-return objj_msgSend(objj_msgSend(CPDate,"alloc"),"initWithTimeIntervalSince1970:",_24);
+return objj_msgSend(_changedAttributes,"containsKey:",key);
+}
+}),new objj_method(sel_getUid("parseDate:"),function(_24,_25,_26){
+with(_24){
+if(objj_msgSend(_26,"isKindOfClass:",CPString)){
+var _27;
+if(/^\d+$/.test(_26)){
+return objj_msgSend(objj_msgSend(CPDate,"alloc"),"initWithTimeIntervalSince1970:",_26);
 }else{
-if(_25=_24.match(/^(\d{4})-(\d\d?)-(\d\d?)$/)){
-return new Date(_25[1],Number(_25[2])-1,_25[3]);
+if(_27=_26.match(/^(\d{4})-(\d\d?)-(\d\d?)$/)){
+return new Date(_27[1],Number(_27[2])-1,_27[3]);
 }else{
-return Date.parse(_24);
+return Date.parse(_26);
 }
 }
 }else{
-if(!_24||objj_msgSend(_24,"isKindOfClass:",CPDate)){
-return _24;
+if(!_26||objj_msgSend(_26,"isKindOfClass:",CPDate)){
+return _26;
 }else{
-objj_msgSend(CPException,"raise:reason:",CPInvalidArgumentException,objj_msgSend(CPString,"stringWithFormat:","date must be of type %@ (got %@)",CPDate,objj_msgSend(_24,"class")));
+objj_msgSend(CPException,"raise:reason:",CPInvalidArgumentException,objj_msgSend(CPString,"stringWithFormat:","date must be of type %@ (got %@)",CPDate,objj_msgSend(_26,"class")));
 }
 }
 }
-}),new objj_method(sel_getUid("recordWasCreated"),function(_26,_27){
-with(_26){
-}
-}),new objj_method(sel_getUid("recordWasUpdated"),function(_28,_29){
+}),new objj_method(sel_getUid("recordWasCreated"),function(_28,_29){
 with(_28){
 }
-}),new objj_method(sel_getUid("recordWasDeleted"),function(_2a,_2b){
+}),new objj_method(sel_getUid("recordWasUpdated"),function(_2a,_2b){
 with(_2a){
 }
-})]);
-class_addMethods(_3,[new objj_method(sel_getUid("observedAttributes"),function(_2c,_2d){
+}),new objj_method(sel_getUid("recordWasDeleted"),function(_2c,_2d){
 with(_2c){
+}
+})]);
+class_addMethods(_3,[new objj_method(sel_getUid("observedAttributes"),function(_2e,_2f){
+with(_2e){
 return objj_msgSend(CPSet,"set");
 }
-}),new objj_method(sel_getUid("allObservedAttributes"),function(_2e,_2f){
-with(_2e){
-return _1[objj_msgSend(_2e,"UID")];
-}
-}),new objj_method(sel_getUid("_loadObservedAttributes"),function(_30,_31){
+}),new objj_method(sel_getUid("allObservedAttributes"),function(_30,_31){
 with(_30){
-if(objj_msgSend(_30,"allObservedAttributes")){
+return _1[objj_msgSend(_30,"UID")];
+}
+}),new objj_method(sel_getUid("_loadObservedAttributes"),function(_32,_33){
+with(_32){
+if(objj_msgSend(_32,"allObservedAttributes")){
 return;
 }
-var _32=objj_msgSend(objj_msgSend(_30,"observedAttributes"),"copy");
-if(objj_msgSend(objj_msgSend(_30,"superclass"),"respondsToSelector:",sel_getUid("_loadObservedAttributes"))){
-objj_msgSend(objj_msgSend(_30,"superclass"),"_loadObservedAttributes");
-objj_msgSend(_32,"unionSet:",objj_msgSend(objj_msgSend(_30,"superclass"),"allObservedAttributes"));
+var _34=objj_msgSend(objj_msgSend(_32,"observedAttributes"),"copy");
+if(objj_msgSend(objj_msgSend(_32,"superclass"),"respondsToSelector:",sel_getUid("_loadObservedAttributes"))){
+objj_msgSend(objj_msgSend(_32,"superclass"),"_loadObservedAttributes");
+objj_msgSend(_34,"unionSet:",objj_msgSend(objj_msgSend(_32,"superclass"),"allObservedAttributes"));
 }
-CPLog.debug("[%@ _loadObservedAttributes] observedAttributes: %@",_30,_32);
-_1[objj_msgSend(_30,"UID")]=_32;
+CPLog.debug("[%@ _loadObservedAttributes] observedAttributes: %@",_32,_34);
+_1[objj_msgSend(_32,"UID")]=_34;
 }
 })]);
 p;15;Models/PMSURL.jt;1410;@STATIC;1.0;I;18;Foundation/CPURL.ji;16;../PMSSecurity.jt;1347;
@@ -3331,7 +3335,7 @@ objj_msgSend(_2a,"setValuesForNodeAttributes:ignoreUndefinedKeys:",_28,YES);
 return _2a;
 }
 })]);
-p;26;DataSources/MMDataSource.jt;22786;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPURL.ji;20;../MMURLConnection.ji;13;MMDataStore.jt;22674;
+p;26;DataSources/MMDataSource.jt;22988;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPURL.ji;20;../MMURLConnection.ji;13;MMDataStore.jt;22876;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("Foundation/CPURL.j",NO);
 objj_executeFile("../MMURLConnection.j",YES);
@@ -3532,6 +3536,12 @@ if(_7b.nodeType==1&&(!_75||objj_msgSend(_70,"shouldProcessNode:contextInfo:",_7b
 _77=objj_msgSend(_77,"arrayByAddingObjectsFromArray:",objj_msgSend(_70,"recordsFromElement:contextInfo:",_7b,_74));
 }
 }
+for(var i=0,_7a=objj_msgSend(_77,"count");i<_7a;i++){
+var _7c=_77[i];
+if(objj_msgSend(_7c,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
+objj_msgSend(_7c,"acceptChangedAttributes");
+}
+}
 if(_76){
 for(var i=0,_7a=objj_msgSend(_77,"count");i<_7a;i++){
 if(_7b.nodeType==1&&objj_msgSend(_70,"shouldSelectRecord:element:contextInfo:",_77[i],_7b,_74)){
@@ -3545,150 +3555,150 @@ objj_msgSend(_70,"setSelectionIndexes:",_79);
 }
 CPLog.trace("[%@ -didReceiveRecordsAsData:connection:contextInfo:] END",objj_msgSend(_70,"class"));
 }
-}),new objj_method(sel_getUid("recordsFromElement:contextInfo:"),function(_7c,_7d,_7e,_7f){
-with(_7c){
-return objj_msgSend(CPArray,"arrayWithObject:",objj_msgSend(_7c,"recordFromElement:contextInfo:",_7e,_7f));
+}),new objj_method(sel_getUid("recordsFromElement:contextInfo:"),function(_7d,_7e,_7f,_80){
+with(_7d){
+return objj_msgSend(CPArray,"arrayWithObject:",objj_msgSend(_7d,"recordFromElement:contextInfo:",_7f,_80));
 }
-}),new objj_method(sel_getUid("didFailToReceiveRecordsWithError:contextInfo:"),function(_80,_81,_82,_83){
-with(_80){
-CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] START",objj_msgSend(_80,"class"));
+}),new objj_method(sel_getUid("didFailToReceiveRecordsWithError:contextInfo:"),function(_81,_82,_83,_84){
+with(_81){
+CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] START",objj_msgSend(_81,"class"));
 if(delegateRespondsTo_dataSource_didFailToReceiveRecords_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToReceiveRecordsWithError:contextInfo:",_80,_82,_83);
+objj_msgSend(delegate,"dataSource:didFailToReceiveRecordsWithError:contextInfo:",_81,_83,_84);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToReceiveRecords,_80,objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",_83,"contextInfo"));
-CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] END",objj_msgSend(_80,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToReceiveRecords,_81,objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",_84,"contextInfo"));
+CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] END",objj_msgSend(_81,"class"));
 }
-}),new objj_method(sel_getUid("didDeleteRecord:contextInfo:"),function(_84,_85,_86,_87){
-with(_84){
+}),new objj_method(sel_getUid("didDeleteRecord:contextInfo:"),function(_85,_86,_87,_88){
+with(_85){
 if(delegateRespondsTo_dataSource_didDeleteRecord_contextInfo){
-objj_msgSend(delegate,"dataSource:didDeleteRecord:contextInfo:",_84,_86,_87);
+objj_msgSend(delegate,"dataSource:didDeleteRecord:contextInfo:",_85,_87,_88);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidDeleteRecord,_84,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_87,_86],["contextInfo","record"]));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidDeleteRecord,_85,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_88,_87],["contextInfo","record"]));
 }
-}),new objj_method(sel_getUid("didFailToDeleteRecord:withError:contextInfo:"),function(_88,_89,_8a,_8b,_8c){
-with(_88){
-CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] START",objj_msgSend(_88,"class"));
+}),new objj_method(sel_getUid("didFailToDeleteRecord:withError:contextInfo:"),function(_89,_8a,_8b,_8c,_8d){
+with(_89){
+CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] START",objj_msgSend(_89,"class"));
 if(delegateRespondsTo_dataSource_didFailToDeleteRecord_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToDeleteRecord:withError:contextInfo:",_88,_8a,_8b,_8c);
+objj_msgSend(delegate,"dataSource:didFailToDeleteRecord:withError:contextInfo:",_89,_8b,_8c,_8d);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToDeleteRecord,_88,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_8c,_8a,_8b],["contextInfo","record","error"]));
-CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] END",objj_msgSend(_88,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToDeleteRecord,_89,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_8d,_8b,_8c],["contextInfo","record","error"]));
+CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] END",objj_msgSend(_89,"class"));
 }
-}),new objj_method(sel_getUid("didUpdateRecord:contextInfo:"),function(_8d,_8e,_8f,_90){
-with(_8d){
-if(objj_msgSend(_8f,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
-objj_msgSend(_8f,"acceptChangedAttributes");
+}),new objj_method(sel_getUid("didUpdateRecord:contextInfo:"),function(_8e,_8f,_90,_91){
+with(_8e){
+if(objj_msgSend(_90,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
+objj_msgSend(_90,"acceptChangedAttributes");
 }
 if(delegateRespondsTo_dataSource_didUpdateRecord_contextInfo){
-objj_msgSend(delegate,"dataSource:didUpdateRecord:contextInfo:",_8d,_8f,_90);
+objj_msgSend(delegate,"dataSource:didUpdateRecord:contextInfo:",_8e,_90,_91);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidUpdateRecord,_8d,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_90,_8f],["contextInfo","record"]));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidUpdateRecord,_8e,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_91,_90],["contextInfo","record"]));
 }
-}),new objj_method(sel_getUid("didFailToUpdateRecord:withError:contextInfo:"),function(_91,_92,_93,_94,_95){
-with(_91){
-CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] START",objj_msgSend(_91,"class"));
+}),new objj_method(sel_getUid("didFailToUpdateRecord:withError:contextInfo:"),function(_92,_93,_94,_95,_96){
+with(_92){
+CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] START",objj_msgSend(_92,"class"));
 if(delegateRespondsTo_dataSource_didFailToUpdateRecord_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToUpdateRecord:withError:contextInfo:",_91,_93,_94,_95);
+objj_msgSend(delegate,"dataSource:didFailToUpdateRecord:withError:contextInfo:",_92,_94,_95,_96);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToUpdateRecord,_91,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_95,_93,_94],["contextInfo","record","error"]));
-CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] END",objj_msgSend(_91,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToUpdateRecord,_92,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_96,_94,_95],["contextInfo","record","error"]));
+CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] END",objj_msgSend(_92,"class"));
 }
-}),new objj_method(sel_getUid("didCreateRecord:contextInfo:"),function(_96,_97,_98,_99){
-with(_96){
-objj_msgSend(dataStore,"storeRecord:",_98);
-objj_msgSend(_98,"acceptChangedAttributes");
+}),new objj_method(sel_getUid("didCreateRecord:contextInfo:"),function(_97,_98,_99,_9a){
+with(_97){
+objj_msgSend(dataStore,"storeRecord:",_99);
+objj_msgSend(_99,"acceptChangedAttributes");
 if(delegateRespondsTo_dataSource_didCreateRecord_contextInfo){
-objj_msgSend(delegate,"dataSource:didCreateRecord:contextInfo:",_96,_98,_99);
+objj_msgSend(delegate,"dataSource:didCreateRecord:contextInfo:",_97,_99,_9a);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidCreateRecord,_96,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_99,_98],["contextInfo","record"]));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidCreateRecord,_97,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_9a,_99],["contextInfo","record"]));
 }
-}),new objj_method(sel_getUid("didFailToCreateRecord:withError:contextInfo:"),function(_9a,_9b,_9c,_9d,_9e){
-with(_9a){
-CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] START",objj_msgSend(_9a,"class"));
+}),new objj_method(sel_getUid("didFailToCreateRecord:withError:contextInfo:"),function(_9b,_9c,_9d,_9e,_9f){
+with(_9b){
+CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] START",objj_msgSend(_9b,"class"));
 if(delegateRespondsTo_dataSource_didFailToCreateRecord_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToCreateRecord:withError:contextInfo:",_9a,_9c,_9d,_9e);
+objj_msgSend(delegate,"dataSource:didFailToCreateRecord:withError:contextInfo:",_9b,_9d,_9e,_9f);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToCreateRecord,_9a,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_9e,_9c,_9d],["contextInfo","record","error"]));
-CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] END",objj_msgSend(_9a,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToCreateRecord,_9b,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_9f,_9d,_9e],["contextInfo","record","error"]));
+CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] END",objj_msgSend(_9b,"class"));
 }
-}),new objj_method(sel_getUid("connection:didReceiveResponse:"),function(_9f,_a0,_a1,_a2){
-with(_9f){
-var _a3=objj_msgSend(_a2,"respondsToSelector:",sel_getUid("statusCode"))&&objj_msgSend(_a2,"statusCode");
-CPLog.trace("[%@ -connection:didReceiveResponse:] START (statusCode=%@)",objj_msgSend(_9f,"class"),_a3);
-objj_msgSend(statusCodeByConnection,"setObject:forKey:",_a3,_a1);
-CPLog.trace("[%@ -connection:didReceiveResponse:] END",objj_msgSend(_9f,"class"));
+}),new objj_method(sel_getUid("connection:didReceiveResponse:"),function(_a0,_a1,_a2,_a3){
+with(_a0){
+var _a4=objj_msgSend(_a3,"respondsToSelector:",sel_getUid("statusCode"))&&objj_msgSend(_a3,"statusCode");
+CPLog.trace("[%@ -connection:didReceiveResponse:] START (statusCode=%@)",objj_msgSend(_a0,"class"),_a4);
+objj_msgSend(statusCodeByConnection,"setObject:forKey:",_a4,_a2);
+CPLog.trace("[%@ -connection:didReceiveResponse:] END",objj_msgSend(_a0,"class"));
 }
-}),new objj_method(sel_getUid("connection:didReceiveData:"),function(_a4,_a5,_a6,_a7){
-with(_a4){
-CPLog.trace("[%@ -connection:didReceiveData:] START",objj_msgSend(_a4,"class"));
-var _a8=objj_msgSend(statusCodeByConnection,"objectForKey:",_a6),_a9=objj_msgSend(contextInfoByConnection,"objectForKey:",_a6);
-if(!_a8||_a8>=400){
-objj_msgSend(_a4,"connection:didFailWithError:",_a6,_a7);
+}),new objj_method(sel_getUid("connection:didReceiveData:"),function(_a5,_a6,_a7,_a8){
+with(_a5){
+CPLog.trace("[%@ -connection:didReceiveData:] START",objj_msgSend(_a5,"class"));
+var _a9=objj_msgSend(statusCodeByConnection,"objectForKey:",_a7),_aa=objj_msgSend(contextInfoByConnection,"objectForKey:",_a7);
+if(!_a9||_a9>=400){
+objj_msgSend(_a5,"connection:didFailWithError:",_a7,_a8);
 }else{
-if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_a6)){
-objj_msgSend(_a4,"didReceiveRecordsAsData:connection:contextInfo:",_a7,_a6,_a9);
+if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_a7)){
+objj_msgSend(_a5,"didReceiveRecordsAsData:connection:contextInfo:",_a8,_a7,_aa);
 }else{
-if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_a6)){
-var _aa=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_a6);
-objj_msgSend(_a4,"didDeleteRecord:contextInfo:",_aa,_a9);
+if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_a7)){
+var _ab=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_a7);
+objj_msgSend(_a5,"didDeleteRecord:contextInfo:",_ab,_aa);
 }else{
-if(objj_msgSend(recordsByCreateConnection,"containsKey:",_a6)){
-var _aa=objj_msgSend(recordsByCreateConnection,"objectForKey:",_a6);
-objj_msgSend(_a4,"didCreateRecord:contextInfo:",_aa,_a9);
+if(objj_msgSend(recordsByCreateConnection,"containsKey:",_a7)){
+var _ab=objj_msgSend(recordsByCreateConnection,"objectForKey:",_a7);
+objj_msgSend(_a5,"didCreateRecord:contextInfo:",_ab,_aa);
 }else{
-if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_a6)){
-var _aa=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_a6);
-objj_msgSend(_a4,"didUpdateRecord:contextInfo:",_aa,_a9);
+if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_a7)){
+var _ab=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_a7);
+objj_msgSend(_a5,"didUpdateRecord:contextInfo:",_ab,_aa);
 }else{
-CPLog.warn("[%@ -connection:didReceiveData:] got message for unknown connection: %@ data: %@",objj_msgSend(_a4,"class"),_a6,_a7);
+CPLog.warn("[%@ -connection:didReceiveData:] got message for unknown connection: %@ data: %@",objj_msgSend(_a5,"class"),_a7,_a8);
 }
 }
 }
 }
 }
-objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_a6);
-objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_a6);
-objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_a6);
-objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_a6);
-objj_msgSend(contextInfoByConnection,"removeObjectForKey:",_a6);
-CPLog.trace("[%@ -connection:didReceiveData:] END",objj_msgSend(_a4,"class"));
+objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_a7);
+objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_a7);
+objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_a7);
+objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_a7);
+objj_msgSend(contextInfoByConnection,"removeObjectForKey:",_a7);
+CPLog.trace("[%@ -connection:didReceiveData:] END",objj_msgSend(_a5,"class"));
 }
-}),new objj_method(sel_getUid("connection:didFailWithError:"),function(_ab,_ac,_ad,_ae){
-with(_ab){
-CPLog.trace("[%@ -connection:didFailWithError:] START (error=%@)",objj_msgSend(_ab,"class"),_ae);
-if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_ad)){
-objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_ad);
-objj_msgSend(_ab,"didFailToReceiveRecordsWithError:contextInfo:",_ae,objj_msgSend(contextInfoByConnection,"objectForKey:",_ad));
+}),new objj_method(sel_getUid("connection:didFailWithError:"),function(_ac,_ad,_ae,_af){
+with(_ac){
+CPLog.trace("[%@ -connection:didFailWithError:] START (error=%@)",objj_msgSend(_ac,"class"),_af);
+if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_ae)){
+objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_ae);
+objj_msgSend(_ac,"didFailToReceiveRecordsWithError:contextInfo:",_af,objj_msgSend(contextInfoByConnection,"objectForKey:",_ae));
 }else{
-if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_ad)){
-var _af=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_ad);
-objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_ad);
-objj_msgSend(_ab,"didFailToDeleteRecord:withError:contextInfo:",_af,_ae,objj_msgSend(contextInfoByConnection,"objectForKey:",_ad));
+if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_ae)){
+var _b0=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_ae);
+objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_ae);
+objj_msgSend(_ac,"didFailToDeleteRecord:withError:contextInfo:",_b0,_af,objj_msgSend(contextInfoByConnection,"objectForKey:",_ae));
 }else{
-if(objj_msgSend(recordsByCreateConnection,"containsKey:",_ad)){
-var _af=objj_msgSend(recordsByCreateConnection,"objectForKey:",_ad);
-objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_ad);
-objj_msgSend(_ab,"didFailToCreateRecord:withError:contextInfo:",_af,_ae,objj_msgSend(contextInfoByConnection,"objectForKey:",_ad));
+if(objj_msgSend(recordsByCreateConnection,"containsKey:",_ae)){
+var _b0=objj_msgSend(recordsByCreateConnection,"objectForKey:",_ae);
+objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_ae);
+objj_msgSend(_ac,"didFailToCreateRecord:withError:contextInfo:",_b0,_af,objj_msgSend(contextInfoByConnection,"objectForKey:",_ae));
 }else{
-if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_ad)){
-var _af=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_ad);
-objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_ad);
-objj_msgSend(_ab,"didFailToUpdateRecord:withError:contextInfo:",_af,_ae,objj_msgSend(contextInfoByConnection,"objectForKey:",_ad));
+if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_ae)){
+var _b0=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_ae);
+objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_ae);
+objj_msgSend(_ac,"didFailToUpdateRecord:withError:contextInfo:",_b0,_af,objj_msgSend(contextInfoByConnection,"objectForKey:",_ae));
 }
 }
 }
 }
-CPLog.trace("[%@ -connection:didFailWithError:] END",objj_msgSend(_ab,"class"));
+CPLog.trace("[%@ -connection:didFailWithError:] END",objj_msgSend(_ac,"class"));
 }
 })]);
-class_addMethods(_3,[new objj_method(sel_getUid("sharedDataSource"),function(_b0,_b1){
-with(_b0){
-var _b2=objj_msgSend(_1,"objectForKey:",CPStringFromClass(_b0));
-if(!_b2){
-_b2=objj_msgSend(objj_msgSend(_b0,"alloc"),"init");
-objj_msgSend(_1,"setObject:forKey:",_b2,CPStringFromClass(_b0));
+class_addMethods(_3,[new objj_method(sel_getUid("sharedDataSource"),function(_b1,_b2){
+with(_b1){
+var _b3=objj_msgSend(_1,"objectForKey:",CPStringFromClass(_b1));
+if(!_b3){
+_b3=objj_msgSend(objj_msgSend(_b1,"alloc"),"init");
+objj_msgSend(_1,"setObject:forKey:",_b3,CPStringFromClass(_b1));
 }
-return _b2;
+return _b3;
 }
 })]);
 p;25;DataSources/MMDataStore.jt;1607;@STATIC;1.0;I;21;Foundation/CPObject.jt;1562;
@@ -10732,7 +10742,7 @@ objj_msgSend(_30,"setFrame:",_31);
 return bar;
 }
 })]);
-p;26;Views/MMPreferencesPanel.jt;7264;@STATIC;1.0;I;26;AppKit/CPKeyValueBinding.jI;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;6770;
+p;26;Views/MMPreferencesPanel.jt;7521;@STATIC;1.0;I;26;AppKit/CPKeyValueBinding.jI;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;6969;
 objj_executeFile("AppKit/CPKeyValueBinding.j",NO);
 objj_executeFile("AppKit/CPResponder.j",NO);
 objj_executeFile("AppKit/CPView.j",NO);
@@ -10741,6 +10751,7 @@ objj_executeFile("../Controllers/MMPreferencesGeneralPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesLibraryPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesSharingPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesTranscodingPanelController.j",YES);
+objj_executeFile("../Controllers/MMPreferencesSecurityPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesAdvancedPanelController.j",YES);
 objj_executeFile("../Controllers/MMPrefsController.j",YES);
 objj_executeFile("../Models/MMPref.j",YES);
@@ -10778,6 +10789,7 @@ if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"anySharin
 objj_msgSend(_b,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesSharingPanelController,"alloc"),"init"));
 }
 objj_msgSend(_b,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesTranscodingPanelController,"alloc"),"init"));
+objj_msgSend(_b,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesSecurityPanelController,"alloc"),"init"));
 objj_msgSend(_b,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanelController,"alloc"),"init"));
 var _11=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Done","Done"));
 objj_msgSend(_11,"setKeyEquivalent:",CPEscapeFunctionKey);
@@ -11139,6 +11151,565 @@ objj_msgSend(_3,"addSubview:",_6);
 objj_msgSend(_3,"sizeToFit");
 }
 return _3;
+}
+})]);
+p;50;Controllers/MMPreferencesSecurityPanelController.jt;11203;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;36;../DataSources/MMAccountDataSource.ji;21;../Models/MMAccount.ji;37;../Views/MMPreferencesSecurityPanel.ji;19;../Views/MMPrompt.jt;11011;
+objj_executeFile("MMPreferencesBasePanelController.j",YES);
+objj_executeFile("../DataSources/MMAccountDataSource.j",YES);
+objj_executeFile("../Models/MMAccount.j",YES);
+objj_executeFile("../Views/MMPreferencesSecurityPanel.j",YES);
+objj_executeFile("../Views/MMPrompt.j",YES);
+var _1=objj_allocateClassPair(MMPreferencesBasePanelController,"MMPreferencesSecurityPanelController"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("accountDataSource"),new objj_ivar("adminAccount"),new objj_ivar("enableSecurityPrompt"),new objj_ivar("disableSecurityPrompt"),new objj_ivar("changeUsernamePrompt"),new objj_ivar("changePasswordPrompt")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("init"),function(_3,_4){
+with(_3){
+if(_3=objj_msgSendSuper({receiver:_3,super_class:objj_getClass("MMPreferencesSecurityPanelController").super_class},"init")){
+accountDataSource=objj_msgSend(objj_msgSend(MMAccountDataSource,"alloc"),"initWithDelegate:",_3);
+adminAccount=objj_msgSend(accountDataSource,"adminAccount");
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"addObserver:forKeyPath:options:context:",_3,"securityEnabled",CPKeyValueObservingOptionNew|CPKeyValueObservingOptionInitial,nil);
+}
+return _3;
+}
+}),new objj_method(sel_getUid("identifier"),function(_5,_6){
+with(_5){
+return "Security";
+}
+}),new objj_method(sel_getUid("title"),function(_7,_8){
+with(_7){
+return CPLocalizedString("Security","Security");
+}
+}),new objj_method(sel_getUid("loadView"),function(_9,_a){
+with(_9){
+var _b=objj_msgSend(objj_msgSend(MMPreferencesSecurityPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,455,195));
+objj_msgSend(objj_msgSend(_b,"usernameValueLabel"),"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(accountDataSource,"adminAccount"),"name",nil);
+objj_msgSend(objj_msgSend(_b,"changeUsernameButton"),"setTarget:",_9);
+objj_msgSend(objj_msgSend(_b,"changeUsernameButton"),"setAction:",sel_getUid("changeUsername:"));
+objj_msgSend(objj_msgSend(_b,"changePasswordButton"),"setTarget:",_9);
+objj_msgSend(objj_msgSend(_b,"changePasswordButton"),"setAction:",sel_getUid("changePassword:"));
+objj_msgSend(objj_msgSend(_b,"enableSecurityCheckbox"),"setTarget:",_9);
+objj_msgSend(objj_msgSend(_b,"enableSecurityCheckbox"),"setAction:",sel_getUid("toggleSecurityEnabled:"));
+objj_msgSend(_9,"setView:",_b);
+}
+}),new objj_method(sel_getUid("prompt:userDidActivateButtonWithReturnCode:"),function(_c,_d,_e,_f){
+with(_c){
+switch(_f){
+case 0:
+objj_msgSend(_c,"promptWasSubmitted:",_e);
+break;
+case 1:
+objj_msgSend(_c,"promptWasCancelled:",_e);
+break;
+}
+}
+}),new objj_method(sel_getUid("promptWasCancelled:"),function(_10,_11,_12){
+with(_10){
+if(_12==enableSecurityPrompt){
+objj_msgSend(objj_msgSend(objj_msgSend(_10,"view"),"enableSecurityCheckbox"),"setState:",CPOffState);
+objj_msgSend(enableSecurityPrompt,"dismissPrompt"),enableSecurityPrompt=nil;
+}else{
+if(_12==disableSecurityPrompt){
+objj_msgSend(objj_msgSend(objj_msgSend(_10,"view"),"enableSecurityCheckbox"),"setState:",CPOnState);
+objj_msgSend(disableSecurityPrompt,"dismissPrompt"),disableSecurityPrompt=nil;
+}else{
+if(_12==changeUsernamePrompt){
+objj_msgSend(changeUsernamePrompt,"dismissPrompt"),changeUsernamePrompt=nil;
+}else{
+if(_12==changePasswordPrompt){
+objj_msgSend(changePasswordPrompt,"dismissPrompt"),changePasswordPrompt=nil;
+}
+}
+}
+}
+}
+}),new objj_method(sel_getUid("promptWasSubmitted:"),function(_13,_14,_15){
+with(_13){
+if(_15==enableSecurityPrompt){
+var _16=objj_msgSend(enableSecurityPrompt,"stringValueAtIndex:",0),_17=objj_msgSend(enableSecurityPrompt,"stringValueAtIndex:",1);
+if(_16!=_17){
+objj_msgSend(enableSecurityPrompt,"shake");
+return;
+}
+if(!objj_msgSend(adminAccount,"name")){
+objj_msgSend(adminAccount,"setName:","Administrator");
+}
+objj_msgSend(adminAccount,"setPassword:",_16);
+objj_msgSend(accountDataSource,"updateRecord:withPassword:",adminAccount,"");
+}else{
+if(_15==disableSecurityPrompt){
+var _18=objj_msgSend(disableSecurityPrompt,"stringValueAtIndex:",0),_16="";
+objj_msgSend(adminAccount,"setPassword:",_16);
+objj_msgSend(accountDataSource,"updateRecord:withPassword:",adminAccount,_18);
+}else{
+if(_15==changeUsernamePrompt){
+var _19=objj_msgSend(changeUsernamePrompt,"stringValueAtIndex:",0),_18=objj_msgSend(changeUsernamePrompt,"stringValueAtIndex:",1);
+objj_msgSend(adminAccount,"setName:",_19);
+objj_msgSend(accountDataSource,"updateRecord:withPassword:",adminAccount,_18);
+}else{
+if(_15==changePasswordPrompt){
+var _1a=objj_msgSend(changePasswordPrompt,"stringValueAtIndex:",0),_16=objj_msgSend(changePasswordPrompt,"stringValueAtIndex:",1),_17=objj_msgSend(changePasswordPrompt,"stringValueAtIndex:",2);
+if(_16!=_17){
+objj_msgSend(changePasswordPrompt,"shake");
+return;
+}
+objj_msgSend(adminAccount,"setPassword:",_16);
+objj_msgSend(accountDataSource,"updateRecord:withPassword:",adminAccount,_1a);
+}
+}
+}
+}
+}
+}),new objj_method(sel_getUid("dataSource:didUpdateRecord:contextInfo:"),function(_1b,_1c,_1d,_1e,_1f){
+with(_1b){
+if(enableSecurityPrompt){
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setUsername:",objj_msgSend(_1e,"name"));
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setPassword:",objj_msgSend(_1e,"password"));
+objj_msgSend(enableSecurityPrompt,"dismissPrompt"),enableSecurityPrompt=nil;
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setSecurityEnabled:",YES);
+}else{
+if(disableSecurityPrompt){
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setUsername:",nil);
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setPassword:",nil);
+objj_msgSend(disableSecurityPrompt,"dismissPrompt"),disableSecurityPrompt=nil;
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setSecurityEnabled:",NO);
+}else{
+if(changeUsernamePrompt){
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setUsername:",objj_msgSend(_1e,"name"));
+objj_msgSend(changeUsernamePrompt,"dismissPrompt"),changeUsernamePrompt=nil;
+}else{
+if(changePasswordPrompt){
+objj_msgSend(objj_msgSend(PMSSecurity,"sharedSecurity"),"setPassword:",objj_msgSend(_1e,"password"));
+objj_msgSend(changePasswordPrompt,"dismissPrompt"),changePasswordPrompt=nil;
+}
+}
+}
+}
+}
+}),new objj_method(sel_getUid("dataSource:didFailToUpdateRecord:withError:contextInfo:"),function(_20,_21,_22,_23,_24,_25){
+with(_20){
+var _26=enableSecurityPrompt||disableSecurityPrompt||changeUsernamePrompt||changePasswordPrompt;
+objj_msgSend(_26,"shake");
+objj_msgSend(_23,"rejectChangedAttributes");
+}
+}),new objj_method(sel_getUid("changeUsername:"),function(_27,_28,_29){
+with(_27){
+if(changeUsernamePrompt){
+return;
+}
+var _2a=objj_msgSend(objj_msgSend(MMPrompt,"alloc"),"init");
+changeUsernamePrompt=_2a;
+objj_msgSend(_2a,"setMessageText:",CPLocalizedString("Change your username, and enter your password to authenticate.","Change username prompt message"));
+objj_msgSend(_2a,"addFieldWithLabel:value:",CPLocalizedString("Username:","Username label"),objj_msgSend(adminAccount,"name"));
+objj_msgSend(_2a,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Password:","Password label"),"","",YES);
+objj_msgSend(_2a,"addButtonWithTitle:",CPLocalizedString("Change","Change"));
+objj_msgSend(_2a,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(_2a,"setDelegate:",_27);
+objj_msgSend(_2a,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",objj_msgSend(objj_msgSend(_27,"view"),"window"),nil,nil,nil);
+}
+}),new objj_method(sel_getUid("changePassword:"),function(_2b,_2c,_2d){
+with(_2b){
+if(changePasswordPrompt){
+return;
+}
+var _2e=objj_msgSend(objj_msgSend(MMPrompt,"alloc"),"init");
+changePasswordPrompt=_2e;
+objj_msgSend(_2e,"setMessageText:",CPLocalizedString("Enter your current password to authenticate, then enter and verify your new password.","Change password prompt message"));
+objj_msgSend(_2e,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Current Password:","Password label"),"","",YES);
+objj_msgSend(_2e,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("New Password:","Password label"),"","",YES);
+objj_msgSend(_2e,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Verify:","Verify password label"),"","",YES);
+objj_msgSend(_2e,"addButtonWithTitle:",CPLocalizedString("Change","Change"));
+objj_msgSend(_2e,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(_2e,"setDelegate:",_2b);
+objj_msgSend(_2e,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",objj_msgSend(objj_msgSend(_2b,"view"),"window"),nil,nil,nil);
+}
+}),new objj_method(sel_getUid("toggleSecurityEnabled:"),function(_2f,_30,_31){
+with(_2f){
+var _32=(objj_msgSend(_31,"state")==CPOnState);
+if(_32){
+var _33=objj_msgSend(objj_msgSend(MMPrompt,"alloc"),"init");
+enableSecurityPrompt=_33;
+objj_msgSend(_33,"setMessageText:",CPLocalizedString("Enter a password to enable secure access to your server:","Enable security prompt message"));
+objj_msgSend(_33,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Password:","Password label"),"","",YES);
+objj_msgSend(_33,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Verify:","Verify password label"),"","",YES);
+objj_msgSend(_33,"addButtonWithTitle:",CPLocalizedString("Enable","Enable"));
+objj_msgSend(_33,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(_33,"setDelegate:",_2f);
+objj_msgSend(_33,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",objj_msgSend(objj_msgSend(_2f,"view"),"window"),nil,nil,nil);
+}else{
+var _33=objj_msgSend(objj_msgSend(MMPrompt,"alloc"),"init");
+disableSecurityPrompt=_33;
+objj_msgSend(_33,"setMessageText:",CPLocalizedString("Are you sure you want to disable secure access to your server?","Disable secure server access confirmation"));
+objj_msgSend(_33,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Password:","Password label"),"","",YES);
+objj_msgSend(_33,"addButtonWithTitle:",CPLocalizedString("Disable Secure Access","Disable secure server confirmation button"));
+objj_msgSend(_33,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(_33,"setInformativeText:",CPLocalizedString("Turning off secure server access will allow incoming connections from any computer.","Disable secure server access confirmation info"));
+objj_msgSend(_33,"setDelegate:",_2f);
+objj_msgSend(_33,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",objj_msgSend(objj_msgSend(_2f,"view"),"window"),_2f,nil,nil);
+}
+}
+}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_34,_35,_36,_37,_38,_39){
+with(_34){
+if(enableSecurityPrompt||disableSecurityPrompt){
+return;
+}
+var _3a=objj_msgSend(_38,"objectForKey:",CPKeyValueChangeNewKey);
+objj_msgSend(objj_msgSend(objj_msgSend(_34,"view"),"enableSecurityCheckbox"),"setState:",_3a?CPOnState:CPOffState);
+objj_msgSend(objj_msgSend(objj_msgSend(_34,"view"),"changeUsernameButton"),"setEnabled:",_3a);
+objj_msgSend(objj_msgSend(objj_msgSend(_34,"view"),"changePasswordButton"),"setEnabled:",_3a);
+}
+})]);
+p;33;DataSources/MMAccountDataSource.jt;2213;@STATIC;1.0;i;14;MMDataSource.ji;21;../Models/MMAccount.jt;2149;
+objj_executeFile("MMDataSource.j",YES);
+objj_executeFile("../Models/MMAccount.j",YES);
+var _1=objj_allocateClassPair(MMDataSource,"MMAccountDataSource"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("adminAccount")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("URLForRecordsWithContextInfo:"),function(_3,_4,_5){
+with(_3){
+return objj_msgSend(PMSURL,"URLWithPath:","/accounts");
+}
+}),new objj_method(sel_getUid("URLForRecord:contextInfo:"),function(_6,_7,_8,_9){
+with(_6){
+return objj_msgSend(_8,"URL");
+}
+}),new objj_method(sel_getUid("URLForUpdatedRecord:contextInfo:"),function(_a,_b,_c,_d){
+with(_a){
+var _e=_d?objj_msgSend(CPMutableDictionary,"dictionaryWithDictionary:",_d):objj_msgSend(CPMutableDictionary,"dictionary");
+if(objj_msgSend(_c,"attributeForKeyHasChanged:","name")){
+objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_c,"name"),"username");
+}
+if(objj_msgSend(_c,"attributeForKeyHasChanged:","password")){
+objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_c,"password"),"newPassword");
+}
+return objj_msgSend(PMSURL,"URLWithPath:params:",objj_msgSend(objj_msgSend(_c,"URL"),"path"),_e);
+}
+}),new objj_method(sel_getUid("HTTPBodyForUpdatedRecord:contextInfo:"),function(_f,_10,_11,_12){
+with(_f){
+return nil;
+}
+}),new objj_method(sel_getUid("recordFromElement:contextInfo:"),function(_13,_14,_15,_16){
+with(_13){
+var _17=objj_msgSend(objj_msgSend(_13,"dataStore"),"recordWithClass:id:",objj_msgSend(MMAccount,"class"),objj_msgSend(MMAccount,"idFromKey:",_15.getAttribute("key")));
+objj_msgSend(_17,"setValuesForNodeAttributes:ignoreUndefinedKeys:",_15,YES);
+return _17;
+}
+}),new objj_method(sel_getUid("adminAccount"),function(_18,_19){
+with(_18){
+if(!adminAccount){
+adminAccount=objj_msgSend(objj_msgSend(MMDataStore,"defaultDataStore"),"recordWithClass:id:",objj_msgSend(MMAccount,"class"),1);
+objj_msgSend(_18,"refreshRecord:",adminAccount);
+}
+return adminAccount;
+}
+}),new objj_method(sel_getUid("updateRecord:withPassword:"),function(_1a,_1b,_1c,_1d){
+with(_1a){
+objj_msgSend(_1a,"updateRecord:contextInfo:",_1c,objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_1d,"password"));
+}
+})]);
+p;18;Models/MMAccount.jt;1400;@STATIC;1.0;i;10;MMRecord.jt;1366;
+objj_executeFile("MMRecord.j",YES);
+var _1=objj_allocateClassPair(MMRecord,"MMAccount"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("name"),new objj_ivar("password")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("name"),function(_3,_4){
+with(_3){
+return name;
+}
+}),new objj_method(sel_getUid("setName:"),function(_5,_6,_7){
+with(_5){
+name=_7;
+}
+}),new objj_method(sel_getUid("password"),function(_8,_9){
+with(_8){
+return password;
+}
+}),new objj_method(sel_getUid("setPassword:"),function(_a,_b,_c){
+with(_a){
+password=_c;
+}
+}),new objj_method(sel_getUid("key"),function(_d,_e){
+with(_d){
+return objj_msgSend(CPString,"stringWithFormat:","/accounts/%@",objj_msgSend(_d,"id"));
+}
+}),new objj_method(sel_getUid("setKey:"),function(_f,_10,_11){
+with(_f){
+objj_msgSend(_f,"setId:",objj_msgSend(objj_msgSend(_f,"class"),"idFromKey:",_11));
+}
+}),new objj_method(sel_getUid("URL"),function(_12,_13){
+with(_12){
+return objj_msgSend(PMSURL,"URLWithPath:",objj_msgSend(_12,"key"));
+}
+})]);
+class_addMethods(_2,[new objj_method(sel_getUid("observedAttributes"),function(_14,_15){
+with(_14){
+return objj_msgSend(CPSet,"setWithObjects:","name","password");
+}
+}),new objj_method(sel_getUid("idFromKey:"),function(_16,_17,_18){
+with(_16){
+return Number(objj_msgSend(_18,"stringByReplacingOccurrencesOfString:withString:","/accounts/",""));
+}
+})]);
+p;34;Views/MMPreferencesSecurityPanel.jt;8933;@STATIC;1.0;I;15;AppKit/CPView.jt;8894;
+objj_executeFile("AppKit/CPView.j",NO);
+var _1=objj_allocateClassPair(CPView,"MMPreferencesSecurityPanel"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("securityTitleLabel"),new objj_ivar("securityExplanationLabel"),new objj_ivar("enableSecurityCheckbox"),new objj_ivar("settingsBox"),new objj_ivar("changeUsernameButton"),new objj_ivar("changePasswordButton"),new objj_ivar("usernameLabel"),new objj_ivar("usernameValueLabel"),new objj_ivar("keyImageView")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("enableSecurityCheckbox"),function(_3,_4){
+with(_3){
+return enableSecurityCheckbox;
+}
+}),new objj_method(sel_getUid("setEnableSecurityCheckbox:"),function(_5,_6,_7){
+with(_5){
+enableSecurityCheckbox=_7;
+}
+}),new objj_method(sel_getUid("changeUsernameButton"),function(_8,_9){
+with(_8){
+return changeUsernameButton;
+}
+}),new objj_method(sel_getUid("setChangeUsernameButton:"),function(_a,_b,_c){
+with(_a){
+changeUsernameButton=_c;
+}
+}),new objj_method(sel_getUid("changePasswordButton"),function(_d,_e){
+with(_d){
+return changePasswordButton;
+}
+}),new objj_method(sel_getUid("setChangePasswordButton:"),function(_f,_10,_11){
+with(_f){
+changePasswordButton=_11;
+}
+}),new objj_method(sel_getUid("usernameValueLabel"),function(_12,_13){
+with(_12){
+return usernameValueLabel;
+}
+}),new objj_method(sel_getUid("setUsernameValueLabel:"),function(_14,_15,_16){
+with(_14){
+usernameValueLabel=_16;
+}
+}),new objj_method(sel_getUid("initWithFrame:"),function(_17,_18,_19){
+with(_17){
+if(_17=objj_msgSendSuper({receiver:_17,super_class:objj_getClass("MMPreferencesSecurityPanel").super_class},"initWithFrame:",_19)){
+securityTitleLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Secure Server Access","Security preference pane title"));
+securityExplanationLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.","Security preference pane explanation"));
+objj_msgSend(securityTitleLabel,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",14));
+objj_msgSend(securityTitleLabel,"sizeToFit");
+objj_msgSend(securityTitleLabel,"setFrameOrigin:",CGPointMake(0,0));
+objj_msgSend(securityExplanationLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",12));
+objj_msgSend(securityExplanationLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+enableSecurityCheckbox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Enable Secure Access","Check box label to enable secure server access"));
+objj_msgSend(enableSecurityCheckbox,"setTarget:",_17);
+objj_msgSend(enableSecurityCheckbox,"setAction:",sel_getUid("toggleSecurityEnabled:"));
+objj_msgSend(enableSecurityCheckbox,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",13));
+objj_msgSend(enableSecurityCheckbox,"sizeToFit");
+var _1a=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMakeZero());
+settingsBox=objj_msgSend(CPBox,"boxEnclosingView:",_1a);
+objj_msgSend(settingsBox,"setBorderType:",CPBezelBorder);
+objj_msgSend(settingsBox,"setBoxType:",CPBoxPrimary);
+objj_msgSend(settingsBox,"setCornerRadius:",5);
+objj_msgSend(settingsBox,"setFillColor:",objj_msgSend(CPColor,"colorWithWhite:alpha:",229/255,1));
+objj_msgSend(settingsBox,"setAutoresizingMask:",CPViewWidthSizable);
+var _1b=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","Key_Large.png"),CGSizeMake(128,128));
+keyImageView=objj_msgSend(objj_msgSend(MMImageView,"alloc"),"initWithFrame:",CGRectMake(0,0,objj_msgSend(_1b,"size").width,objj_msgSend(_1b,"size").height));
+objj_msgSend(keyImageView,"setImage:",_1b);
+objj_msgSend(_17,"addSubview:",keyImageView);
+usernameLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Username:","Username label"));
+objj_msgSend(usernameLabel,"setFrameOrigin:",CGPointMake(15,15));
+objj_msgSend(usernameLabel,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",12));
+objj_msgSend(usernameLabel,"sizeToFit");
+objj_msgSend(_1a,"addSubview:",usernameLabel);
+usernameValueLabel=objj_msgSend(CPTextField,"labelWithTitle:","");
+objj_msgSend(usernameValueLabel,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(usernameLabel,"frame"))+5,CGRectGetMinY(objj_msgSend(usernameLabel,"frame")),CGRectGetWidth(objj_msgSend(_1a,"frame"))-CGRectGetMaxX(objj_msgSend(usernameLabel,"frame"))-5,CGRectGetHeight(objj_msgSend(usernameValueLabel,"frame"))));
+objj_msgSend(usernameValueLabel,"setAutoresizingMask:",CPViewWidthSizable);
+objj_msgSend(_1a,"addSubview:",usernameValueLabel);
+changeUsernameButton=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Change Username","Security preferences button to change the main account username"));
+objj_msgSend(changeUsernameButton,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(usernameLabel,"frame")),CGRectGetMaxY(objj_msgSend(usernameLabel,"frame"))+10));
+objj_msgSend(_1a,"addSubview:",changeUsernameButton);
+changePasswordButton=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Change Password","Security preferences button to change the main account password"));
+objj_msgSend(changePasswordButton,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(changeUsernameButton,"frame"))+10,CGRectGetMinY(objj_msgSend(changeUsernameButton,"frame"))));
+objj_msgSend(_1a,"addSubview:",changePasswordButton);
+objj_msgSend(_17,"addSubview:",securityTitleLabel);
+objj_msgSend(_17,"addSubview:",securityExplanationLabel);
+objj_msgSend(_17,"addSubview:",enableSecurityCheckbox);
+objj_msgSend(_17,"addSubview:",settingsBox);
+objj_msgSend(_17,"layoutSubviews");
+}
+return _17;
+}
+}),new objj_method(sel_getUid("promptForValues:messageText:confirmButtonText:target:selector:"),function(_1c,_1d,_1e,_1f,_20,_21,_22){
+with(_1c){
+var _23=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
+objj_msgSend(_23,"setWindowStyle:",CPInformationalAlertStyle);
+objj_msgSend(_23,"setMessageText:",_1f);
+var _24=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMakeZero()),_25=[],_26=[],_27=nil,_28=0,_29=0;
+for(var i=0,_2a=objj_msgSend(_1e,"count");i<_2a;i++){
+var _2b=objj_msgSend(CPTextField,"labelWithTitle:",_1e[i].label),_2c=objj_msgSend(CPTextField,"textFieldWithStringValue:placeholder:width:",_1e[i].value,_1e[i].placeholder,150);
+objj_msgSend(_2b,"setAlignment:",CPRightTextAlignment);
+objj_msgSend(_2c,"setSecure:",_1e[i].secure);
+objj_msgSend(_25,"addObject:",_2b);
+objj_msgSend(_26,"addObject:",_2c);
+var _2d=CGRectGetWidth(objj_msgSend(_2b,"frame"));
+if(_2d>_29){
+_29=_2d;
+}
+objj_msgSend(_24,"addSubview:",_2b);
+objj_msgSend(_24,"addSubview:",_2c);
+if(!_27){
+_27=_2c;
+}
+}
+for(var i=0,_2a=objj_msgSend(_1e,"count");i<_2a;i++){
+var _2b=_25[i],_2c=_26[i];
+objj_msgSend(_2c,"setFrameOrigin:",CGPointMake(_29,_28));
+objj_msgSend(_2b,"setFrame:",CGRectMake(0,CGRectGetMinY(objj_msgSend(_2c,"frame"))+(CGRectGetHeight(objj_msgSend(_2c,"frame"))-CGRectGetHeight(objj_msgSend(_2b,"frame")))/2,_29,CGRectGetHeight(objj_msgSend(_2b,"frame"))));
+_28+=CGRectGetHeight(objj_msgSend(_2c,"frame"))+5;
+}
+objj_msgSend(_24,"sizeToFit");
+objj_msgSend(_23,"setAccessoryView:",_24);
+objj_msgSend(_23,"addButtonWithTitle:",_20);
+objj_msgSend(_23,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(_23,"runModal");
+objj_msgSend(_27,"selectAll:",nil);
+objj_msgSend(objj_msgSend(_23,"window"),"makeFirstResponder:",_27);
+}
+}),new objj_method(sel_getUid("layoutSubviews"),function(_2e,_2f){
+with(_2e){
+var _30=CGRectGetWidth(objj_msgSend(_2e,"frame"));
+var _31=objj_msgSend(objj_msgSend(securityExplanationLabel,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(securityExplanationLabel,"font"),_30);
+_31.height+=5;
+objj_msgSend(securityExplanationLabel,"setFrameSize:",_31);
+objj_msgSend(securityExplanationLabel,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(securityTitleLabel,"frame")),CGRectGetMaxY(objj_msgSend(securityTitleLabel,"frame"))+5));
+objj_msgSend(keyImageView,"setFrameOrigin:",CGPointMake(-15,CGRectGetMaxY(objj_msgSend(securityExplanationLabel,"frame"))+5));
+objj_msgSend(enableSecurityCheckbox,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(keyImageView,"frame"))-15,CGRectGetMinY(objj_msgSend(keyImageView,"frame"))+15));
+objj_msgSend(settingsBox,"setFrame:",CGRectMake(CGRectGetMinX(objj_msgSend(enableSecurityCheckbox,"frame")),CGRectGetMaxY(objj_msgSend(enableSecurityCheckbox,"frame"))+5,_30-CGRectGetMinX(objj_msgSend(enableSecurityCheckbox,"frame")),CGRectGetMaxY(objj_msgSend(changeUsernameButton,"frame"))+15));
+objj_msgSendSuper({receiver:_2e,super_class:objj_getClass("MMPreferencesSecurityPanel").super_class},"layoutSubviews");
+}
+}),new objj_method(sel_getUid("toggleSecurityEnabled:"),function(_32,_33,_34){
+with(_32){
+var _35=objj_msgSend(enableSecurityCheckbox,"state")==CPOnState;
+}
+})]);
+p;16;Views/MMPrompt.jt;4156;@STATIC;1.0;I;16;AppKit/CPAlert.ji;19;../CPWindow+Shake.jt;4092;
+objj_executeFile("AppKit/CPAlert.j",NO);
+objj_executeFile("../CPWindow+Shake.j",YES);
+var _1=150;
+var _2=objj_allocateClassPair(CPAlert,"MMPrompt"),_3=_2.isa;
+class_addIvars(_2,[new objj_ivar("labels"),new objj_ivar("inputs")]);
+objj_registerClassPair(_2);
+class_addMethods(_2,[new objj_method(sel_getUid("initWithFrame:"),function(_4,_5,_6){
+with(_4){
+if(_4=objj_msgSendSuper({receiver:_4,super_class:objj_getClass("MMPrompt").super_class},"initWithFrame:",_6)){
+labels=objj_msgSend(CPMutableArray,"array");
+inputs=objj_msgSend(CPMutableArray,"array");
+objj_msgSend(_4,"setAccessoryView:",objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMakeZero()));
+}
+return _4;
+}
+}),new objj_method(sel_getUid("addFieldWithLabel:value:"),function(_7,_8,_9,_a){
+with(_7){
+objj_msgSend(_7,"addFieldWithLabel:value:placeholder:secure:",_9,_a,"",NO);
+}
+}),new objj_method(sel_getUid("addFieldWithLabel:value:placeholder:secure:"),function(_b,_c,_d,_e,_f,_10){
+with(_b){
+var _11=objj_msgSend(CPTextField,"labelWithTitle:",_d),_12=objj_msgSend(CPTextField,"textFieldWithStringValue:placeholder:width:",_e,_f,_1);
+objj_msgSend(_11,"setAlignment:",CPRightTextAlignment);
+objj_msgSend(_12,"setSecure:",_10);
+objj_msgSend(labels,"addObject:",_11);
+objj_msgSend(inputs,"addObject:",_12);
+objj_msgSend(objj_msgSend(_b,"accessoryView"),"addSubview:",_11);
+objj_msgSend(objj_msgSend(_b,"accessoryView"),"addSubview:",_12);
+_needsLayout=YES;
+}
+}),new objj_method(sel_getUid("stringValueAtIndex:"),function(_13,_14,_15){
+with(_13){
+return objj_msgSend(objj_msgSend(inputs,"objectAtIndex:",_15),"stringValue");
+}
+}),new objj_method(sel_getUid("shake"),function(_16,_17){
+with(_16){
+objj_msgSend(_window,"shake");
+}
+}),new objj_method(sel_getUid("dismissPrompt"),function(_18,_19){
+with(_18){
+if(objj_msgSend(_window,"isSheet")){
+objj_msgSend(CPApp,"endSheet:returnCode:",_window,-1);
+}else{
+objj_msgSend(CPApp,"abortModal");
+objj_msgSend(_window,"close");
+}
+}
+}),new objj_method(sel_getUid("_takeReturnCodeFrom:"),function(_1a,_1b,_1c){
+with(_1a){
+if(objj_msgSend(_delegate,"respondsToSelector:",sel_getUid("prompt:userDidActivateButtonWithReturnCode:"))){
+objj_msgSend(_delegate,"prompt:userDidActivateButtonWithReturnCode:",_1a,objj_msgSend(_1c,"tag"));
+}else{
+objj_msgSendSuper({receiver:_1a,super_class:objj_getClass("MMPrompt").super_class},"_takeReturnCodeFrom:",_1c);
+}
+}
+}),new objj_method(sel_getUid("runModal"),function(_1d,_1e){
+with(_1d){
+objj_msgSendSuper({receiver:_1d,super_class:objj_getClass("MMPrompt").super_class},"runModal");
+objj_msgSend(_1d,"activateFirstResponder");
+}
+}),new objj_method(sel_getUid("beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:"),function(_1f,_20,_21,_22,_23,_24){
+with(_1f){
+objj_msgSendSuper({receiver:_1f,super_class:objj_getClass("MMPrompt").super_class},"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",_21,_22,_23,_24);
+objj_msgSend(_1f,"activateFirstResponder");
+}
+}),new objj_method(sel_getUid("activateFirstResponder"),function(_25,_26){
+with(_25){
+if(objj_msgSend(inputs,"count")){
+var _27=objj_msgSend(inputs,"objectAtIndex:",0);
+objj_msgSend(objj_msgSend(_25,"window"),"makeFirstResponder:",_27);
+objj_msgSend(_27,"selectAll:",nil);
+}
+}
+}),new objj_method(sel_getUid("layout"),function(_28,_29){
+with(_28){
+var _2a=0,_2b=0;
+for(var i=0,_2c=objj_msgSend(labels,"count");i<_2c;i++){
+var _2d=objj_msgSend(labels,"objectAtIndex:",i),_2e=CGRectGetWidth(objj_msgSend(_2d,"frame"));
+if(_2e>_2b){
+_2b=_2e;
+}
+}
+for(var i=0,_2c=objj_msgSend(labels,"count");i<_2c;i++){
+var _2d=objj_msgSend(labels,"objectAtIndex:",i),_2f=objj_msgSend(inputs,"objectAtIndex:",i);
+objj_msgSend(_2f,"setFrameOrigin:",CGPointMake(_2b,_2a));
+objj_msgSend(_2d,"setFrame:",CGRectMake(0,_2a+(CGRectGetHeight(objj_msgSend(_2f,"frame"))-CGRectGetHeight(objj_msgSend(_2d,"frame")))/2,_2b,CGRectGetHeight(objj_msgSend(_2d,"frame"))));
+_2a=CGRectGetMaxY(objj_msgSend(_2f,"frame"))+5;
+}
+objj_msgSend(objj_msgSend(_28,"accessoryView"),"sizeToFit");
+objj_msgSendSuper({receiver:_28,super_class:objj_getClass("MMPrompt").super_class},"layout");
+}
+})]);
+p;16;CPWindow+Shake.jt;1288;@STATIC;1.0;t;1269;
+var _1=objj_getClass("CPWindow");
+if(!_1){
+throw new SyntaxError("*** Could not find definition for class \"CPWindow\"");
+}
+var _2=_1.isa;
+class_addMethods(_1,[new objj_method(sel_getUid("shake"),function(_3,_4){
+with(_3){
+var _5=30,_6=3,_7=0.18,_8=0,_9=objj_msgSend(_3,"frame").origin,_a=_9.x,_b=_9.y;
+for(var i=0;i<_6;i++){
+var _c;
+_c=_7/_6/4;
+objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a-_5,_b),_c,_8);
+_8+=_c;
+_c=_7/_6/2;
+objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a+_5,_b),_c,_8);
+_8+=_c;
+_c=_7/_6/4;
+objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a,_b),_c,_8);
+_8+=_c;
+}
+}
+}),new objj_method(sel_getUid("animateOriginToPoint:duration:afterDelay:"),function(_d,_e,_f,_10,_11){
+with(_d){
+setTimeout(function(){
+var _12=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_10,CPAnimationEaseInOut),_13=objj_msgSend(_d,"frame"),_14=CGRectMake(_f.x,_f.y,CGRectGetWidth(_13),CGRectGetHeight(_13));
+objj_msgSend(_12,"setViewAnimations:",[objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_d,CPViewAnimationTargetKey,_13,CPViewAnimationStartFrameKey,_14,CPViewAnimationEndFrameKey)]);
+objj_msgSend(_12,"startAnimation");
+},_11*1000);
 }
 })]);
 p;50;Controllers/MMPreferencesAdvancedPanelController.jt;802;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;37;../Views/MMPreferencesAdvancedPanel.jt;703;
