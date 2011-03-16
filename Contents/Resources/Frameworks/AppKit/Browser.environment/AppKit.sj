@@ -29886,7 +29886,7 @@ return {context:_6};
 CABackingStoreSetSize=function(_7,_8){
 };
 }
-p;19;CPArrayController.jt;19900;@STATIC;1.0;I;23;Foundation/CPIndexSet.ji;20;CPObjectController.ji;19;CPKeyValueBinding.jt;19803;
+p;19;CPArrayController.jt;19985;@STATIC;1.0;I;23;Foundation/CPIndexSet.ji;20;CPObjectController.ji;19;CPKeyValueBinding.jt;19888;
 objj_executeFile("Foundation/CPIndexSet.j",NO);
 objj_executeFile("CPObjectController.j",YES);
 objj_executeFile("CPKeyValueBinding.j",YES);
@@ -30204,6 +30204,9 @@ if(_clearsFilterPredicateOnInsertion){
 objj_msgSend(_80,"__setFilterPredicate:",nil);
 }
 if(_filterPredicate===nil||objj_msgSend(_filterPredicate,"evaluateWithObject:",_82)){
+if(_arrangedObjects===nil){
+_arrangedObjects=objj_msgSend(CPMutableArray,"array");
+}
 var pos=objj_msgSend(_arrangedObjects,"insertObject:inArraySortedByDescriptors:",_82,_sortDescriptors);
 if(_selectsInsertedObjects){
 objj_msgSend(_80,"__setSelectionIndex:",pos);
