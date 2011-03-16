@@ -1224,7 +1224,7 @@ with(_3){
 return objj_msgSend(_3,"buttonWithTitle:theme:",_5,objj_msgSend(CPTheme,"themeNamed:","Aristo-HUD"));
 }
 })]);
-p;23;Models/MMMetadataItem.jt;21882;@STATIC;1.0;i;10;MMRecord.jt;21847;
+p;23;Models/MMMetadataItem.jt;21860;@STATIC;1.0;i;10;MMRecord.jt;21825;
 objj_executeFile("MMRecord.j",YES);
 var _1;
 MMMetadataItemTypeShow="show";
@@ -1248,7 +1248,7 @@ MMMetadataItemStateIdle=5;
 MMMetadataItemStateDeleted=9;
 MMMetadataItemTagAttributeMap=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:","writer","writers","director","directors","genre","genres","collection","collections");
 var _2=objj_allocateClassPair(MMRecord,"MMMetadataItem"),_3=_2.isa;
-class_addIvars(_2,[new objj_ivar("_key"),new objj_ivar("guid"),new objj_ivar("language"),new objj_ivar("_title"),new objj_ivar("_titleSort"),new objj_ivar("_originalTitle"),new objj_ivar("_tagline"),new objj_ivar("_year"),new objj_ivar("_rating"),new objj_ivar("_index"),new objj_ivar("_duration"),new objj_ivar("_summary"),new objj_ivar("_studio"),new objj_ivar("_contentRating"),new objj_ivar("_originallyAvailableAt"),new objj_ivar("_thumb"),new objj_ivar("_art"),new objj_ivar("_type"),new objj_ivar("updatedAt"),new objj_ivar("deletedAt"),new objj_ivar("_librarySection"),new objj_ivar("_thumbImage"),new objj_ivar("_artImage"),new objj_ivar("_state"),new objj_ivar("_leafCount"),new objj_ivar("_matching"),new objj_ivar("_idle"),new objj_ivar("_loading"),new objj_ivar("_parent"),new objj_ivar("_writers"),new objj_ivar("_directors"),new objj_ivar("_genres"),new objj_ivar("_collections"),new objj_ivar("_titleLocked"),new objj_ivar("_titleSortLocked"),new objj_ivar("_originalTitleLocked"),new objj_ivar("_taglineLocked"),new objj_ivar("_yearLocked"),new objj_ivar("_ratingLocked"),new objj_ivar("_summaryLocked"),new objj_ivar("_studioLocked"),new objj_ivar("_contentRatingLocked"),new objj_ivar("_originallyAvailableAtLocked"),new objj_ivar("_writersLocked"),new objj_ivar("_directorsLocked"),new objj_ivar("_genresLocked"),new objj_ivar("_collectionLocked"),new objj_ivar("_thumbLocked"),new objj_ivar("_artLocked"),new objj_ivar("mediaItems")]);
+class_addIvars(_2,[new objj_ivar("_key"),new objj_ivar("guid"),new objj_ivar("language"),new objj_ivar("_title"),new objj_ivar("_titleSort"),new objj_ivar("_originalTitle"),new objj_ivar("_tagline"),new objj_ivar("_year"),new objj_ivar("_rating"),new objj_ivar("_index"),new objj_ivar("_duration"),new objj_ivar("_summary"),new objj_ivar("_studio"),new objj_ivar("_contentRating"),new objj_ivar("_originallyAvailableAt"),new objj_ivar("thumb"),new objj_ivar("art"),new objj_ivar("_type"),new objj_ivar("updatedAt"),new objj_ivar("deletedAt"),new objj_ivar("_librarySection"),new objj_ivar("_thumbImage"),new objj_ivar("_artImage"),new objj_ivar("_state"),new objj_ivar("_leafCount"),new objj_ivar("_matching"),new objj_ivar("_idle"),new objj_ivar("_loading"),new objj_ivar("_parent"),new objj_ivar("_writers"),new objj_ivar("_directors"),new objj_ivar("_genres"),new objj_ivar("_collections"),new objj_ivar("_titleLocked"),new objj_ivar("_titleSortLocked"),new objj_ivar("_originalTitleLocked"),new objj_ivar("_taglineLocked"),new objj_ivar("_yearLocked"),new objj_ivar("_ratingLocked"),new objj_ivar("_summaryLocked"),new objj_ivar("_studioLocked"),new objj_ivar("_contentRatingLocked"),new objj_ivar("_originallyAvailableAtLocked"),new objj_ivar("_writersLocked"),new objj_ivar("_directorsLocked"),new objj_ivar("_genresLocked"),new objj_ivar("_collectionLocked"),new objj_ivar("thumbLocked"),new objj_ivar("artLocked"),new objj_ivar("mediaItems")]);
 objj_registerClassPair(_2);
 class_addMethods(_2,[new objj_method(sel_getUid("key"),function(_4,_5){
 with(_4){
@@ -1372,19 +1372,19 @@ _originallyAvailableAt=_4e;
 }
 }),new objj_method(sel_getUid("thumb"),function(_4f,_50){
 with(_4f){
-return _thumb;
+return thumb;
 }
 }),new objj_method(sel_getUid("setThumb:"),function(_51,_52,_53){
 with(_51){
-_thumb=_53;
+thumb=_53;
 }
 }),new objj_method(sel_getUid("art"),function(_54,_55){
 with(_54){
-return _art;
+return art;
 }
 }),new objj_method(sel_getUid("setArt:"),function(_56,_57,_58){
 with(_56){
-_art=_58;
+art=_58;
 }
 }),new objj_method(sel_getUid("type"),function(_59,_5a){
 with(_59){
@@ -1600,19 +1600,19 @@ _collectionLocked=_db;
 }
 }),new objj_method(sel_getUid("isThumbLocked"),function(_dc,_dd){
 with(_dc){
-return _thumbLocked;
+return thumbLocked;
 }
 }),new objj_method(sel_getUid("setThumbLocked:"),function(_de,_df,_e0){
 with(_de){
-_thumbLocked=_e0;
+thumbLocked=_e0;
 }
 }),new objj_method(sel_getUid("isArtLocked"),function(_e1,_e2){
 with(_e1){
-return _artLocked;
+return artLocked;
 }
 }),new objj_method(sel_getUid("setArtLocked:"),function(_e3,_e4,_e5){
 with(_e3){
-_artLocked=_e5;
+artLocked=_e5;
 }
 }),new objj_method(sel_getUid("mediaItems"),function(_e6,_e7){
 with(_e6){
@@ -1750,15 +1750,15 @@ _state=_117;
 }
 }),new objj_method(sel_getUid("setThumb:"),function(self,_118,_119){
 with(self){
-if(_thumb===_119){
+if(thumb===_119){
 return;
 }
-_thumb=_119;
+thumb=_119;
 _thumbImage=nil;
 }
 }),new objj_method(sel_getUid("thumbImage"),function(self,_11a){
 with(self){
-if(!_thumb){
+if(!thumb){
 return nil;
 }
 if(!_thumbImage){
@@ -1768,22 +1768,22 @@ return _thumbImage;
 }
 }),new objj_method(sel_getUid("thumbURL"),function(self,_11b){
 with(self){
-if(!_thumb){
+if(!thumb){
 return nil;
 }
-return objj_msgSend(PMSURL,"URLWithPath:",_thumb);
+return objj_msgSend(PMSURL,"URLWithPath:",thumb);
 }
 }),new objj_method(sel_getUid("setArt:"),function(self,_11c,_11d){
 with(self){
-if(_art===_11d){
+if(art===_11d){
 return;
 }
-_art=_11d;
+art=_11d;
 _artImage=nil;
 }
 }),new objj_method(sel_getUid("artImage"),function(self,_11e){
 with(self){
-if(!_art){
+if(!art){
 return nil;
 }
 if(!_artImage){
@@ -1793,10 +1793,10 @@ return _artImage;
 }
 }),new objj_method(sel_getUid("artURL"),function(self,_11f){
 with(self){
-if(!_art){
+if(!art){
 return nil;
 }
-return objj_msgSend(PMSURL,"URLWithPath:",_art);
+return objj_msgSend(PMSURL,"URLWithPath:",art);
 }
 }),new objj_method(sel_getUid("isMatching"),function(self,_120){
 with(self){
@@ -6243,7 +6243,7 @@ objj_msgSend(_3f,"encodeObject:forKey:",_stringValue,_38);
 objj_msgSend(_3f,"encodeBool:forKey:",(_hideOverflow?NO:YES),_39);
 }
 })]);
-p;38;DataSources/MMMetadataItemDataSource.jt;1739;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;1615;
+p;38;DataSources/MMMetadataItemDataSource.jt;1819;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;1695;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("../Models/MMMediaItem.j",YES);
 objj_executeFile("MMDataSource.j",YES);
@@ -6268,16 +6268,18 @@ for(var i=_c.length;i--;){
 var _d=_c[i];
 switch(String(_d.nodeName)){
 case "Field":
-var _e=_d.getAttribute("name"),_f=(_d.getAttribute("locked")=="1");
-objj_msgSend(_b,"setValue:forKey:",_f,_e+"Locked");
+var _e=_d.getAttribute("name"),_f=(_d.getAttribute("locked")=="1"),_10=_e+"Locked";
+if(objj_msgSend(_b,"respondsToSelector:",CPSelectorFromString(_10))){
+objj_msgSend(_b,"setValue:forKey:",_f,_10);
+}
 break;
 case "Writer":
 case "Director":
 case "Genre":
 var key=String(_d.nodeName).toLowerCase()+"s";
-var _10=objj_msgSend(_b,"valueForKey:",key)||[];
-objj_msgSend(_10,"addObject:",_d.getAttribute("tag"));
-objj_msgSend(_b,"setValue:forKey:",_10,key);
+var _11=objj_msgSend(_b,"valueForKey:",key)||[];
+objj_msgSend(_11,"addObject:",_d.getAttribute("tag"));
+objj_msgSend(_b,"setValue:forKey:",_11,key);
 break;
 }
 }
