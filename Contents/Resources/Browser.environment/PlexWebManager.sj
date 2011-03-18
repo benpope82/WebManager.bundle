@@ -5953,8 +5953,9 @@ with(_3){
 return objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",CGInsetMake(15,15,15,15),"content-inset");
 }
 })]);
-p;20;Views/MMLockButton.jt;3513;@STATIC;1.0;I;17;AppKit/CPButton.jt;3472;
+p;20;Views/MMLockButton.jt;3595;@STATIC;1.0;I;17;AppKit/CPButton.jI;26;AppKit/CPKeyValueBinding.jt;3523;
 objj_executeFile("AppKit/CPButton.j",NO);
+objj_executeFile("AppKit/CPKeyValueBinding.j",NO);
 var _1=nil;
 var _2=nil;
 var _3=objj_allocateClassPair(CPButton,"MMLockButton"),_4=_3.isa;

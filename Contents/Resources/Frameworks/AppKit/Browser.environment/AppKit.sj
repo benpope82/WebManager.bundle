@@ -14364,7 +14364,7 @@ CGContextStrokePath(_d);
 CGContextRestoreGState(_d);
 return _a;
 };
-p;12;CPScroller.jt;16773;@STATIC;1.0;i;11;CPControl.jt;16737;
+p;12;CPScroller.jt;16754;@STATIC;1.0;i;11;CPControl.jt;16718;
 objj_executeFile("CPControl.j",YES);
 CPScrollerNoPart=0;
 CPScrollerDecrementPage=1;
@@ -14513,7 +14513,7 @@ _partRects[CPScrollerKnob]={origin:{x:0,y:0},size:{width:0,height:0}};
 if(_27<_29.width+_2a.width-2){
 _partRects[CPScrollerIncrementLine]={origin:{x:0,y:0},size:{width:0,height:0}};
 _partRects[CPScrollerDecrementLine]={origin:{x:0,y:0},size:{width:0,height:0}};
-_partRects[CPScrollerKnobSlot]={origin:{x:0,y:0},size:{width:_27,height:_28-_26.top-_26.bottom}};
+_partRects[CPScrollerKnobSlot]={origin:{x:0,y:0},size:{width:_27,height:_2d}};
 }
 }
 }
@@ -25124,7 +25124,7 @@ CGGradientRelease=function(){
 CGGradientRetain=function(_a){
 return _a;
 };
-p;13;CPTableView.jt;109791;@STATIC;1.0;I;20;Foundation/CPArray.jI;23;Foundation/CPIndexSet.ji;12;CGGradient.ji;11;CPControl.ji;15;CPTableColumn.ji;15;_CPCornerView.ji;12;CPScroller.jt;109627;
+p;13;CPTableView.jt;109919;@STATIC;1.0;I;20;Foundation/CPArray.jI;23;Foundation/CPIndexSet.ji;12;CGGradient.ji;11;CPControl.ji;15;CPTableColumn.ji;15;_CPCornerView.ji;12;CPScroller.jt;109755;
 objj_executeFile("Foundation/CPArray.j",NO);
 objj_executeFile("Foundation/CPIndexSet.j",NO);
 objj_executeFile("CGGradient.j",YES);
@@ -25761,7 +25761,7 @@ var _109=objj_msgSend(_108,"objectForKey:",CPObservedObjectKey),_10a=objj_msgSen
 _numberOfRows=objj_msgSend(objj_msgSend(_109,"valueForKeyPath:",_10a),"count");
 }else{
 if(_dataSource&&(_implementedDataSourceMethods&_1)){
-_numberOfRows=objj_msgSend(_dataSource,"numberOfRowsInTableView:",self);
+_numberOfRows=objj_msgSend(_dataSource,"numberOfRowsInTableView:",self)||0;
 }else{
 if(_dataSource){
 CPLog("no content binding established and data source "+objj_msgSend(_dataSource,"description")+" does not implement numberOfRowsInTableView:");
@@ -25876,7 +25876,13 @@ if(_125&&(_124>_126||_124<0)){
 return {origin:{x:0,y:0},size:{width:0,height:0}};
 }
 if(_implementedDelegateMethods&_d){
-var _127=MIN(_124,_126),y=_cachedRowHeights[_127].heightAboveRow,_128=_cachedRowHeights[_127].height+_intercellSpacing.height,_129=_124-_127;
+var _127=MIN(_124,_126);
+if(_127!==CPNotFound){
+var y=_cachedRowHeights[_127].heightAboveRow,_128=_cachedRowHeights[_127].height+_intercellSpacing.height,_129=_124-_127;
+}else{
+y=_124*(_rowHeight+_intercellSpacing.height);
+_128=_rowHeight+_intercellSpacing.height;
+}
 if(_129>0){
 y+=_129*(_rowHeight+_intercellSpacing.height);
 _128=_rowHeight+_intercellSpacing.height;
@@ -29886,7 +29892,7 @@ return {context:_6};
 CABackingStoreSetSize=function(_7,_8){
 };
 }
-p;19;CPArrayController.jt;19985;@STATIC;1.0;I;23;Foundation/CPIndexSet.ji;20;CPObjectController.ji;19;CPKeyValueBinding.jt;19888;
+p;19;CPArrayController.jt;19926;@STATIC;1.0;I;23;Foundation/CPIndexSet.ji;20;CPObjectController.ji;19;CPKeyValueBinding.jt;19829;
 objj_executeFile("Foundation/CPIndexSet.j",NO);
 objj_executeFile("CPObjectController.j",YES);
 objj_executeFile("CPKeyValueBinding.j",YES);
@@ -29913,7 +29919,7 @@ with(_5){
 _sortDescriptors=objj_msgSend(CPArray,"array");
 _filterPredicate=nil;
 _selectionIndexes=objj_msgSend(CPIndexSet,"indexSet");
-_arrangedObjects=nil;
+_arrangedObjects=objj_msgSend(CPArray,"array");
 }
 }),new objj_method(sel_getUid("prepareContent"),function(_7,_8){
 with(_7){
@@ -30204,9 +30210,6 @@ if(_clearsFilterPredicateOnInsertion){
 objj_msgSend(_80,"__setFilterPredicate:",nil);
 }
 if(_filterPredicate===nil||objj_msgSend(_filterPredicate,"evaluateWithObject:",_82)){
-if(_arrangedObjects===nil){
-_arrangedObjects=objj_msgSend(CPMutableArray,"array");
-}
 var pos=objj_msgSend(_arrangedObjects,"insertObject:inArraySortedByDescriptors:",_82,_sortDescriptors);
 if(_selectsInsertedObjects){
 objj_msgSend(_80,"__setSelectionIndex:",pos);
