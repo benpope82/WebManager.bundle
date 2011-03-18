@@ -92,7 +92,7 @@ objj_msgSend(_27,"setDictionary:forTable:",_2b,"Localizable");
 }
 window.LocaleCPApplicationMain(_25,_26);
 };
-p;20;CPView+Transitions.jt;2889;@STATIC;1.0;I;15;AppKit/CPView.jI;20;AppKit/CPAnimation.jt;2825;
+p;20;CPView+Transitions.jt;3141;@STATIC;1.0;I;15;AppKit/CPView.jI;20;AppKit/CPAnimation.jt;3077;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("AppKit/CPAnimation.j",NO);
 CPViewWillTransitionToSubview="CPViewWillTransitionToSubview";
@@ -104,34 +104,39 @@ throw new SyntaxError("*** Could not find definition for class \"CPView\"");
 var _2=_1.isa;
 class_addMethods(_1,[new objj_method(sel_getUid("transitionFromSubview:toSubview:"),function(_3,_4,_5,_6){
 with(_3){
-if(objj_msgSend(_5,"isEqual:",_6)){
+objj_msgSend(_3,"transitionFromSubview:toSubview:adjustWidth:adjustHeight:",_5,_6,YES,YES);
+}
+}),new objj_method(sel_getUid("transitionFromSubview:toSubview:adjustWidth:adjustHeight:"),function(_7,_8,_9,_a,_b,_c){
+with(_7){
+if(objj_msgSend(_9,"isEqual:",_a)){
 return;
 }
-var _7=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_6,"toSubview",_5,"fromSubview");
-objj_msgSend(_3,"willTransitionFromSubview:toSubview:",_5,_6);
-objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewWillTransitionToSubview,_3,_7);
-var _8=objj_msgSend(_3,"window"),_9=CGRectGetWidth(objj_msgSend(_6,"frame"))-CGRectGetWidth(objj_msgSend(_5,"frame")),_a=CGRectGetHeight(objj_msgSend(_6,"frame"))-CGRectGetHeight(objj_msgSend(_5,"frame")),_b=objj_msgSend(_8,"frame").size,_c=CGSizeMake(_b.width+_9,_b.height+_a),_d=objj_msgSend(_8,"frame"),_e=CGRectMake(CGRectGetMidX(_d)-_c.width/2,CGRectGetMinY(_d),_c.width,_c.height),_f=objj_msgSend(_8,"animationResizeTime:",_e);
-var _10=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_f,CPAnimationLinear);
-objj_msgSend(_10,"setViewAnimations:",objj_msgSend(CPArray,"arrayWithObjects:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_5,CPViewAnimationTargetKey,objj_msgSend(_5,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_5,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeOutEffect,CPViewAnimationEffectKey),objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_6,CPViewAnimationTargetKey,objj_msgSend(_6,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_6,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeInEffect,CPViewAnimationEffectKey)));
-objj_msgSend(_10,"startAnimation");
-objj_msgSend(_8,"setFrame:display:animate:",_e,YES,YES);
-objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",_f,_3,sel_getUid("_didTransitionWithTimer:"),_7,NO);
+var _d=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_a,"toSubview",_9,"fromSubview");
+objj_msgSend(_7,"willTransitionFromSubview:toSubview:",_9,_a);
+objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewWillTransitionToSubview,_7,_d);
+var _e=objj_msgSend(_7,"window"),_f=_b?CGRectGetWidth(objj_msgSend(_a,"frame"))-CGRectGetWidth(objj_msgSend(_9,"frame")):0,_10=_c?CGRectGetHeight(objj_msgSend(_a,"frame"))-CGRectGetHeight(objj_msgSend(_9,"frame")):0,_11=objj_msgSend(_e,"frame").size,_12=CGSizeMake(_11.width+_f,_11.height+_10),_13=objj_msgSend(_e,"frame"),_14=CGRectMake(CGRectGetMidX(_13)-_12.width/2,CGRectGetMinY(_13),_12.width,_12.height),_15=objj_msgSend(_e,"animationResizeTime:",_14);
+var _16=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_15,CPAnimationLinear);
+objj_msgSend(_16,"setViewAnimations:",objj_msgSend(CPArray,"arrayWithObjects:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_9,CPViewAnimationTargetKey,objj_msgSend(_9,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_9,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeOutEffect,CPViewAnimationEffectKey),objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_a,CPViewAnimationTargetKey,objj_msgSend(_a,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_a,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeInEffect,CPViewAnimationEffectKey)));
+objj_msgSend(_16,"startAnimation");
+objj_msgSend(_e,"setFrame:display:animate:",_14,YES,YES);
+objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",_15,_7,sel_getUid("_didTransitionWithTimer:"),_d,NO);
 }
-}),new objj_method(sel_getUid("_didTransitionWithTimer:"),function(_11,_12,_13){
-with(_11){
-var _14=objj_msgSend(_13,"userInfo");
-objj_msgSend(_11,"didTransitionFromSubview:toSubview:",objj_msgSend(_14,"objectForKey:","fromSubview"),objj_msgSend(_14,"objectForKey:","toSubview"));
-objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewDidTransitionToSubview,_11,_14);
+}),new objj_method(sel_getUid("_didTransitionWithTimer:"),function(_17,_18,_19){
+with(_17){
+var _1a=objj_msgSend(_19,"userInfo");
+objj_msgSend(_17,"didTransitionFromSubview:toSubview:",objj_msgSend(_1a,"objectForKey:","fromSubview"),objj_msgSend(_1a,"objectForKey:","toSubview"));
+objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewDidTransitionToSubview,_17,_1a);
 }
-}),new objj_method(sel_getUid("willTransitionFromSubview:toSubview:"),function(_15,_16,_17,_18){
-with(_15){
+}),new objj_method(sel_getUid("willTransitionFromSubview:toSubview:"),function(_1b,_1c,_1d,_1e){
+with(_1b){
 }
-}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_19,_1a,_1b,_1c){
-with(_19){
+}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_1f,_20,_21,_22){
+with(_1f){
 }
 })]);
-p;18;CPView+sizeToFit.jt;1755;@STATIC;1.0;I;15;AppKit/CPView.jt;1716;
+p;18;CPView+sizeToFit.jt;2228;@STATIC;1.0;I;15;AppKit/CPView.jt;2189;
 objj_executeFile("AppKit/CPView.j",NO);
+CPViewInsetDefault="CPViewInsetDefault";
 var _1=objj_getClass("CPView");
 if(!_1){
 throw new SyntaxError("*** Could not find definition for class \"CPView\"");
@@ -139,50 +144,69 @@ throw new SyntaxError("*** Could not find definition for class \"CPView\"");
 var _2=_1.isa;
 class_addMethods(_1,[new objj_method(sel_getUid("sizeToFit"),function(_3,_4){
 with(_3){
-objj_msgSend(_3,"sizeToFitWithInset:",objj_msgSend(_3,"hasThemeAttribute:","content-inset")&&objj_msgSend(_3,"currentValueForThemeAttribute:","content-inset")||CGInsetMakeZero());
+objj_msgSend(_3,"sizeToFitWithInset:",CPViewInsetDefault);
 }
 }),new objj_method(sel_getUid("sizeToFitWithInset:"),function(_5,_6,_7){
 with(_5){
-var _8=CGSizeMake(_7.left,_7.top),_9={origin:CGPointMakeZero(),size:_8},_a=CGSizeMakeZero();
-for(var i=0,_b=objj_msgSend(_subviews,"count");i<_b;i++){
-var _c=_subviews[i],_d=objj_msgSend(_c,"autoresizingMask");
-if(objj_msgSend(_c,"isHidden")){
+objj_msgSend(_5,"sizeToFitWithInset:adjustWidth:adjustHeight:",_7,YES,YES);
+}
+}),new objj_method(sel_getUid("sizeToFitWithInset:adjustWidth:adjustHeight:"),function(_8,_9,_a,_b,_c){
+with(_8){
+if(!_b&&!_c){
+return;
+}
+if(_a===CPViewInsetDefault){
+_a=objj_msgSend(_8,"hasThemeAttribute:","content-inset")&&objj_msgSend(_8,"currentValueForThemeAttribute:","content-inset");
+}
+if(!_a){
+_a=CGInsetMakeZero();
+}
+var _d=CGSizeMake(_a.left,_a.top),_e={origin:CGPointMakeZero(),size:_d},_f=CGSizeMakeZero();
+for(var i=0,_10=objj_msgSend(_subviews,"count");i<_10;i++){
+var _11=_subviews[i],_12=objj_msgSend(_11,"autoresizingMask");
+if(objj_msgSend(_11,"isHidden")){
 continue;
 }
-if(_d&CPViewMinYMargin){
-var _e=CGRectIntersection(_9,objj_msgSend(_c,"frame"));
-if(!CGRectIsEmpty(_e)){
-_a.height+=CGRectGetHeight(_e);
+if(_12&CPViewMinYMargin){
+var _13=CGRectIntersection(_e,objj_msgSend(_11,"frame"));
+if(!CGRectIsEmpty(_13)){
+_f.height+=CGRectGetHeight(_13);
 }else{
-_a.height+=CGRectGetHeight(objj_msgSend(_c,"frame"));
-}
-}else{
-if(_d&CPViewMinXMargin){
-var _e=CGRectIntersection(_9,objj_msgSend(_c,"frame"));
-if(!CGRectIsEmpty(_e)){
-_a.width+=CGRectGetWidth(_e);
-}else{
-_a.width+=CGRectGetWidth(objj_msgSend(_c,"frame"));
+_f.height+=CGRectGetHeight(objj_msgSend(_11,"frame"));
 }
 }else{
-var _f=objj_msgSend(_c,"frame"),_10=CGRectGetMaxX(_f),_11=CGRectGetMaxY(_f);
-if(_8.width<_10){
-_8.width=_10;
+if(_12&CPViewMinXMargin){
+var _13=CGRectIntersection(_e,objj_msgSend(_11,"frame"));
+if(!CGRectIsEmpty(_13)){
+_f.width+=CGRectGetWidth(_13);
+}else{
+_f.width+=CGRectGetWidth(objj_msgSend(_11,"frame"));
 }
-if(_8.height<_11){
-_8.height=_11;
+}else{
+var _14=objj_msgSend(_11,"frame"),_15=CGRectGetMaxX(_14),_16=CGRectGetMaxY(_14);
+if(_d.width<_15){
+_d.width=_15;
+}
+if(_d.height<_16){
+_d.height=_16;
 }
 }
 }
-objj_msgSend(_5,"setFrameSize:",CGSizeMake(_8.width+_a.width,_8.height+_a.height));
+objj_msgSend(_8,"setFrameSize:",CGSizeMake(_d.width+_f.width,_d.height+_f.height));
 }
-_8.width+=_a.width+_7.right;
-_8.height+=_a.height+_7.bottom;
-objj_msgSend(_5,"setFrameSize:",_8);
+_d.width+=_f.width+_a.right;
+_d.height+=_f.height+_a.bottom;
+if(!_b){
+_d.width=CGRectGetWidth(objj_msgSend(_8,"frame"));
 }
-}),new objj_method(sel_getUid("hasThemeAttribute:"),function(_12,_13,_14){
-with(_12){
-return !!objj_msgSend(objj_msgSend(_12,"_themeAttributeDictionary"),"objectForKey:",_14);
+if(!_c){
+_d.height=CGRectGetHeight(objj_msgSend(_8,"frame"));
+}
+objj_msgSend(_8,"setFrameSize:",_d);
+}
+}),new objj_method(sel_getUid("hasThemeAttribute:"),function(_17,_18,_19){
+with(_17){
+return !!objj_msgSend(objj_msgSend(_17,"_themeAttributeDictionary"),"objectForKey:",_19);
 }
 })]);
 p;21;CPNumber+Formatting.jt;1212;@STATIC;1.0;t;1193;
@@ -640,7 +664,7 @@ objj_msgSend(_7a,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextI
 }
 }),new objj_method(sel_getUid("_settingsButtonWasClicked:"),function(_7b,_7c,_7d){
 with(_7b){
-var _7e=objj_msgSend(objj_msgSend(MMPreferencesPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,500,200));
+var _7e=objj_msgSend(objj_msgSend(MMPreferencesPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,520,200));
 objj_msgSend(_7e,"sizeToFit");
 objj_msgSend(_7e,"presentSheetInWindow:",objj_msgSend(objj_msgSend(_7b,"view"),"window"));
 }
@@ -10901,7 +10925,7 @@ objj_msgSend(_30,"setFrame:",_31);
 return bar;
 }
 })]);
-p;26;Views/MMPreferencesPanel.jt;7439;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;6918;
+p;26;Views/MMPreferencesPanel.jt;7657;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;7136;
 objj_executeFile("AppKit/CPResponder.j",NO);
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Frameworks/LPKit/LPMultiLineTextField.j",YES);
@@ -10938,7 +10962,7 @@ var _e=objj_msgSend(objj_msgSend(CPToolbar,"alloc"),"init");
 var _f=objj_msgSend(_e,"_toolbarView");
 objj_msgSend(_f,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_b,"frame")),CGRectGetHeight(objj_msgSend(_f,"frame"))));
 var _10=objj_msgSend(_b,"valueForThemeAttribute:","content-inset");
-sectionOrigin=CGRectOffset(CGRectInset(objj_msgSend(_b,"bounds"),_10.left,_10.top),0,CGRectGetHeight(objj_msgSend(_f,"frame"))).origin;
+sectionOrigin=CGRectOffset(CGRectInset(objj_msgSend(_b,"bounds"),0,_10.top),0,CGRectGetHeight(objj_msgSend(_f,"frame"))).origin;
 sections=objj_msgSend(CPArray,"array");
 sectionIdentifiers=objj_msgSend(CPArray,"array");
 objj_msgSend(_b,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesGeneralPanelController,"alloc"),"init"));
@@ -11009,28 +11033,29 @@ with(_27){
 sectionBeingSelected=_29;
 var _2a=objj_msgSend(_29,"view");
 if(!objj_msgSend(objj_msgSend(_27,"subviews"),"containsObject:",_2a)){
-objj_msgSend(_2a,"setFrameOrigin:",sectionOrigin);
+var _2b=CGPointMake(sectionOrigin.x+(CGRectGetWidth(objj_msgSend(_27,"frame"))-CGRectGetWidth(objj_msgSend(_2a,"frame")))/2,sectionOrigin.y);
+objj_msgSend(_2a,"setFrameOrigin:",_2b);
 objj_msgSend(_27,"addSubview:",_2a);
 }
 if(selectedSection){
-objj_msgSend(_27,"transitionFromSubview:toSubview:",objj_msgSend(selectedSection,"view"),_2a);
+objj_msgSend(_27,"transitionFromSubview:toSubview:adjustWidth:adjustHeight:",objj_msgSend(selectedSection,"view"),_2a,NO,YES);
 }else{
 objj_msgSend(_27,"willTransitionFromSubview:toSubview:",nil,_2a);
-objj_msgSend(_27,"sizeToFit");
+objj_msgSend(_27,"sizeToFitWithInset:adjustWidth:adjustHeight:",CPViewInsetDefault,NO,YES);
 objj_msgSend(_27,"didTransitionFromSubview:toSubview:",nil,_2a);
 }
 }
-}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_2b,_2c,_2d,_2e){
-with(_2b){
+}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_2c,_2d,_2e,_2f){
+with(_2c){
 objj_msgSend(objj_msgSend(selectedSection,"view"),"setHidden:",YES);
-objj_msgSend(_2e,"setHidden:",NO);
-objj_msgSend(objj_msgSend(_2b,"window"),"makeFirstResponder:",objj_msgSend(sectionBeingSelected,"initialFirstResponder"));
+objj_msgSend(_2f,"setHidden:",NO);
+objj_msgSend(objj_msgSend(_2c,"window"),"makeFirstResponder:",objj_msgSend(sectionBeingSelected,"initialFirstResponder"));
 selectedSection=sectionBeingSelected;
 sectionBeingSelected=nil;
 }
 })]);
-class_addMethods(_2,[new objj_method(sel_getUid("themeAttributes"),function(_2f,_30){
-with(_2f){
+class_addMethods(_2,[new objj_method(sel_getUid("themeAttributes"),function(_30,_31){
+with(_30){
 return objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[CGInsetMake(15,15,15,15)],["content-inset"]);
 }
 })]);
@@ -11885,7 +11910,7 @@ return CPLocalizedString("Advanced","Advanced");
 }
 }),new objj_method(sel_getUid("loadView"),function(_7,_8){
 with(_7){
-objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,500,120)));
+objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,485,120)));
 }
 })]);
 p;34;Views/MMPreferencesAdvancedPanel.jt;2724;@STATIC;1.0;I;15;AppKit/CPView.jt;2685;
