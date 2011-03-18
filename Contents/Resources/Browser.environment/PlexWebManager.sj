@@ -1929,7 +1929,7 @@ with(self){
 return objj_msgSend(CPSet,"setWithObject:","parent");
 }
 })]);
-p;17;Models/MMRecord.jt;4476;@STATIC;1.0;I;21;Foundation/CPObject.jt;4431;
+p;17;Models/MMRecord.jt;5180;@STATIC;1.0;I;21;Foundation/CPObject.jt;5135;
 objj_executeFile("Foundation/CPObject.j",NO);
 var _1=objj_msgSend(CPDictionary,"dictionary");
 var _2=objj_allocateClassPair(CPObject,"MMRecord"),_3=_2.isa;
@@ -2030,27 +2030,43 @@ with(_2a){
 }),new objj_method(sel_getUid("recordWasDeleted"),function(_2c,_2d){
 with(_2c){
 }
-})]);
-class_addMethods(_3,[new objj_method(sel_getUid("observedAttributes"),function(_2e,_2f){
+}),new objj_method(sel_getUid("copy"),function(_2e,_2f){
 with(_2e){
+var _30=objj_msgSend(objj_msgSend(objj_msgSend(_2e,"class"),"alloc"),"init");
+objj_msgSend(_30,"takeAttributesFromRecord:onlyChanges:",_2e,NO);
+objj_msgSend(_30,"setId:",nil);
+objj_msgSend(_30,"acceptChangedAttributes");
+return _30;
+}
+}),new objj_method(sel_getUid("takeAttributesFromRecord:onlyChanges:"),function(_31,_32,_33,_34){
+with(_31){
+objj_msgSend(objj_msgSend(objj_msgSend(_31,"class"),"allObservedAttributes"),"enumerateObjectsUsingBlock:",function(_35){
+if(!_34||objj_msgSend(_33,"attributeForKeyHasChanged:",_35)){
+objj_msgSend(_31,"setValue:forKey:",objj_msgSend(objj_msgSend(_33,"valueForKey:",_35),"copy"),_35);
+}
+});
+}
+})]);
+class_addMethods(_3,[new objj_method(sel_getUid("observedAttributes"),function(_36,_37){
+with(_36){
 return objj_msgSend(CPSet,"set");
 }
-}),new objj_method(sel_getUid("allObservedAttributes"),function(_30,_31){
-with(_30){
-return _1[objj_msgSend(_30,"UID")];
+}),new objj_method(sel_getUid("allObservedAttributes"),function(_38,_39){
+with(_38){
+return _1[objj_msgSend(_38,"UID")];
 }
-}),new objj_method(sel_getUid("_loadObservedAttributes"),function(_32,_33){
-with(_32){
-if(objj_msgSend(_32,"allObservedAttributes")){
+}),new objj_method(sel_getUid("_loadObservedAttributes"),function(_3a,_3b){
+with(_3a){
+if(objj_msgSend(_3a,"allObservedAttributes")){
 return;
 }
-var _34=objj_msgSend(objj_msgSend(_32,"observedAttributes"),"copy");
-if(objj_msgSend(objj_msgSend(_32,"superclass"),"respondsToSelector:",sel_getUid("_loadObservedAttributes"))){
-objj_msgSend(objj_msgSend(_32,"superclass"),"_loadObservedAttributes");
-objj_msgSend(_34,"unionSet:",objj_msgSend(objj_msgSend(_32,"superclass"),"allObservedAttributes"));
+var _3c=objj_msgSend(objj_msgSend(_3a,"observedAttributes"),"copy");
+if(objj_msgSend(objj_msgSend(_3a,"superclass"),"respondsToSelector:",sel_getUid("_loadObservedAttributes"))){
+objj_msgSend(objj_msgSend(_3a,"superclass"),"_loadObservedAttributes");
+objj_msgSend(_3c,"unionSet:",objj_msgSend(objj_msgSend(_3a,"superclass"),"allObservedAttributes"));
 }
-CPLog.debug("[%@ _loadObservedAttributes] observedAttributes: %@",_32,_34);
-_1[objj_msgSend(_32,"UID")]=_34;
+CPLog.debug("[%@ _loadObservedAttributes] observedAttributes: %@",_3a,_3c);
+_1[objj_msgSend(_3a,"UID")]=_3c;
 }
 })]);
 p;15;Models/PMSURL.jt;1410;@STATIC;1.0;I;18;Foundation/CPURL.ji;16;../PMSSecurity.jt;1347;
@@ -5649,7 +5665,7 @@ var _f=_d,_10=_e;
 return objj_msgSend(PMSURL,"URLWithPath:params:",objj_msgSend(_b,"URLForMetadataItem:withSuffix:",_10,"/art"),objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",objj_msgSend(_f,"ratingKey"),"url"));
 }
 })]);
-p;40;Controllers/MMMetadataEditorController.jt;17764;@STATIC;1.0;I;25;AppKit/CPViewController.ji;22;../CPDateTransformer.ji;26;../Models/MMMetadataItem.ji;21;../CPView+sizeToFit.ji;27;../Views/MMSheetContainer.ji;23;../Views/MMLockButton.jt;17570;
+p;40;Controllers/MMMetadataEditorController.jt;17963;@STATIC;1.0;I;25;AppKit/CPViewController.ji;22;../CPDateTransformer.ji;26;../Models/MMMetadataItem.ji;21;../CPView+sizeToFit.ji;27;../Views/MMSheetContainer.ji;23;../Views/MMLockButton.jt;17769;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("../CPDateTransformer.j",YES);
 objj_executeFile("../Models/MMMetadataItem.j",YES);
@@ -5657,7 +5673,7 @@ objj_executeFile("../CPView+sizeToFit.j",YES);
 objj_executeFile("../Views/MMSheetContainer.j",YES);
 objj_executeFile("../Views/MMLockButton.j",YES);
 var _1=objj_allocateClassPair(CPViewController,"MMMetadataEditorController"),_2=_1.isa;
-class_addIvars(_1,[new objj_ivar("_delegate"),new objj_ivar("_metadataItem"),new objj_ivar("_sheetPanel"),new objj_ivar("_initialFirstResponder")]);
+class_addIvars(_1,[new objj_ivar("_delegate"),new objj_ivar("metadataItem"),new objj_ivar("originalMetadataItem"),new objj_ivar("_sheetPanel"),new objj_ivar("_initialFirstResponder")]);
 objj_registerClassPair(_1);
 class_addMethods(_1,[new objj_method(sel_getUid("delegate"),function(_3,_4){
 with(_3){
@@ -5669,11 +5685,11 @@ _delegate=_7;
 }
 }),new objj_method(sel_getUid("metadataItem"),function(_8,_9){
 with(_8){
-return _metadataItem;
+return metadataItem;
 }
 }),new objj_method(sel_getUid("setMetadataItem:"),function(_a,_b,_c){
 with(_a){
-_metadataItem=_c;
+metadataItem=_c;
 }
 }),new objj_method(sel_getUid("initWithDelegate:"),function(_d,_e,_f){
 with(_d){
@@ -5891,7 +5907,8 @@ objj_msgSend(CPApp,"beginSheet:modalForWindow:modalDelegate:didEndSelector:conte
 }
 }),new objj_method(sel_getUid("presentMetadataItem:inWindow:"),function(_48,_49,_4a,_4b){
 with(_48){
-objj_msgSend(_48,"setMetadataItem:",_4a);
+originalMetadataItem=_4a;
+objj_msgSend(_48,"setMetadataItem:",objj_msgSend(originalMetadataItem,"copy"));
 objj_msgSend(_48,"presentSheetInWindow:",_4b);
 }
 }),new objj_method(sel_getUid("dismissSheet"),function(_4c,_4d){
@@ -5903,8 +5920,9 @@ objj_msgSend(CPApp,"endSheet:returnCode:",_sheetPanel,0),_sheetPanel=nil;
 }
 }),new objj_method(sel_getUid("save:"),function(_4e,_4f,_50){
 with(_4e){
+objj_msgSend(originalMetadataItem,"takeAttributesFromRecord:onlyChanges:",metadataItem,YES);
 if(objj_msgSend(_delegate,"respondsToSelector:",sel_getUid("metadataEditor:didCommitMetadataItem:"))){
-objj_msgSend(_delegate,"metadataEditor:didCommitMetadataItem:",_4e,_metadataItem);
+objj_msgSend(_delegate,"metadataEditor:didCommitMetadataItem:",_4e,originalMetadataItem);
 }
 }
 }),new objj_method(sel_getUid("cancel:"),function(_51,_52,_53){
@@ -5953,9 +5971,8 @@ with(_3){
 return objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",CGInsetMake(15,15,15,15),"content-inset");
 }
 })]);
-p;20;Views/MMLockButton.jt;3595;@STATIC;1.0;I;17;AppKit/CPButton.jI;26;AppKit/CPKeyValueBinding.jt;3523;
+p;20;Views/MMLockButton.jt;3495;@STATIC;1.0;I;17;AppKit/CPButton.jt;3454;
 objj_executeFile("AppKit/CPButton.j",NO);
-objj_executeFile("AppKit/CPKeyValueBinding.j",NO);
 var _1=nil;
 var _2=nil;
 var _3=objj_allocateClassPair(CPButton,"MMLockButton"),_4=_3.isa;
@@ -5989,7 +6006,7 @@ if(_12===locked){
 return;
 }
 locked=_12;
-objj_msgSend(objj_msgSend(CPKeyValueBinding,"getBinding:forObject:","locked",_10),"reverseSetValueFor:","locked");
+objj_msgSend(objj_msgSend(CPBinder,"getBinding:forObject:","locked",_10),"reverseSetValueFor:","locked");
 objj_msgSend(_10,"setImage:",locked?objj_msgSend(objj_msgSend(_10,"class"),"lockImage"):objj_msgSend(objj_msgSend(_10,"class"),"unlockImage"));
 objj_msgSend(_10,"setHighlighted:",_12);
 }
@@ -6000,7 +6017,7 @@ objj_msgSend(_13,"willChangeValueForKey:","locked");
 locked=!locked;
 objj_msgSend(_13,"setImage:",locked?objj_msgSend(objj_msgSend(_13,"class"),"lockImage"):objj_msgSend(objj_msgSend(_13,"class"),"unlockImage"));
 objj_msgSend(_13,"didChangeValueForKey:","locked");
-objj_msgSend(objj_msgSend(CPKeyValueBinding,"getBinding:forObject:","locked",_13),"reverseSetValueFor:","locked");
+objj_msgSend(objj_msgSend(CPBinder,"getBinding:forObject:","locked",_13),"reverseSetValueFor:","locked");
 try{
 objj_msgSendSuper({receiver:_13,super_class:objj_getClass("MMLockButton").super_class},"sendAction:to:",_15,_16);
 }
@@ -10884,8 +10901,7 @@ objj_msgSend(_30,"setFrame:",_31);
 return bar;
 }
 })]);
-p;26;Views/MMPreferencesPanel.jt;7521;@STATIC;1.0;I;26;AppKit/CPKeyValueBinding.jI;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;6969;
-objj_executeFile("AppKit/CPKeyValueBinding.j",NO);
+p;26;Views/MMPreferencesPanel.jt;7439;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;6918;
 objj_executeFile("AppKit/CPResponder.j",NO);
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Frameworks/LPKit/LPMultiLineTextField.j",YES);
