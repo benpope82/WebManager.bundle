@@ -8556,7 +8556,7 @@ with(_8){
 return objj_msgSend(CPSet,"setWithObject:","representedObject");
 }
 })]);
-p;41;DataSources/MMLibraryTimelineDataSource.jt;4939;@STATIC;1.0;I;19;Foundation/CPDate.jI;20;Foundation/CPTimer.ji;26;MMLibraryMediaDataSource.ji;28;../Models/MMLibrarySection.ji;26;../Models/MMMetadataItem.jt;4776;
+p;41;DataSources/MMLibraryTimelineDataSource.jt;5167;@STATIC;1.0;I;19;Foundation/CPDate.jI;20;Foundation/CPTimer.ji;26;MMLibraryMediaDataSource.ji;28;../Models/MMLibrarySection.ji;26;../Models/MMMetadataItem.jt;5004;
 objj_executeFile("Foundation/CPDate.j",NO);
 objj_executeFile("Foundation/CPTimer.j",NO);
 objj_executeFile("MMLibraryMediaDataSource.j",YES);
@@ -8612,9 +8612,12 @@ with(_20){
 if(!objj_msgSendSuper({receiver:_20,super_class:objj_getClass("MMLibraryTimelineDataSource").super_class},"shouldProcessNode:contextInfo:",_22,_23)){
 return NO;
 }
-if(Number(_22.getAttribute("state"))==MMMetadataItemStateCreated){
 var id=objj_msgSend(MMMetadataItem,"idFromKey:",String(_22.getAttribute("key")));
-return !objj_msgSend(objj_msgSend(_20,"dataStore"),"hasRecordWithClass:id:",MMMetadataItem,id);
+switch(Number(_22.getAttribute("state"))){
+case MMMetadataItemStateCreated:
+return !objj_msgSend(objj_msgSend(_20,"dataStore"),"hasRecordWithClass:id:",objj_msgSend(MMMetadataItem,"class"),id);
+case MMMetadataItemStateDeleted:
+return objj_msgSend(objj_msgSend(objj_msgSend(_20,"dataStore"),"recordWithClass:id:",objj_msgSend(MMMetadataItem,"class"),id),"state")!=MMMetadataItemStateDeleted;
 }
 return YES;
 }
@@ -9100,7 +9103,7 @@ objj_msgSend(_3b,"encodeInt:forKey:",_underlineMask,_35);
 }
 }
 })]);
-p;52;Controllers/MMMetadataItemCollectionViewController.jt;14244;@STATIC;1.0;I;25;AppKit/CPViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;13960;
+p;52;Controllers/MMMetadataItemCollectionViewController.jt;14315;@STATIC;1.0;I;25;AppKit/CPViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;14031;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("../DataSources/MMLibraryMediaDataSource.j",YES);
 objj_executeFile("../DataSources/MMLibraryTimelineDataSource.j",YES);
@@ -9198,9 +9201,11 @@ if(!objj_msgSend(_26,"isKindOfClass:",MMMetadataItem)||!objj_msgSend(objj_msgSen
 return;
 }
 CPLog.info("[%@ _recordWasDeleted:] removing record with id=%@",objj_msgSend(_22,"class"),objj_msgSend(_26,"id"));
+if(objj_msgSend(objj_msgSend(_22,"content"),"containsObject:",_26)){
 objj_msgSend(_22,"willChangeValueForKey:","content");
 objj_msgSend(_collectionView,"removeObject:",_26);
 objj_msgSend(_22,"didChangeValueForKey:","content");
+}
 }
 }),new objj_method(sel_getUid("_recordWasCreated:"),function(_27,_28,_29){
 with(_27){
