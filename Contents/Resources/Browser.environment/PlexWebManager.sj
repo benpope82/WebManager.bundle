@@ -7822,7 +7822,7 @@ with(_11){
 return objj_msgSend(CPString,"stringWithFormat:","/sections/%@/media/%@/children/%@/children/%@",objj_msgSend(objj_msgSend(_13,"librarySection"),"id"),objj_msgSend(objj_msgSend(_13,"root"),"id"),objj_msgSend(objj_msgSend(_13,"parent"),"id"),objj_msgSend(_13,"id"));
 }
 })]);
-p;38;Controllers/MMMetadataItemController.jt;10607;@STATIC;1.0;I;25;AppKit/CPViewController.ji;25;MMImagePickerController.ji;25;MMMatchPickerController.ji;28;MMMetadataEditorController.ji;33;MMMetadataItemToolbarController.ji;26;../Models/MMMetadataItem.ji;35;../Views/MMMetadataItemDetailView.ji;22;../Views/MMAlbumCell.ji;23;../Views/MMSeasonCell.jt;10300;
+p;38;Controllers/MMMetadataItemController.jt;10531;@STATIC;1.0;I;25;AppKit/CPViewController.ji;25;MMImagePickerController.ji;25;MMMatchPickerController.ji;28;MMMetadataEditorController.ji;33;MMMetadataItemToolbarController.ji;26;../Models/MMMetadataItem.ji;35;../Views/MMMetadataItemDetailView.ji;22;../Views/MMAlbumCell.ji;23;../Views/MMSeasonCell.jt;10224;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("MMImagePickerController.j",YES);
 objj_executeFile("MMMatchPickerController.j",YES);
@@ -7913,7 +7913,6 @@ return objj_msgSend(objj_msgSend(_22,"content"),"tagline");
 }
 }),new objj_method(sel_getUid("genre"),function(_24,_25){
 with(_24){
-console.log("genres =",objj_msgSend(objj_msgSend(_24,"content"),"genres"));
 return objj_msgSend(objj_msgSend(objj_msgSend(_24,"content"),"genres"),"objectAtIndex:",0);
 }
 }),new objj_method(sel_getUid("setContent:"),function(_26,_27,_28){
@@ -8416,7 +8415,7 @@ var _16=_14.getHours();
 return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("%d:%02d %@","ShortLocalTimeFormat"),(_16%12)==0?12:(_16%12),_14.getMinutes(),_16>11?CPLocalizedString("PM","PostMeridiem"):CPLocalizedString("AM","AnteMeridiem"));
 }
 })]);
-p;25;Views/MMRatingStarsView.jt;3884;@STATIC;1.0;I;15;AppKit/CPView.ji;13;MMImageView.jt;3827;
+p;25;Views/MMRatingStarsView.jt;3731;@STATIC;1.0;I;15;AppKit/CPView.ji;13;MMImageView.jt;3674;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("MMImageView.j",YES);
 var _1=5;
@@ -8486,10 +8485,8 @@ objj_msgSend(fullStarContainer,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_ms
 }),new objj_method(sel_getUid("layoutSubviews"),function(_1e,_1f){
 with(_1e){
 objj_msgSendSuper({receiver:_1e,super_class:objj_getClass("MMRatingStarsView").super_class},"layoutSubviews");
-console.log(objj_msgSend(stars,"description"));
 for(var i=0;i<_1;i++){
 var _20=objj_msgSend(_1e,"frameForStarAtIndex:",i);
-console.log(i,CPStringFromRect(_20),objj_msgSend(objj_msgSend(stars,"objectAtIndex:",i),"description"));
 objj_msgSend(objj_msgSend(stars,"objectAtIndex:",i),"setFrame:",_20);
 objj_msgSend(objj_msgSend(stars,"objectAtIndex:",i+_1),"setFrame:",_20);
 }
