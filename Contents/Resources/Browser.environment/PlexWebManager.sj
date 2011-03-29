@@ -7822,7 +7822,7 @@ with(_11){
 return objj_msgSend(CPString,"stringWithFormat:","/sections/%@/media/%@/children/%@/children/%@",objj_msgSend(objj_msgSend(_13,"librarySection"),"id"),objj_msgSend(objj_msgSend(_13,"root"),"id"),objj_msgSend(objj_msgSend(_13,"parent"),"id"),objj_msgSend(_13,"id"));
 }
 })]);
-p;38;Controllers/MMMetadataItemController.jt;10531;@STATIC;1.0;I;25;AppKit/CPViewController.ji;25;MMImagePickerController.ji;25;MMMatchPickerController.ji;28;MMMetadataEditorController.ji;33;MMMetadataItemToolbarController.ji;26;../Models/MMMetadataItem.ji;35;../Views/MMMetadataItemDetailView.ji;22;../Views/MMAlbumCell.ji;23;../Views/MMSeasonCell.jt;10224;
+p;38;Controllers/MMMetadataItemController.jt;10609;@STATIC;1.0;I;25;AppKit/CPViewController.ji;25;MMImagePickerController.ji;25;MMMatchPickerController.ji;28;MMMetadataEditorController.ji;33;MMMetadataItemToolbarController.ji;26;../Models/MMMetadataItem.ji;35;../Views/MMMetadataItemDetailView.ji;22;../Views/MMAlbumCell.ji;23;../Views/MMSeasonCell.jt;10302;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("MMImagePickerController.j",YES);
 objj_executeFile("MMMatchPickerController.j",YES);
@@ -7913,7 +7913,7 @@ return objj_msgSend(objj_msgSend(_22,"content"),"tagline");
 }
 }),new objj_method(sel_getUid("genre"),function(_24,_25){
 with(_24){
-return objj_msgSend(objj_msgSend(objj_msgSend(_24,"content"),"genres"),"objectAtIndex:",0);
+return objj_msgSend(objj_msgSend(objj_msgSend(_24,"content"),"genres"),"count")&&objj_msgSend(objj_msgSend(objj_msgSend(_24,"content"),"genres"),"objectAtIndex:",0)||"";
 }
 }),new objj_method(sel_getUid("setContent:"),function(_26,_27,_28){
 with(_26){
