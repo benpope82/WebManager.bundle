@@ -9583,7 +9583,7 @@ return YES;
 return objj_msgSendSuper({receiver:_1f,super_class:objj_getClass("MMMetadataItemCollectionView").super_class},"performKeyEquivalent:",_21);
 }
 })]);
-p;26;Views/MMMetadataItemCell.jt;11220;@STATIC;1.0;i;40;../Controllers/MMMatchPickerController.ji;34;../DataSources/MMAgentDataSource.ji;41;../DataSources/MMMediaMatchesDataSource.ji;41;../DataSources/MMMetadataItemDataSource.ji;26;../Models/MMMetadataItem.ji;26;MMCollectionViewItemCell.ji;13;MMImageView.jt;10944;
+p;26;Views/MMMetadataItemCell.jt;11177;@STATIC;1.0;i;40;../Controllers/MMMatchPickerController.ji;34;../DataSources/MMAgentDataSource.ji;41;../DataSources/MMMediaMatchesDataSource.ji;41;../DataSources/MMMetadataItemDataSource.ji;26;../Models/MMMetadataItem.ji;26;MMCollectionViewItemCell.ji;13;MMImageView.jt;10901;
 objj_executeFile("../Controllers/MMMatchPickerController.j",YES);
 objj_executeFile("../DataSources/MMAgentDataSource.j",YES);
 objj_executeFile("../DataSources/MMMediaMatchesDataSource.j",YES);
@@ -9761,7 +9761,7 @@ objj_msgSend(objj_msgSend(MMMediaMatchesDataSource,"sharedDataSource"),"unmatchI
 }),new objj_method(sel_getUid("matchUsing:"),function(_46,_47,_48){
 with(_46){
 var _49=objj_msgSend(objj_msgSend(objj_msgSend(matchUsingMenuItem,"submenu"),"itemArray"),"indexOfObject:",_48),_4a=objj_msgSend(agents,"objectAtIndex:",_49),_4b=objj_msgSend(_46,"representedObject");
-objj_msgSend(matchesDataSource,"refreshRecordsForMetadataItem:title:agent:language:year:",_4b,objj_msgSend(_4b,"title"),_4a,objj_msgSend(_4b,"language"),objj_msgSend(_4b,"year"));
+objj_msgSend(matchesDataSource,"refreshRecordsForMetadataItem:title:agent:language:year:",_4b,nil,_4a,objj_msgSend(_4b,"language"),nil);
 }
 })]);
 p;30;Views/MMSectionSettingsSheet.jt;31711;@STATIC;1.0;I;27;AppKit/CPSegmentedControl.jI;15;AppKit/CPView.ji;16;MMFileListView.ji;34;../DataSources/MMAgentDataSource.ji;34;../Views/MMDirectoryBrowserSheet.jt;31540;
