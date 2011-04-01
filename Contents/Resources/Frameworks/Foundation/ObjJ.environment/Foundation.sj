@@ -1,4 +1,4 @@
-@STATIC;1.0;p;12;Foundation.jt;2949;@STATIC;1.0;i;9;CPArray.ji;10;CPBundle.ji;16;CPCharacterSet.ji;9;CPCoder.ji;8;CPData.ji;8;CPDate.ji;14;CPDictionary.ji;14;CPEnumerator.ji;13;CPException.ji;12;CPIndexSet.ji;14;CPInvocation.ji;17;CPKeyedArchiver.ji;19;CPKeyedUnarchiver.ji;18;CPKeyValueCoding.ji;21;CPKeyValueObserving.ji;16;CPMutableArray.ji;14;CPMutableSet.ji;16;CPNotification.ji;22;CPNotificationCenter.ji;8;CPNull.ji;10;CPNumber.ji;10;CPObject.ji;15;CPObjJRuntime.ji;29;CPPropertyListSerialization.ji;9;CPRange.ji;11;CPRunLoop.ji;7;CPSet.ji;18;CPSortDescriptor.ji;10;CPString.ji;9;CPTimer.ji;15;CPUndoManager.ji;7;CPURL.ji;17;CPURLConnection.ji;14;CPURLRequest.ji;15;CPURLResponse.ji;16;CPUserDefaults.ji;9;CPValue.ji;20;CPValueTransformer.jt;2231;
+@STATIC;1.0;p;12;Foundation.jt;2947;@STATIC;1.0;i;9;CPArray.ji;10;CPBundle.ji;16;CPCharacterSet.ji;9;CPCoder.ji;8;CPData.ji;8;CPDate.ji;14;CPDictionary.ji;14;CPEnumerator.ji;13;CPException.ji;12;CPIndexSet.ji;14;CPInvocation.ji;17;CPKeyedArchiver.ji;19;CPKeyedUnarchiver.ji;18;CPKeyValueCoding.ji;21;CPKeyValueObserving.ji;16;CPMutableArray.ji;14;CPMutableSet.ji;16;CPNotification.ji;22;CPNotificationCenter.ji;8;CPNull.ji;10;CPNumber.ji;10;CPObject.ji;15;CPObjJRuntime.ji;29;CPPropertyListSerialization.ji;9;CPRange.ji;11;CPRunLoop.ji;11;CPScanner.ji;7;CPSet.ji;18;CPSortDescriptor.ji;10;CPString.ji;9;CPTimer.ji;15;CPUndoManager.ji;7;CPURL.ji;17;CPURLConnection.ji;14;CPURLRequest.ji;15;CPURLResponse.ji;16;CPUserDefaults.ji;9;CPValue.ji;20;CPValueTransformer.jt;2213;
 objj_executeFile("CPArray.j",YES);
 objj_executeFile("CPBundle.j",YES);
 objj_executeFile("CPCharacterSet.j",YES);
@@ -35,7 +35,7 @@ objj_executeFile("CPObjJRuntime.j",YES);
 objj_executeFile("CPPropertyListSerialization.j",YES);
 objj_executeFile("CPRange.j",YES);
 objj_executeFile("CPRunLoop.j",YES);
-/* objj_executeFile("CPScanner.j",YES) */ (undefined);
+objj_executeFile("CPScanner.j",YES);
 objj_executeFile("CPSet.j",YES);
 objj_executeFile("CPSortDescriptor.j",YES);
 objj_executeFile("CPString.j",YES);
@@ -8682,3 +8682,258 @@ punctuationCharacterSet=[33,3,37,6,44,4,58,2,63,2,91,3,95,1,123,1,125,1,161,1,17
 uppercaseLetterCharacterSet=[65,26,192,23,216,7,256,1,258,1,260,1,262,1,264,1,266,1,268,1,270,1,272,1,274,1,276,1,278,1,280,1,282,1,284,1,286,1,288,1,290,1,292,1,294,1,296,1,298,1,300,1,302,1,304,1,306,1,308,1,310,1,313,1,315,1,317,1,319,1,321,1,323,1,325,1,327,1,330,1,332,1,334,1,336,1,338,1,340,1,342,1,344,1,346,1,348,1,350,1,352,1,354,1,356,1,358,1,360,1,362,1,364,1,366,1,368,1,370,1,372,1,374,1,376,2,379,1,381,1,385,2,388,1,390,2,393,3,398,4,403,2,406,3,412,2,415,2,418,1,420,1,422,2,425,1,428,1,430,2,433,3,437,1,439,2,444,1,452,2,455,2,458,2,461,1,463,1,465,1,467,1,469,1,471,1,473,1,475,1,478,1,480,1,482,1,484,1,486,1,488,1,490,1,492,1,494,1,497,2,500,1,502,3,506,1,508,1,510,1,512,1,514,1,516,1,518,1,520,1,522,1,524,1,526,1,528,1,530,1,532,1,534,1,536,1,538,1,540,1,542,1,544,1,546,1,548,1,550,1,552,1,554,1,556,1,558,1,560,1,562,1,570,2,573,2,577,1,579,4,584,1,586,1,588,1,590,1,902,1,904,3,908,1,910,2,913,17,931,9,978,3,984,1,986,1,988,1,990,1,992,1,994,1,996,1,998,1,1000,1,1002,1,1004,1,1006,1,1012,1,1015,1,1017,2,1021,51,1120,1,1122,1,1124,1,1126,1,1128,1,1130,1,1132,1,1134,1,1136,1,1138,1,1140,1,1142,1,1144,1,1146,1,1148,1,1150,1,1152,1,1162,1,1164,1,1166,1,1168,1,1170,1,1172,1,1174,1,1176,1,1178,1,1180,1,1182,1,1184,1,1186,1,1188,1,1190,1,1192,1,1194,1,1196,1,1198,1,1200,1,1202,1,1204,1,1206,1,1208,1,1210,1,1212,1,1214,1,1216,2,1219,1,1221,1,1223,1,1225,1,1227,1,1229,1,1232,1,1234,1,1236,1,1238,1,1240,1,1242,1,1244,1,1246,1,1248,1,1250,1,1252,1,1254,1,1256,1,1258,1,1260,1,1262,1,1264,1,1266,1,1268,1,1270,1,1272,1,1274,1,1276,1,1278,1,1280,1,1282,1,1284,1,1286,1,1288,1,1290,1,1292,1,1294,1,1296,1,1298,1,1329,38,4256,38,7680,1,7682,1,7684,1,7686,1,7688,1,7690,1,7692,1,7694,1,7696,1,7698,1,7700,1,7702,1,7704,1,7706,1,7708,1,7710,1,7712,1,7714,1,7716,1,7718,1,7720,1,7722,1,7724,1,7726,1,7728,1,7730,1,7732,1,7734,1,7736,1,7738,1,7740,1,7742,1,7744,1,7746,1,7748,1,7750,1,7752,1,7754,1,7756,1,7758,1,7760,1,7762,1,7764,1,7766,1,7768,1,7770,1,7772,1,7774,1,7776,1,7778,1,7780,1,7782,1,7784,1,7786,1,7788,1,7790,1,7792,1,7794,1,7796,1,7798,1,7800,1,7802,1,7804,1,7806,1,7808,1,7810,1,7812,1,7814,1,7816,1,7818,1,7820,1,7822,1,7824,1,7826,1,7828,1,7840,1,7842,1,7844,1,7846,1,7848,1,7850,1,7852,1,7854,1,7856,1,7858,1,7860,1,7862,1,7864,1,7866,1,7868,1,7870,1,7872,1,7874,1,7876,1,7878,1,7880,1,7882,1,7884,1,7886,1,7888,1,7890,1,7892,1,7894,1,7896,1,7898,1,7900,1,7902,1,7904,1,7906,1,7908,1,7910,1,7912,1,7914,1,7916,1,7918,1,7920,1,7922,1,7924,1,7926,1,7928,1,7944,8,7960,6,7976,8,7992,8,8008,6,8025,1,8027,1,8029,1,8031,1,8040,8,8072,8,8088,8,8104,8,8120,5,8136,5,8152,4,8168,5,8184,5,8450,1,8455,1,8459,3,8464,3,8469,1,8473,5,8484,1,8486,1,8488,1,8490,4,8496,4,8510,2,8517,1,8579,1,11264,47,11360,1,11362,3,11367,1,11369,1,11371,1,11381,1,11392,1,11394,1,11396,1,11398,1,11400,1,11402,1,11404,1,11406,1,11408,1,11410,1,11412,1,11414,1,11416,1,11418,1,11420,1,11422,1,11424,1,11426,1,11428,1,11430,1,11432,1,11434,1,11436,1,11438,1,11440,1,11442,1,11444,1,11446,1,11448,1,11450,1,11452,1,11454,1,11456,1,11458,1,11460,1,11462,1,11464,1,11466,1,11468,1,11470,1,11472,1,11474,1,11476,1,11478,1,11480,1,11482,1,11484,1,11486,1,11488,1,11490,1];
 whitespaceAndNewlineCharacterSet=[9,5,32,1,133,1,160,1,5760,1,8192,12,8232,2,8239,1,8287,1];
 whitespaceCharacterSet=[9,1,32,1,160,1,5760,1,8192,12,8239,1,8287,1];
+p;11;CPScanner.jt;7842;@STATIC;1.0;i;16;CPCharacterSet.ji;14;CPDictionary.ji;10;CPString.jt;7768;
+objj_executeFile("CPCharacterSet.j",YES);
+objj_executeFile("CPDictionary.j",YES);
+objj_executeFile("CPString.j",YES);
+var _1=objj_allocateClassPair(CPObject,"CPScanner"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("_string"),new objj_ivar("_locale"),new objj_ivar("_scanLocation"),new objj_ivar("_caseSensitive"),new objj_ivar("_charactersToBeSkipped")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("initWithString:"),function(_3,_4,_5){
+with(_3){
+if(_3=objj_msgSendSuper({receiver:_3,super_class:objj_getClass("CPScanner").super_class},"init")){
+_string=objj_msgSend(_5,"copy");
+_scanLocation=0;
+_charactersToBeSkipped=objj_msgSend(CPCharacterSet,"whitespaceCharacterSet");
+_caseSensitive=NO;
+}
+return _3;
+}
+}),new objj_method(sel_getUid("copy"),function(_6,_7){
+with(_6){
+var _8=objj_msgSend(objj_msgSend(CPScanner,"alloc"),"initWithString:",objj_msgSend(_6,"string"));
+objj_msgSend(_8,"setCharactersToBeSkipped:",objj_msgSend(_6,"charactersToBeSkipped"));
+objj_msgSend(_8,"setCaseSensitive:",objj_msgSend(_6,"caseSensitive"));
+objj_msgSend(_8,"setLocale:",objj_msgSend(_6,"locale"));
+objj_msgSend(_8,"setScanLocation:",objj_msgSend(_6,"scanLocation"));
+return _8;
+}
+}),new objj_method(sel_getUid("locale"),function(_9,_a){
+with(_9){
+return _locale;
+}
+}),new objj_method(sel_getUid("setLocale:"),function(_b,_c,_d){
+with(_b){
+_locale=_d;
+}
+}),new objj_method(sel_getUid("setCaseSensitive:"),function(_e,_f,_10){
+with(_e){
+_caseSensitive=_10;
+}
+}),new objj_method(sel_getUid("caseSensitive"),function(_11,_12){
+with(_11){
+return _caseSensitive;
+}
+}),new objj_method(sel_getUid("string"),function(_13,_14){
+with(_13){
+return _string;
+}
+}),new objj_method(sel_getUid("charactersToBeSkipped"),function(_15,_16){
+with(_15){
+return _charactersToBeSkipped;
+}
+}),new objj_method(sel_getUid("setCharactersToBeSkipped:"),function(_17,_18,c){
+with(_17){
+_charactersToBeSkipped=c;
+}
+}),new objj_method(sel_getUid("isAtEnd"),function(_19,_1a){
+with(_19){
+return _scanLocation==_string.length;
+}
+}),new objj_method(sel_getUid("scanLocation"),function(_1b,_1c){
+with(_1b){
+return _scanLocation;
+}
+}),new objj_method(sel_getUid("setScanLocation:"),function(_1d,_1e,_1f){
+with(_1d){
+if(_1f>_string.length){
+_1f=_string.length;
+}else{
+if(_1f<0){
+_1f=0;
+}
+}
+_scanLocation=_1f;
+}
+}),new objj_method(sel_getUid("_performScanWithSelector:withObject:into:"),function(_20,_21,s,arg,ref){
+with(_20){
+var ret=objj_msgSend(_20,"performSelector:withObject:",s,arg);
+if(ref!=nil){
+ref(ret);
+}
+return ret!=NULL;
+}
+}),new objj_method(sel_getUid("scanCharactersFromSet:intoString:"),function(_22,_23,_24,ref){
+with(_22){
+return objj_msgSend(_22,"_performScanWithSelector:withObject:into:",sel_getUid("scanCharactersFromSet:"),_24,ref);
+}
+}),new objj_method(sel_getUid("scanCharactersFromSet:"),function(_25,_26,_27){
+with(_25){
+return objj_msgSend(_25,"_scanWithSet:breakFlag:",_27,NO);
+}
+}),new objj_method(sel_getUid("scanUpToCharactersFromSet:intoString:"),function(_28,_29,_2a,ref){
+with(_28){
+return objj_msgSend(_28,"_performScanWithSelector:withObject:into:",sel_getUid("scanUpToCharactersFromSet:"),_2a,ref);
+}
+}),new objj_method(sel_getUid("scanUpToCharactersFromSet:"),function(_2b,_2c,_2d){
+with(_2b){
+return objj_msgSend(_2b,"_scanWithSet:breakFlag:",_2d,YES);
+}
+}),new objj_method(sel_getUid("_scanWithSet:breakFlag:"),function(_2e,_2f,_30,_31){
+with(_2e){
+if(objj_msgSend(_2e,"isAtEnd")){
+return nil;
+}
+var _32=objj_msgSend(_2e,"scanLocation"),str=nil;
+while(_32<_string.length){
+var c=(_string.charAt(_32));
+if(objj_msgSend(_30,"characterIsMember:",c)==_31){
+break;
+}
+if(!objj_msgSend(_charactersToBeSkipped,"characterIsMember:",c)){
+if(!str){
+str="";
+}
+str+=c;
+}
+_32++;
+}
+if(str){
+objj_msgSend(_2e,"setScanLocation:",_32);
+}
+return str;
+}
+}),new objj_method(sel_getUid("_movePastCharactersToBeSkipped"),function(_33,_34){
+with(_33){
+var _35=objj_msgSend(_33,"scanLocation"),_36=objj_msgSend(_33,"string"),_37=objj_msgSend(_33,"charactersToBeSkipped");
+while(_35<_36.length){
+if(!objj_msgSend(_37,"characterIsMember:",_36.charAt(_35))){
+break;
+}
+_35++;
+}
+objj_msgSend(_33,"setScanLocation:",_35);
+}
+}),new objj_method(sel_getUid("scanString:intoString:"),function(_38,_39,_3a,ref){
+with(_38){
+return objj_msgSend(_38,"_performScanWithSelector:withObject:into:",sel_getUid("scanString:"),_3a,ref);
+}
+}),new objj_method(sel_getUid("scanString:"),function(_3b,_3c,s){
+with(_3b){
+objj_msgSend(_3b,"_movePastCharactersToBeSkipped");
+if(objj_msgSend(_3b,"isAtEnd")){
+return nil;
+}
+var _3d=objj_msgSend(_3b,"string").substr(objj_msgSend(_3b,"scanLocation"),s.length);
+if((_caseSensitive&&_3d!=s)||(!_caseSensitive&&(_3d.toLowerCase()!=s.toLowerCase()))){
+return nil;
+}else{
+objj_msgSend(_3b,"setScanLocation:",objj_msgSend(_3b,"scanLocation")+s.length);
+return s;
+}
+}
+}),new objj_method(sel_getUid("scanUpToString:intoString:"),function(_3e,_3f,_40,ref){
+with(_3e){
+return objj_msgSend(_3e,"_performScanWithSelector:withObject:into:",sel_getUid("scanUpToString:"),_40,ref);
+}
+}),new objj_method(sel_getUid("scanUpToString:"),function(_41,_42,s){
+with(_41){
+var _43=objj_msgSend(_41,"scanLocation"),str=objj_msgSend(_41,"string"),_44=nil;
+while(_43<str.length){
+var _45=str.substr(_43,s.length);
+if(_45==s||(!_caseSensitive&&_45.toLowerCase()==s.toLowerCase())){
+break;
+}
+if(!_44){
+_44="";
+}
+_44+=str.charAt(_43);
+_43++;
+}
+if(_44){
+objj_msgSend(_41,"setScanLocation:",_43);
+}
+if(objj_msgSend(_41,"charactersToBeSkipped")){
+_44=objj_msgSend(_44,"_stringByTrimmingCharactersInSet:options:",objj_msgSend(_41,"charactersToBeSkipped"),_CPCharacterSetTrimAtBeginning);
+}
+return _44;
+}
+}),new objj_method(sel_getUid("scanFloat"),function(_46,_47){
+with(_46){
+objj_msgSend(_46,"_movePastCharactersToBeSkipped");
+var str=objj_msgSend(_46,"string"),_48=objj_msgSend(_46,"scanLocation");
+if(objj_msgSend(_46,"isAtEnd")){
+return 0;
+}
+var s=str.substring(_48,str.length),f=parseFloat(s);
+if(f){
+var pos=_48,_49=NO;
+var _4a=45;
+for(;pos<_48+str.length;pos++){
+var _4b=str.charCodeAt(pos);
+if(_4b==_4a){
+if(_49==YES){
+break;
+}
+_49=YES;
+}else{
+if(_4b<48||_4b>57||(_4b==45&&pos!=_48)){
+break;
+}
+}
+}
+objj_msgSend(_46,"setScanLocation:",pos);
+return f;
+}
+return nil;
+}
+}),new objj_method(sel_getUid("scanInt"),function(_4c,_4d){
+with(_4c){
+objj_msgSend(_4c,"_movePastCharactersToBeSkipped");
+var str=objj_msgSend(_4c,"string"),_4e=objj_msgSend(_4c,"scanLocation");
+if(objj_msgSend(_4c,"isAtEnd")){
+return 0;
+}
+var s=str.substring(_4e,str.length),i=parseInt(s);
+if(i){
+var pos=_4e,_4f=NO;
+for(;pos<_4e+str.length;pos++){
+var _50=str.charCodeAt(pos);
+if(_50==46){
+if(_4f==YES){
+break;
+}
+_4f=YES;
+}else{
+if(_50<48||_50>57||(_50==45&&pos!=_4e)){
+break;
+}
+}
+}
+objj_msgSend(_4c,"setScanLocation:",pos);
+return i;
+}
+return nil;
+}
+}),new objj_method(sel_getUid("scanInt:"),function(_51,_52,_53){
+with(_51){
+return objj_msgSend(_51,"_performScanWithSelector:withObject:into:",sel_getUid("scanInt"),nil,_53);
+}
+}),new objj_method(sel_getUid("scanFloat:"),function(_54,_55,_56){
+with(_54){
+return objj_msgSend(_54,"_performScanWithSelector:withObject:into:",sel_getUid("scanFloat"),nil,_56);
+}
+}),new objj_method(sel_getUid("scanDouble:"),function(_57,_58,_59){
+with(_57){
+return objj_msgSend(_57,"scanFloat:",_59);
+}
+}),new objj_method(sel_getUid("description"),function(_5a,_5b){
+with(_5a){
+return objj_msgSendSuper({receiver:_5a,super_class:objj_getClass("CPScanner").super_class},"description")+" {"+CPStringFromClass(objj_msgSend(_5a,"class"))+", state = '"+(objj_msgSend(_5a,"string").substr(0,_scanLocation)+"{{ SCAN LOCATION ->}}"+objj_msgSend(_5a,"string").substr(_scanLocation))+"'; }";
+}
+})]);
+class_addMethods(_2,[new objj_method(sel_getUid("scannerWithString:"),function(_5c,_5d,_5e){
+with(_5c){
+return objj_msgSend(objj_msgSend(_5c,"alloc"),"initWithString:",_5e);
+}
+})]);
