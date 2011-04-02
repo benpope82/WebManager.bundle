@@ -8873,7 +8873,7 @@ objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificatio
 objj_msgSend(_24,"_scheduleTimer");
 }
 })]);
-p;24;Models/PMSCapabilities.jt;4119;@STATIC;1.0;I;21;Foundation/CPObject.ji;9;Version.jt;4061;
+p;24;Models/PMSCapabilities.jt;4427;@STATIC;1.0;I;21;Foundation/CPObject.ji;9;Version.jt;4369;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("Version.j",YES);
 var _1=nil;
@@ -8954,28 +8954,36 @@ return objj_msgSend(_21,"versionIsAtLeast:","0.9.2.6");
 with(_23){
 return objj_msgSend(_23,"versionIsAtLeast:","0.9.2.6");
 }
-}),new objj_method(sel_getUid("versionIsAtLeast:"),function(_25,_26,_27){
+}),new objj_method(sel_getUid("dtsMixdownSupported"),function(_25,_26){
 with(_25){
-if(objj_msgSend(_27,"isKindOfClass:",objj_msgSend(CPString,"class"))){
-_27=objj_msgSend(Version,"versionWithString:",_27);
+return objj_msgSend(_25,"versionIsAtLeast:","0.9.2.7");
 }
-return objj_msgSend(version,"compare:",_27)!=CPOrderedAscending;
+}),new objj_method(sel_getUid("versionIsAtLeast:"),function(_27,_28,_29){
+with(_27){
+if(objj_msgSend(_29,"isKindOfClass:",objj_msgSend(CPString,"class"))){
+_29=objj_msgSend(Version,"versionWithString:",_29);
+}
+return objj_msgSend(version,"compare:",_29)!=CPOrderedAscending;
 }
 })]);
-class_addMethods(_3,[new objj_method(sel_getUid("sharedPMSCapabilities"),function(_28,_29){
-with(_28){
+class_addMethods(_3,[new objj_method(sel_getUid("sharedPMSCapabilities"),function(_2a,_2b){
+with(_2a){
 if(!_1){
-_1=objj_msgSend(objj_msgSend(_28,"alloc"),"init");
+_1=objj_msgSend(objj_msgSend(_2a,"alloc"),"init");
 objj_msgSend(_1,"refresh");
 }
 return _1;
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingLanguagePreferencesSupported"),function(_2a,_2b){
-with(_2a){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingLanguagePreferencesSupported"),function(_2c,_2d){
+with(_2c){
 return objj_msgSend(CPSet,"setWithObjects:","version");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingStopRefreshSupported"),function(_2c,_2d){
-with(_2c){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingStopRefreshSupported"),function(_2e,_2f){
+with(_2e){
+return objj_msgSend(CPSet,"setWithObjects:","version");
+}
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingDtsMixdownSupported"),function(_30,_31){
+with(_30){
 return objj_msgSend(CPSet,"setWithObjects:","version");
 }
 })]);
@@ -12573,10 +12581,10 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,485,120)));
 }
 })]);
-p;34;Views/MMPreferencesAdvancedPanel.jt;2724;@STATIC;1.0;I;15;AppKit/CPView.jt;2685;
+p;34;Views/MMPreferencesAdvancedPanel.jt;4337;@STATIC;1.0;I;15;AppKit/CPView.jt;4298;
 objj_executeFile("AppKit/CPView.j",NO);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesAdvancedPanel"),_2=_1.isa;
-class_addIvars(_1,[new objj_ivar("disableCapabilityCheckingCheckBox"),new objj_ivar("disableCapabilityCheckingLabel")]);
+class_addIvars(_1,[new objj_ivar("disableCapabilityCheckingCheckBox"),new objj_ivar("disableCapabilityCheckingLabel"),new objj_ivar("dtsMixdownCheckbox"),new objj_ivar("dtsMixdownLabel")]);
 objj_registerClassPair(_1);
 class_addMethods(_1,[new objj_method(sel_getUid("initWithFrame:"),function(_3,_4,_5){
 with(_3){
@@ -12586,28 +12594,42 @@ objj_msgSend(disableCapabilityCheckingCheckBox,"sizeToFit");
 objj_msgSend(disableCapabilityCheckingCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.disableCapabilityChecking",nil);
 objj_msgSend(_3,"addSubview:",disableCapabilityCheckingCheckBox);
 disableCapabilityCheckingLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.","Preference window setting detail"));
+objj_msgSend(disableCapabilityCheckingLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",11));
 objj_msgSend(disableCapabilityCheckingLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
 objj_msgSend(_3,"addSubview:",disableCapabilityCheckingLabel);
+if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"dtsMixdownSupported")){
+dtsMixdownCheckbox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Enable DTS mix-down for Media Link clients","Preference window setting"));
+objj_msgSend(dtsMixdownCheckbox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.enableMediaLinkDtsDownmixing",nil);
+objj_msgSend(_3,"addSubview:",dtsMixdownCheckbox);
+dtsMixdownLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.","Preference window setting detail"));
+objj_msgSend(dtsMixdownLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",11));
+objj_msgSend(dtsMixdownLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(_3,"addSubview:",dtsMixdownLabel);
+}
 objj_msgSend(_3,"sizeToFit");
 }
 return _3;
 }
-}),new objj_method(sel_getUid("targetWidth"),function(_6,_7){
+}),new objj_method(sel_getUid("sizeToFit"),function(_6,_7){
 with(_6){
-return MAX(CGRectGetMaxX(objj_msgSend(disableCapabilityCheckingCheckBox,"frame")),CGRectGetWidth(objj_msgSend(_6,"frame")));
+objj_msgSend(_6,"layoutSubviews");
+objj_msgSend(_6,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_6,"frame")),CGRectGetMaxY(objj_msgSend((dtsMixdownLabel||disableCapabilityCheckingLabel),"frame"))));
 }
-}),new objj_method(sel_getUid("sizeToFit"),function(_8,_9){
+}),new objj_method(sel_getUid("layoutSubviews"),function(_8,_9){
 with(_8){
-objj_msgSend(_8,"layoutSubviews");
-objj_msgSend(_8,"setFrameSize:",CGSizeMake(objj_msgSend(_8,"targetWidth"),CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingLabel,"frame"))));
-}
-}),new objj_method(sel_getUid("layoutSubviews"),function(_a,_b){
-with(_a){
 objj_msgSend(disableCapabilityCheckingCheckBox,"sizeToFit");
-var _c=objj_msgSend(_a,"targetWidth"),_d=17,_e=_c-_d;
-var _f=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(disableCapabilityCheckingLabel,"stringValue"),objj_msgSend(disableCapabilityCheckingLabel,"font"),_e);
+objj_msgSend(dtsMixdownCheckbox,"sizeToFit");
+var _a=CGRectGetWidth(objj_msgSend(_8,"frame")),_b=17,_c=_a-_b,_d=_a-_b;
+var _e=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(disableCapabilityCheckingLabel,"stringValue"),objj_msgSend(disableCapabilityCheckingLabel,"font"),_c);
+_e.height+=5;
+objj_msgSend(disableCapabilityCheckingLabel,"setFrameOrigin:",CGPointMake(_b,CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingCheckBox,"frame"))));
+objj_msgSend(disableCapabilityCheckingLabel,"setFrameSize:",_e);
+if(dtsMixdownCheckbox){
+objj_msgSend(dtsMixdownCheckbox,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(disableCapabilityCheckingCheckBox,"frame")),CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingLabel,"frame"))+10));
+var _f=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(dtsMixdownLabel,"stringValue"),objj_msgSend(dtsMixdownLabel,"font"),dtsMixdownLabel);
 _f.height+=5;
-objj_msgSend(disableCapabilityCheckingLabel,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingCheckBox,"frame"))));
-objj_msgSend(disableCapabilityCheckingLabel,"setFrameSize:",_f);
+objj_msgSend(dtsMixdownLabel,"setFrameOrigin:",CGPointMake(_b,CGRectGetMaxY(objj_msgSend(dtsMixdownCheckbox,"frame"))));
+objj_msgSend(dtsMixdownLabel,"setFrameSize:",_f);
+}
 }
 })]);
