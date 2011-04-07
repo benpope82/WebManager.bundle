@@ -6390,7 +6390,7 @@ objj_msgSend(_3f,"encodeObject:forKey:",_stringValue,_38);
 objj_msgSend(_3f,"encodeBool:forKey:",(_hideOverflow?NO:YES),_39);
 }
 })]);
-p;38;DataSources/MMMetadataItemDataSource.jt;1829;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;1705;
+p;38;DataSources/MMMetadataItemDataSource.jt;1848;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;1724;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("../Models/MMMediaItem.j",YES);
 objj_executeFile("MMDataSource.j",YES);
@@ -6425,6 +6425,7 @@ break;
 case "Writer":
 case "Director":
 case "Genre":
+case "Collection":
 var key=String(_d.nodeName).toLowerCase()+"s";
 var _11=objj_msgSend(_b,"valueForKey:",key)||[];
 objj_msgSend(_11,"addObject:",_d.getAttribute("tag"));
