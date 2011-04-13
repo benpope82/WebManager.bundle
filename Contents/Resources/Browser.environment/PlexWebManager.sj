@@ -4024,7 +4024,7 @@ with(_23){
 return objj_msgSend(CPString,"stringWithFormat:","{MMSearchResult %@ (%@, %d) guid=%@/score=%d}",_name,objj_msgSend(_language,"languageCode"),_year,_guid,_score);
 }
 })]);
-p;24;CPDictionary+URLParams.jt;1821;@STATIC;1.0;t;1802;
+p;24;CPDictionary+URLParams.jt;1891;@STATIC;1.0;t;1872;
 var _1=objj_getClass("CPDictionary");
 if(!_1){
 throw new SyntaxError("*** Could not find definition for class \"CPDictionary\"");
@@ -4049,6 +4049,9 @@ _d=objj_msgSend(_d,"asURLParam");
 }
 if(_7&&(_d===null||_d===undefined||objj_msgSend(objj_msgSend(CPNull,"null"),"isEqual:",_d))){
 continue;
+}
+if(objj_msgSend(_d,"isEqual:",objj_msgSend(CPNull,"null"))){
+_d="";
 }
 if(_d===true||_d===false){
 _d=_d?"1":"0";
@@ -4267,7 +4270,7 @@ objj_msgSend(_29,"setValue:forKey:",_2a.getAttribute(_2c),_2c);
 }
 }
 })]);
-p;24;CPObject+XMLAttributes.jt;650;@STATIC;1.0;t;632;
+p;24;CPObject+XMLAttributes.jt;1124;@STATIC;1.0;t;1105;
 var _1=objj_getClass("CPObject");
 if(!_1){
 throw new SyntaxError("*** Could not find definition for class \"CPObject\"");
@@ -4280,12 +4283,19 @@ for(var i=_8.length;i--;){
 var _9=_8[i],_a=String(_9.nodeName).replace(/[-_]([a-z])/ig,function(_b,_c){
 return _c.toUpperCase();
 }),_d=String(_9.nodeValue);
+objj_msgSend(_3,"setValue:forKey:ignoreUndefinedKey:",_d,_a,_6);
+}
+}
+}),new objj_method(sel_getUid("setValue:forKey:ignoreUndefinedKey:"),function(_e,_f,_10,_11,_12){
+with(_e){
+if(!_12){
+objj_msgSend(_e,"setValue:forKey:",_10,_11);
+}else{
 try{
-objj_msgSend(_3,"setValue:forKey:",_d,_a);
-continue;
+objj_msgSend(_e,"setValue:forKey:",_10,_11);
 }
 catch(e){
-if(!_6||(objj_msgSend(e,"name")!=CPUndefinedKeyException)){
+if(!e.isa||!objj_msgSend(e,"isKindOfClass:",objj_msgSend(CPException,"class"))||objj_msgSend(e,"name")!=CPUndefinedKeyException||objj_msgSend(objj_msgSend(e,"userInfo"),"objectForKey:",CPTargetObjectUserInfoKey)!=_e||objj_msgSend(objj_msgSend(e,"userInfo"),"objectForKey:",CPUnknownUserInfoKey)!=_11){
 throw e;
 }
 }
@@ -6390,7 +6400,7 @@ objj_msgSend(_3f,"encodeObject:forKey:",_stringValue,_38);
 objj_msgSend(_3f,"encodeBool:forKey:",(_hideOverflow?NO:YES),_39);
 }
 })]);
-p;38;DataSources/MMMetadataItemDataSource.jt;1848;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;1724;
+p;38;DataSources/MMMetadataItemDataSource.jt;1799;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;1675;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("../Models/MMMediaItem.j",YES);
 objj_executeFile("MMDataSource.j",YES);
@@ -6418,9 +6428,7 @@ var _d=_c[i];
 switch(String(_d.nodeName)){
 case "Field":
 var _e=_d.getAttribute("name"),_f=(_d.getAttribute("locked")=="1"),_10=_e+"Locked";
-if(objj_msgSend(_b,"respondsToSelector:",CPSelectorFromString(_10))){
-objj_msgSend(_b,"setValue:forKey:",_f,_10);
-}
+objj_msgSend(_b,"setValue:forKey:ignoreUndefinedKey:",_f,_10,YES);
 break;
 case "Writer":
 case "Director":
