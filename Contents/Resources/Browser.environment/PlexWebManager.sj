@@ -1112,16 +1112,18 @@ with(_58){
 return objj_msgSend(CPSet,"setWithObjects:","content","content.parent");
 }
 })]);
-p;17;Views/MMToolbar.jt;5847;@STATIC;1.0;I;15;AppKit/CPView.jt;5808;
+p;17;Views/MMToolbar.jt;6270;@STATIC;1.0;I;15;AppKit/CPView.jt;6231;
 objj_executeFile("AppKit/CPView.j",NO);
 MMToolbarCocoaStyleTopGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",245/255,1);
 MMToolbarCocoaStyleBottomGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",155/255,1);
 MMToolbarCocoaStyleTopBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",81/255,1);
 MMToolbarCocoaStyleBottomBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",88/255,1);
+MMToolbarCocoaStyleSolidFillColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",192/255,1);
 MMToolbarHUDStyleTopGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",60/255,1);
 MMToolbarHUDStyleBottomGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",0/255,1);
 MMToolbarHUDStyleTopBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",101/255,1);
 MMToolbarHUDStyleBottomBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",0/255,1);
+MMToolbarHUDStyleSolidFillColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",32/255,1);
 MMToolbarCocoaStyle="MMToolbarCocoaStyle";
 MMToolbarHUDStyle="MMToolbarHUDStyle";
 var _1=objj_allocateClassPair(CPView,"MMToolbar"),_2=_1.isa;
@@ -1161,9 +1163,7 @@ _bottomBorderColor=_16;
 }
 }),new objj_method(sel_getUid("initWithFrame:"),function(_17,_18,_19){
 with(_17){
-if(_17=objj_msgSend(_17,"initWithFrame:style:",_19,MMToolbarCocoaStyle)){
-}
-return _17;
+return objj_msgSend(_17,"initWithFrame:style:",_19,MMToolbarCocoaStyle);
 }
 }),new objj_method(sel_getUid("initWithFrame:style:"),function(_1a,_1b,_1c,_1d){
 with(_1a){
@@ -1176,12 +1176,14 @@ return _1a;
 with(_1e){
 switch(_20){
 case MMToolbarCocoaStyle:
+objj_msgSend(_1e,"setBackgroundColor:",MMToolbarCocoaStyleSolidFillColor);
 _topGradientColor=MMToolbarCocoaStyleTopGradientColor;
 _bottomGradientColor=MMToolbarCocoaStyleBottomGradientColor;
 _topBorderColor=MMToolbarCocoaStyleTopBorderColor;
 _bottomBorderColor=MMToolbarCocoaStyleBottomBorderColor;
 break;
 case MMToolbarHUDStyle:
+objj_msgSend(_1e,"setBackgroundColor:",MMToolbarHUDStyleSolidFillColor);
 _topGradientColor=MMToolbarHUDStyleTopGradientColor;
 _bottomGradientColor=MMToolbarHUDStyleBottomGradientColor;
 _topBorderColor=MMToolbarHUDStyleTopBorderColor;
@@ -1225,6 +1227,10 @@ objj_msgSend(_2a,"setNeedsDisplay:",YES);
 }
 }),new objj_method(sel_getUid("drawRect:"),function(_2d,_2e,_2f){
 with(_2d){
+if(!CPFeatureIsCompatible(CPHTMLCanvasFeature)){
+objj_msgSendSuper({receiver:_2d,super_class:objj_getClass("MMToolbar").super_class},"drawRect:",_2f);
+return;
+}
 var _30=objj_msgSend(_2d,"bounds"),_31=objj_msgSend(objj_msgSend(CPGraphicsContext,"currentContext"),"graphicsPort");
 CGContextBeginPath(_31);
 CGContextSetFillColor(_31,_topGradientColor);
@@ -1235,7 +1241,6 @@ CGContextAddLineToPoint(_31,CGRectGetMaxX(_30),CGRectGetMinY(_30));
 CGContextAddLineToPoint(_31,CGRectGetMinX(_30),CGRectGetMinY(_30));
 CGContextClosePath(_31);
 CGContextFillPath(_31);
-if(CPFeatureIsCompatible(CPHTMLCanvasFeature)){
 var _32;
 var _33;
 var _34=2;
@@ -1258,7 +1263,6 @@ CGContextMoveToPoint(_31,CGRectGetMinX(_30),CGRectGetMaxY(_30)-0.5);
 CGContextAddLineToPoint(_31,CGRectGetMaxX(_30),CGRectGetMaxY(_30)-0.5);
 CGContextClosePath(_31);
 CGContextStrokePath(_31);
-}
 objj_msgSendSuper({receiver:_2d,super_class:objj_getClass("MMToolbar").super_class},"drawRect:",_2f);
 }
 })]);
@@ -1271,7 +1275,7 @@ with(_3){
 return objj_msgSend(_3,"buttonWithTitle:theme:",_5,objj_msgSend(CPTheme,"themeNamed:","Aristo-HUD"));
 }
 })]);
-p;23;Models/MMMetadataItem.jt;22702;@STATIC;1.0;i;10;MMRecord.ji;9;MMAgent.jt;22654;
+p;23;Models/MMMetadataItem.jt;22616;@STATIC;1.0;i;10;MMRecord.ji;9;MMAgent.jt;22568;
 objj_executeFile("MMRecord.j",YES);
 objj_executeFile("MMAgent.j",YES);
 var _1;
@@ -1817,7 +1821,9 @@ if(thumb===_11c){
 return;
 }
 thumb=_11c;
+objj_msgSend(self,"willChangeValueForKey:","thumbImage");
 _thumbImage=nil;
+objj_msgSend(self,"didChangeValueForKey:","thumbImage");
 }
 }),new objj_method(sel_getUid("thumbImage"),function(self,_11d){
 with(self){
@@ -1842,7 +1848,9 @@ if(art===_120){
 return;
 }
 art=_120;
+objj_msgSend(self,"willChangeValueForKey:","artImage");
 _artImage=nil;
+objj_msgSend(self,"didChangeValueForKey:","artImage");
 }
 }),new objj_method(sel_getUid("artImage"),function(self,_121){
 with(self){
@@ -1967,35 +1975,27 @@ return objj_msgSend(CPSet,"setWithObject:","state");
 with(self){
 return objj_msgSend(CPSet,"setWithObject:","state");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingThumbImage"),function(self,_13d){
-with(self){
-return objj_msgSend(CPSet,"setWithObject:","thumb");
-}
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingArtImage"),function(self,_13e){
-with(self){
-return objj_msgSend(CPSet,"setWithObject:","art");
-}
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingDisplayTitle"),function(self,_13f){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingDisplayTitle"),function(self,_13d){
 with(self){
 return objj_msgSend(CPSet,"setWithObject:","title");
 }
-}),new objj_method(sel_getUid("idFromKey:"),function(self,_140,aKey){
+}),new objj_method(sel_getUid("idFromKey:"),function(self,_13e,aKey){
 with(self){
 return aKey&&aKey.replace(/[^\d]/g,"");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingMainMediaItem"),function(self,_141){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingMainMediaItem"),function(self,_13f){
 with(self){
 return objj_msgSend(CPSet,"setWithObject:","mediaItems");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingAgent"),function(self,_142){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingAgent"),function(self,_140){
 with(self){
 return objj_msgSend(CPSet,"setWithObjects:","guid");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingPersonalMedia"),function(self,_143){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingPersonalMedia"),function(self,_141){
 with(self){
 return objj_msgSend(CPSet,"setWithObjects:","agent");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingRoot"),function(self,_144){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingRoot"),function(self,_142){
 with(self){
 return objj_msgSend(CPSet,"setWithObject:","parent");
 }
@@ -6686,7 +6686,7 @@ objj_msgSend(titleLabel,"setFrameOrigin:",CGPointMake(0,(CGRectGetHeight(objj_ms
 objj_msgSend(yearLabel,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(titleLabel,"frame"))+4,(CGRectGetHeight(objj_msgSend(_18,"frame"))-CGRectGetHeight(objj_msgSend(yearLabel,"frame")))*0.667));
 }
 })]);
-p;45;Controllers/MMLibrarySectionsViewController.jt;11533;@STATIC;1.0;I;25;AppKit/CPViewController.jI;26;AppKit/CPArrayController.jI;22;AppKit/CPOutlineView.ji;28;../Models/MMLibrarySection.ji;44;../DataSources/MMLibrarySectionsDataSource.ji;39;../Views/MMLibrarySectionTableRowView.jt;11299;
+p;45;Controllers/MMLibrarySectionsViewController.jt;11683;@STATIC;1.0;I;25;AppKit/CPViewController.jI;26;AppKit/CPArrayController.jI;22;AppKit/CPOutlineView.ji;28;../Models/MMLibrarySection.ji;44;../DataSources/MMLibrarySectionsDataSource.ji;39;../Views/MMLibrarySectionTableRowView.jt;11449;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("AppKit/CPArrayController.j",NO);
 objj_executeFile("AppKit/CPOutlineView.j",NO);
@@ -6837,6 +6837,9 @@ with(_3e){
 _librarySectionsController=objj_msgSend(objj_msgSend(CPArrayController,"alloc"),"init");
 objj_msgSend(_librarySectionsController,"setSortDescriptors:",objj_msgSend(CPArray,"arrayWithObject:",objj_msgSend(CPSortDescriptor,"sortDescriptorWithKey:ascending:","title",YES)));
 outlineView=objj_msgSend(objj_msgSend(CPOutlineView,"alloc"),"initWithFrame:",CGRectMakeZero());
+if(!CPFeatureIsCompatible(CPHTMLCanvasFeature)){
+objj_msgSend(outlineView,"setSelectionHighlightStyle:",CPTableViewSelectionHighlightStyleRegular);
+}
 objj_msgSend(outlineView,"setBackgroundColor:",objj_msgSend(CPColor,"colorWithRed:green:blue:alpha:",222/255,228/255,234/255,1));
 objj_msgSend(outlineView,"setAutoresizingMask:",CPViewWidthSizable|CPViewHeightSizable);
 objj_msgSend(outlineView,"setDelegate:",_3e);
