@@ -8552,7 +8552,7 @@ with(_5f){
 return objj_msgSend(CPSet,"setWithObjects:","content.studio");
 }
 })]);
-p;32;Views/MMMetadataItemDetailView.jt;20162;@STATIC;1.0;I;20;AppKit/CPImageView.jI;15;AppKit/CPMenu.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.ji;22;../CPDate+Formatting.ji;43;../DataSources/MMPosterMetadataDataSource.ji;41;../DataSources/MMLibraryMediaDataSource.ji;43;../DataSources/MMBannerMetadataDataSource.ji;50;../DataSources/MMBackgroundArtMetadataDataSource.ji;26;../Models/MMMetadataItem.ji;11;HUDButton.ji;24;MMHorizontalScrollView.ji;21;MMTitleAndYearLabel.ji;13;MMImageView.ji;19;MMRatingStarsView.ji;18;MMFlagCollection.jt;19661;
+p;32;Views/MMMetadataItemDetailView.jt;20389;@STATIC;1.0;I;20;AppKit/CPImageView.jI;15;AppKit/CPMenu.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.ji;22;../CPDate+Formatting.ji;43;../DataSources/MMPosterMetadataDataSource.ji;41;../DataSources/MMLibraryMediaDataSource.ji;43;../DataSources/MMBannerMetadataDataSource.ji;50;../DataSources/MMBackgroundArtMetadataDataSource.ji;26;../Models/MMMetadataItem.ji;11;HUDButton.ji;24;MMHorizontalScrollView.ji;21;MMTitleAndYearLabel.ji;13;MMImageView.ji;19;MMRatingStarsView.ji;18;MMFlagCollection.jt;19888;
 objj_executeFile("AppKit/CPImageView.j",NO);
 objj_executeFile("AppKit/CPMenu.j",NO);
 objj_executeFile("AppKit/CPTextField.j",NO);
@@ -8836,11 +8836,17 @@ CGContextDrawLinearGradient(_62,_65,_6a,_6b,0);
 }
 }),new objj_method(sel_getUid("setContentRatingFlagImage:"),function(_6c,_6d,_6e){
 with(_6c){
+if(objj_msgSend(objj_msgSend(_6e,"filename"),"isEqual:",objj_msgSend(contentRatingFlagImage,"filename"))){
+return;
+}
 contentRatingFlagImage=_6e;
 objj_msgSend(_6c,"refreshFlags");
 }
 }),new objj_method(sel_getUid("setStudioFlagImage:"),function(_6f,_70,_71){
 with(_6f){
+if(objj_msgSend(objj_msgSend(_71,"filename"),"isEqual:",objj_msgSend(studioFlagImage,"filename"))){
+return;
+}
 studioFlagImage=_71;
 objj_msgSend(_6f,"refreshFlags");
 }
@@ -12565,7 +12571,7 @@ with(_30){
 return Number(objj_msgSend(_32,"stringByReplacingOccurrencesOfString:withString:","/accounts/",""));
 }
 })]);
-p;33;DataSources/MMAccountDataSource.jt;2923;@STATIC;1.0;i;14;MMDataSource.ji;21;../Models/MMAccount.jt;2859;
+p;33;DataSources/MMAccountDataSource.jt;2955;@STATIC;1.0;i;14;MMDataSource.ji;21;../Models/MMAccount.jt;2891;
 objj_executeFile("MMDataSource.j",YES);
 objj_executeFile("../Models/MMAccount.j",YES);
 var _1=objj_allocateClassPair(MMDataSource,"MMAccountDataSource"),_2=_1.isa;
@@ -12581,18 +12587,20 @@ return objj_msgSend(_8,"URL");
 }
 }),new objj_method(sel_getUid("URLForUpdatedRecord:contextInfo:"),function(_a,_b,_c,_d){
 with(_a){
-var _e=_d?objj_msgSend(CPMutableDictionary,"dictionaryWithDictionary:",_d):objj_msgSend(CPMutableDictionary,"dictionary");
-objj_msgSend(_e,"addEntriesFromDictionary:",objj_msgSend(_c,"changedAttributeDictionary"));
-if(objj_msgSend(_c,"attributeForKeyHasChanged:","name")){
-objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_c,"name"),"username");
+var _e=objj_msgSend(CPMutableDictionary,"dictionaryWithDictionary:",objj_msgSend(_c,"changedAttributeDictionary"));
+if(objj_msgSend(_e,"containsKey:","name")){
+objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_e,"objectForKey:","name"),"username");
 objj_msgSend(_e,"removeObjectForKey:","name");
 }
-if(objj_msgSend(_c,"attributeForKeyHasChanged:","password")){
-objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_c,"password"),"newPassword");
+if(objj_msgSend(_e,"containsKey:","password")){
+objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_e,"objectForKey:","password"),"newPassword");
 objj_msgSend(_e,"removeObjectForKey:","password");
 }
-if(objj_msgSend(_c,"attributeForKeyHasChanged:","subtitleMode")){
-objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_c,"subtitleMode"),"autoSelectSubtitle");
+if(objj_msgSend(_e,"containsKey:","subtitleMode")){
+objj_msgSend(_e,"setObject:forKey:",objj_msgSend(_e,"objectForKey:","subtitleMode"),"autoSelectSubtitle");
+}
+if(objj_msgSend(_d,"isKindOfClass:",objj_msgSend(CPDictionary,"class"))){
+objj_msgSend(_e,"addEntriesFromDictionary:",_d);
 }
 return objj_msgSend(PMSURL,"URLWithPath:params:",objj_msgSend(objj_msgSend(_c,"URL"),"path"),_e);
 }
