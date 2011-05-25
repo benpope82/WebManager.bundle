@@ -92,7 +92,7 @@ objj_msgSend(_27,"setDictionary:forTable:",_2b,"Localizable");
 }
 window.LocaleCPApplicationMain(_25,_26);
 };
-p;20;CPView+Transitions.jt;3141;@STATIC;1.0;I;15;AppKit/CPView.jI;20;AppKit/CPAnimation.jt;3077;
+p;20;CPView+Transitions.jt;4033;@STATIC;1.0;I;15;AppKit/CPView.jI;20;AppKit/CPAnimation.jt;3969;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("AppKit/CPAnimation.j",NO);
 CPViewWillTransitionToSubview="CPViewWillTransitionToSubview";
@@ -104,37 +104,59 @@ throw new SyntaxError("*** Could not find definition for class \"CPView\"");
 var _2=_1.isa;
 class_addMethods(_1,[new objj_method(sel_getUid("transitionFromSubview:toSubview:"),function(_3,_4,_5,_6){
 with(_3){
-objj_msgSend(_3,"transitionFromSubview:toSubview:adjustWidth:adjustHeight:",_5,_6,YES,YES);
+objj_msgSend(_3,"transitionFromSubview:toSubview:adjustWidth:adjustHeight:animated:",_5,_6,YES,YES,YES);
 }
-}),new objj_method(sel_getUid("transitionFromSubview:toSubview:adjustWidth:adjustHeight:"),function(_7,_8,_9,_a,_b,_c){
+}),new objj_method(sel_getUid("transitionFromSubview:toSubview:adjustWidth:adjustHeight:animated:"),function(_7,_8,_9,_a,_b,_c,_d){
 with(_7){
-if(objj_msgSend(_9,"isEqual:",_a)){
+if(_9===nil||_a===nil||objj_msgSend(_9,"isEqual:",_a)){
 return;
 }
-var _d=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_a,"toSubview",_9,"fromSubview");
+var _e=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_a,"toSubview",_9,"fromSubview");
 objj_msgSend(_7,"willTransitionFromSubview:toSubview:",_9,_a);
-objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewWillTransitionToSubview,_7,_d);
-var _e=objj_msgSend(_7,"window"),_f=_b?CGRectGetWidth(objj_msgSend(_a,"frame"))-CGRectGetWidth(objj_msgSend(_9,"frame")):0,_10=_c?CGRectGetHeight(objj_msgSend(_a,"frame"))-CGRectGetHeight(objj_msgSend(_9,"frame")):0,_11=objj_msgSend(_e,"frame").size,_12=CGSizeMake(_11.width+_f,_11.height+_10),_13=objj_msgSend(_e,"frame"),_14=CGRectMake(CGRectGetMidX(_13)-_12.width/2,CGRectGetMinY(_13),_12.width,_12.height),_15=objj_msgSend(_e,"animationResizeTime:",_14);
-var _16=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_15,CPAnimationLinear);
-objj_msgSend(_16,"setViewAnimations:",objj_msgSend(CPArray,"arrayWithObjects:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_9,CPViewAnimationTargetKey,objj_msgSend(_9,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_9,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeOutEffect,CPViewAnimationEffectKey),objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_a,CPViewAnimationTargetKey,objj_msgSend(_a,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_a,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeInEffect,CPViewAnimationEffectKey)));
-objj_msgSend(_16,"startAnimation");
-objj_msgSend(_e,"setFrame:display:animate:",_14,YES,YES);
-objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",_15,_7,sel_getUid("_didTransitionWithTimer:"),_d,NO);
+objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewWillTransitionToSubview,_7,_e);
+if(!objj_msgSend(_7,"window")){
+_d=NO;
 }
-}),new objj_method(sel_getUid("_didTransitionWithTimer:"),function(_17,_18,_19){
-with(_17){
-var _1a=objj_msgSend(_19,"userInfo");
-objj_msgSend(_17,"didTransitionFromSubview:toSubview:",objj_msgSend(_1a,"objectForKey:","fromSubview"),objj_msgSend(_1a,"objectForKey:","toSubview"));
-objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewDidTransitionToSubview,_17,_1a);
+var _f=objj_msgSend(_7,"window"),_10=_b?CGRectGetWidth(objj_msgSend(_a,"frame"))-CGRectGetWidth(objj_msgSend(_9,"frame")):0,_11=_c?CGRectGetHeight(objj_msgSend(_a,"frame"))-CGRectGetHeight(objj_msgSend(_9,"frame")):0,_12=_f&&objj_msgSend(_f,"frame").size,_13=_12&&CGSizeMake(_12.width+_10,_12.height+_11),_14=_f&&objj_msgSend(_f,"frame"),_15=_14&&CGRectMake(CGRectGetMidX(_14)-_13.width/2,CGRectGetMinY(_14),_13.width,_13.height);
+if(_d){
+var _16=objj_msgSend(_f,"animationResizeTime:",_15),_17=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_16,CPAnimationLinear);
+var _18=objj_msgSend(CPMutableArray,"arrayWithObjects:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_9,CPViewAnimationTargetKey,objj_msgSend(_9,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_9,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeOutEffect,CPViewAnimationEffectKey),objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_a,CPViewAnimationTargetKey,objj_msgSend(_a,"frame"),CPViewAnimationStartFrameKey,objj_msgSend(_a,"frame"),CPViewAnimationEndFrameKey,CPViewAnimationFadeInEffect,CPViewAnimationEffectKey));
+if(objj_msgSend(_a,"superview")===objj_msgSend(_9,"superview")){
+var _19=_a;
+while(_19=objj_msgSend(_19,"superview")){
+var _1a=objj_msgSend(_19,"frame");
+_1a.size=CGSizeMake(CGRectGetWidth(_1a)+_10,CGRectGetHeight(_1a)+_11);
+objj_msgSend(_18,"addObject:",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_19,CPViewAnimationTargetKey,objj_msgSend(_19,"frame"),CPViewAnimationStartFrameKey,_1a,CPViewAnimationEndFrameKey));
 }
-}),new objj_method(sel_getUid("willTransitionFromSubview:toSubview:"),function(_1b,_1c,_1d,_1e){
+}
+objj_msgSend(_17,"setViewAnimations:",_18);
+objj_msgSend(_17,"startAnimation");
+objj_msgSend(_f,"setFrame:display:animate:",_15,YES,YES);
+objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:",_16,_7,sel_getUid("_didTransitionWithTimer:"),_e,NO);
+}else{
+objj_msgSend(_9,"setHidden:",YES);
+objj_msgSend(_a,"setHidden:",NO);
+objj_msgSend(_f,"setFrame:display:animate:",_15,YES,NO);
+objj_msgSend(_7,"_didTransitionWithUserInfo:",_e);
+}
+}
+}),new objj_method(sel_getUid("_didTransitionWithTimer:"),function(_1b,_1c,_1d){
 with(_1b){
+objj_msgSend(_1b,"_didTransitionWithUserInfo:",objj_msgSend(_1d,"userInfo"));
 }
-}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_1f,_20,_21,_22){
-with(_1f){
+}),new objj_method(sel_getUid("_didTransitionWithUserInfo:"),function(_1e,_1f,_20){
+with(_1e){
+objj_msgSend(_1e,"didTransitionFromSubview:toSubview:",objj_msgSend(_20,"objectForKey:","fromSubview"),objj_msgSend(_20,"objectForKey:","toSubview"));
+objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificationName:object:userInfo:",CPViewDidTransitionToSubview,_1e,_20);
+}
+}),new objj_method(sel_getUid("willTransitionFromSubview:toSubview:"),function(_21,_22,_23,_24){
+with(_21){
+}
+}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_25,_26,_27,_28){
+with(_25){
 }
 })]);
-p;18;CPView+sizeToFit.jt;2228;@STATIC;1.0;I;15;AppKit/CPView.jt;2189;
+p;18;CPView+sizeToFit.jt;2257;@STATIC;1.0;I;15;AppKit/CPView.jt;2218;
 objj_executeFile("AppKit/CPView.j",NO);
 CPViewInsetDefault="CPViewInsetDefault";
 var _1=objj_getClass("CPView");
@@ -155,58 +177,59 @@ with(_8){
 if(!_b&&!_c){
 return;
 }
+var _d=CGRectGetWidth(objj_msgSend(_8,"frame")),_e=CGRectGetHeight(objj_msgSend(_8,"frame"));
 if(_a===CPViewInsetDefault){
 _a=objj_msgSend(_8,"hasThemeAttribute:","content-inset")&&objj_msgSend(_8,"currentValueForThemeAttribute:","content-inset");
 }
 if(!_a){
 _a=CGInsetMakeZero();
 }
-var _d=CGSizeMake(_a.left,_a.top),_e={origin:CGPointMakeZero(),size:_d},_f=CGSizeMakeZero();
-for(var i=0,_10=objj_msgSend(_subviews,"count");i<_10;i++){
-var _11=_subviews[i],_12=objj_msgSend(_11,"autoresizingMask");
-if(objj_msgSend(_11,"isHidden")){
+var _f=CGSizeMake(_a.left,_a.top),_10={origin:CGPointMakeZero(),size:_f},_11=CGSizeMakeZero();
+for(var i=0,_12=objj_msgSend(_subviews,"count");i<_12;i++){
+var _13=_subviews[i],_14=objj_msgSend(_13,"autoresizingMask");
+if(objj_msgSend(_13,"isHidden")){
 continue;
 }
-if(_12&CPViewMinYMargin){
-var _13=CGRectIntersection(_e,objj_msgSend(_11,"frame"));
-if(!CGRectIsEmpty(_13)){
-_f.height+=CGRectGetHeight(_13);
+if(_14&CPViewMinYMargin){
+var _15=CGRectIntersection(_10,objj_msgSend(_13,"frame"));
+if(!CGRectIsEmpty(_15)){
+_11.height+=CGRectGetHeight(_15);
 }else{
-_f.height+=CGRectGetHeight(objj_msgSend(_11,"frame"));
-}
-}else{
-if(_12&CPViewMinXMargin){
-var _13=CGRectIntersection(_e,objj_msgSend(_11,"frame"));
-if(!CGRectIsEmpty(_13)){
-_f.width+=CGRectGetWidth(_13);
-}else{
-_f.width+=CGRectGetWidth(objj_msgSend(_11,"frame"));
+_11.height+=CGRectGetHeight(objj_msgSend(_13,"frame"));
 }
 }else{
-var _14=objj_msgSend(_11,"frame"),_15=CGRectGetMaxX(_14),_16=CGRectGetMaxY(_14);
-if(_d.width<_15){
-_d.width=_15;
+if(_14&CPViewMinXMargin){
+var _15=CGRectIntersection(_10,objj_msgSend(_13,"frame"));
+if(!CGRectIsEmpty(_15)){
+_11.width+=CGRectGetWidth(_15);
+}else{
+_11.width+=CGRectGetWidth(objj_msgSend(_13,"frame"));
 }
-if(_d.height<_16){
-_d.height=_16;
+}else{
+var _16=objj_msgSend(_13,"frame"),_17=CGRectGetMaxX(_16),_18=CGRectGetMaxY(_16);
+if(_f.width<_17){
+_f.width=_17;
+}
+if(_f.height<_18){
+_f.height=_18;
 }
 }
 }
-objj_msgSend(_8,"setFrameSize:",CGSizeMake(_d.width+_f.width,_d.height+_f.height));
+objj_msgSend(_8,"setFrameSize:",CGSizeMake(_f.width+_11.width,_f.height+_11.height));
 }
-_d.width+=_f.width+_a.right;
-_d.height+=_f.height+_a.bottom;
+_f.width+=_11.width+_a.right;
+_f.height+=_11.height+_a.bottom;
 if(!_b){
-_d.width=CGRectGetWidth(objj_msgSend(_8,"frame"));
+_f.width=_d;
 }
 if(!_c){
-_d.height=CGRectGetHeight(objj_msgSend(_8,"frame"));
+_f.height=_e;
 }
-objj_msgSend(_8,"setFrameSize:",_d);
+objj_msgSend(_8,"setFrameSize:",_f);
 }
-}),new objj_method(sel_getUid("hasThemeAttribute:"),function(_17,_18,_19){
-with(_17){
-return !!objj_msgSend(objj_msgSend(_17,"_themeAttributeDictionary"),"objectForKey:",_19);
+}),new objj_method(sel_getUid("hasThemeAttribute:"),function(_19,_1a,_1b){
+with(_19){
+return !!objj_msgSend(objj_msgSend(_19,"_themeAttributeDictionary"),"objectForKey:",_1b);
 }
 })]);
 p;21;CPNumber+Formatting.jt;1212;@STATIC;1.0;t;1193;
@@ -309,7 +332,7 @@ with(_17){
 objj_msgSend(_17,"notifyUserOfError:withTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?","Error message for when we cannot connect to PMS or when the response is invalid"),_19),CPLocalizedString("Unable to connect to Plex Media Server","Error title for when we cannot connect to PMS or when the response is invalid"));
 }
 })]);
-p;33;Controllers/MMManagerController.jt;29004;@STATIC;1.0;I;25;AppKit/CPViewController.jI;27;AppKit/CPSegmentedControl.jI;28;LPKit/LPLocationController.ji;30;../CPCheckBox+ObjectValueFix.ji;32;../CPURLConnection+XMLResponse.ji;34;../Controllers/MMAlbumController.ji;48;../Controllers/MMLibrarySectionsViewController.ji;34;../Controllers/MMPrefsController.ji;35;../Controllers/MMSeasonController.ji;34;../DataSources/MMAgentDataSource.ji;41;../DataSources/MMLibraryMediaDataSource.ji;41;../DataSources/MMMetadataItemDataSource.ji;44;../DataSources/MMLibrarySectionsDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;26;../Models/LanguageConfig.ji;23;../Models/SectionType.ji;26;../Models/MMMetadataItem.ji;27;../Models/PMSCapabilities.ji;36;../Controllers/MMContentController.ji;55;../Controllers/MMMetadataItemCollectionViewController.ji;41;../Controllers/MMMetadataItemController.ji;30;../Views/MMActionPopUpButton.ji;27;../Views/MMCollectionView.ji;22;../Views/MMContainer.ji;25;../Views/MMFirstRunView.ji;44;../Views/MMInternetExplorerNotificationBar.ji;35;../Views/MMMetadataItemDetailView.ji;39;../Views/MMMetadataItemCollectionView.ji;23;../Views/MMScrollView.ji;33;../Views/MMSectionSettingsSheet.ji;29;../Views/MMPreferencesPanel.ji;20;../Views/MMToolbar.jt;27766;
+p;33;Controllers/MMManagerController.jt;29452;@STATIC;1.0;I;25;AppKit/CPViewController.jI;27;AppKit/CPSegmentedControl.jI;28;LPKit/LPLocationController.ji;30;../CPCheckBox+ObjectValueFix.ji;32;../CPURLConnection+XMLResponse.ji;34;../Controllers/MMAlbumController.ji;48;../Controllers/MMLibrarySectionsViewController.ji;34;../Controllers/MMPrefsController.ji;35;../Controllers/MMSeasonController.ji;34;../DataSources/MMAgentDataSource.ji;41;../DataSources/MMLibraryMediaDataSource.ji;41;../DataSources/MMMetadataItemDataSource.ji;44;../DataSources/MMLibrarySectionsDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;26;../Models/LanguageConfig.ji;23;../Models/SectionType.ji;26;../Models/MMMetadataItem.ji;27;../Models/PMSCapabilities.ji;36;../Controllers/MMContentController.ji;55;../Controllers/MMMetadataItemCollectionViewController.ji;41;../Controllers/MMMetadataItemController.ji;30;../Views/MMActionPopUpButton.ji;27;../Views/MMCollectionView.ji;22;../Views/MMContainer.ji;25;../Views/MMFirstRunView.ji;44;../Views/MMInternetExplorerNotificationBar.ji;35;../Views/MMMetadataItemDetailView.ji;39;../Views/MMMetadataItemCollectionView.ji;23;../Views/MMScrollView.ji;33;../Views/MMSectionSettingsSheet.ji;29;../Views/MMPreferencesPanel.ji;20;../Views/MMToolbar.jt;28214;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("AppKit/CPSegmentedControl.j",NO);
 objj_executeFile("LPKit/LPLocationController.j",NO);
@@ -530,16 +553,24 @@ return;
 }
 var _36=objj_msgSend(_librarySectionController,"librarySectionsController");
 var _37=nil,_38=nil,_36=nil;
-var _39=objj_msgSend(_35,"componentsSeparatedByString:","/");
+var _39=objj_msgSend(CPMutableArray,"arrayWithArray:",objj_msgSend(_35,"componentsSeparatedByString:","/"));
 objj_msgSend(_39,"removeObjectIdenticalTo:","");
 _preventUpdates=YES;
 if(objj_msgSend(_39,"count")>=2&&objj_msgSend(objj_msgSend(_39,"objectAtIndex:",0),"isEqualToString:","sections")){
-_37=objj_msgSend(_39,"objectAtIndex:",1);
+objj_msgSend(_39,"removeObjectAtIndex:",0);
+if(objj_msgSend(_39,"count")>=2&&objj_msgSend(objj_msgSend(_39,"objectAtIndex:",0),"isEqualToString:","queues")){
+_37=objj_msgSend(CPString,"stringWithFormat:","%@/%@",objj_msgSend(_39,"objectAtIndex:",0),objj_msgSend(_39,"objectAtIndex:",1));
+objj_msgSend(_39,"removeObjectsInRange:",CPMakeRange(0,2));
+}else{
+_37=objj_msgSend(_39,"objectAtIndex:",0);
+objj_msgSend(_39,"removeObjectAtIndex:",0);
+}
+}
 if(_37){
 objj_msgSend(_librarySectionController,"selectSectionWithId:",_37);
 }
-if(objj_msgSend(_39,"count")>=4&&objj_msgSend(objj_msgSend(_39,"objectAtIndex:",2),"isEqualToString:","media")){
-_38=objj_msgSend(_39,"objectAtIndex:",3);
+if(objj_msgSend(_39,"count")>=2&&objj_msgSend(objj_msgSend(_39,"objectAtIndex:",0),"isEqualToString:","media")){
+_38=objj_msgSend(_39,"objectAtIndex:",1);
 _wantedMetadataItemId=_38;
 if(_38){
 var _3a=objj_msgSend(_mediaGridController,"content");
@@ -556,7 +587,6 @@ break;
 }
 }else{
 objj_msgSend(_contentController,"popToRootViewControllerAnimated:",NO);
-}
 }
 _preventUpdates=NO;
 }
@@ -3016,7 +3046,7 @@ with(_2e){
 return objj_msgSend(CPSet,"setWithObjects:","parts");
 }
 })]);
-p;25;Models/MMLibrarySection.jt;8987;@STATIC;1.0;i;10;MMRecord.ji;8;PMSURL.ji;9;MMAgent.ji;11;MMScanner.jt;8912;
+p;25;Models/MMLibrarySection.jt;9086;@STATIC;1.0;i;10;MMRecord.ji;8;PMSURL.ji;9;MMAgent.ji;11;MMScanner.jt;9011;
 objj_executeFile("MMRecord.j",YES);
 objj_executeFile("PMSURL.j",YES);
 objj_executeFile("MMAgent.j",YES);
@@ -3221,6 +3251,9 @@ objj_msgSend(MMURLConnection,"connectionWithRequest:delegate:",_5d,_5b);
 }
 }),new objj_method(sel_getUid("allMediaItemsURL"),function(_5e,_5f){
 with(_5e){
+if(objj_msgSend(objj_msgSend(_5e,"id"),"hasPrefix:","queues/")){
+return objj_msgSend(_5e,"URL");
+}
 return objj_msgSend(_5e,"URLWithSuffix:","/all");
 }
 }),new objj_method(sel_getUid("URL"),function(_60,_61){
@@ -3495,7 +3528,7 @@ objj_msgSend(_2,"addObject:",objj_msgSend(objj_msgSend(_1e,"alloc"),"initWithCod
 return _2;
 }
 })]);
-p;17;MMURLConnection.jt;1881;@STATIC;1.0;I;27;Foundation/CPUserDefaults.ji;13;PMSSecurity.ji;40;Controllers/MMAuthenticationController.jt;1767;
+p;17;MMURLConnection.jt;2111;@STATIC;1.0;I;27;Foundation/CPUserDefaults.ji;13;PMSSecurity.ji;40;Controllers/MMAuthenticationController.jt;1997;
 objj_executeFile("Foundation/CPUserDefaults.j",NO);
 objj_executeFile("PMSSecurity.j",YES);
 objj_executeFile("Controllers/MMAuthenticationController.j",YES);
@@ -3524,7 +3557,11 @@ with(_d){
 if(_HTTPRequest.readyState()===CFHTTPRequest.CompleteState){
 var _f=_HTTPRequest.status();
 if(_f===406||_f===401){
+if(objj_msgSend(objj_msgSend(_d,"delegate"),"respondsToSelector:",sel_getUid("connectionDidReceiveAuthenticationChallenge:"))){
+objj_msgSend(objj_msgSend(_d,"delegate"),"connectionDidReceiveAuthenticationChallenge:",_d);
+}else{
 objj_msgSend(objj_msgSend(MMAuthenticationController,"sharedAuthenticationController"),"connectionDidReceiveAuthenticationChallenge:",_d);
+}
 }else{
 objj_msgSend(objj_msgSend(MMAuthenticationController,"sharedAuthenticationController"),"connectionSucceeded:",_d);
 objj_msgSendSuper({receiver:_d,super_class:objj_getClass("MMURLConnection").super_class},"_readyStateDidChange");
@@ -3781,7 +3818,7 @@ objj_msgSend(_2f,"setValuesForNodeAttributes:ignoreUndefinedKeys:",_2d,YES);
 return _2f;
 }
 })]);
-p;26;DataSources/MMDataSource.jt;23564;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPURL.ji;20;../MMURLConnection.ji;13;MMDataStore.jt;23452;
+p;26;DataSources/MMDataSource.jt;24713;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPURL.ji;20;../MMURLConnection.ji;13;MMDataStore.jt;24601;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("Foundation/CPURL.j",NO);
 objj_executeFile("../MMURLConnection.j",YES);
@@ -3799,7 +3836,7 @@ MMDataSourceDidUpdateRecord="MMDataSourceDidUpdateRecord";
 MMDataSourceDidFailToUpdateRecord="MMDataSourceDidFailToUpdateRecord";
 var _1=objj_msgSend(CPDictionary,"dictionary");
 var _2=objj_allocateClassPair(CPObject,"MMDataSource"),_3=_2.isa;
-class_addIvars(_2,[new objj_ivar("delegate"),new objj_ivar("dataStore"),new objj_ivar("recordsByRefreshConnection"),new objj_ivar("recordsByDeleteConnection"),new objj_ivar("recordsByCreateConnection"),new objj_ivar("recordsByUpdateConnection"),new objj_ivar("contextInfoByConnection"),new objj_ivar("statusCodeByConnection"),new objj_ivar("arrayControllers"),new objj_ivar("notificationCenter"),new objj_ivar("delegateRespondsTo_dataSource_didRequestRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didRequestRecordsWithContextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didReceiveRecords_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToReceiveRecords_withError_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didDeleteRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToDeleteRecord_withError_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didCreateRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToCreateRecord_withError_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didUpdateRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToUpdateRecord_withError_contextInfo")]);
+class_addIvars(_2,[new objj_ivar("delegate"),new objj_ivar("dataStore"),new objj_ivar("recordsByRefreshConnection"),new objj_ivar("recordsByDeleteConnection"),new objj_ivar("recordsByCreateConnection"),new objj_ivar("recordsByUpdateConnection"),new objj_ivar("contextInfoByConnection"),new objj_ivar("statusCodeByConnection"),new objj_ivar("connections"),new objj_ivar("arrayControllers"),new objj_ivar("notificationCenter"),new objj_ivar("delegateRespondsTo_dataSource_didRequestRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didRequestRecordsWithContextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didReceiveRecords_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToReceiveRecords_withError_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didDeleteRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToDeleteRecord_withError_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didCreateRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToCreateRecord_withError_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didUpdateRecord_contextInfo"),new objj_ivar("delegateRespondsTo_dataSource_didFailToUpdateRecord_withError_contextInfo")]);
 objj_registerClassPair(_2);
 class_addMethods(_2,[new objj_method(sel_getUid("delegate"),function(_4,_5){
 with(_4){
@@ -3830,14 +3867,15 @@ with(_13){
 if(_13=objj_msgSendSuper({receiver:_13,super_class:objj_getClass("MMDataSource").super_class},"init")){
 objj_msgSend(_13,"setDelegate:",_15);
 objj_msgSend(_13,"setDataStore:",_16||objj_msgSend(MMDataStore,"defaultDataStore"));
-recordsByRefreshConnection=objj_msgSend(CPDictionary,"dictionary");
-recordsByDeleteConnection=objj_msgSend(CPDictionary,"dictionary");
-recordsByCreateConnection=objj_msgSend(CPDictionary,"dictionary");
-recordsByUpdateConnection=objj_msgSend(CPDictionary,"dictionary");
-contextInfoByConnection=objj_msgSend(CPDictionary,"dictionary");
-statusCodeByConnection=objj_msgSend(CPDictionary,"dictionary");
+recordsByRefreshConnection=objj_msgSend(CPMutableDictionary,"dictionary");
+recordsByDeleteConnection=objj_msgSend(CPMutableDictionary,"dictionary");
+recordsByCreateConnection=objj_msgSend(CPMutableDictionary,"dictionary");
+recordsByUpdateConnection=objj_msgSend(CPMutableDictionary,"dictionary");
+contextInfoByConnection=objj_msgSend(CPMutableDictionary,"dictionary");
+statusCodeByConnection=objj_msgSend(CPMutableDictionary,"dictionary");
 notificationCenter=objj_msgSend(CPNotificationCenter,"defaultCenter");
-arrayControllers=objj_msgSend(CPArray,"array");
+arrayControllers=objj_msgSend(CPMutableArray,"array");
+connections=objj_msgSend(CPMutableArray,"array");
 }
 return _13;
 }
@@ -3874,6 +3912,7 @@ objj_msgSend(_23,"refreshRecord:contextInfo:",_25,nil);
 }),new objj_method(sel_getUid("refreshRecord:contextInfo:"),function(_26,_27,_28,_29){
 with(_26){
 var _2a=objj_msgSend(CPURLRequest,"requestWithURL:",objj_msgSend(_26,"URLForRecord:contextInfo:",_28,_29)),_2b=objj_msgSend(objj_msgSend(MMURLConnection,"alloc"),"initWithRequest:delegate:startImmediately:",_2a,_26,NO);
+objj_msgSend(connections,"addObject:",_2b);
 objj_msgSend(contextInfoByConnection,"setObject:forKey:",_29,_2b);
 objj_msgSend(recordsByRefreshConnection,"setObject:forKey:",_28,_2b);
 objj_msgSend(_2b,"start");
@@ -3889,6 +3928,7 @@ objj_msgSend(_2c,"refreshRecordsWithContextInfo:",nil);
 }),new objj_method(sel_getUid("refreshRecordsWithContextInfo:"),function(_2e,_2f,_30){
 with(_2e){
 var _31=objj_msgSend(CPURLRequest,"requestWithURL:",objj_msgSend(_2e,"URLForRecordsWithContextInfo:",_30)),_32=objj_msgSend(objj_msgSend(MMURLConnection,"alloc"),"initWithRequest:delegate:startImmediately:",_31,_2e,NO);
+objj_msgSend(connections,"addObject:",_32);
 objj_msgSend(contextInfoByConnection,"setObject:forKey:",_30,_32);
 objj_msgSend(recordsByRefreshConnection,"setObject:forKey:",objj_msgSend(CPNull,"null"),_32);
 objj_msgSend(_32,"start");
@@ -3904,6 +3944,7 @@ objj_msgSend(_33,"deleteRecord:contextInfo:",_35,nil);
 }),new objj_method(sel_getUid("deleteRecord:contextInfo:"),function(_36,_37,_38,_39){
 with(_36){
 var _3a=objj_msgSend(CPURLRequest,"requestWithURL:",objj_msgSend(_36,"URLForRecord:contextInfo:",_38,_39)),_3b=objj_msgSend(objj_msgSend(MMURLConnection,"alloc"),"initWithRequest:delegate:startImmediately:",_3a,_36,NO);
+objj_msgSend(connections,"addObject:",_3b);
 objj_msgSend(_3a,"setHTTPMethod:","DELETE");
 objj_msgSend(contextInfoByConnection,"setObject:forKey:",_39,_3b);
 objj_msgSend(recordsByDeleteConnection,"setObject:forKey:",_38,_3b);
@@ -3916,6 +3957,7 @@ objj_msgSend(_3c,"createRecord:contextInfo:",_3e,nil);
 }),new objj_method(sel_getUid("createRecord:contextInfo:"),function(_3f,_40,_41,_42){
 with(_3f){
 var _43=objj_msgSend(CPURLRequest,"requestWithURL:",objj_msgSend(_3f,"URLForNewRecord:contextInfo:",_41,_42)),_44=objj_msgSend(objj_msgSend(MMURLConnection,"alloc"),"initWithRequest:delegate:startImmediately:",_43,_3f,NO);
+objj_msgSend(connections,"addObject:",_44);
 objj_msgSend(_43,"setHTTPMethod:","POST");
 objj_msgSend(_43,"setHTTPBody:",objj_msgSend(_3f,"HTTPBodyForNewRecord:contextInfo:",_41,_42));
 objj_msgSend(recordsByCreateConnection,"setObject:forKey:",_41,_44);
@@ -3943,219 +3985,238 @@ objj_msgSend(recordsByUpdateConnection,"setObject:forKey:",_54,_5a);
 objj_msgSend(contextInfoByConnection,"setObject:forKey:",_55,_5a);
 objj_msgSend(_5a,"start");
 }
-}),new objj_method(sel_getUid("URLForRecordsWithContextInfo:"),function(_5b,_5c,_5d){
+}),new objj_method(sel_getUid("cancelAllRequests"),function(_5b,_5c){
 with(_5b){
-objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForRecordsWithContextInfo:",objj_msgSend(_5b,"class")));
+objj_msgSend(connections,"makeObjectsPerformSelector:",sel_getUid("cancel"));
+objj_msgSend(connections,"removeAllObjects");
+objj_msgSend(recordsByRefreshConnection,"removeAllObjects");
+objj_msgSend(recordsByUpdateConnection,"removeAllObjects");
+objj_msgSend(recordsByCreateConnection,"removeAllObjects");
+objj_msgSend(recordsByDeleteConnection,"removeAllObjects");
+objj_msgSend(contextInfoByConnection,"removeAllObjects");
+objj_msgSend(statusCodeByConnection,"removeAllObjects");
 }
-}),new objj_method(sel_getUid("URLForRecord:contextInfo:"),function(_5e,_5f,_60,_61){
-with(_5e){
-objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForRecord:contextInfo:",objj_msgSend(_5e,"class")));
+}),new objj_method(sel_getUid("URLForRecordsWithContextInfo:"),function(_5d,_5e,_5f){
+with(_5d){
+objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForRecordsWithContextInfo:",objj_msgSend(_5d,"class")));
 }
-}),new objj_method(sel_getUid("URLForNewRecord:contextInfo:"),function(_62,_63,_64,_65){
-with(_62){
-objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForNewRecord:contextInfo:",objj_msgSend(_62,"class")));
+}),new objj_method(sel_getUid("URLForRecord:contextInfo:"),function(_60,_61,_62,_63){
+with(_60){
+objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForRecord:contextInfo:",objj_msgSend(_60,"class")));
 }
-}),new objj_method(sel_getUid("URLForUpdatedRecord:contextInfo:"),function(_66,_67,_68,_69){
-with(_66){
-objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForUpdatedRecord:contextInfo:",objj_msgSend(_66,"class")));
+}),new objj_method(sel_getUid("URLForNewRecord:contextInfo:"),function(_64,_65,_66,_67){
+with(_64){
+objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForNewRecord:contextInfo:",objj_msgSend(_64,"class")));
 }
-}),new objj_method(sel_getUid("HTTPBodyForNewRecord:contextInfo:"),function(_6a,_6b,_6c,_6d){
-with(_6a){
-objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement HTTPBodyForNewRecord:contextInfo:",objj_msgSend(_6a,"class")));
+}),new objj_method(sel_getUid("URLForUpdatedRecord:contextInfo:"),function(_68,_69,_6a,_6b){
+with(_68){
+objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement URLForUpdatedRecord:contextInfo:",objj_msgSend(_68,"class")));
 }
-}),new objj_method(sel_getUid("HTTPBodyForUpdatedRecord:contextInfo:"),function(_6e,_6f,_70,_71){
-with(_6e){
-objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement HTTPBodyForUpdatedRecord:contextInfo:",objj_msgSend(_6e,"class")));
+}),new objj_method(sel_getUid("HTTPBodyForNewRecord:contextInfo:"),function(_6c,_6d,_6e,_6f){
+with(_6c){
+objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement HTTPBodyForNewRecord:contextInfo:",objj_msgSend(_6c,"class")));
 }
-}),new objj_method(sel_getUid("didReceiveRecords:connection:contextInfo:"),function(_72,_73,_74,_75,_76){
-with(_72){
+}),new objj_method(sel_getUid("HTTPBodyForUpdatedRecord:contextInfo:"),function(_70,_71,_72,_73){
+with(_70){
+objj_msgSend(CPException,"raise:reason:",MMDataSourceImplementationIncomplete,objj_msgSend(CPString,"stringWithFormat:","%@ does not implement HTTPBodyForUpdatedRecord:contextInfo:",objj_msgSend(_70,"class")));
+}
+}),new objj_method(sel_getUid("didReceiveRecords:connection:contextInfo:"),function(_74,_75,_76,_77,_78){
+with(_74){
 if(delegateRespondsTo_dataSource_didReceiveRecords_contextInfo){
-objj_msgSend(delegate,"dataSource:didReceiveRecords:contextInfo:",_72,_74,_76);
+objj_msgSend(delegate,"dataSource:didReceiveRecords:contextInfo:",_74,_76,_78);
 }
-objj_msgSend(arrayControllers,"setValue:forKey:",_74,"content");
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidReceiveRecords,_72,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_76,_74],["contextInfo","records"]));
+objj_msgSend(arrayControllers,"setValue:forKey:",_76,"content");
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidReceiveRecords,_74,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_78,_76],["contextInfo","records"]));
 }
-}),new objj_method(sel_getUid("didReceiveRecordsAsData:connection:contextInfo:"),function(_77,_78,_79,_7a,_7b){
-with(_77){
-CPLog.trace("[%@ -didReceiveRecordsAsData:connection:contextInfo:] START",objj_msgSend(_77,"class"));
-var _7c=objj_msgSend(_77,"respondsToSelector:",sel_getUid("shouldProcessNode:contextInfo:")),_7d=objj_msgSend(_77,"respondsToSelector:",sel_getUid("shouldSelectRecord:element:contextInfo:"));
-var _7e=objj_msgSend(CPMutableArray,"array"),_7f=objj_msgSend(_7a,"responseXML").documentElement.childNodes,_80=objj_msgSend(CPMutableArray,"array"),_81=objj_msgSend(CPMutableIndexSet,"indexSet"),_82=objj_msgSend(CPMutableArray,"array");
-for(var i=0,_83=_7f.length;i<_83;i++){
-var _84=_7f[i];
-if(_84.nodeType==1&&(!_7c||objj_msgSend(_77,"shouldProcessNode:contextInfo:",_84,_7b))){
-var _85=objj_msgSend(_77,"recordsFromElement:contextInfo:",_84,_7b);
-_7e=objj_msgSend(_7e,"arrayByAddingObjectsFromArray:",_85);
-objj_msgSend(_82,"addObject:",_85);
-objj_msgSend(_80,"addObject:",_84);
+}),new objj_method(sel_getUid("didReceiveRecordsAsData:connection:contextInfo:"),function(_79,_7a,_7b,_7c,_7d){
+with(_79){
+CPLog.trace("[%@ -didReceiveRecordsAsData:connection:contextInfo:] START",objj_msgSend(_79,"class"));
+var _7e=objj_msgSend(_79,"respondsToSelector:",sel_getUid("shouldProcessNode:contextInfo:")),_7f=objj_msgSend(_79,"respondsToSelector:",sel_getUid("shouldSelectRecord:element:contextInfo:"));
+var _80=objj_msgSend(CPMutableArray,"array"),_81=objj_msgSend(_7c,"responseXML").documentElement,_82=_81&&_81.childNodes||[],_83=objj_msgSend(CPMutableArray,"array"),_84=objj_msgSend(CPMutableIndexSet,"indexSet"),_85=objj_msgSend(CPMutableArray,"array");
+if(objj_msgSend(_79,"shouldProcessRootElement:contextInfo:",_81,_7d)){
+_82=[_81].concat(_82);
+}
+for(var i=0,_86=_82.length;i<_86;i++){
+var _87=_82[i];
+if(_87.nodeType==1&&(!_7e||objj_msgSend(_79,"shouldProcessNode:contextInfo:",_87,_7d))){
+var _88=objj_msgSend(_79,"recordsFromElement:contextInfo:",_87,_7d);
+_80=objj_msgSend(_80,"arrayByAddingObjectsFromArray:",_88);
+objj_msgSend(_85,"addObject:",_88);
+objj_msgSend(_83,"addObject:",_87);
 }
 }
-objj_msgSend(_7e,"enumerateObjectsUsingBlock:",function(_86){
-if(objj_msgSend(_86,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
-objj_msgSend(_86,"acceptChangedAttributes");
+objj_msgSend(_80,"enumerateObjectsUsingBlock:",function(_89){
+if(objj_msgSend(_89,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
+objj_msgSend(_89,"acceptChangedAttributes");
 }
 });
-if(_7d){
-var _87=0;
-objj_msgSend(_80,"enumerateObjectsUsingBlock:",function(_88,i){
-objj_msgSend(objj_msgSend(_82,"objectAtIndex:",i),"enumerateObjectsUsingBlock:",function(_89){
-if(objj_msgSend(_77,"shouldSelectRecord:element:contextInfo:",_89,_88,_7b)){
-objj_msgSend(_81,"addIndex:",_87);
+if(_7f){
+var _8a=0;
+objj_msgSend(_83,"enumerateObjectsUsingBlock:",function(_8b,i){
+objj_msgSend(objj_msgSend(_85,"objectAtIndex:",i),"enumerateObjectsUsingBlock:",function(_8c){
+if(objj_msgSend(_79,"shouldSelectRecord:element:contextInfo:",_8c,_8b,_7d)){
+objj_msgSend(_84,"addIndex:",_8a);
 }
-_87++;
+_8a++;
 });
 });
 }
-objj_msgSend(_77,"didReceiveRecords:connection:contextInfo:",_7e,_7a,_7b);
-if(_7d){
-objj_msgSend(_77,"setSelectionIndexes:",_81);
+objj_msgSend(_79,"didReceiveRecords:connection:contextInfo:",_80,_7c,_7d);
+if(_7f){
+objj_msgSend(_79,"setSelectionIndexes:",_84);
 }
-CPLog.trace("[%@ -didReceiveRecordsAsData:connection:contextInfo:] END",objj_msgSend(_77,"class"));
+CPLog.trace("[%@ -didReceiveRecordsAsData:connection:contextInfo:] END",objj_msgSend(_79,"class"));
 }
-}),new objj_method(sel_getUid("recordsFromElement:contextInfo:"),function(_8a,_8b,_8c,_8d){
-with(_8a){
-return objj_msgSend(CPArray,"arrayWithObject:",objj_msgSend(_8a,"recordFromElement:contextInfo:",_8c,_8d));
+}),new objj_method(sel_getUid("shouldProcessRootElement:contextInfo:"),function(_8d,_8e,_8f,_90){
+with(_8d){
+return NO;
 }
-}),new objj_method(sel_getUid("didFailToReceiveRecordsWithError:contextInfo:"),function(_8e,_8f,_90,_91){
-with(_8e){
-CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] START",objj_msgSend(_8e,"class"));
+}),new objj_method(sel_getUid("recordsFromElement:contextInfo:"),function(_91,_92,_93,_94){
+with(_91){
+return objj_msgSend(CPArray,"arrayWithObject:",objj_msgSend(_91,"recordFromElement:contextInfo:",_93,_94));
+}
+}),new objj_method(sel_getUid("didFailToReceiveRecordsWithError:contextInfo:"),function(_95,_96,_97,_98){
+with(_95){
+CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] START",objj_msgSend(_95,"class"));
 if(delegateRespondsTo_dataSource_didFailToReceiveRecords_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToReceiveRecordsWithError:contextInfo:",_8e,_90,_91);
+objj_msgSend(delegate,"dataSource:didFailToReceiveRecordsWithError:contextInfo:",_95,_97,_98);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToReceiveRecords,_8e,objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",_91,"contextInfo"));
-CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] END",objj_msgSend(_8e,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToReceiveRecords,_95,objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",_98,"contextInfo"));
+CPLog.trace("[%@ -didFailToReceiveRecordsWithError:contextInfo:] END",objj_msgSend(_95,"class"));
 }
-}),new objj_method(sel_getUid("didDeleteRecord:contextInfo:"),function(_92,_93,_94,_95){
-with(_92){
+}),new objj_method(sel_getUid("didDeleteRecord:contextInfo:"),function(_99,_9a,_9b,_9c){
+with(_99){
 if(delegateRespondsTo_dataSource_didDeleteRecord_contextInfo){
-objj_msgSend(delegate,"dataSource:didDeleteRecord:contextInfo:",_92,_94,_95);
+objj_msgSend(delegate,"dataSource:didDeleteRecord:contextInfo:",_99,_9b,_9c);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidDeleteRecord,_92,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_95,_94],["contextInfo","record"]));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidDeleteRecord,_99,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_9c,_9b],["contextInfo","record"]));
 }
-}),new objj_method(sel_getUid("didFailToDeleteRecord:withError:contextInfo:"),function(_96,_97,_98,_99,_9a){
-with(_96){
-CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] START",objj_msgSend(_96,"class"));
+}),new objj_method(sel_getUid("didFailToDeleteRecord:withError:contextInfo:"),function(_9d,_9e,_9f,_a0,_a1){
+with(_9d){
+CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] START",objj_msgSend(_9d,"class"));
 if(delegateRespondsTo_dataSource_didFailToDeleteRecord_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToDeleteRecord:withError:contextInfo:",_96,_98,_99,_9a);
+objj_msgSend(delegate,"dataSource:didFailToDeleteRecord:withError:contextInfo:",_9d,_9f,_a0,_a1);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToDeleteRecord,_96,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_9a,_98,_99],["contextInfo","record","error"]));
-CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] END",objj_msgSend(_96,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToDeleteRecord,_9d,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_a1,_9f,_a0],["contextInfo","record","error"]));
+CPLog.trace("[%@ -didFailToDeleteRecord:withError:contextInfo:] END",objj_msgSend(_9d,"class"));
 }
-}),new objj_method(sel_getUid("didUpdateRecord:contextInfo:"),function(_9b,_9c,_9d,_9e){
-with(_9b){
-if(objj_msgSend(_9d,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
-objj_msgSend(_9d,"acceptChangedAttributes");
+}),new objj_method(sel_getUid("didUpdateRecord:contextInfo:"),function(_a2,_a3,_a4,_a5){
+with(_a2){
+if(objj_msgSend(_a4,"respondsToSelector:",sel_getUid("acceptChangedAttributes"))){
+objj_msgSend(_a4,"acceptChangedAttributes");
 }
 if(delegateRespondsTo_dataSource_didUpdateRecord_contextInfo){
-objj_msgSend(delegate,"dataSource:didUpdateRecord:contextInfo:",_9b,_9d,_9e);
+objj_msgSend(delegate,"dataSource:didUpdateRecord:contextInfo:",_a2,_a4,_a5);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidUpdateRecord,_9b,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_9e,_9d],["contextInfo","record"]));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidUpdateRecord,_a2,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_a5,_a4],["contextInfo","record"]));
 }
-}),new objj_method(sel_getUid("didFailToUpdateRecord:withError:contextInfo:"),function(_9f,_a0,_a1,_a2,_a3){
-with(_9f){
-CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] START",objj_msgSend(_9f,"class"));
+}),new objj_method(sel_getUid("didFailToUpdateRecord:withError:contextInfo:"),function(_a6,_a7,_a8,_a9,_aa){
+with(_a6){
+CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] START",objj_msgSend(_a6,"class"));
 if(delegateRespondsTo_dataSource_didFailToUpdateRecord_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToUpdateRecord:withError:contextInfo:",_9f,_a1,_a2,_a3);
+objj_msgSend(delegate,"dataSource:didFailToUpdateRecord:withError:contextInfo:",_a6,_a8,_a9,_aa);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToUpdateRecord,_9f,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_a3,_a1,_a2],["contextInfo","record","error"]));
-CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] END",objj_msgSend(_9f,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToUpdateRecord,_a6,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_aa,_a8,_a9],["contextInfo","record","error"]));
+CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] END",objj_msgSend(_a6,"class"));
 }
-}),new objj_method(sel_getUid("didCreateRecord:contextInfo:"),function(_a4,_a5,_a6,_a7){
-with(_a4){
-objj_msgSend(dataStore,"storeRecord:",_a6);
-objj_msgSend(_a6,"acceptChangedAttributes");
+}),new objj_method(sel_getUid("didCreateRecord:contextInfo:"),function(_ab,_ac,_ad,_ae){
+with(_ab){
+objj_msgSend(dataStore,"storeRecord:",_ad);
+objj_msgSend(_ad,"acceptChangedAttributes");
 if(delegateRespondsTo_dataSource_didCreateRecord_contextInfo){
-objj_msgSend(delegate,"dataSource:didCreateRecord:contextInfo:",_a4,_a6,_a7);
+objj_msgSend(delegate,"dataSource:didCreateRecord:contextInfo:",_ab,_ad,_ae);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidCreateRecord,_a4,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_a7,_a6],["contextInfo","record"]));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidCreateRecord,_ab,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_ae,_ad],["contextInfo","record"]));
 }
-}),new objj_method(sel_getUid("didFailToCreateRecord:withError:contextInfo:"),function(_a8,_a9,_aa,_ab,_ac){
-with(_a8){
-CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] START",objj_msgSend(_a8,"class"));
+}),new objj_method(sel_getUid("didFailToCreateRecord:withError:contextInfo:"),function(_af,_b0,_b1,_b2,_b3){
+with(_af){
+CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] START",objj_msgSend(_af,"class"));
 if(delegateRespondsTo_dataSource_didFailToCreateRecord_withError_contextInfo){
-objj_msgSend(delegate,"dataSource:didFailToCreateRecord:withError:contextInfo:",_a8,_aa,_ab,_ac);
+objj_msgSend(delegate,"dataSource:didFailToCreateRecord:withError:contextInfo:",_af,_b1,_b2,_b3);
 }
-objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToCreateRecord,_a8,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_ac,_aa,_ab],["contextInfo","record","error"]));
-CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] END",objj_msgSend(_a8,"class"));
+objj_msgSend(notificationCenter,"postNotificationName:object:userInfo:",MMDataSourceDidFailToCreateRecord,_af,objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[_b3,_b1,_b2],["contextInfo","record","error"]));
+CPLog.trace("[%@ -didFailToCreateRecord:withError:contextInfo:] END",objj_msgSend(_af,"class"));
 }
-}),new objj_method(sel_getUid("connection:didReceiveResponse:"),function(_ad,_ae,_af,_b0){
-with(_ad){
-var _b1=objj_msgSend(_b0,"respondsToSelector:",sel_getUid("statusCode"))&&objj_msgSend(_b0,"statusCode");
-CPLog.trace("[%@ -connection:didReceiveResponse:] START (statusCode=%@)",objj_msgSend(_ad,"class"),_b1);
-objj_msgSend(statusCodeByConnection,"setObject:forKey:",_b1,_af);
-CPLog.trace("[%@ -connection:didReceiveResponse:] END",objj_msgSend(_ad,"class"));
+}),new objj_method(sel_getUid("connection:didReceiveResponse:"),function(_b4,_b5,_b6,_b7){
+with(_b4){
+var _b8=objj_msgSend(_b7,"respondsToSelector:",sel_getUid("statusCode"))&&objj_msgSend(_b7,"statusCode");
+CPLog.trace("[%@ -connection:didReceiveResponse:] START (statusCode=%@)",objj_msgSend(_b4,"class"),_b8);
+objj_msgSend(statusCodeByConnection,"setObject:forKey:",_b8,_b6);
+objj_msgSend(connections,"removeObject:",_b6);
+CPLog.trace("[%@ -connection:didReceiveResponse:] END",objj_msgSend(_b4,"class"));
 }
-}),new objj_method(sel_getUid("connection:didReceiveData:"),function(_b2,_b3,_b4,_b5){
-with(_b2){
-CPLog.trace("[%@ -connection:didReceiveData:] START",objj_msgSend(_b2,"class"));
-var _b6=objj_msgSend(statusCodeByConnection,"objectForKey:",_b4),_b7=objj_msgSend(contextInfoByConnection,"objectForKey:",_b4);
-if(!_b6||_b6>=400){
-objj_msgSend(_b2,"connection:didFailWithError:",_b4,_b5);
-}else{
-if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_b4)){
-objj_msgSend(_b2,"didReceiveRecordsAsData:connection:contextInfo:",_b5,_b4,_b7);
-}else{
-if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_b4)){
-var _b8=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_b4);
-objj_msgSend(_b2,"didDeleteRecord:contextInfo:",_b8,_b7);
-}else{
-if(objj_msgSend(recordsByCreateConnection,"containsKey:",_b4)){
-var _b8=objj_msgSend(recordsByCreateConnection,"objectForKey:",_b4);
-objj_msgSend(_b2,"didCreateRecord:contextInfo:",_b8,_b7);
-}else{
-if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_b4)){
-var _b8=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_b4);
-objj_msgSend(_b2,"didUpdateRecord:contextInfo:",_b8,_b7);
-}else{
-CPLog.warn("[%@ -connection:didReceiveData:] got message for unknown connection: %@ data: %@",objj_msgSend(_b2,"class"),_b4,_b5);
-}
-}
-}
-}
-}
-objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_b4);
-objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_b4);
-objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_b4);
-objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_b4);
-objj_msgSend(contextInfoByConnection,"removeObjectForKey:",_b4);
-objj_msgSend(statusCodeByConnection,"removeObjectForKey:",_b4);
-CPLog.trace("[%@ -connection:didReceiveData:] END",objj_msgSend(_b2,"class"));
-}
-}),new objj_method(sel_getUid("connection:didFailWithError:"),function(_b9,_ba,_bb,_bc){
+}),new objj_method(sel_getUid("connection:didReceiveData:"),function(_b9,_ba,_bb,_bc){
 with(_b9){
-CPLog.trace("[%@ -connection:didFailWithError:] START (error=%@)",objj_msgSend(_b9,"class"),_bc);
+CPLog.trace("[%@ -connection:didReceiveData:] START",objj_msgSend(_b9,"class"));
+var _bd=objj_msgSend(statusCodeByConnection,"objectForKey:",_bb),_be=objj_msgSend(contextInfoByConnection,"objectForKey:",_bb);
+if(!_bd||_bd>=400){
+objj_msgSend(_b9,"connection:didFailWithError:",_bb,_bc);
+}else{
 if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_bb)){
-objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_bb);
-objj_msgSend(_b9,"didFailToReceiveRecordsWithError:contextInfo:",_bc,objj_msgSend(contextInfoByConnection,"objectForKey:",_bb));
+objj_msgSend(_b9,"didReceiveRecordsAsData:connection:contextInfo:",_bc,_bb,_be);
 }else{
 if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_bb)){
-var _bd=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_bb);
-objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_bb);
-objj_msgSend(_b9,"didFailToDeleteRecord:withError:contextInfo:",_bd,_bc,objj_msgSend(contextInfoByConnection,"objectForKey:",_bb));
+var _bf=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_bb);
+objj_msgSend(_b9,"didDeleteRecord:contextInfo:",_bf,_be);
 }else{
 if(objj_msgSend(recordsByCreateConnection,"containsKey:",_bb)){
-var _bd=objj_msgSend(recordsByCreateConnection,"objectForKey:",_bb);
-objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_bb);
-objj_msgSend(_b9,"didFailToCreateRecord:withError:contextInfo:",_bd,_bc,objj_msgSend(contextInfoByConnection,"objectForKey:",_bb));
+var _bf=objj_msgSend(recordsByCreateConnection,"objectForKey:",_bb);
+objj_msgSend(_b9,"didCreateRecord:contextInfo:",_bf,_be);
 }else{
 if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_bb)){
-var _bd=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_bb);
+var _bf=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_bb);
+objj_msgSend(_b9,"didUpdateRecord:contextInfo:",_bf,_be);
+}else{
+CPLog.warn("[%@ -connection:didReceiveData:] got message for unknown connection: %@ data: %@",objj_msgSend(_b9,"class"),_bb,_bc);
+}
+}
+}
+}
+}
+objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_bb);
+objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_bb);
+objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_bb);
 objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_bb);
-objj_msgSend(_b9,"didFailToUpdateRecord:withError:contextInfo:",_bd,_bc,objj_msgSend(contextInfoByConnection,"objectForKey:",_bb));
+objj_msgSend(contextInfoByConnection,"removeObjectForKey:",_bb);
+objj_msgSend(statusCodeByConnection,"removeObjectForKey:",_bb);
+CPLog.trace("[%@ -connection:didReceiveData:] END",objj_msgSend(_b9,"class"));
+}
+}),new objj_method(sel_getUid("connection:didFailWithError:"),function(_c0,_c1,_c2,_c3){
+with(_c0){
+CPLog.trace("[%@ -connection:didFailWithError:] START (error=%@)",objj_msgSend(_c0,"class"),_c3);
+if(objj_msgSend(recordsByRefreshConnection,"containsKey:",_c2)){
+objj_msgSend(recordsByRefreshConnection,"removeObjectForKey:",_c2);
+objj_msgSend(_c0,"didFailToReceiveRecordsWithError:contextInfo:",_c3,objj_msgSend(contextInfoByConnection,"objectForKey:",_c2));
+}else{
+if(objj_msgSend(recordsByDeleteConnection,"containsKey:",_c2)){
+var _c4=objj_msgSend(recordsByDeleteConnection,"objectForKey:",_c2);
+objj_msgSend(recordsByDeleteConnection,"removeObjectForKey:",_c2);
+objj_msgSend(_c0,"didFailToDeleteRecord:withError:contextInfo:",_c4,_c3,objj_msgSend(contextInfoByConnection,"objectForKey:",_c2));
+}else{
+if(objj_msgSend(recordsByCreateConnection,"containsKey:",_c2)){
+var _c4=objj_msgSend(recordsByCreateConnection,"objectForKey:",_c2);
+objj_msgSend(recordsByCreateConnection,"removeObjectForKey:",_c2);
+objj_msgSend(_c0,"didFailToCreateRecord:withError:contextInfo:",_c4,_c3,objj_msgSend(contextInfoByConnection,"objectForKey:",_c2));
+}else{
+if(objj_msgSend(recordsByUpdateConnection,"containsKey:",_c2)){
+var _c4=objj_msgSend(recordsByUpdateConnection,"objectForKey:",_c2);
+objj_msgSend(recordsByUpdateConnection,"removeObjectForKey:",_c2);
+objj_msgSend(_c0,"didFailToUpdateRecord:withError:contextInfo:",_c4,_c3,objj_msgSend(contextInfoByConnection,"objectForKey:",_c2));
 }
 }
 }
 }
-CPLog.trace("[%@ -connection:didFailWithError:] END",objj_msgSend(_b9,"class"));
+CPLog.trace("[%@ -connection:didFailWithError:] END",objj_msgSend(_c0,"class"));
 }
 })]);
-class_addMethods(_3,[new objj_method(sel_getUid("sharedDataSource"),function(_be,_bf){
-with(_be){
-var _c0=objj_msgSend(_1,"objectForKey:",CPStringFromClass(_be));
-if(!_c0){
-_c0=objj_msgSend(objj_msgSend(_be,"alloc"),"init");
-objj_msgSend(_1,"setObject:forKey:",_c0,CPStringFromClass(_be));
+class_addMethods(_3,[new objj_method(sel_getUid("sharedDataSource"),function(_c5,_c6){
+with(_c5){
+var _c7=objj_msgSend(_1,"objectForKey:",CPStringFromClass(_c5));
+if(!_c7){
+_c7=objj_msgSend(objj_msgSend(_c5,"alloc"),"init");
+objj_msgSend(_1,"setObject:forKey:",_c7,CPStringFromClass(_c5));
 }
-return _c0;
+return _c7;
 }
 })]);
 p;25;DataSources/MMDataStore.jt;1607;@STATIC;1.0;I;21;Foundation/CPObject.jt;1562;
@@ -9453,7 +9514,7 @@ objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificatio
 objj_msgSend(_24,"_scheduleTimer");
 }
 })]);
-p;24;Models/PMSCapabilities.jt;4427;@STATIC;1.0;I;21;Foundation/CPObject.ji;9;Version.jt;4369;
+p;24;Models/PMSCapabilities.jt;4727;@STATIC;1.0;I;21;Foundation/CPObject.ji;9;Version.jt;4669;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("Version.j",YES);
 var _1=nil;
@@ -9538,32 +9599,40 @@ return objj_msgSend(_23,"versionIsAtLeast:","0.9.2.6");
 with(_25){
 return objj_msgSend(_25,"versionIsAtLeast:","0.9.2.7");
 }
-}),new objj_method(sel_getUid("versionIsAtLeast:"),function(_27,_28,_29){
+}),new objj_method(sel_getUid("myPlexSupported"),function(_27,_28){
 with(_27){
-if(objj_msgSend(_29,"isKindOfClass:",objj_msgSend(CPString,"class"))){
-_29=objj_msgSend(Version,"versionWithString:",_29);
+return objj_msgSend(_27,"versionIsAtLeast:","0.9.2.8");
 }
-return objj_msgSend(version,"compare:",_29)!=CPOrderedAscending;
+}),new objj_method(sel_getUid("versionIsAtLeast:"),function(_29,_2a,_2b){
+with(_29){
+if(objj_msgSend(_2b,"isKindOfClass:",objj_msgSend(CPString,"class"))){
+_2b=objj_msgSend(Version,"versionWithString:",_2b);
+}
+return objj_msgSend(version,"compare:",_2b)!=CPOrderedAscending;
 }
 })]);
-class_addMethods(_3,[new objj_method(sel_getUid("sharedPMSCapabilities"),function(_2a,_2b){
-with(_2a){
+class_addMethods(_3,[new objj_method(sel_getUid("sharedPMSCapabilities"),function(_2c,_2d){
+with(_2c){
 if(!_1){
-_1=objj_msgSend(objj_msgSend(_2a,"alloc"),"init");
+_1=objj_msgSend(objj_msgSend(_2c,"alloc"),"init");
 objj_msgSend(_1,"refresh");
 }
 return _1;
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingLanguagePreferencesSupported"),function(_2c,_2d){
-with(_2c){
-return objj_msgSend(CPSet,"setWithObjects:","version");
-}
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingStopRefreshSupported"),function(_2e,_2f){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingLanguagePreferencesSupported"),function(_2e,_2f){
 with(_2e){
 return objj_msgSend(CPSet,"setWithObjects:","version");
 }
-}),new objj_method(sel_getUid("keyPathsForValuesAffectingDtsMixdownSupported"),function(_30,_31){
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingStopRefreshSupported"),function(_30,_31){
 with(_30){
+return objj_msgSend(CPSet,"setWithObjects:","version");
+}
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingDtsMixdownSupported"),function(_32,_33){
+with(_32){
+return objj_msgSend(CPSet,"setWithObjects:","version");
+}
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingMyPlexSupported"),function(_34,_35){
+with(_34){
 return objj_msgSend(CPSet,"setWithObjects:","version");
 }
 })]);
@@ -11159,7 +11228,7 @@ objj_msgSend(_ae,"setTag:",tag);
 return _ae;
 }
 })]);
-p;22;Views/MMFileListView.jt;5240;@STATIC;1.0;I;25;AppKit/CPCollectionView.ji;20;MMFileListViewItem.jt;5166;
+p;22;Views/MMFileListView.jt;5933;@STATIC;1.0;I;25;AppKit/CPCollectionView.ji;20;MMFileListViewItem.jt;5859;
 objj_executeFile("AppKit/CPCollectionView.j",NO);
 objj_executeFile("MMFileListViewItem.j",YES);
 var _1=objj_allocateClassPair(CPCollectionView,"MMFileListView"),_2=_1.isa;
@@ -11202,145 +11271,175 @@ objj_msgSend(_3,"bind:toObject:withKeyPath:options:","selectionIndexes",_filesCo
 }
 return _3;
 }
-}),new objj_method(sel_getUid("reloadContent"),function(_b,_c){
+}),new objj_method(sel_getUid("becomeFirstResponder"),function(_b,_c){
 with(_b){
-objj_msgSendSuper({receiver:_b,super_class:objj_getClass("MMFileListView").super_class},"reloadContent");
-var _d=0,_e=objj_msgSend(_b,"backgroundColors"),_f=objj_msgSend(_e,"count"),_10=objj_msgSend(_items,"count");
-if(!_f){
-return;
+objj_msgSend(_items,"enumerateObjectsUsingBlock:",function(_d){
+objj_msgSend(objj_msgSend(_d,"view"),"setNeedsDisplay:",YES);
+});
+return objj_msgSendSuper({receiver:_b,super_class:objj_getClass("MMFileListView").super_class},"becomeFirstResponder");
 }
-CPLog.trace("[MMFileListView -reloadContent] repainting background for %d item(s) with %d background(s)",_10,_f);
-for(var _11=0;_11<_10;_11++,_d++){
-if(objj_msgSend(_selectionIndexes,"containsIndex:",_11)){
-continue;
+}),new objj_method(sel_getUid("resignFirstResponder"),function(_e,_f){
+with(_e){
+objj_msgSend(_items,"enumerateObjectsUsingBlock:",function(_10){
+objj_msgSend(objj_msgSend(_10,"view"),"setNeedsDisplay:",YES);
+});
+return objj_msgSendSuper({receiver:_e,super_class:objj_getClass("MMFileListView").super_class},"resignFirstResponder");
 }
-_d=_d%_f;
-objj_msgSend(objj_msgSend(_items[_11],"view"),"setBackgroundColor:",_e[_d]);
-}
-}
-}),new objj_method(sel_getUid("dropPerformedWithPasteboard:"),function(_12,_13,_14){
-with(_12){
-var _15=objj_msgSend(objj_msgSend(_14,"dataForType:","text/uri-list"),"rawString");
-CPLog.debug("[MMFileListView -dropPerformedWithPasteboard:] got a drop with files: %@",_15);
+}),new objj_method(sel_getUid("reloadContent"),function(_11,_12){
+with(_11){
+objj_msgSendSuper({receiver:_11,super_class:objj_getClass("MMFileListView").super_class},"reloadContent");
+var _13=0,_14=objj_msgSend(_11,"backgroundColors"),_15=objj_msgSend(_14,"count"),_16=objj_msgSend(_items,"count");
 if(!_15){
 return;
 }
-var _16=objj_msgSend(CPString,"stringWithString:",_15).split(/\s+/);
-for(var i=0;i<objj_msgSend(_16,"count");i++){
-objj_msgSend(_12,"addFileWithURI:",objj_msgSend(_16,"objectAtIndex:",i));
+CPLog.trace("[%@ -%@] repainting background for %d item(s) with %d background(s)",objj_msgSend(_11,"class"),_12,_16,_15);
+for(var _17=0;_17<_16;_17++,_13++){
+if(objj_msgSend(_selectionIndexes,"containsIndex:",_17)){
+continue;
+}
+_13=_13%_15;
+objj_msgSend(objj_msgSend(_items[_17],"view"),"setBackgroundColor:",_14[_13]);
 }
 }
-}),new objj_method(sel_getUid("addFileWithURI:"),function(_17,_18,uri){
-with(_17){
-var _19=objj_msgSend(CPArray,"arrayWithObjects:","file://localhost","file://"),_1a;
-for(var i=0;i<objj_msgSend(_19,"count");i++){
-_1a=objj_msgSend(uri,"rangeOfString:",objj_msgSend(_19,"objectAtIndex:",i));
-if(_1a.location==0){
-uri=objj_msgSend(uri,"stringByReplacingCharactersInRange:withString:",_1a,"");
-}
-}
-objj_msgSend(_17,"addFileWithPath:",decodeURIComponent(uri));
-}
-}),new objj_method(sel_getUid("addFileWithPath:"),function(_1b,_1c,_1d){
-with(_1b){
-objj_msgSend(_1b,"addFileWithPath:reload:",_1d,YES);
-}
-}),new objj_method(sel_getUid("addFileWithPath:reload:"),function(_1e,_1f,_20,_21){
-with(_1e){
-_20=objj_msgSend(_20,"stringByReplacingOccurrencesOfString:withString:","\\","/");
-if(objj_msgSend(objj_msgSend(_20,"substringFromIndex:",objj_msgSend(_20,"length")-1),"isEqualToString:","/")){
-_20=objj_msgSend(_20,"substringToIndex:",objj_msgSend(_20,"length")-1);
-}
-if(objj_msgSend(objj_msgSend(_filesController,"content"),"containsObject:",_20)){
-CPLog.warn("[MMFileListView -addFileWithPath:] skipping %@ since we already have it",_20);
+}),new objj_method(sel_getUid("dropPerformedWithPasteboard:"),function(_18,_19,_1a){
+with(_18){
+var _1b=objj_msgSend(objj_msgSend(_1a,"dataForType:","text/uri-list"),"rawString");
+CPLog.debug("[%@ -%@:] got a drop with files: %@",objj_msgSend(_18,"class"),_19,_1b);
+if(!_1b){
 return;
 }
-CPLog.debug("[MMFileListView -addFileWithPath:] adding %@",_20);
-objj_msgSend(_filesController,"addObject:",_20);
-if(_21){
-objj_msgSend(_1e,"reload");
+var _1c=objj_msgSend(CPString,"stringWithString:",_1b).split(/\s+/);
+for(var i=0;i<objj_msgSend(_1c,"count");i++){
+objj_msgSend(_18,"addFileWithURI:",objj_msgSend(_1c,"objectAtIndex:",i));
 }
 }
-}),new objj_method(sel_getUid("files"),function(_22,_23){
-with(_22){
-return objj_msgSend(_filesController,"arrangedObjects");
+}),new objj_method(sel_getUid("addFileWithURI:"),function(_1d,_1e,uri){
+with(_1d){
+var _1f=objj_msgSend(CPArray,"arrayWithObjects:","file://localhost","file://"),_20;
+for(var i=0;i<objj_msgSend(_1f,"count");i++){
+_20=objj_msgSend(uri,"rangeOfString:",objj_msgSend(_1f,"objectAtIndex:",i));
+if(_20.location==0){
+uri=objj_msgSend(uri,"stringByReplacingCharactersInRange:withString:",_20,"");
 }
-}),new objj_method(sel_getUid("setFiles:"),function(_24,_25,_26){
+}
+objj_msgSend(_1d,"addFileWithPath:",decodeURIComponent(uri));
+}
+}),new objj_method(sel_getUid("addFileWithPath:"),function(_21,_22,_23){
+with(_21){
+objj_msgSend(_21,"addFileWithPath:reload:",_23,YES);
+}
+}),new objj_method(sel_getUid("addFileWithPath:reload:"),function(_24,_25,_26,_27){
 with(_24){
-objj_msgSend(_filesController,"setContent:",[]);
-for(var i=0;i<objj_msgSend(_26,"count");i++){
-objj_msgSend(_24,"addFileWithPath:reload:",objj_msgSend(_26,"objectAtIndex:",i),NO);
+_26=objj_msgSend(_26,"stringByReplacingOccurrencesOfString:withString:","\\","/");
+if(objj_msgSend(objj_msgSend(_26,"substringFromIndex:",objj_msgSend(_26,"length")-1),"isEqualToString:","/")){
+_26=objj_msgSend(_26,"substringToIndex:",objj_msgSend(_26,"length")-1);
 }
+if(objj_msgSend(objj_msgSend(_filesController,"content"),"containsObject:",_26)){
+CPLog.warn("[%@ -%@] skipping %@ since we already have it",objj_msgSend(_24,"class"),_25,_26);
+return;
+}
+CPLog.debug("[%@ -%@] adding %@",objj_msgSend(_24,"class"),_25,_26);
+objj_msgSend(_filesController,"addObject:",_26);
+if(_27){
 objj_msgSend(_24,"reload");
 }
-}),new objj_method(sel_getUid("removeFilesAtIndexes:"),function(_27,_28,_29){
-with(_27){
-objj_msgSend(_filesController,"removeObjectsAtArrangedObjectIndexes:",_29);
-objj_msgSend(_27,"reload");
 }
-}),new objj_method(sel_getUid("reload"),function(_2a,_2b){
+}),new objj_method(sel_getUid("files"),function(_28,_29){
+with(_28){
+return objj_msgSend(_filesController,"arrangedObjects");
+}
+}),new objj_method(sel_getUid("setFiles:"),function(_2a,_2b,_2c){
 with(_2a){
-objj_msgSend(_2a,"setContent:",objj_msgSend(_filesController,"content"));
-objj_msgSend(_2a,"needsDisplay");
+objj_msgSend(_filesController,"setContent:",[]);
+for(var i=0;i<objj_msgSend(_2c,"count");i++){
+objj_msgSend(_2a,"addFileWithPath:reload:",objj_msgSend(_2c,"objectAtIndex:",i),NO);
+}
+objj_msgSend(_2a,"reload");
+}
+}),new objj_method(sel_getUid("removeFilesAtIndexes:"),function(_2d,_2e,_2f){
+with(_2d){
+objj_msgSend(_filesController,"removeObjectsAtArrangedObjectIndexes:",_2f);
+objj_msgSend(_2d,"reload");
+}
+}),new objj_method(sel_getUid("reload"),function(_30,_31){
+with(_30){
+objj_msgSend(_30,"setContent:",objj_msgSend(_filesController,"content"));
+objj_msgSend(_30,"needsDisplay");
 }
 })]);
-p;26;Views/MMFileListViewItem.jt;3145;@STATIC;1.0;I;15;AppKit/CPView.jt;3106;
+p;26;Views/MMFileListViewItem.jt;3877;@STATIC;1.0;I;15;AppKit/CPView.jt;3838;
 objj_executeFile("AppKit/CPView.j",NO);
 var _1=10;
 MMFileListViewItemSelectedColor=objj_msgSend(CPColor,"colorWithRed:green:blue:alpha:",56/255,117/255,215/255,1);
+MMFileListViewItemSelectedBlurredColor=objj_msgSend(CPColor,"colorWithCalibratedWhite:alpha:",212/255,1);
 MMFileListViewItemBackgroundColors=objj_msgSend(CPArray,"arrayWithObjects:",objj_msgSend(CPColor,"whiteColor"),objj_msgSend(CPColor,"colorWithRed:green:blue:alpha:",237/255,243/255,254/255,1));
 var _2=objj_allocateClassPair(CPView,"MMFileListViewItem"),_3=_2.isa;
-class_addIvars(_2,[new objj_ivar("_title"),new objj_ivar("_path"),new objj_ivar("_originalBackgroundColor")]);
+class_addIvars(_2,[new objj_ivar("_title"),new objj_ivar("_path"),new objj_ivar("_originalBackgroundColor"),new objj_ivar("selected")]);
 objj_registerClassPair(_2);
-class_addMethods(_2,[new objj_method(sel_getUid("setRepresentedObject:"),function(_4,_5,_6){
+class_addMethods(_2,[new objj_method(sel_getUid("isSelected"),function(_4,_5){
 with(_4){
-CPLog.trace("[%@ -setRepresentedObject:] filePath=%@",objj_msgSend(_4,"class"),_6);
-var _7=NO,_8=objj_msgSend(_6,"lastPathComponent"),_9=_6;
+return selected;
+}
+}),new objj_method(sel_getUid("setSelected:"),function(_6,_7,_8){
+with(_6){
+selected=_8;
+}
+}),new objj_method(sel_getUid("setRepresentedObject:"),function(_9,_a,_b){
+with(_9){
+CPLog.trace("[%@ -setRepresentedObject:] filePath=%@",objj_msgSend(_9,"class"),_b);
+var _c=NO,_d=objj_msgSend(_b,"lastPathComponent"),_e=_b;
 if(!_title){
 _title=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_title,"setStringValue:",_8);
+objj_msgSend(_title,"setStringValue:",_d);
 objj_msgSend(_title,"setFont:",objj_msgSend(CPFont,"boldSystemFontOfSize:",12));
 objj_msgSend(_title,"sizeToFit");
 objj_msgSend(_title,"setAutoresizingMask:",CPViewWidthSizable|CPViewMinYMargin|CPViewMaxYMargin);
 objj_msgSend(_title,"setLineBreakMode:",CPLineBreakByTruncatingTail);
-objj_msgSend(_4,"addSubview:",_title);
-_7=YES;
+objj_msgSend(_9,"addSubview:",_title);
+_c=YES;
 }
 if(!_path){
 _path=objj_msgSend(objj_msgSend(CPTextField,"alloc"),"initWithFrame:",CGRectMakeZero());
-objj_msgSend(_path,"setStringValue:",_9);
+objj_msgSend(_path,"setStringValue:",_e);
 objj_msgSend(_path,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",10));
 objj_msgSend(_path,"sizeToFit");
 objj_msgSend(_path,"setAutoresizingMask:",CPViewWidthSizable|CPViewMinYMargin|CPViewMaxYMargin);
 objj_msgSend(_path,"setLineBreakMode:",CPLineBreakByTruncatingTail);
-objj_msgSend(_4,"addSubview:",_path);
-_7=YES;
+objj_msgSend(_9,"addSubview:",_path);
+_c=YES;
 }
-if(_7){
-var _a=CGRectGetHeight(objj_msgSend(_title,"frame"))+CGRectGetHeight(objj_msgSend(_path,"frame")),_b=(CGRectGetHeight(objj_msgSend(_4,"frame"))-_a)/2;
-objj_msgSend(_title,"setFrameOrigin:",CGPointMake(_1,_b));
-objj_msgSend(_path,"setFrameOrigin:",CGPointMake(_1,_b+CGRectGetHeight(objj_msgSend(_title,"frame"))));
-objj_msgSend(_4,"setSelected:",NO);
+if(_c){
+var _f=CGRectGetHeight(objj_msgSend(_title,"frame"))+CGRectGetHeight(objj_msgSend(_path,"frame")),top=(CGRectGetHeight(objj_msgSend(_9,"frame"))-_f)/2;
+objj_msgSend(_title,"setFrameOrigin:",CGPointMake(_1,top));
+objj_msgSend(_path,"setFrameOrigin:",CGPointMake(_1,top+CGRectGetHeight(objj_msgSend(_title,"frame"))));
+objj_msgSend(_9,"setSelected:",NO);
 }
-objj_msgSend(_title,"setStringValue:",_8);
-objj_msgSend(_path,"setStringValue:",objj_msgSend(objj_msgSend(_4,"class"),"displayValueForNormalizedPath:",objj_msgSend(_9,"stringByDeletingLastPathComponent")));
+objj_msgSend(_title,"setStringValue:",_d);
+objj_msgSend(_path,"setStringValue:",objj_msgSend(objj_msgSend(_9,"class"),"displayValueForNormalizedPath:",objj_msgSend(_e,"stringByDeletingLastPathComponent")));
 }
-}),new objj_method(sel_getUid("setSelected:"),function(_c,_d,_e){
-with(_c){
+}),new objj_method(sel_getUid("setSelected:"),function(_10,_11,_12){
+with(_10){
+selected=_12;
+objj_msgSend(_10,"setNeedsDisplay:",YES);
+}
+}),new objj_method(sel_getUid("drawRect:"),function(_13,_14,_15){
+with(_13){
 if(!_originalBackgroundColor){
-_originalBackgroundColor=objj_msgSend(_c,"backgroundColor");
+_originalBackgroundColor=objj_msgSend(_13,"backgroundColor");
 }
-objj_msgSend(_c,"setBackgroundColor:",_e?MMFileListViewItemSelectedColor:_originalBackgroundColor);
-objj_msgSend(_title,"setTextColor:",_e?objj_msgSend(CPColor,"whiteColor"):objj_msgSend(CPColor,"blackColor"));
-objj_msgSend(_path,"setTextColor:",objj_msgSend(CPColor,"colorWithCalibratedWhite:alpha:",(_e?200:137)/255,1));
+var _16=!objj_msgSend(objj_msgSend(_13,"superview"),"isFirstResponder");
+objj_msgSend(_13,"setBackgroundColor:",(selected&&_16)?MMFileListViewItemSelectedBlurredColor:selected?MMFileListViewItemSelectedColor:_originalBackgroundColor);
+objj_msgSend(_title,"setTextColor:",(selected&&!_16)?objj_msgSend(CPColor,"whiteColor"):objj_msgSend(CPColor,"blackColor"));
+objj_msgSend(_path,"setTextColor:",objj_msgSend(CPColor,"colorWithCalibratedWhite:alpha:",((selected&&!_16)?200:137)/255,1));
+objj_msgSendSuper({receiver:_13,super_class:objj_getClass("MMFileListViewItem").super_class},"drawRect:",_15);
 }
 })]);
-class_addMethods(_3,[new objj_method(sel_getUid("displayValueForNormalizedPath:"),function(_f,_10,_11){
-with(_f){
+class_addMethods(_3,[new objj_method(sel_getUid("displayValueForNormalizedPath:"),function(_17,_18,_19){
+with(_17){
 if(CPBrowserIsOperatingSystem(CPWindowsOperatingSystem)){
-return objj_msgSend(_11,"stringByReplacingOccurrencesOfString:withString:","/","\\");
+return objj_msgSend(_19,"stringByReplacingOccurrencesOfString:withString:","/","\\");
 }
-return _11;
+return _19;
 }
 })]);
 p;33;DataSources/MMScannerDataSource.jt;2171;@STATIC;1.0;i;14;MMDataSource.ji;21;../Models/MMScanner.jt;2107;
@@ -12013,7 +12112,7 @@ objj_msgSend(_30,"setFrame:",_31);
 return bar;
 }
 })]);
-p;26;Views/MMPreferencesPanel.jt;9317;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;54;../Controllers/MMPreferencesLanguagesPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;8737;
+p;26;Views/MMPreferencesPanel.jt;9981;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;54;../Controllers/MMPreferencesLanguagesPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;51;../Controllers/MMPreferencesMyPlexPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;9345;
 objj_executeFile("AppKit/CPResponder.j",NO);
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Frameworks/LPKit/LPMultiLineTextField.j",YES);
@@ -12022,6 +12121,7 @@ objj_executeFile("../Controllers/MMPreferencesLibraryPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesSharingPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesLanguagesPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesTranscodingPanelController.j",YES);
+objj_executeFile("../Controllers/MMPreferencesMyPlexPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesSecurityPanelController.j",YES);
 objj_executeFile("../Controllers/MMPreferencesAdvancedPanelController.j",YES);
 objj_executeFile("../Controllers/MMPrefsController.j",YES);
@@ -12063,6 +12163,9 @@ if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"languageP
 objj_msgSend(_c,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesLanguagesPanelController,"alloc"),"init"));
 }
 objj_msgSend(_c,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesTranscodingPanelController,"alloc"),"init"));
+if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"myPlexSupported")){
+objj_msgSend(_c,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesMyPlexPanelController,"alloc"),"init"));
+}
 objj_msgSend(_c,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesSecurityPanelController,"alloc"),"init"));
 objj_msgSend(_c,"addPreferencePanel:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanelController,"alloc"),"init"));
 var _11=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Done","Done"));
@@ -12107,7 +12210,9 @@ with(_19){
 if(!sheetPanel){
 return;
 }
+objj_msgSend(selectedSection,"viewWillDisappear");
 objj_msgSend(CPApp,"endSheet:returnCode:",sheetPanel,0),sheetPanel=nil;
+objj_msgSend(selectedSection,"viewDidDisappear");
 }
 }),new objj_method(sel_getUid("toolbarDefaultItemIdentifiers:"),function(_1b,_1c,_1d){
 with(_1b){
@@ -12128,11 +12233,13 @@ objj_msgSend(_24,"selectSection:",objj_msgSend(_24,"sectionByIdentifier:",objj_m
 with(_27){
 var _2a;
 if(selectedSection){
+objj_msgSend(selectedSection,"viewWillDisappear");
 _2a=objj_msgSend(sections,"indexOfObject:",selectedSection);
 if(_2a!=CPNotFound){
 objj_msgSend(objj_msgSend(objj_msgSend(toolbar,"items"),"objectAtIndex:",_2a),"setImage:",objj_msgSend(selectedSection,"image"));
 }
 }
+objj_msgSend(_29,"viewWillAppear");
 sectionBeingSelected=_29;
 var _2b=objj_msgSend(_29,"view");
 if(!objj_msgSend(objj_msgSend(_27,"subviews"),"containsObject:",_2b)){
@@ -12146,7 +12253,7 @@ objj_msgSend(objj_msgSend(objj_msgSend(toolbar,"items"),"objectAtIndex:",_2a),"s
 objj_msgSend(selectionIndicator,"setFrameOrigin:",CGPointMake(CGRectGetMidX(objj_msgSend(objj_msgSend(objj_msgSend(toolbar,"_toolbarView"),"viewForItem:",objj_msgSend(objj_msgSend(toolbar,"items"),"objectAtIndex:",_2a)),"frame"))-CGRectGetWidth(objj_msgSend(selectionIndicator,"frame"))/2,CGRectGetMinY(objj_msgSend(selectionIndicator,"frame"))));
 }
 if(selectedSection){
-objj_msgSend(_27,"transitionFromSubview:toSubview:adjustWidth:adjustHeight:",objj_msgSend(selectedSection,"view"),_2b,NO,YES);
+objj_msgSend(_27,"transitionFromSubview:toSubview:adjustWidth:adjustHeight:animated:",objj_msgSend(selectedSection,"view"),_2b,NO,YES,selectedSection!=nil);
 }else{
 objj_msgSend(_27,"willTransitionFromSubview:toSubview:",nil,_2b);
 objj_msgSend(_27,"sizeToFitWithInset:adjustWidth:adjustHeight:",CPViewInsetDefault,NO,YES);
@@ -12158,6 +12265,8 @@ with(_2d){
 objj_msgSend(objj_msgSend(selectedSection,"view"),"setHidden:",YES);
 objj_msgSend(_30,"setHidden:",NO);
 objj_msgSend(objj_msgSend(_2d,"window"),"makeFirstResponder:",objj_msgSend(sectionBeingSelected,"initialFirstResponder"));
+objj_msgSend(selectedSection,"viewDidDisappear");
+objj_msgSend(sectionBeingSelected,"viewDidAppear");
 selectedSection=sectionBeingSelected;
 sectionBeingSelected=nil;
 }
@@ -12186,7 +12295,7 @@ objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesGeneralPanel,"
 objj_msgSend(_7,"setInitialFirstResponder:",objj_msgSend(objj_msgSend(_7,"view"),"initialFirstResponder"));
 }
 })]);
-p;46;Controllers/MMPreferencesBasePanelController.jt;1412;@STATIC;1.0;I;25;AppKit/CPViewController.jt;1363;
+p;46;Controllers/MMPreferencesBasePanelController.jt;1734;@STATIC;1.0;I;25;AppKit/CPViewController.jt;1685;
 objj_executeFile("AppKit/CPViewController.j",NO);
 var _1=objj_allocateClassPair(CPViewController,"MMPreferencesBasePanelController"),_2=_1.isa;
 class_addIvars(_1,[new objj_ivar("initialFirstResponder")]);
@@ -12213,6 +12322,18 @@ return objj_msgSend(objj_msgSend(CPImage,"alloc"),"initByReferencingFile:size:",
 }),new objj_method(sel_getUid("selectedImage"),function(_d,_e){
 with(_d){
 return objj_msgSend(objj_msgSend(CPImage,"alloc"),"initByReferencingFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:",objj_msgSend(_d,"identifier")+"-Selected.png"),CGSizeMake(32,32));
+}
+}),new objj_method(sel_getUid("viewWillAppear"),function(_f,_10){
+with(_f){
+}
+}),new objj_method(sel_getUid("viewWillDisappear"),function(_11,_12){
+with(_11){
+}
+}),new objj_method(sel_getUid("viewDidAppear"),function(_13,_14){
+with(_13){
+}
+}),new objj_method(sel_getUid("viewDidDisappear"),function(_15,_16){
+with(_15){
 }
 })]);
 p;33;Views/MMPreferencesGeneralPanel.jt;5416;@STATIC;1.0;I;15;AppKit/CPView.jt;5377;
@@ -12767,6 +12888,900 @@ objj_msgSend(_3,"sizeToFit");
 return _3;
 }
 })]);
+p;48;Controllers/MMPreferencesMyPlexPanelController.jt;16991;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;35;../DataSources/MMMyPlexDataSource.ji;26;../Models/MMMyPlexStatus.ji;35;../Views/MMPreferencesMyPlexPanel.ji;19;../Views/MMPrompt.jt;16797;
+objj_executeFile("MMPreferencesBasePanelController.j",YES);
+objj_executeFile("../DataSources/MMMyPlexDataSource.j",YES);
+objj_executeFile("../Models/MMMyPlexStatus.j",YES);
+objj_executeFile("../Views/MMPreferencesMyPlexPanel.j",YES);
+objj_executeFile("../Views/MMPrompt.j",YES);
+var _1=objj_allocateClassPair(MMPreferencesBasePanelController,"MMPreferencesMyPlexPanelController"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("signInPrompt"),new objj_ivar("signUpPrompt"),new objj_ivar("myPlexDataSource"),new objj_ivar("statusRefreshTimer")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("identifier"),function(_3,_4){
+with(_3){
+return "myPlex";
+}
+}),new objj_method(sel_getUid("title"),function(_5,_6){
+with(_5){
+return CPLocalizedString("myPlex","myPlex");
+}
+}),new objj_method(sel_getUid("viewWillAppear"),function(_7,_8){
+with(_7){
+myPlexDataSource=objj_msgSend(objj_msgSend(MMMyPlexDataSource,"alloc"),"initWithDelegate:",_7);
+objj_msgSend(myPlexDataSource,"refreshRecord:",objj_msgSend(MMMyPlexStatus,"sharedStatus"));
+objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"addObserver:forKeyPath:options:context:",_7,"values.PublishServerOnPlexOnlineKey",CPKeyValueChangeNewKey,nil);
+objj_msgSend(objj_msgSend(objj_msgSend(_7,"view"),"publishCheckbox"),"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.PublishServerOnPlexOnlineKey",nil);
+objj_msgSend(objj_msgSend(objj_msgSend(_7,"view"),"mappingStatus"),"bind:toObject:withKeyPath:options:","hidden",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.PublishServerOnPlexOnlineKey",objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",CPNegateBooleanTransformer,CPValueTransformerNameBindingOption));
+[objj_msgSend(objj_msgSend(objj_msgSend(_7,"view"),"myPlexStatus"),"bind:toObject:withKeyPath:options:","hidden",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.PublishServerOnPlexOnlineKey",objj_msgSend(CPDictionary,"dictionaryWithObject:forKey:",CPNegateBooleanTransformer,CPValueTransformerNameBindingOption))];
+objj_msgSend(objj_msgSend(objj_msgSend(_7,"view"),"manualMappingCheckbox"),"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ManualPortMappingMode",nil);
+objj_msgSend(objj_msgSend(objj_msgSend(_7,"view"),"manualMappingPortField"),"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ManualPortMappingPort",nil);
+objj_msgSend(objj_msgSend(_7,"view"),"bind:toObject:withKeyPath:options:","manualPortControlsHidden",_7,"manualPortControlsHidden",nil);
+}
+}),new objj_method(sel_getUid("viewWillDisappear"),function(_9,_a){
+with(_9){
+objj_msgSend(myPlexDataSource,"cancelAllRequests"),myPlexDataSource=nil;
+objj_msgSend(statusRefreshTimer,"invalidate"),statusRefreshTimer=nil;
+objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"removeObserver:forKeyPath:",_9,"values.PublishServerOnPlexOnlineKey");
+objj_msgSend(objj_msgSend(objj_msgSend(_9,"view"),"publishCheckbox"),"unbind:",CPValueBinding);
+objj_msgSend(objj_msgSend(objj_msgSend(_9,"view"),"mappingStatus"),"unbind:","hidden");
+objj_msgSend(objj_msgSend(objj_msgSend(_9,"view"),"myPlexStatus"),"unbind:","hidden");
+objj_msgSend(objj_msgSend(objj_msgSend(_9,"view"),"manualMappingCheckbox"),"unbind:",CPValueBinding);
+objj_msgSend(objj_msgSend(objj_msgSend(_9,"view"),"manualMappingPortField"),"unbind:",CPValueBinding);
+objj_msgSend(objj_msgSend(_9,"view"),"unbind:","manualPortControlsHidden");
+}
+}),new objj_method(sel_getUid("manualPortControlsHidden"),function(_b,_c){
+with(_b){
+var _d=objj_msgSend(MMMyPlexStatus,"sharedStatus"),_e=objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"values");
+return !objj_msgSend(_d,"signedIn")||(!objj_msgSend(_e,"valueForKey:","ManualPortMappingMode")&&!(objj_msgSend(_e,"valueForKey:","PublishServerOnPlexOnlineKey")&&!objj_msgSend(_d,"isMapped")));
+}
+}),new objj_method(sel_getUid("dataSource:didReceiveRecords:contextInfo:"),function(_f,_10,_11,_12,_13){
+with(_f){
+statusRefreshTimer=objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:callback:repeats:",2,function(){
+objj_msgSend(myPlexDataSource,"refreshRecord:",objj_msgSend(MMMyPlexStatus,"sharedStatus"));
+},NO);
+objj_msgSend(_f,"invalidateAllStatusFieldsWithCallback:",nil);
+objj_msgSend(objj_msgSend(_f,"view"),"setNeedsLayout");
+objj_msgSend(objj_msgSend(_f,"view"),"setSignedIn:",objj_msgSend(objj_msgSend(MMMyPlexStatus,"sharedStatus"),"signedIn"));
+}
+}),new objj_method(sel_getUid("dataSource:didFailToReceiveRecordsWithError:contextInfo:"),function(_14,_15,_16,_17,_18){
+with(_14){
+statusRefreshTimer=objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:callback:repeats:",10,function(){
+objj_msgSend(myPlexDataSource,"refreshRecord:",objj_msgSend(MMMyPlexStatus,"sharedStatus"));
+},NO);
+}
+}),new objj_method(sel_getUid("dataSource:didUpdateRecord:contextInfo:"),function(_19,_1a,_1b,_1c,_1d){
+with(_19){
+objj_msgSend(signInPrompt,"dismissPrompt"),signInPrompt=nil;
+}
+}),new objj_method(sel_getUid("dataSource:didFailToUpdateRecord:withError:contextInfo:"),function(_1e,_1f,_20,_21,_22,_23){
+with(_1e){
+objj_msgSend(signInPrompt,"shake");
+}
+}),new objj_method(sel_getUid("dataSource::contextInfo:"),function(_24,_25,_26,_27,_28){
+with(_24){
+objj_msgSend(signUpPrompt,"dismissPrompt"),signUpPrompt=nil;
+}
+}),new objj_method(sel_getUid("dataSource:didFailToCreateRecord:withError:contextInfo:"),function(_29,_2a,_2b,_2c,_2d,_2e){
+with(_29){
+objj_msgSend(signUpPrompt,"shake");
+}
+}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_2f,_30,_31,_32,_33,_34){
+with(_2f){
+if(_32===objj_msgSend(MMPrefsController,"sharedPrefsController")&&objj_msgSend(_31,"isEqualToString:","values.PublishServerOnPlexOnlineKey")){
+objj_msgSend(_2f,"invalidateAllStatusFieldsWithCallback:",function(){
+var _35=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+objj_msgSend(_35,"setMappingState:",MMMyPlexMappingStateWaiting);
+objj_msgSend(_35,"setMappingError:",nil);
+objj_msgSend(_35,"setMappingErrorMessage:",nil);
+});
+}
+}
+}),new objj_method(sel_getUid("invalidateAllStatusFieldsWithCallback:"),function(_36,_37,_38){
+with(_36){
+objj_msgSend(_36,"willChangeValueForKey:","signInStatusMessage");
+objj_msgSend(_36,"willChangeValueForKey:","signInStatusType");
+objj_msgSend(_36,"willChangeValueForKey:","mappingStatusMessage");
+objj_msgSend(_36,"willChangeValueForKey:","mappingStatusType");
+objj_msgSend(_36,"willChangeValueForKey:","myPlexStatusMessage");
+objj_msgSend(_36,"willChangeValueForKey:","myPlexStatusType");
+objj_msgSend(_36,"willChangeValueForKey:","manualPortControlsHidden");
+if(_38){
+_38();
+}
+objj_msgSend(_36,"didChangeValueForKey:","manualPortControlsHidden");
+objj_msgSend(_36,"didChangeValueForKey:","myPlexStatusType");
+objj_msgSend(_36,"didChangeValueForKey:","myPlexStatusMessage");
+objj_msgSend(_36,"didChangeValueForKey:","mappingStatusType");
+objj_msgSend(_36,"didChangeValueForKey:","mappingStatusMessage");
+objj_msgSend(_36,"didChangeValueForKey:","signInStatusType");
+objj_msgSend(_36,"didChangeValueForKey:","signInStatusMessage");
+}
+}),new objj_method(sel_getUid("loadView"),function(_39,_3a){
+with(_39){
+objj_msgSend(_39,"setView:",objj_msgSend(objj_msgSend(MMPreferencesMyPlexPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,455,225)));
+var _3b=objj_msgSend(objj_msgSend(_39,"view"),"signInStatus");
+objj_msgSend(_3b,"bind:toObject:withKeyPath:options:","type",_39,"signInStatusType",nil);
+objj_msgSend(_3b,"bind:toObject:withKeyPath:options:","stringValue",_39,"signInStatusMessage",nil);
+var _3c=objj_msgSend(objj_msgSend(_39,"view"),"mappingStatus");
+objj_msgSend(_3c,"bind:toObject:withKeyPath:options:","type",_39,"mappingStatusType",nil);
+objj_msgSend(_3c,"bind:toObject:withKeyPath:options:","stringValue",_39,"mappingStatusMessage",nil);
+var _3d=objj_msgSend(objj_msgSend(_39,"view"),"myPlexStatus");
+objj_msgSend(_3d,"bind:toObject:withKeyPath:options:","type",_39,"myPlexStatusType",nil);
+objj_msgSend(_3d,"bind:toObject:withKeyPath:options:","stringValue",_39,"myPlexStatusMessage",nil);
+objj_msgSend(objj_msgSend(_39,"view"),"setSignedIn:",NO);
+var _3e=objj_msgSend(objj_msgSend(_39,"view"),"signInButton");
+objj_msgSend(_3e,"setTarget:",_39);
+objj_msgSend(_3e,"setAction:",sel_getUid("signIn:"));
+var _3f=objj_msgSend(objj_msgSend(_39,"view"),"signUpButton");
+objj_msgSend(_3f,"setTarget:",_39);
+objj_msgSend(_3f,"setAction:",sel_getUid("signUp:"));
+var _40=objj_msgSend(objj_msgSend(_39,"view"),"signOutButton");
+objj_msgSend(_40,"setTarget:",_39);
+objj_msgSend(_40,"setAction:",sel_getUid("signOut:"));
+}
+}),new objj_method(sel_getUid("signInStatusType"),function(_41,_42){
+with(_41){
+switch(objj_msgSend(objj_msgSend(MMMyPlexStatus,"sharedStatus"),"signInState")){
+case MMMyPlexSignInStateAuthenticated:
+return MMStatusIndicatorOK;
+case MMMyPlexSignInStateNotSignedIn:
+return MMStatusIndicatorDisabled;
+case MMMyPlexSignInStateInvalid:
+return MMStatusIndicatorError;
+case MMMyPlexSignInStateUnknown:
+default:
+return MMStatusIndicatorWarning;
+}
+}
+}),new objj_method(sel_getUid("signInStatusMessage"),function(_43,_44){
+with(_43){
+var _45=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+switch(objj_msgSend(_45,"signInState")){
+case MMMyPlexSignInStateAuthenticated:
+return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Signed in as %@","myPlex preference pane successfully authenticated string"),objj_msgSend(_45,"username"));
+case MMMyPlexSignInStateNotSignedIn:
+return CPLocalizedString("Disabled","Disabled status message for the myPlex preference pane");
+case MMMyPlexSignInStateInvalid:
+return CPLocalizedString("Invalid email, username, or password","myPlex preference pane invalid credential message");
+case MMMyPlexSignInStateUnknown:
+default:
+return CPLocalizedString("Unknown sign in state","myPlex preference pane unknown sign in state message");
+}
+}
+}),new objj_method(sel_getUid("mappingStatusType"),function(_46,_47){
+with(_46){
+switch(objj_msgSend(objj_msgSend(MMMyPlexStatus,"sharedStatus"),"mappingState")){
+case MMMyPlexMappingStateMapped:
+return MMStatusIndicatorOK;
+case MMMyPlexMappingStateWaiting:
+return MMStatusIndicatorWarning;
+case MMMyPlexMappingStateFailed:
+return MMStatusIndicatorError;
+case MMMyPlexMappingStateUnknown:
+default:
+return MMStatusIndicatorWarning;
+}
+}
+}),new objj_method(sel_getUid("mappingStatusMessage"),function(_48,_49){
+with(_48){
+var _4a=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+switch(objj_msgSend(_4a,"mappingState")){
+case MMMyPlexMappingStateMapped:
+if(_4a.publicAddress){
+return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Server is mapped to port %i (%s)","myPlex prefpane mapping status message"),_4a.publicPort,_4a.publicAddress);
+}else{
+return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Server is mapped to port %i","myPlex prefpane mapping status message"),_4a.publicPort);
+}
+case MMMyPlexMappingStateWaiting:
+return CPLocalizedString("Waiting for a valid mapping...","myPlex prefpane mapping status message");
+case MMMyPlexMappingStateFailed:
+if(objj_msgSend(_4a,"mappingErrorMessage")){
+return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Failed to map ports: %@","myPlex prefpane mapping status message"),objj_msgSend(_4a,"mappingErrorMessage"));
+}else{
+return CPLocalizedString("Failed to map ports","myPlex prefpane mapping status message");
+}
+case MMMyPlexMappingStateUnknown:
+default:
+return CPLocalizedString("Publishing state is unknown","myPlex prefpane mapping status message");
+}
+}
+}),new objj_method(sel_getUid("myPlexStatusType"),function(_4b,_4c){
+with(_4b){
+switch(objj_msgSend(objj_msgSend(MMMyPlexStatus,"sharedStatus"),"mappingError")){
+case MMMyPlexMappingErrorBadAuth:
+case MMMyPlexMappingErrorUnreachable:
+case MMMyPlexMappingErrorMyPlexGone:
+case MMMyPlexMappingErrorNotPublished:
+return MMStatusIndicatorError;
+default:
+return nil;
+}
+}
+}),new objj_method(sel_getUid("myPlexStatusMessage"),function(_4d,_4e){
+with(_4d){
+switch(objj_msgSend(objj_msgSend(MMMyPlexStatus,"sharedStatus"),"mappingError")){
+case MMMyPlexMappingErrorBadAuth:
+return CPLocalizedString("Unable to authenticate","myPlex prefpane myPlex status message");
+case MMMyPlexMappingErrorUnreachable:
+return CPLocalizedString("MyPlex was unable to connect to your Server","myPlex prefpane myPlex status message");
+case MMMyPlexMappingErrorMyPlexGone:
+return CPLocalizedString("MyPlex appears to be offline","myPlex prefpane myPlex status message");
+case MMMyPlexMappingErrorNotPublished:
+return CPLocalizedString("There was an error publishing the connection","myPlex prefpane myPlex status message");
+default:
+return "";
+}
+}
+}),new objj_method(sel_getUid("signIn:"),function(_4f,_50,_51){
+with(_4f){
+if(signInPrompt||signUpPrompt){
+return;
+}
+signInPrompt=objj_msgSend(objj_msgSend(MMPrompt,"alloc"),"init");
+objj_msgSend(signInPrompt,"setAlertStyle:",CPInformationalAlertStyle);
+objj_msgSend(signInPrompt,"setMessageText:",CPLocalizedString("Sign in to myPlex","myPlex sign in sheet title"));
+objj_msgSend(signInPrompt,"addFieldWithLabel:value:",CPLocalizedString("Email:","Email label"),"");
+objj_msgSend(signInPrompt,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Password:","Password label"),"","",YES);
+objj_msgSend(signInPrompt,"addButtonWithTitle:",CPLocalizedString("Sign In","Sign in button on myPlex preference panel"));
+objj_msgSend(signInPrompt,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(signInPrompt,"setDelegate:",_4f);
+objj_msgSend(signInPrompt,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",objj_msgSend(objj_msgSend(_4f,"view"),"window"),nil,nil,nil);
+}
+}),new objj_method(sel_getUid("signUp:"),function(_52,_53,_54){
+with(_52){
+if(signInPrompt||signUpPrompt){
+return;
+}
+signUpPrompt=objj_msgSend(objj_msgSend(MMPrompt,"alloc"),"init");
+objj_msgSend(signUpPrompt,"setAlertStyle:",CPInformationalAlertStyle);
+objj_msgSend(signUpPrompt,"setMessageText:",CPLocalizedString("Sign up to myPlex","myPlex sign up sheet title"));
+objj_msgSend(signUpPrompt,"addFieldWithLabel:value:",CPLocalizedString("Email:","Email label"),"");
+objj_msgSend(signUpPrompt,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Password:","Password label"),"","",YES);
+objj_msgSend(signUpPrompt,"addFieldWithLabel:value:placeholder:secure:",CPLocalizedString("Confirm password:","Confirm password label"),"","",YES);
+objj_msgSend(signUpPrompt,"addButtonWithTitle:",CPLocalizedString("Sign Up","Sign up button on myPlex preference panel"));
+objj_msgSend(signUpPrompt,"addButtonWithTitle:",CPLocalizedString("Cancel","Cancel"));
+objj_msgSend(signUpPrompt,"setDelegate:",_52);
+objj_msgSend(signUpPrompt,"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",objj_msgSend(objj_msgSend(_52,"view"),"window"),nil,nil,nil);
+}
+}),new objj_method(sel_getUid("signOut:"),function(_55,_56,_57){
+with(_55){
+var _58=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+objj_msgSend(_55,"invalidateAllStatusFieldsWithCallback:",function(){
+objj_msgSend(_58,"setSignInState:",MMMyPlexSignInStateNotSignedIn);
+objj_msgSend(_58,"setAuthToken:",nil);
+objj_msgSend(_58,"setPassword:",nil);
+});
+objj_msgSend(objj_msgSend(_55,"view"),"setSignedIn:",NO);
+objj_msgSend(myPlexDataSource,"deleteRecord:",_58);
+}
+}),new objj_method(sel_getUid("prompt:userDidActivateButtonWithReturnCode:"),function(_59,_5a,_5b,_5c){
+with(_59){
+switch(_5c){
+case 0:
+objj_msgSend(_59,"promptWasSubmitted:",_5b);
+break;
+case 1:
+objj_msgSend(_59,"promptWasCancelled:",_5b);
+break;
+}
+}
+}),new objj_method(sel_getUid("promptWasCancelled:"),function(_5d,_5e,_5f){
+with(_5d){
+if(signInPrompt===_5f||signUpPrompt===_5f){
+objj_msgSend(_5f,"dismissPrompt"),signInPrompt=nil,signUpPrompt=nil;
+}
+}
+}),new objj_method(sel_getUid("promptWasSubmitted:"),function(_60,_61,_62){
+with(_60){
+if(_62===signInPrompt){
+var _63=objj_msgSend(signInPrompt,"stringValueAtIndex:",0),_64=objj_msgSend(signInPrompt,"stringValueAtIndex:",1),_65=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+if(!_63||!_64){
+objj_msgSend(signInPrompt,"shake");
+return;
+}
+objj_msgSend(_65,"setUsername:",_63);
+objj_msgSend(_65,"setPassword:",_64);
+objj_msgSend(myPlexDataSource,"updateRecord:",_65);
+}else{
+if(_62===signUpPrompt){
+var _63=objj_msgSend(signInPrompt,"stringValueAtIndex:",0),_64=objj_msgSend(signInPrompt,"stringValueAtIndex:",1),_66=objj_msgSend(signInPrompt,"stringValueAtIndex:",2),_65=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+if(!_63||!_64||!objj_msgSend(_64,"isEqualToString:",_66)){
+objj_msgSend(signUpPrompt,"shake");
+return;
+}
+objj_msgSend(_65,"setUsername:",_63);
+objj_msgSend(_65,"setPassword:",_64);
+objj_msgSend(myPlexDataSource,"createRecord:",_65);
+}
+}
+}
+})]);
+p;32;DataSources/MMMyPlexDataSource.jt;2238;@STATIC;1.0;i;14;MMDataSource.ji;26;../Models/MMMyPlexStatus.jt;2169;
+objj_executeFile("MMDataSource.j",YES);
+objj_executeFile("../Models/MMMyPlexStatus.j",YES);
+var _1=objj_allocateClassPair(MMDataSource,"MMMyPlexDataSource"),_2=_1.isa;
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("URLForRecord:contextInfo:"),function(_3,_4,_5,_6){
+with(_3){
+return objj_msgSend(PMSURL,"URLWithPath:","/myplex/account");
+}
+}),new objj_method(sel_getUid("URLForUpdatedRecord:contextInfo:"),function(_7,_8,_9,_a){
+with(_7){
+return objj_msgSend(PMSURL,"URLWithPath:params:","/myplex/account",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",objj_msgSend(_9,"username"),"username",objj_msgSend(_9,"password"),"password"));
+}
+}),new objj_method(sel_getUid("HTTPBodyForUpdatedRecord:contextInfo:"),function(_b,_c,_d,_e){
+with(_b){
+return "";
+}
+}),new objj_method(sel_getUid("shouldProcessRootElement:contextInfo:"),function(_f,_10,_11,_12){
+with(_f){
+return YES;
+}
+}),new objj_method(sel_getUid("shouldProcessNode:contextInfo:"),function(_13,_14,_15,_16){
+with(_13){
+return _15&&objj_msgSend(String(_15.nodeName),"isEqualToString:","MyPlex");
+}
+}),new objj_method(sel_getUid("recordFromElement:contextInfo:"),function(_17,_18,_19,_1a){
+with(_17){
+var _1b=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+objj_msgSend(_1b,"setMappingState:",_19.getAttribute("mappingState"));
+objj_msgSend(_1b,"setMappingError:",_19.getAttribute("mappingError"));
+objj_msgSend(_1b,"setMappingErrorMessage:",_19.getAttribute("mappingErrorMessage"));
+objj_msgSend(_1b,"setUsername:",_19.getAttribute("username"));
+objj_msgSend(_1b,"setSignInState:",_19.getAttribute("signInState"));
+objj_msgSend(_1b,"setAuthToken:",_19.getAttribute("authToken"));
+objj_msgSend(_1b,"setPublicAddress:",_19.getAttribute("publicAddress"));
+objj_msgSend(_1b,"setPublicPort:",_19.getAttribute("publicPort"));
+objj_msgSend(_1b,"setPrivateAddress:",_19.getAttribute("privateAddress"));
+objj_msgSend(_1b,"setPrivatePort:",_19.getAttribute("privatePort"));
+return _1b;
+}
+}),new objj_method(sel_getUid("connectionDidReceiveAuthenticationChallenge:"),function(_1c,_1d,_1e){
+with(_1c){
+objj_msgSend(_1c,"connection:didFailWithError:",_1e,"invalid credentials");
+}
+})]);
+p;23;Models/MMMyPlexStatus.jt;4147;@STATIC;1.0;I;21;Foundation/CPObject.jt;4102;
+objj_executeFile("Foundation/CPObject.j",NO);
+var _1=nil;
+MMMyPlexSignInStateAuthenticated="ok";
+MMMyPlexSignInStateNotSignedIn="none";
+MMMyPlexSignInStateInvalid="invalid";
+MMMyPlexSignInStateUnknown="unknown";
+MMMyPlexMappingStateMapped="mapped";
+MMMyPlexMappingStateWaiting="waiting";
+MMMyPlexMappingStateFailed="failed";
+MMMyPlexMappingStateUnknown="unknown";
+MMMyPlexMappingErrorBadAuth="badauth";
+MMMyPlexMappingErrorUnreachable="unreachable";
+MMMyPlexMappingErrorMyPlexGone="myplexgone";
+MMMyPlexMappingErrorNotPublished="publisherror";
+var _2=objj_allocateClassPair(CPObject,"MMMyPlexStatus"),_3=_2.isa;
+class_addIvars(_2,[new objj_ivar("mappingState"),new objj_ivar("mappingError"),new objj_ivar("mappingErrorMessage"),new objj_ivar("signInState"),new objj_ivar("username"),new objj_ivar("password"),new objj_ivar("authToken"),new objj_ivar("publicAddress"),new objj_ivar("publicPort"),new objj_ivar("privateAddress"),new objj_ivar("privatePort")]);
+objj_registerClassPair(_2);
+class_addMethods(_2,[new objj_method(sel_getUid("mappingState"),function(_4,_5){
+with(_4){
+return mappingState;
+}
+}),new objj_method(sel_getUid("setMappingState:"),function(_6,_7,_8){
+with(_6){
+mappingState=_8;
+}
+}),new objj_method(sel_getUid("mappingError"),function(_9,_a){
+with(_9){
+return mappingError;
+}
+}),new objj_method(sel_getUid("setMappingError:"),function(_b,_c,_d){
+with(_b){
+mappingError=_d;
+}
+}),new objj_method(sel_getUid("mappingErrorMessage"),function(_e,_f){
+with(_e){
+return mappingErrorMessage;
+}
+}),new objj_method(sel_getUid("setMappingErrorMessage:"),function(_10,_11,_12){
+with(_10){
+mappingErrorMessage=_12;
+}
+}),new objj_method(sel_getUid("signInState"),function(_13,_14){
+with(_13){
+return signInState;
+}
+}),new objj_method(sel_getUid("setSignInState:"),function(_15,_16,_17){
+with(_15){
+signInState=_17;
+}
+}),new objj_method(sel_getUid("username"),function(_18,_19){
+with(_18){
+return username;
+}
+}),new objj_method(sel_getUid("setUsername:"),function(_1a,_1b,_1c){
+with(_1a){
+username=_1c;
+}
+}),new objj_method(sel_getUid("password"),function(_1d,_1e){
+with(_1d){
+return password;
+}
+}),new objj_method(sel_getUid("setPassword:"),function(_1f,_20,_21){
+with(_1f){
+password=_21;
+}
+}),new objj_method(sel_getUid("authToken"),function(_22,_23){
+with(_22){
+return authToken;
+}
+}),new objj_method(sel_getUid("setAuthToken:"),function(_24,_25,_26){
+with(_24){
+authToken=_26;
+}
+}),new objj_method(sel_getUid("publicAddress"),function(_27,_28){
+with(_27){
+return publicAddress;
+}
+}),new objj_method(sel_getUid("setPublicAddress:"),function(_29,_2a,_2b){
+with(_29){
+publicAddress=_2b;
+}
+}),new objj_method(sel_getUid("publicPort"),function(_2c,_2d){
+with(_2c){
+return publicPort;
+}
+}),new objj_method(sel_getUid("setPublicPort:"),function(_2e,_2f,_30){
+with(_2e){
+publicPort=_30;
+}
+}),new objj_method(sel_getUid("privateAddress"),function(_31,_32){
+with(_31){
+return privateAddress;
+}
+}),new objj_method(sel_getUid("setPrivateAddress:"),function(_33,_34,_35){
+with(_33){
+privateAddress=_35;
+}
+}),new objj_method(sel_getUid("privatePort"),function(_36,_37){
+with(_36){
+return privatePort;
+}
+}),new objj_method(sel_getUid("setPrivatePort:"),function(_38,_39,_3a){
+with(_38){
+privatePort=_3a;
+}
+}),new objj_method(sel_getUid("isMapped"),function(_3b,_3c){
+with(_3b){
+return mappingState===MMMyPlexMappingStateMapped;
+}
+}),new objj_method(sel_getUid("signedIn"),function(_3d,_3e){
+with(_3d){
+return signInState===MMMyPlexSignInStateAuthenticated;
+}
+})]);
+class_addMethods(_3,[new objj_method(sel_getUid("sharedStatus"),function(_3f,_40){
+with(_3f){
+return _1||(_1=objj_msgSend(objj_msgSend(_3f,"alloc"),"init"));
+}
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingMapped"),function(_41,_42){
+with(_41){
+return objj_msgSend(CPSet,"setWithObjects:","mappingState");
+}
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingPublished"),function(_43,_44){
+with(_43){
+return objj_msgSend(CPSet,"setWithObjects:","signedIn");
+}
+}),new objj_method(sel_getUid("keyPathsForValuesAffectingSignedIn"),function(_45,_46){
+with(_45){
+return objj_msgSend(CPSet,"setWithObjects:","signInState");
+}
+})]);
+p;32;Views/MMPreferencesMyPlexPanel.jt;12659;@STATIC;1.0;I;15;AppKit/CPView.ji;19;MMStatusIndicator.jt;12595;
+objj_executeFile("AppKit/CPView.j",NO);
+objj_executeFile("MMStatusIndicator.j",YES);
+var _1=objj_allocateClassPair(CPView,"MMPreferencesMyPlexPanel"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("initialFirstResponder"),new objj_ivar("descriptionLabel"),new objj_ivar("signInStatus"),new objj_ivar("signedIn"),new objj_ivar("signedInContainer"),new objj_ivar("signedOutContainer"),new objj_ivar("signOutButton"),new objj_ivar("signInButton"),new objj_ivar("signInButtonLabel"),new objj_ivar("signUpButton"),new objj_ivar("signUpButtonLabel"),new objj_ivar("separator"),new objj_ivar("publishCheckbox"),new objj_ivar("mappingStatus"),new objj_ivar("myPlexStatus"),new objj_ivar("manualMappingCheckbox"),new objj_ivar("manualMappingPortField")]);
+objj_registerClassPair(_1);
+class_addMethods(_1,[new objj_method(sel_getUid("initialFirstResponder"),function(_3,_4){
+with(_3){
+return initialFirstResponder;
+}
+}),new objj_method(sel_getUid("setInitialFirstResponder:"),function(_5,_6,_7){
+with(_5){
+initialFirstResponder=_7;
+}
+}),new objj_method(sel_getUid("signInStatus"),function(_8,_9){
+with(_8){
+return signInStatus;
+}
+}),new objj_method(sel_getUid("setSignInStatus:"),function(_a,_b,_c){
+with(_a){
+signInStatus=_c;
+}
+}),new objj_method(sel_getUid("signOutButton"),function(_d,_e){
+with(_d){
+return signOutButton;
+}
+}),new objj_method(sel_getUid("setSignOutButton:"),function(_f,_10,_11){
+with(_f){
+signOutButton=_11;
+}
+}),new objj_method(sel_getUid("signInButton"),function(_12,_13){
+with(_12){
+return signInButton;
+}
+}),new objj_method(sel_getUid("setSignInButton:"),function(_14,_15,_16){
+with(_14){
+signInButton=_16;
+}
+}),new objj_method(sel_getUid("signUpButton"),function(_17,_18){
+with(_17){
+return signUpButton;
+}
+}),new objj_method(sel_getUid("setSignUpButton:"),function(_19,_1a,_1b){
+with(_19){
+signUpButton=_1b;
+}
+}),new objj_method(sel_getUid("publishCheckbox"),function(_1c,_1d){
+with(_1c){
+return publishCheckbox;
+}
+}),new objj_method(sel_getUid("setPublishCheckbox:"),function(_1e,_1f,_20){
+with(_1e){
+publishCheckbox=_20;
+}
+}),new objj_method(sel_getUid("mappingStatus"),function(_21,_22){
+with(_21){
+return mappingStatus;
+}
+}),new objj_method(sel_getUid("setMappingStatus:"),function(_23,_24,_25){
+with(_23){
+mappingStatus=_25;
+}
+}),new objj_method(sel_getUid("myPlexStatus"),function(_26,_27){
+with(_26){
+return myPlexStatus;
+}
+}),new objj_method(sel_getUid("setMyPlexStatus:"),function(_28,_29,_2a){
+with(_28){
+myPlexStatus=_2a;
+}
+}),new objj_method(sel_getUid("manualMappingCheckbox"),function(_2b,_2c){
+with(_2b){
+return manualMappingCheckbox;
+}
+}),new objj_method(sel_getUid("setManualMappingCheckbox:"),function(_2d,_2e,_2f){
+with(_2d){
+manualMappingCheckbox=_2f;
+}
+}),new objj_method(sel_getUid("manualMappingPortField"),function(_30,_31){
+with(_30){
+return manualMappingPortField;
+}
+}),new objj_method(sel_getUid("setManualMappingPortField:"),function(_32,_33,_34){
+with(_32){
+manualMappingPortField=_34;
+}
+}),new objj_method(sel_getUid("initWithFrame:"),function(_35,_36,_37){
+with(_35){
+if(_35=objj_msgSendSuper({receiver:_35,super_class:objj_getClass("MMPreferencesMyPlexPanel").super_class},"initWithFrame:",_37)){
+signedInContainer=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMake(20,0,CGRectGetWidth(objj_msgSend(_35,"frame"))-40,0));
+objj_msgSend(signedInContainer,"setAutoresizingMask:",CPViewWidthSizable);
+objj_msgSend(_35,"addSubview:",signedInContainer);
+signedOutContainer=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",objj_msgSend(signedInContainer,"frame"));
+objj_msgSend(signedOutContainer,"setAutoresizingMask:",CPViewWidthSizable);
+objj_msgSend(_35,"addSubview:",signedOutContainer);
+descriptionLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media.","myPlex preference panel description"));
+objj_msgSend(descriptionLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(_35,"addSubview:",descriptionLabel);
+signInStatus=objj_msgSend(objj_msgSend(MMStatusIndicator,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(signInStatus,"sizeToFit");
+objj_msgSend(signedInContainer,"addSubview:",signInStatus);
+signInButtonLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Have a myPlex or forums account?","Sign in button help label"));
+objj_msgSend(signInButtonLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(signInButtonLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",10));
+objj_msgSend(signedOutContainer,"addSubview:",signInButtonLabel);
+signInButton=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Sign In","Sign in button on myPlex preference panel"));
+objj_msgSend(signedOutContainer,"addSubview:",signInButton);
+signUpButtonLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Don't have an account? It's easy to sign up!","Sign up button help label"));
+objj_msgSend(signUpButtonLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(signUpButtonLabel,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",10));
+objj_msgSend(signedOutContainer,"addSubview:",signUpButtonLabel);
+signUpButton=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Sign Up","Sign up button on myPlex preference panel"));
+objj_msgSend(signedOutContainer,"addSubview:",signUpButton);
+signOutButton=objj_msgSend(CPButton,"buttonWithTitle:",CPLocalizedString("Sign Out","Sign out button on myPlex preference panel"));
+objj_msgSend(signedInContainer,"addSubview:",signOutButton);
+separator=objj_msgSend(objj_msgSend(CPBox,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(separator,"setAutoresizingMask:",CPViewWidthSizable);
+objj_msgSend(signedInContainer,"addSubview:",separator);
+publishCheckbox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Publish server to myPlex","Check box option on the myPlex prefpane"));
+objj_msgSend(signedInContainer,"addSubview:",publishCheckbox);
+mappingStatus=objj_msgSend(objj_msgSend(MMStatusIndicator,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(mappingStatus,"sizeToFit");
+objj_msgSend(signedInContainer,"addSubview:",mappingStatus);
+myPlexStatus=objj_msgSend(objj_msgSend(MMStatusIndicator,"alloc"),"initWithFrame:",CGRectMakeZero());
+objj_msgSend(myPlexStatus,"sizeToFit");
+objj_msgSend(signedInContainer,"addSubview:",myPlexStatus);
+manualMappingContainer=objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",objj_msgSend(signedInContainer,"frame"));
+objj_msgSend(manualMappingContainer,"setAutoresizingMask:",CPViewWidthSizable);
+objj_msgSend(_35,"addSubview:",manualMappingContainer);
+manualMappingCheckbox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Manually specify port","Check box option to allow choosing a port manually"));
+objj_msgSend(manualMappingCheckbox,"setFrameOrigin:",CGPointMakeZero());
+objj_msgSend(manualMappingContainer,"addSubview:",manualMappingCheckbox);
+manualMappingPortField=objj_msgSend(CPTextField,"textFieldWithStringValue:placeholder:width:","","",70);
+objj_msgSend(manualMappingPortField,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(manualMappingCheckbox,"frame"))+10,CGRectGetMidY(objj_msgSend(manualMappingCheckbox,"frame"))-CGRectGetHeight(objj_msgSend(manualMappingPortField,"frame"))/2));
+objj_msgSend(manualMappingContainer,"addSubview:",manualMappingPortField);
+var _38=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Enable this if your router doesn't support automatic configuration.","Description of manual mapping in the myPlex prefpane"));
+objj_msgSend(_38,"setFont:",objj_msgSend(CPFont,"systemFontOfSize:",10));
+var _39=CGRectGetWidth(objj_msgSend(manualMappingContainer,"frame")),_3a=objj_msgSend(objj_msgSend(_38,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(_38,"font"),_39);
+_3a.height+=5;
+objj_msgSend(_38,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(_38,"setFrameSize:",_3a);
+objj_msgSend(_38,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(manualMappingCheckbox,"frame"))+17,CGRectGetMaxY(objj_msgSend(manualMappingPortField,"frame"))));
+objj_msgSend(manualMappingContainer,"addSubview:",_38);
+if(CGRectGetMinY(objj_msgSend(manualMappingPortField,"frame"))<0){
+var _3b=CGRectGetMinY(objj_msgSend(manualMappingPortField,"frame"));
+objj_msgSend(objj_msgSend(CPArray,"arrayWithObjects:",manualMappingCheckbox,manualMappingPortField,_38),"enumerateObjectsUsingBlock:",function(_3c){
+objj_msgSend(_3c,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(_3c,"frame")),CGRectGetMinY(objj_msgSend(_3c,"frame"))-_3b));
+});
+}
+objj_msgSend(manualMappingContainer,"sizeToFit");
+objj_msgSend(_35,"layoutSubviews");
+objj_msgSend(_35,"setSignedIn:",NO);
+}
+return _35;
+}
+}),new objj_method(sel_getUid("setSignedIn:"),function(_3d,_3e,_3f){
+with(_3d){
+_3f=!!_3f;
+if(signedIn===_3f){
+return;
+}
+signedIn=_3f;
+objj_msgSend(signedOutContainer,"setHidden:",_3f);
+objj_msgSend(signedInContainer,"setHidden:",!_3f);
+}
+}),new objj_method(sel_getUid("manualPortControlsHidden"),function(_40,_41){
+with(_40){
+return objj_msgSend(manualMappingContainer,"isHidden");
+}
+}),new objj_method(sel_getUid("setManualPortControlsHidden:"),function(_42,_43,_44){
+with(_42){
+objj_msgSend(manualMappingContainer,"setHidden:",_44);
+}
+}),new objj_method(sel_getUid("layoutSubviews"),function(_45,_46){
+with(_45){
+var _47=objj_msgSend(objj_msgSend(descriptionLabel,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(descriptionLabel,"font"),CGRectGetWidth(objj_msgSend(_45,"frame")));
+_47.height+=5;
+objj_msgSend(descriptionLabel,"setFrameSize:",_47);
+objj_msgSend(descriptionLabel,"setFrameOrigin:",CGPointMakeZero());
+objj_msgSend(signedInContainer,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(signedInContainer,"frame")),CGRectGetMaxY(objj_msgSend(descriptionLabel,"frame"))+5));
+objj_msgSend(signedOutContainer,"setFrameOrigin:",objj_msgSend(signedInContainer,"frame").origin);
+objj_msgSend(signInStatus,"sizeToFit");
+objj_msgSend(signInStatus,"setFrameOrigin:",CGPointMake(0,10));
+objj_msgSend(signOutButton,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(signInStatus,"frame"))+5,CGRectGetMidY(objj_msgSend(signInStatus,"frame"))-CGRectGetHeight(objj_msgSend(signOutButton,"frame"))/2));
+objj_msgSend(separator,"setFrame:",CGRectMake(0,CGRectGetMaxY(objj_msgSend(signOutButton,"frame"))+10,CGRectGetWidth(objj_msgSend(signedInContainer,"frame")),1));
+objj_msgSend(publishCheckbox,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(signInStatus,"frame")),CGRectGetMaxY(objj_msgSend(separator,"frame"))+10));
+objj_msgSend(mappingStatus,"sizeToFit");
+objj_msgSend(mappingStatus,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(signInStatus,"frame")),CGRectGetMaxY(objj_msgSend(publishCheckbox,"frame"))+10));
+objj_msgSend(myPlexStatus,"sizeToFit");
+objj_msgSend(myPlexStatus,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(mappingStatus,"frame")),CGRectGetMaxY(objj_msgSend(mappingStatus,"frame"))+5));
+objj_msgSend(signInButton,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(signInStatus,"frame")),CGRectGetMinY(objj_msgSend(signInStatus,"frame"))+50));
+var _48=objj_msgSend(objj_msgSend(signInButtonLabel,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(signInButtonLabel,"font"),140);
+_48.height+=5;
+objj_msgSend(signInButtonLabel,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(signInButton,"frame"))+10,CGRectGetMidY(objj_msgSend(signInButton,"frame"))-_48.height/2,_48.width,_48.height));
+objj_msgSend(signUpButton,"setFrameOrigin:",CGPointMake(CGRectGetMaxX(objj_msgSend(signInButtonLabel,"frame"))+10,CGRectGetMinY(objj_msgSend(signInButtonLabel,"frame"))));
+var _49=objj_msgSend(objj_msgSend(signUpButtonLabel,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(signUpButtonLabel,"font"),140);
+_49.height+=5;
+objj_msgSend(signUpButtonLabel,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(signUpButton,"frame"))+10,CGRectGetMidY(objj_msgSend(signUpButton,"frame"))-_49.height/2,_49.width,_49.height));
+objj_msgSend(signedInContainer,"sizeToFitWithInset:adjustWidth:adjustHeight:",CPViewInsetDefault,NO,YES);
+objj_msgSend(signedOutContainer,"sizeToFitWithInset:adjustWidth:adjustHeight:",CPViewInsetDefault,NO,YES);
+objj_msgSend(manualMappingContainer,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(signedInContainer,"frame")),CGRectGetMaxY(objj_msgSend(signedInContainer,"frame"))+10));
+objj_msgSendSuper({receiver:_45,super_class:objj_getClass("MMPreferencesMyPlexPanel").super_class},"layoutSubviews");
+}
+})]);
+p;25;Views/MMStatusIndicator.jt;4066;@STATIC;1.0;I;15;AppKit/CPView.jt;4027;
+objj_executeFile("AppKit/CPView.j",NO);
+MMStatusIndicatorDisabled="MMStatusIndicatorDisabled";
+MMStatusIndicatorWarning="MMStatusIndicatorWarning";
+MMStatusIndicatorError="MMStatusIndicatorError";
+MMStatusIndicatorOK="MMStatusIndicatorOK";
+var _1=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","dot-gray.png"),CGSizeMake(16,16));
+var _2=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","dot-yellow.png"),CGSizeMake(16,16));
+var _3=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","dot-red.png"),CGSizeMake(16,16));
+var _4=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:size:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","dot-green.png"),CGSizeMake(16,16));
+var _5=objj_allocateClassPair(CPView,"MMStatusIndicator"),_6=_5.isa;
+class_addIvars(_5,[new objj_ivar("type"),new objj_ivar("stringValue"),new objj_ivar("statusLight"),new objj_ivar("statusMessage")]);
+objj_registerClassPair(_5);
+class_addMethods(_5,[new objj_method(sel_getUid("type"),function(_7,_8){
+with(_7){
+return type;
+}
+}),new objj_method(sel_getUid("setType:"),function(_9,_a,_b){
+with(_9){
+type=_b;
+}
+}),new objj_method(sel_getUid("stringValue"),function(_c,_d){
+with(_c){
+return stringValue;
+}
+}),new objj_method(sel_getUid("setStringValue:"),function(_e,_f,_10){
+with(_e){
+stringValue=_10;
+}
+}),new objj_method(sel_getUid("initWithFrame:"),function(_11,_12,_13){
+with(_11){
+if(_11=objj_msgSendSuper({receiver:_11,super_class:objj_getClass("MMStatusIndicator").super_class},"initWithFrame:",_13)){
+var _14=objj_msgSend(_1,"size");
+statusLight=objj_msgSend(objj_msgSend(CPImageView,"alloc"),"initWithFrame:",CGRectMake(0,0,_14.width,_14.height));
+objj_msgSend(_11,"addSubview:",statusLight);
+statusMessage=objj_msgSend(CPTextField,"labelWithTitle:","");
+objj_msgSend(_11,"addSubview:",statusMessage);
+}
+return _11;
+}
+}),new objj_method(sel_getUid("setStringValue:"),function(_15,_16,_17){
+with(_15){
+stringValue=_17;
+objj_msgSend(statusMessage,"setStringValue:",stringValue);
+}
+}),new objj_method(sel_getUid("setType:"),function(_18,_19,_1a){
+with(_18){
+switch(_1a){
+case MMStatusIndicatorDisabled:
+objj_msgSend(statusLight,"setImage:",_1);
+break;
+case MMStatusIndicatorWarning:
+objj_msgSend(statusLight,"setImage:",_2);
+break;
+case MMStatusIndicatorError:
+objj_msgSend(statusLight,"setImage:",_3);
+break;
+case MMStatusIndicatorOK:
+objj_msgSend(statusLight,"setImage:",_4);
+break;
+default:
+if(_1a===nil){
+objj_msgSend(statusLight,"setImage:",nil);
+}else{
+objj_msgSend(CPException,"raise:reason:",CPInvalidArgumentException,objj_msgSend(CPString,"stringWithFormat:","type must be one of MMStatusIndicatorType, got %@",_1a));
+}
+}
+type=_1a;
+}
+}),new objj_method(sel_getUid("sizeToFit"),function(_1b,_1c){
+with(_1b){
+objj_msgSend(statusMessage,"sizeToFit");
+objj_msgSend(_1b,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(statusLight,"frame"))+CGRectGetWidth(objj_msgSend(statusMessage,"frame")),MAX(CGRectGetHeight(objj_msgSend(statusLight,"frame")),CGRectGetHeight(objj_msgSend(statusLight,"frame")))));
+}
+}),new objj_method(sel_getUid("layoutSubviews"),function(_1d,_1e){
+with(_1d){
+objj_msgSend(statusMessage,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(statusLight,"frame")),MAX(0,(CGRectGetHeight(objj_msgSend(statusLight,"frame"))-CGRectGetHeight(objj_msgSend(statusMessage,"frame")))/2),CGRectGetWidth(objj_msgSend(_1d,"frame"))-CGRectGetMaxX(objj_msgSend(statusLight,"frame")),CGRectGetHeight(objj_msgSend(statusMessage,"frame"))));
+objj_msgSend(statusLight,"setFrameOrigin:",CGPointMake(0,CGRectGetMidY(objj_msgSend(statusMessage,"frame"))-CGRectGetHeight(objj_msgSend(statusLight,"frame"))/2));
+objj_msgSendSuper({receiver:_1d,super_class:objj_getClass("MMStatusIndicator").super_class},"layoutSubviews");
+}
+})]);
+p;16;Views/MMPrompt.jt;4156;@STATIC;1.0;I;16;AppKit/CPAlert.ji;19;../CPWindow+Shake.jt;4092;
+objj_executeFile("AppKit/CPAlert.j",NO);
+objj_executeFile("../CPWindow+Shake.j",YES);
+var _1=150;
+var _2=objj_allocateClassPair(CPAlert,"MMPrompt"),_3=_2.isa;
+class_addIvars(_2,[new objj_ivar("labels"),new objj_ivar("inputs")]);
+objj_registerClassPair(_2);
+class_addMethods(_2,[new objj_method(sel_getUid("initWithFrame:"),function(_4,_5,_6){
+with(_4){
+if(_4=objj_msgSendSuper({receiver:_4,super_class:objj_getClass("MMPrompt").super_class},"initWithFrame:",_6)){
+labels=objj_msgSend(CPMutableArray,"array");
+inputs=objj_msgSend(CPMutableArray,"array");
+objj_msgSend(_4,"setAccessoryView:",objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMakeZero()));
+}
+return _4;
+}
+}),new objj_method(sel_getUid("addFieldWithLabel:value:"),function(_7,_8,_9,_a){
+with(_7){
+objj_msgSend(_7,"addFieldWithLabel:value:placeholder:secure:",_9,_a,"",NO);
+}
+}),new objj_method(sel_getUid("addFieldWithLabel:value:placeholder:secure:"),function(_b,_c,_d,_e,_f,_10){
+with(_b){
+var _11=objj_msgSend(CPTextField,"labelWithTitle:",_d),_12=objj_msgSend(CPTextField,"textFieldWithStringValue:placeholder:width:",_e,_f,_1);
+objj_msgSend(_11,"setAlignment:",CPRightTextAlignment);
+objj_msgSend(_12,"setSecure:",_10);
+objj_msgSend(labels,"addObject:",_11);
+objj_msgSend(inputs,"addObject:",_12);
+objj_msgSend(objj_msgSend(_b,"accessoryView"),"addSubview:",_11);
+objj_msgSend(objj_msgSend(_b,"accessoryView"),"addSubview:",_12);
+_needsLayout=YES;
+}
+}),new objj_method(sel_getUid("stringValueAtIndex:"),function(_13,_14,_15){
+with(_13){
+return objj_msgSend(objj_msgSend(inputs,"objectAtIndex:",_15),"stringValue");
+}
+}),new objj_method(sel_getUid("shake"),function(_16,_17){
+with(_16){
+objj_msgSend(_window,"shake");
+}
+}),new objj_method(sel_getUid("dismissPrompt"),function(_18,_19){
+with(_18){
+if(objj_msgSend(_window,"isSheet")){
+objj_msgSend(CPApp,"endSheet:returnCode:",_window,-1);
+}else{
+objj_msgSend(CPApp,"abortModal");
+objj_msgSend(_window,"close");
+}
+}
+}),new objj_method(sel_getUid("_takeReturnCodeFrom:"),function(_1a,_1b,_1c){
+with(_1a){
+if(objj_msgSend(_delegate,"respondsToSelector:",sel_getUid("prompt:userDidActivateButtonWithReturnCode:"))){
+objj_msgSend(_delegate,"prompt:userDidActivateButtonWithReturnCode:",_1a,objj_msgSend(_1c,"tag"));
+}else{
+objj_msgSendSuper({receiver:_1a,super_class:objj_getClass("MMPrompt").super_class},"_takeReturnCodeFrom:",_1c);
+}
+}
+}),new objj_method(sel_getUid("runModal"),function(_1d,_1e){
+with(_1d){
+objj_msgSendSuper({receiver:_1d,super_class:objj_getClass("MMPrompt").super_class},"runModal");
+objj_msgSend(_1d,"activateFirstResponder");
+}
+}),new objj_method(sel_getUid("beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:"),function(_1f,_20,_21,_22,_23,_24){
+with(_1f){
+objj_msgSendSuper({receiver:_1f,super_class:objj_getClass("MMPrompt").super_class},"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",_21,_22,_23,_24);
+objj_msgSend(_1f,"activateFirstResponder");
+}
+}),new objj_method(sel_getUid("activateFirstResponder"),function(_25,_26){
+with(_25){
+if(objj_msgSend(inputs,"count")){
+var _27=objj_msgSend(inputs,"objectAtIndex:",0);
+objj_msgSend(objj_msgSend(_25,"window"),"makeFirstResponder:",_27);
+objj_msgSend(_27,"selectAll:",nil);
+}
+}
+}),new objj_method(sel_getUid("layout"),function(_28,_29){
+with(_28){
+var _2a=0,_2b=0;
+for(var i=0,_2c=objj_msgSend(labels,"count");i<_2c;i++){
+var _2d=objj_msgSend(labels,"objectAtIndex:",i),_2e=CGRectGetWidth(objj_msgSend(_2d,"frame"));
+if(_2e>_2b){
+_2b=_2e;
+}
+}
+for(var i=0,_2c=objj_msgSend(labels,"count");i<_2c;i++){
+var _2d=objj_msgSend(labels,"objectAtIndex:",i),_2f=objj_msgSend(inputs,"objectAtIndex:",i);
+objj_msgSend(_2f,"setFrameOrigin:",CGPointMake(_2b,_2a));
+objj_msgSend(_2d,"setFrame:",CGRectMake(0,_2a+(CGRectGetHeight(objj_msgSend(_2f,"frame"))-CGRectGetHeight(objj_msgSend(_2d,"frame")))/2,_2b,CGRectGetHeight(objj_msgSend(_2d,"frame"))));
+_2a=CGRectGetMaxY(objj_msgSend(_2f,"frame"))+5;
+}
+objj_msgSend(objj_msgSend(_28,"accessoryView"),"sizeToFit");
+objj_msgSendSuper({receiver:_28,super_class:objj_getClass("MMPrompt").super_class},"layout");
+}
+})]);
+p;16;CPWindow+Shake.jt;1288;@STATIC;1.0;t;1269;
+var _1=objj_getClass("CPWindow");
+if(!_1){
+throw new SyntaxError("*** Could not find definition for class \"CPWindow\"");
+}
+var _2=_1.isa;
+class_addMethods(_1,[new objj_method(sel_getUid("shake"),function(_3,_4){
+with(_3){
+var _5=30,_6=3,_7=0.18,_8=0,_9=objj_msgSend(_3,"frame").origin,_a=_9.x,_b=_9.y;
+for(var i=0;i<_6;i++){
+var _c;
+_c=_7/_6/4;
+objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a-_5,_b),_c,_8);
+_8+=_c;
+_c=_7/_6/2;
+objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a+_5,_b),_c,_8);
+_8+=_c;
+_c=_7/_6/4;
+objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a,_b),_c,_8);
+_8+=_c;
+}
+}
+}),new objj_method(sel_getUid("animateOriginToPoint:duration:afterDelay:"),function(_d,_e,_f,_10,_11){
+with(_d){
+setTimeout(function(){
+var _12=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_10,CPAnimationEaseInOut),_13=objj_msgSend(_d,"frame"),_14=CGRectMake(_f.x,_f.y,CGRectGetWidth(_13),CGRectGetHeight(_13));
+objj_msgSend(_12,"setViewAnimations:",[objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_d,CPViewAnimationTargetKey,_13,CPViewAnimationStartFrameKey,_14,CPViewAnimationEndFrameKey)]);
+objj_msgSend(_12,"startAnimation");
+},_11*1000);
+}
+})]);
 p;50;Controllers/MMPreferencesSecurityPanelController.jt;11203;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;36;../DataSources/MMAccountDataSource.ji;21;../Models/MMAccount.ji;37;../Views/MMPreferencesSecurityPanel.ji;19;../Views/MMPrompt.jt;11011;
 objj_executeFile("MMPreferencesBasePanelController.j",YES);
 objj_executeFile("../DataSources/MMAccountDataSource.j",YES);
@@ -13073,130 +14088,6 @@ objj_msgSendSuper({receiver:_1c,super_class:objj_getClass("MMPreferencesSecurity
 }),new objj_method(sel_getUid("toggleSecurityEnabled:"),function(_20,_21,_22){
 with(_20){
 var _23=objj_msgSend(enableSecurityCheckbox,"state")==CPOnState;
-}
-})]);
-p;16;Views/MMPrompt.jt;4156;@STATIC;1.0;I;16;AppKit/CPAlert.ji;19;../CPWindow+Shake.jt;4092;
-objj_executeFile("AppKit/CPAlert.j",NO);
-objj_executeFile("../CPWindow+Shake.j",YES);
-var _1=150;
-var _2=objj_allocateClassPair(CPAlert,"MMPrompt"),_3=_2.isa;
-class_addIvars(_2,[new objj_ivar("labels"),new objj_ivar("inputs")]);
-objj_registerClassPair(_2);
-class_addMethods(_2,[new objj_method(sel_getUid("initWithFrame:"),function(_4,_5,_6){
-with(_4){
-if(_4=objj_msgSendSuper({receiver:_4,super_class:objj_getClass("MMPrompt").super_class},"initWithFrame:",_6)){
-labels=objj_msgSend(CPMutableArray,"array");
-inputs=objj_msgSend(CPMutableArray,"array");
-objj_msgSend(_4,"setAccessoryView:",objj_msgSend(objj_msgSend(CPView,"alloc"),"initWithFrame:",CGRectMakeZero()));
-}
-return _4;
-}
-}),new objj_method(sel_getUid("addFieldWithLabel:value:"),function(_7,_8,_9,_a){
-with(_7){
-objj_msgSend(_7,"addFieldWithLabel:value:placeholder:secure:",_9,_a,"",NO);
-}
-}),new objj_method(sel_getUid("addFieldWithLabel:value:placeholder:secure:"),function(_b,_c,_d,_e,_f,_10){
-with(_b){
-var _11=objj_msgSend(CPTextField,"labelWithTitle:",_d),_12=objj_msgSend(CPTextField,"textFieldWithStringValue:placeholder:width:",_e,_f,_1);
-objj_msgSend(_11,"setAlignment:",CPRightTextAlignment);
-objj_msgSend(_12,"setSecure:",_10);
-objj_msgSend(labels,"addObject:",_11);
-objj_msgSend(inputs,"addObject:",_12);
-objj_msgSend(objj_msgSend(_b,"accessoryView"),"addSubview:",_11);
-objj_msgSend(objj_msgSend(_b,"accessoryView"),"addSubview:",_12);
-_needsLayout=YES;
-}
-}),new objj_method(sel_getUid("stringValueAtIndex:"),function(_13,_14,_15){
-with(_13){
-return objj_msgSend(objj_msgSend(inputs,"objectAtIndex:",_15),"stringValue");
-}
-}),new objj_method(sel_getUid("shake"),function(_16,_17){
-with(_16){
-objj_msgSend(_window,"shake");
-}
-}),new objj_method(sel_getUid("dismissPrompt"),function(_18,_19){
-with(_18){
-if(objj_msgSend(_window,"isSheet")){
-objj_msgSend(CPApp,"endSheet:returnCode:",_window,-1);
-}else{
-objj_msgSend(CPApp,"abortModal");
-objj_msgSend(_window,"close");
-}
-}
-}),new objj_method(sel_getUid("_takeReturnCodeFrom:"),function(_1a,_1b,_1c){
-with(_1a){
-if(objj_msgSend(_delegate,"respondsToSelector:",sel_getUid("prompt:userDidActivateButtonWithReturnCode:"))){
-objj_msgSend(_delegate,"prompt:userDidActivateButtonWithReturnCode:",_1a,objj_msgSend(_1c,"tag"));
-}else{
-objj_msgSendSuper({receiver:_1a,super_class:objj_getClass("MMPrompt").super_class},"_takeReturnCodeFrom:",_1c);
-}
-}
-}),new objj_method(sel_getUid("runModal"),function(_1d,_1e){
-with(_1d){
-objj_msgSendSuper({receiver:_1d,super_class:objj_getClass("MMPrompt").super_class},"runModal");
-objj_msgSend(_1d,"activateFirstResponder");
-}
-}),new objj_method(sel_getUid("beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:"),function(_1f,_20,_21,_22,_23,_24){
-with(_1f){
-objj_msgSendSuper({receiver:_1f,super_class:objj_getClass("MMPrompt").super_class},"beginSheetModalForWindow:modalDelegate:didEndSelector:contextInfo:",_21,_22,_23,_24);
-objj_msgSend(_1f,"activateFirstResponder");
-}
-}),new objj_method(sel_getUid("activateFirstResponder"),function(_25,_26){
-with(_25){
-if(objj_msgSend(inputs,"count")){
-var _27=objj_msgSend(inputs,"objectAtIndex:",0);
-objj_msgSend(objj_msgSend(_25,"window"),"makeFirstResponder:",_27);
-objj_msgSend(_27,"selectAll:",nil);
-}
-}
-}),new objj_method(sel_getUid("layout"),function(_28,_29){
-with(_28){
-var _2a=0,_2b=0;
-for(var i=0,_2c=objj_msgSend(labels,"count");i<_2c;i++){
-var _2d=objj_msgSend(labels,"objectAtIndex:",i),_2e=CGRectGetWidth(objj_msgSend(_2d,"frame"));
-if(_2e>_2b){
-_2b=_2e;
-}
-}
-for(var i=0,_2c=objj_msgSend(labels,"count");i<_2c;i++){
-var _2d=objj_msgSend(labels,"objectAtIndex:",i),_2f=objj_msgSend(inputs,"objectAtIndex:",i);
-objj_msgSend(_2f,"setFrameOrigin:",CGPointMake(_2b,_2a));
-objj_msgSend(_2d,"setFrame:",CGRectMake(0,_2a+(CGRectGetHeight(objj_msgSend(_2f,"frame"))-CGRectGetHeight(objj_msgSend(_2d,"frame")))/2,_2b,CGRectGetHeight(objj_msgSend(_2d,"frame"))));
-_2a=CGRectGetMaxY(objj_msgSend(_2f,"frame"))+5;
-}
-objj_msgSend(objj_msgSend(_28,"accessoryView"),"sizeToFit");
-objj_msgSendSuper({receiver:_28,super_class:objj_getClass("MMPrompt").super_class},"layout");
-}
-})]);
-p;16;CPWindow+Shake.jt;1288;@STATIC;1.0;t;1269;
-var _1=objj_getClass("CPWindow");
-if(!_1){
-throw new SyntaxError("*** Could not find definition for class \"CPWindow\"");
-}
-var _2=_1.isa;
-class_addMethods(_1,[new objj_method(sel_getUid("shake"),function(_3,_4){
-with(_3){
-var _5=30,_6=3,_7=0.18,_8=0,_9=objj_msgSend(_3,"frame").origin,_a=_9.x,_b=_9.y;
-for(var i=0;i<_6;i++){
-var _c;
-_c=_7/_6/4;
-objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a-_5,_b),_c,_8);
-_8+=_c;
-_c=_7/_6/2;
-objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a+_5,_b),_c,_8);
-_8+=_c;
-_c=_7/_6/4;
-objj_msgSend(_3,"animateOriginToPoint:duration:afterDelay:",CGPointMake(_a,_b),_c,_8);
-_8+=_c;
-}
-}
-}),new objj_method(sel_getUid("animateOriginToPoint:duration:afterDelay:"),function(_d,_e,_f,_10,_11){
-with(_d){
-setTimeout(function(){
-var _12=objj_msgSend(objj_msgSend(CPViewAnimation,"alloc"),"initWithDuration:animationCurve:",_10,CPAnimationEaseInOut),_13=objj_msgSend(_d,"frame"),_14=CGRectMake(_f.x,_f.y,CGRectGetWidth(_13),CGRectGetHeight(_13));
-objj_msgSend(_12,"setViewAnimations:",[objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",_d,CPViewAnimationTargetKey,_13,CPViewAnimationStartFrameKey,_14,CPViewAnimationEndFrameKey)]);
-objj_msgSend(_12,"startAnimation");
-},_11*1000);
 }
 })]);
 p;50;Controllers/MMPreferencesAdvancedPanelController.jt;802;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;37;../Views/MMPreferencesAdvancedPanel.jt;703;
