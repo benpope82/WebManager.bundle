@@ -9514,12 +9514,12 @@ objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"postNotificatio
 objj_msgSend(_24,"_scheduleTimer");
 }
 })]);
-p;24;Models/PMSCapabilities.jt;4727;@STATIC;1.0;I;21;Foundation/CPObject.ji;9;Version.jt;4669;
+p;24;Models/PMSCapabilities.jt;4902;@STATIC;1.0;I;21;Foundation/CPObject.ji;9;Version.jt;4844;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("Version.j",YES);
 var _1=nil;
 var _2=objj_allocateClassPair(CPObject,"PMSCapabilities"),_3=_2.isa;
-class_addIvars(_2,[new objj_ivar("libraryChangeWatchingSupported"),new objj_ivar("libraryTimedUpdatesSupported"),new objj_ivar("iTunesSharingSupported"),new objj_ivar("iPhotoSharingSupported"),new objj_ivar("ApertureSharingSupported"),new objj_ivar("version")]);
+class_addIvars(_2,[new objj_ivar("libraryChangeWatchingSupported"),new objj_ivar("libraryTimedUpdatesSupported"),new objj_ivar("myPlexSupported"),new objj_ivar("iTunesSharingSupported"),new objj_ivar("iPhotoSharingSupported"),new objj_ivar("ApertureSharingSupported"),new objj_ivar("version")]);
 objj_registerClassPair(_2);
 class_addMethods(_2,[new objj_method(sel_getUid("libraryChangeWatchingSupported"),function(_4,_5){
 with(_4){
@@ -9529,79 +9529,82 @@ return libraryChangeWatchingSupported;
 with(_6){
 return libraryTimedUpdatesSupported;
 }
-}),new objj_method(sel_getUid("iTunesSharingSupported"),function(_8,_9){
+}),new objj_method(sel_getUid("myPlexSupported"),function(_8,_9){
 with(_8){
+return myPlexSupported;
+}
+}),new objj_method(sel_getUid("iTunesSharingSupported"),function(_a,_b){
+with(_a){
 return iTunesSharingSupported;
 }
-}),new objj_method(sel_getUid("iPhotoSharingSupported"),function(_a,_b){
-with(_a){
+}),new objj_method(sel_getUid("iPhotoSharingSupported"),function(_c,_d){
+with(_c){
 return iPhotoSharingSupported;
 }
-}),new objj_method(sel_getUid("ApertureSharingSupported"),function(_c,_d){
-with(_c){
+}),new objj_method(sel_getUid("ApertureSharingSupported"),function(_e,_f){
+with(_e){
 return ApertureSharingSupported;
 }
-}),new objj_method(sel_getUid("version"),function(_e,_f){
-with(_e){
+}),new objj_method(sel_getUid("version"),function(_10,_11){
+with(_10){
 return version;
 }
-}),new objj_method(sel_getUid("init"),function(_10,_11){
-with(_10){
-if(_10=objj_msgSendSuper({receiver:_10,super_class:objj_getClass("PMSCapabilities").super_class},"init")){
+}),new objj_method(sel_getUid("init"),function(_12,_13){
+with(_12){
+if(_12=objj_msgSendSuper({receiver:_12,super_class:objj_getClass("PMSCapabilities").super_class},"init")){
 iTunesSharingSupported=iPhotoSharingSupported=ApertureSharingSupported=(OPERATING_SYSTEM==CPMacOperatingSystem);
 }
-return _10;
+return _12;
 }
-}),new objj_method(sel_getUid("refresh"),function(_12,_13){
-with(_12){
-objj_msgSend(CPURLConnection,"connectionWithRequest:delegate:",objj_msgSend(CPURLRequest,"requestWithURL:",objj_msgSend(PMSURL,"URLWithPath:","/")),_12);
-}
-}),new objj_method(sel_getUid("connection:didReceiveResponse:"),function(_14,_15,_16,_17){
+}),new objj_method(sel_getUid("refresh"),function(_14,_15){
 with(_14){
-if(objj_msgSend(_17,"statusCode")!=200){
-objj_msgSend(_16,"cancel");
+objj_msgSend(CPURLConnection,"connectionWithRequest:delegate:",objj_msgSend(CPURLRequest,"requestWithURL:",objj_msgSend(PMSURL,"URLWithPath:","/")),_14);
+}
+}),new objj_method(sel_getUid("connection:didReceiveResponse:"),function(_16,_17,_18,_19){
+with(_16){
+if(objj_msgSend(_19,"statusCode")!=200){
+objj_msgSend(_18,"cancel");
 }
 }
-}),new objj_method(sel_getUid("connection:didReceiveData:"),function(_18,_19,_1a,_1b){
-with(_18){
-var _1c=objj_msgSend(_1a,"responseXML");
-if(!_1c){
+}),new objj_method(sel_getUid("connection:didReceiveData:"),function(_1a,_1b,_1c,_1d){
+with(_1a){
+var _1e=objj_msgSend(_1c,"responseXML");
+if(!_1e){
 return;
 }
-var _1d=_1c.documentElement;
-objj_msgSend(_18,"willChangeValueForKey:","libraryTimedUpdatesSupported");
-libraryTimedUpdatesSupported=(_1d.getAttribute("libraryNoTimedUpdates")!="1");
-objj_msgSend(_18,"didChangeValueForKey:","libraryTimedUpdatesSupported");
-objj_msgSend(_18,"willChangeValueForKey:","libraryChangeWatchingSupported");
-libraryChangeWatchingSupported=(_1d.getAttribute("libraryNoChangeWatching")!="1");
-objj_msgSend(_18,"didChangeValueForKey:","libraryChangeWatchingSupported");
-var _1e=_1d.getAttribute("version");
-if(_1e){
-_1e=_1e.split("-")[0];
+var _1f=_1e.documentElement;
+objj_msgSend(_1a,"willChangeValueForKey:","libraryTimedUpdatesSupported");
+libraryTimedUpdatesSupported=(_1f.getAttribute("libraryNoTimedUpdates")!="1");
+objj_msgSend(_1a,"didChangeValueForKey:","libraryTimedUpdatesSupported");
+objj_msgSend(_1a,"willChangeValueForKey:","libraryChangeWatchingSupported");
+libraryChangeWatchingSupported=(_1f.getAttribute("libraryNoChangeWatching")!="1");
+objj_msgSend(_1a,"didChangeValueForKey:","libraryChangeWatchingSupported");
+objj_msgSend(_1a,"willChangeValueForKey:","myPlexSupported");
+myPlexSupported=(_1f.getAttribute("myPlex")=="1");
+objj_msgSend(_1a,"didChangeValueForKey:","myPlexSupported");
+var _20=_1f.getAttribute("version");
+if(_20){
+_20=_20.split("-")[0];
 }
-objj_msgSend(_18,"willChangeValueForKey:","version");
-version=objj_msgSend(Version,"versionWithString:",_1e);
-objj_msgSend(_18,"didChangeValueForKey:","version");
+objj_msgSend(_1a,"willChangeValueForKey:","version");
+version=objj_msgSend(Version,"versionWithString:",_20);
+objj_msgSend(_1a,"didChangeValueForKey:","version");
 }
-}),new objj_method(sel_getUid("anySharingSupported"),function(_1f,_20){
-with(_1f){
+}),new objj_method(sel_getUid("anySharingSupported"),function(_21,_22){
+with(_21){
 return iTunesSharingSupported||iPhotoSharingSupported||ApertureSharingSupported;
 }
-}),new objj_method(sel_getUid("languagePreferencesSupported"),function(_21,_22){
-with(_21){
-return objj_msgSend(_21,"versionIsAtLeast:","0.9.2.6");
-}
-}),new objj_method(sel_getUid("stopRefreshSupported"),function(_23,_24){
+}),new objj_method(sel_getUid("languagePreferencesSupported"),function(_23,_24){
 with(_23){
 return objj_msgSend(_23,"versionIsAtLeast:","0.9.2.6");
 }
-}),new objj_method(sel_getUid("dtsMixdownSupported"),function(_25,_26){
+}),new objj_method(sel_getUid("stopRefreshSupported"),function(_25,_26){
 with(_25){
-return objj_msgSend(_25,"versionIsAtLeast:","0.9.2.7");
+return objj_msgSend(_25,"versionIsAtLeast:","0.9.2.6");
 }
-}),new objj_method(sel_getUid("myPlexSupported"),function(_27,_28){
+}),new objj_method(sel_getUid("dtsMixdownSupported"),function(_27,_28){
 with(_27){
-return objj_msgSend(_27,"versionIsAtLeast:","0.9.2.8");
+return objj_msgSend(_27,"versionIsAtLeast:","0.9.2.7");
 }
 }),new objj_method(sel_getUid("versionIsAtLeast:"),function(_29,_2a,_2b){
 with(_29){
@@ -12417,7 +12420,7 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesLibraryPanel,"alloc"),"initWithFrame:",CGRectMakeZero()));
 }
 })]);
-p;33;Views/MMPreferencesLibraryPanel.jt;5101;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;5030;
+p;33;Views/MMPreferencesLibraryPanel.jt;5760;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;5689;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Models/PMSCapabilities.j",YES);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesLibraryPanel"),_2=_1.isa;
@@ -12452,6 +12455,7 @@ objj_msgSend(_9,"sizeToFit");
 objj_msgSend(_9,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(_8,"frame"))+5,CGRectGetMinY(objj_msgSend(_8,"frame"))+(CGRectGetHeight(objj_msgSend(_8,"frame"))-CGRectGetHeight(objj_msgSend(_9,"frame")))/2,140,CGRectGetHeight(objj_msgSend(_9,"frame"))));
 objj_msgSend(_9,"bind:toObject:withKeyPath:options:","enabled",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdatesEnabled",nil);
 objj_msgSend(_9,"bind:toObject:withKeyPath:options:","selectedTag",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdateInterval",nil);
+objj_msgSend(_9,"addObserver:forKeyPath:options:context:",_3,"selectedTag",CPKeyValueObservingOptionNew,nil);
 objj_msgSend(_3,"addSubview:",_9);
 _6=CGRectGetMaxY(objj_msgSend(_8,"frame"))+10;
 }
@@ -12475,12 +12479,21 @@ objj_msgSend(_3,"sizeToFit");
 }
 return _3;
 }
-}),new objj_method(sel_getUid("_periodTitles"),function(_11,_12){
+}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_11,_12,_13,_14,_15,_16){
 with(_11){
+if(objj_msgSend(_13,"isEqualToString:","selectedTag")&&objj_msgSend(_14,"isKindOfClass:",objj_msgSend(CPPopUpButton,"class"))){
+var _17=objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"values"),key="ScheduledLibraryUpdateInterval",_18=objj_msgSend(_15,"objectForKey:",CPKeyValueChangeNewKey),_19=objj_msgSend(_17,"valueForKey:",key);
+if(_18!==_19){
+objj_msgSend(_17,"setValue:forKey:",_18,key);
+}
+}
+}
+}),new objj_method(sel_getUid("_periodTitles"),function(_1a,_1b){
+with(_1a){
 return [CPLocalizedString("every 15 minutes","Library scan interval (i.e. Update my library every 15 minutes)"),CPLocalizedString("every 30 minutes","Library scan interval (i.e. Update my library every 30 minutes)"),CPLocalizedString("hourly","Library scan interval (i.e. Update my library hourly)"),CPLocalizedString("every 2 hours","Library scan interval (i.e. Update my library every 2 hours)"),CPLocalizedString("every 6 hours","Library scan interval (i.e. Update my library every 6 hours)"),CPLocalizedString("every 12 hours","Library scan interval (i.e. Update my library every 12 hours)"),CPLocalizedString("daily","Library scan interval (i.e. Update my library daily")];
 }
-}),new objj_method(sel_getUid("_periodValues"),function(_13,_14){
-with(_13){
+}),new objj_method(sel_getUid("_periodValues"),function(_1c,_1d){
+with(_1c){
 return [15*60,30*60,60*60,2*60*60,6*60*60,12*60*60,24*60*60];
 }
 })]);
