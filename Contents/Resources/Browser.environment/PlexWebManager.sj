@@ -2294,7 +2294,7 @@ MMPersonalMediaAgent=objj_msgSend(objj_msgSend(_29,"alloc"),"initWithIdentifier:
 }
 }
 })]);
-p;15;Models/PMSURL.jt;1666;@STATIC;1.0;I;18;Foundation/CPURL.ji;16;../PMSSecurity.jt;1603;
+p;15;Models/PMSURL.jt;1898;@STATIC;1.0;I;18;Foundation/CPURL.ji;16;../PMSSecurity.jt;1835;
 objj_executeFile("Foundation/CPURL.j",NO);
 objj_executeFile("../PMSSecurity.j",YES);
 var _1=nil;
@@ -2342,6 +2342,11 @@ _14+="&"+_15;
 }
 }
 return objj_msgSend(_12,"URLWithString:relativeToURL:",_14,_1);
+}
+}),new objj_method(sel_getUid("isPMSURL:"),function(_18,_19,_1a){
+with(_18){
+var _1b=objj_msgSend(_1a,"isKindOfClass:",objj_msgSend(CPURL,"class"))?objj_msgSend(_1a,"absoluteString"):_1a;
+return objj_msgSend(_1b,"hasPrefix:",_1);
 }
 })]);
 p;13;PMSSecurity.jt;4056;@STATIC;1.0;I;21;Foundation/CPObject.jI;28;Foundation/CPURLConnection.jI;27;Foundation/CPUserDefaults.jt;3946;
@@ -5116,7 +5121,7 @@ objj_msgSendSuper({receiver:_11,super_class:objj_getClass("MMImagePickerCell").s
 objj_msgSend(_13,"encodeObject:forKey:",_imageView,_d);
 }
 })]);
-p;21;CPImage+Transcoding.jt;2359;@STATIC;1.0;I;16;AppKit/CPImage.ji;15;Models/PMSURL.jt;2299;
+p;21;CPImage+Transcoding.jt;2824;@STATIC;1.0;I;16;AppKit/CPImage.ji;15;Models/PMSURL.jt;2764;
 objj_executeFile("AppKit/CPImage.j",NO);
 objj_executeFile("Models/PMSURL.j",YES);
 var _1=100000;
@@ -5165,6 +5170,16 @@ _14=objj_msgSend(CPURL,"URLWithString:",objj_msgSend(_16,"objectForKey:","url"))
 }
 if(!objj_msgSend(_14,"host")){
 _14=objj_msgSend(PMSURL,"URLWithPath:",objj_msgSend(_14,"absoluteString"));
+}
+if(objj_msgSend(PMSURL,"isPMSURL:",_14)){
+var _17=objj_msgSend(CPMutableArray,"array");
+objj_msgSend(_17,"addObject:",objj_msgSend(_14,"scheme"));
+objj_msgSend(_17,"addObject:","://localhost:32400");
+objj_msgSend(_17,"addObject:",objj_msgSend(_14,"path"));
+if(objj_msgSend(_14,"parameterString")){
+objj_msgSend(_17,"addObject:","?"+objj_msgSend(_14,"parameterString"));
+}
+_14=objj_msgSend(CPURL,"URLWithString:",objj_msgSend(_17,"componentsJoinedByString:",""));
 }
 objj_msgSend(_16,"setObject:forKey:",_14,"url");
 objj_msgSend(_16,"setObject:forKey:",_15.width,"width");
