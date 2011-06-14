@@ -1297,7 +1297,7 @@ with(_3){
 return objj_msgSend(_3,"buttonWithTitle:theme:",_5,objj_msgSend(CPTheme,"themeNamed:","Aristo-HUD"));
 }
 })]);
-p;23;Models/MMMetadataItem.jt;24740;@STATIC;1.0;i;10;MMRecord.ji;9;MMAgent.jt;24692;
+p;23;Models/MMMetadataItem.jt;24754;@STATIC;1.0;i;10;MMRecord.ji;9;MMAgent.jt;24706;
 objj_executeFile("MMRecord.j",YES);
 objj_executeFile("MMAgent.j",YES);
 var _1;
@@ -1945,7 +1945,7 @@ return _state===MMMetadataItemStateMatching;
 }
 }),new objj_method(sel_getUid("isIdle"),function(self,_130){
 with(self){
-return _state===MMMetadataItemStateIdle;
+return _state===MMMetadataItemStateIdle||_state===nil;
 }
 }),new objj_method(sel_getUid("isLoading"),function(self,_131){
 with(self){
@@ -10522,7 +10522,7 @@ return YES;
 return objj_msgSendSuper({receiver:_1f,super_class:objj_getClass("MMMetadataItemCollectionView").super_class},"performKeyEquivalent:",_21);
 }
 })]);
-p;26;Views/MMMetadataItemCell.jt;11492;@STATIC;1.0;i;40;../Controllers/MMMatchPickerController.ji;34;../DataSources/MMAgentDataSource.ji;41;../DataSources/MMMediaMatchesDataSource.ji;41;../DataSources/MMMetadataItemDataSource.ji;26;../Models/MMMetadataItem.ji;26;MMCollectionViewItemCell.ji;13;MMImageView.jt;11216;
+p;26;Views/MMMetadataItemCell.jt;11804;@STATIC;1.0;i;40;../Controllers/MMMatchPickerController.ji;34;../DataSources/MMAgentDataSource.ji;41;../DataSources/MMMediaMatchesDataSource.ji;41;../DataSources/MMMetadataItemDataSource.ji;26;../Models/MMMetadataItem.ji;26;MMCollectionViewItemCell.ji;13;MMImageView.jt;11528;
 objj_executeFile("../Controllers/MMMatchPickerController.j",YES);
 objj_executeFile("../DataSources/MMAgentDataSource.j",YES);
 objj_executeFile("../DataSources/MMMediaMatchesDataSource.j",YES);
@@ -10694,16 +10694,27 @@ objj_msgSend(_40,"dismissSheet");
 }
 }),new objj_method(sel_getUid("refreshMetadata:"),function(_41,_42,_43){
 with(_41){
-objj_msgSend(objj_msgSend(MMMediaMatchesDataSource,"sharedDataSource"),"refreshMatchForMetadataItem:",objj_msgSend(_41,"representedObject"));
+var _44=objj_msgSend(_41,"representedObject");
+if(objj_msgSend(_44,"isIdle")){
+objj_msgSend(_44,"setState:",MMMetadataItemStateLoadingMetadata);
 }
-}),new objj_method(sel_getUid("unmatch:"),function(_44,_45,_46){
-with(_44){
-objj_msgSend(objj_msgSend(MMMediaMatchesDataSource,"sharedDataSource"),"unmatchItem:",objj_msgSend(_44,"representedObject"));
+objj_msgSend(objj_msgSend(MMMediaMatchesDataSource,"sharedDataSource"),"refreshMatchForMetadataItem:",_44);
 }
-}),new objj_method(sel_getUid("matchUsing:"),function(_47,_48,_49){
-with(_47){
-var _4a=objj_msgSend(objj_msgSend(objj_msgSend(matchUsingMenuItem,"submenu"),"itemArray"),"indexOfObject:",_49),_4b=objj_msgSend(agents,"objectAtIndex:",_4a),_4c=objj_msgSend(_47,"representedObject");
-objj_msgSend(matchesDataSource,"refreshRecordsForMetadataItem:title:agent:language:year:manual:",_4c,nil,_4b,objj_msgSend(_4c,"language"),nil,NO);
+}),new objj_method(sel_getUid("unmatch:"),function(_45,_46,_47){
+with(_45){
+var _48=objj_msgSend(_45,"representedObject");
+if(objj_msgSend(_48,"isIdle")){
+objj_msgSend(_48,"setState:",MMMetadataItemStateMatching);
+}
+objj_msgSend(objj_msgSend(MMMediaMatchesDataSource,"sharedDataSource"),"unmatchItem:",_48);
+}
+}),new objj_method(sel_getUid("matchUsing:"),function(_49,_4a,_4b){
+with(_49){
+var _4c=objj_msgSend(objj_msgSend(objj_msgSend(matchUsingMenuItem,"submenu"),"itemArray"),"indexOfObject:",_4b),_4d=objj_msgSend(agents,"objectAtIndex:",_4c),_4e=objj_msgSend(_49,"representedObject");
+if(objj_msgSend(_4e,"isIdle")){
+objj_msgSend(_4e,"setState:",MMMetadataItemStateMatching);
+}
+objj_msgSend(matchesDataSource,"refreshRecordsForMetadataItem:title:agent:language:year:manual:",_4e,nil,_4d,objj_msgSend(_4e,"language"),nil,NO);
 }
 })]);
 p;30;Views/MMSectionSettingsSheet.jt;33220;@STATIC;1.0;I;27;AppKit/CPSegmentedControl.jI;15;AppKit/CPView.ji;16;MMFileListView.ji;34;../DataSources/MMAgentDataSource.ji;36;../DataSources/MMScannerDataSource.ji;34;../Views/MMDirectoryBrowserSheet.jt;33008;
