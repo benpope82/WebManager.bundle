@@ -56,5 +56,23 @@
 		<key>TypeDefaultScanner</key>
 		<string>Plex Music Scanner</string>
 	</dict>
+	<dict>
+    <key>TypeClass</key>
+    <string>Photo</string>
+    <key>TypeScanners</key>
+    <string>Photos</string>
+    <key>TypeName</key>
+    <string>Photos</string>
+    <key>TypeID</key>
+    <integer>13</integer>
+    <key>TypeIcon</key>
+    <string>SourceIconPhotos.png</string>
+    <key>TypeDefaultAgent</key>
+    <string>com.plexapp.agents.none</string>
+    <key>TypeDefaultLanguage</key>
+    <string>en</string>
+    <key>TypeDefaultScanner</key>
+    <string>Plex Photo Scanner</string>
+  </dict>
 </array>
 </plist>

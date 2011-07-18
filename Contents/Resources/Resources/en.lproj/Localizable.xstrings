@@ -8,6 +8,8 @@
 	<string>%d TV shows</string>
 	<key>%d artists</key>
 	<string>%d artists</string>
+	<key>%d photos</key>
+	<string>%d photos</string>
 	<key>%d episodes</key>
 	<string>%d episodes</string>
 	<key>%d movies</key>
@@ -22,6 +24,8 @@
 	<string>1 TV show</string>
 	<key>1 artist</key>
 	<string>1 artist</string>
+	<key>1 photo</key>
+	<string>1 photo</string>
 	<key>1 episode</key>
 	<string>1 episode</string>
 	<key>1 movie</key>
@@ -414,6 +418,8 @@ Are you sure it's running?</string>
 	<string>no TV shows</string>
 	<key>no artists</key>
 	<string>no artists</string>
+	<key>no photos</key>
+	<string>no photos</string>
 	<key>no episodes</key>
 	<string>no episodes</string>
 	<key>no movies</key>
