@@ -13192,7 +13192,7 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesLibraryPanel,"alloc"),"initWithFrame:",CGRectMakeZero()));
 }
 })]);
-p;33;Views/MMPreferencesLibraryPanel.jt;6693;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;6622;
+p;33;Views/MMPreferencesLibraryPanel.jt;6694;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;6623;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Models/PMSCapabilities.j",YES);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesLibraryPanel"),_2=_1.isa;
@@ -13254,7 +13254,7 @@ objj_msgSend(_11,"sizeToFit");
 objj_msgSend(_11,"setFrameOrigin:",CGPointMake(0,_6));
 objj_msgSend(_11,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.allowMediaDeletion",nil);
 objj_msgSend(_3,"addSubview:",_11);
-var _12=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Clients may offer to delete watched media (e.g. TV Show episodes) with this enabled.","Preference window setting"));
+var _12=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Clients will have the ability to request deletion of media files from the hard drive.","Preference window setting"));
 objj_msgSend(_12,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(_11,"frame"))));
 objj_msgSend(_3,"addSubview:",_12);
 _6=CGRectGetMaxY(objj_msgSend(_12,"frame"))+10;
