@@ -3906,7 +3906,7 @@ with(_5e){
 return objj_msgSend(CPSet,"setWithObjects:","content","content.updatedAt","content.updateQueueSize");
 }
 })]);
-p;38;DataSources/MMLibraryMediaDataSource.jt;4118;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;27;../Models/MMMediaItemPart.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;3962;
+p;38;DataSources/MMLibraryMediaDataSource.jt;4141;@STATIC;1.0;I;21;Foundation/CPObject.ji;23;../Models/MMMediaItem.ji;27;../Models/MMMediaItemPart.ji;14;MMDataSource.ji;27;../CPObject+XMLAttributes.jt;3985;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("../Models/MMMediaItem.j",YES);
 objj_executeFile("../Models/MMMediaItemPart.j",YES);
@@ -3976,7 +3976,7 @@ objj_msgSend(_24,"addObject:",_2a);
 break;
 case "Field":
 var _2b=_25.getAttribute("name"),_2c=(_25.getAttribute("locked")=="1");
-objj_msgSend(_20,"setValue:forKey:",_2c,_2b+"Locked");
+objj_msgSend(_20,"setValue:forKey:ignoreUndefinedKey:",_2c,_2b+"Locked",YES);
 break;
 case "Writer":
 case "Director":
