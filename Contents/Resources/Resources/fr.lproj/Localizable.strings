@@ -93,15 +93,6 @@
 /* Advanced */
 "Advanced" = "Expert";
 
-/* A recording album */
-"album" = "album";
-
-/* Explanation text for the empty trash confirmation dialog */
-"All deleted items will be permanently removed from your library. No files on your computer will be removed." = "All deleted items will be permanently removed from your library. No files on your computer will be removed.";
-
-/* Language preference pane subtitle mode option */
-"Always enabled" = "Always enabled";
-
 /* AnteMeridiem */
 "AM" = "AM";
 
@@ -110,12 +101,6 @@
 
 /* Preference window setting */
 "Aperture Sharing Enabled" = "Partage Aperture Activé";
-
-/* Disable secure server access confirmation */
-"Are you sure you want to disable secure access to your server?" = "Are you sure you want to disable secure access to your server?";
-
-/* Confirmation text for the empty trash confirmation dialog */
-"Are you sure you want to empty the trash in \"%@\"?" = "Are you sure you want to empty the trash in \"%@\"?";
 
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "Etes vous sur de vouloir supprimer la section \"%@\"?";
@@ -126,32 +111,14 @@
 /* A musical artist */
 "artist" = "artiste";
 
-/* Authenticate */
-"Authenticate" = "Authenticate";
-
-/* Login prompt title */
-"Authentication Required" = "Authentication Required";
-
 /* Cancel */
 "Cancel" = "Annuler";
 
 /* Preference window setting detail */
 "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "La vérification de compatibilité s'assure que les plug-ins incompatibles avec cette version du serveur ou avec la version actuelle de l'application client que vous utilisez demeurent cachés.";
 
-/* Change */
-"Change" = "Change";
-
 /* Change Artwork */
 "Change Artwork" = "Changer Images";
-
-/* Security preferences button to change the main account password */
-"Change Password" = "Change Password";
-
-/* Security preferences button to change the main account username */
-"Change Username" = "Change Username";
-
-/* Change username prompt message */
-"Change your username, and enter your password to authenticate." = "Change your username, and enter your password to authenticate.";
 
 /* Choose Album Thumbnail menu item */
 "Choose Album Thumbnail" = "Sélectionner Vignette Album";
@@ -177,17 +144,11 @@
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Cliquez sur les titres ci-dessous pour créer des sections dans la médiatèque pour vos médias et les partager avec vos clients Plex.";
 
-/* Collections */
-"Collections" = "Collections";
-
 /* Error message for when we cannot connect to PMS or when the response is invalid */
 "Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "La Connexion au Plex Media Server a échoué avec cause: %@.\n\nLe Serveur est-il disponible?";
 
 /* Content Rating */
 "Content Rating" = "Classement Contenu";
-
-/* Password label */
-"Current Password:" = "Current Password:";
 
 /* Custom Search */
 "Custom Search" = "Recherche Avancée";
@@ -204,9 +165,6 @@
 /* Preference window setting */
 "Disable capability checking" = "Désactiver La Vérification de Compatibilité";
 
-/* Disable secure server confirmation button */
-"Disable Secure Access" = "Disable Secure Access";
-
 /* Done */
 "Done" = "Terminé";
 
@@ -221,30 +179,6 @@
 
 /* Edit Section */
 "Edit Section" = "Modification Section";
-
-/* Confirmation button for the empty trash confirmation dialog */
-"Empty Trash" = "Empty Trash";
-
-/* Preference window setting */
-"Empty trash automatically after every scan" = "Empty trash automatically after every scan";
-
-/* Enable */
-"Enable" = "Enable";
-
-/* Preference window setting */
-"Enable Dolby® Digital during AirPlay" = "Enable Dolby® Digital during AirPlay";
-
-/* Preference window setting */
-"Enable DTS mix-down for Media Link clients" = "Enable DTS mix-down for Media Link clients";
-
-/* Check box label to enable secure server access */
-"Enable Secure Access" = "Enable Secure Access";
-
-/* Enable security prompt message */
-"Enter a password to enable secure access to your server:" = "Enter a password to enable secure access to your server:";
-
-/* Change password prompt message */
-"Enter your current password to authenticate, then enter and verify your new password." = "Enter your current password to authenticate, then enter and verify your new password.";
 
 /* A TV Show episode */
 "episode" = "épisode";
@@ -282,17 +216,11 @@
 /* General */
 "General" = "Général";
 
-/* Genres */
-"Genres" = "Genres";
-
 /* Error message for when we cannot remove a library section */
 "Got this error: %@. Are you sure Plex Media Server is running?" = "Erreur: %@. Plex Media Server est-il disponible?";
 
 /* Library scan interval (i.e. Update my library hourly) */
 "hourly" = "horaire";
-
-/* Security preference pane explanation */
-"If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server." = "If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.";
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Inclure la section musique dans les mises à jours automatiques";
@@ -305,9 +233,6 @@
 
 /* Language label */
 "Language:" = "Langue:";
-
-/* Languages */
-"Languages" = "Languages";
 
 /* Preference window setting */
 "Large music sections may take a long time to scan" = "La mise à jour des sections musique de tailles importantes peuvent durer assez longtemps";
@@ -327,12 +252,6 @@
 /* Button text for the directory browser to allow the user to type in a path manually */
 "Manual Entry" = "Saisie Manuelle";
 
-/* Language preference pane subtitle mode option */
-"Manually selected" = "Manually selected";
-
-/* Context menu item for metadata items */
-"Match Using" = "Match Using";
-
 /* Metadata item status message when it is being matched to a canonical item */
 "Matching '%@'" = "Recherche '%@'";
 
@@ -341,12 +260,6 @@
 
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "Fichier média: ";
-
-/* Preference window setting detail */
-"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.";
-
-/* Header title */
-"MEDIA MANAGER" = "MEDIA MANAGER";
 
 /* Media scanner label */
 "Media scanner:" = "Scanner Médias:";
@@ -381,18 +294,12 @@
 /* Name label */
 "Name:" = "Nom:";
 
-/* Password label */
-"New Password:" = "New Password:";
-
 /* Status label value when there are no musical artists */
 "no artists" = "aucuns artistes";
 
 /* Status for list of episodes when there are none
    Subtitle for a season thumbnail on a TV Show detail view */
 "no episodes" = "aucuns épisodes";
-
-/* 'Match Using' error title */
-"No Match Found" = "No Match Found";
 
 /* Status label value for when there are no movies */
 "no movies" = "aucuns films";
@@ -407,35 +314,14 @@
 /* Preference window setting */
 "Offer higher bitrates over 3G connections" = "Activer haut débit en connexion 3G";
 
-/* OK */
-"OK" = "OK";
-
 /* Original Title */
 "Original Title" = "Titre Original";
 
 /* Originally Available */
 "Originally Available" = "Disponible Originellement";
 
-/* Password field placeholder */
-"Password" = "Password";
-
-/* Password label */
-"Password:" = "Password:";
-
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "Chemin du répertoire que vous souhaitez ajouter:";
-
-/* Login prompt message */
-"Plex Media Server requires a username and password:" = "Plex Media Server requires a username and password:";
-
-/* PostMeridiem */
-"PM" = "PM";
-
-/* Language preference pane audio checkbox label */
-"Prefer audio tracks in:" = "Prefer audio tracks in:";
-
-/* Languages preference pane default subtitle language label */
-"Prefer subtitles in:" = "Prefer subtitles in:";
 
 /* Preferences button in top-right */
 "Preferences" = "Paramètres";
@@ -454,9 +340,6 @@
 
 /* Status label for refreshing sections with one remaining item */
 "Refreshing info for one item" = "Rafraichissement infos pour un objet";
-
-/* Check box label for the login prompt */
-"Remember me on this computer" = "Remember me on this computer";
 
 /* Remove section confirmation button */
 "Remove Section" = "Supprimer Section";
@@ -487,9 +370,6 @@
 
 /* Section type label */
 "Section type:" = "Type section:";
-
-/* Security preference pane title */
-"Secure Server Access" = "Secure Server Access";
 
 /* Security */
 "Security" = "Sécurité";
@@ -530,17 +410,8 @@
 /* A TV Show */
 "show" = "série";
 
-/* Language preference pane subtitle mode option */
-"Shown with foreign audio" = "Shown with foreign audio";
-
 /* Sort Title */
 "Sort Title" = "Trier par titre";
-
-/* Studio */
-"Studio" = "Studio";
-
-/* Languages preference pane subtitle mode label */
-"Subtitle mode:" = "Subtitle mode:";
 
 /* Summary */
 "Summary" = "Résumé";
@@ -550,9 +421,6 @@
 
 /* Tagline */
 "Tagline" = "Slogan";
-
-/* 'Match Using' error message */
-"There was no acceptable match using the specified agent." = "There was no acceptable match using the specified agent.";
 
 /* Summary info for collecting usage data */
 "This helps us improve your experience (for example, to help us match movies and TV shows)." = "Ceci nous aide à améliorer votre expérience (par exemple, en nous aidant à associer vos fichiers aux bons films et séries).";
@@ -581,9 +449,6 @@
 /* Tuesday */
 "Tuesday" = "Mardi`";
 
-/* Disable secure server access confirmation info */
-"Turning off secure server access will allow incoming connections from any computer." = "Turning off secure server access will allow incoming connections from any computer.";
-
 /* TV Shows */
 "TV Shows" = "Séries";
 
@@ -611,20 +476,8 @@
 /* Update section confirm button text */
 "Update Section" = "Mettre à jour Section";
 
-/* Username field placeholder */
-"Username" = "Username";
-
-/* Username label */
-"Username:" = "Username:";
-
-/* Verify password label */
-"Verify:" = "Verify:";
-
 /* Wednesday */
 "Wednesday" = "Mercredi";
-
-/* Preference window setting detail */
-"When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu.";
 
 /* Writers */
 "Writers" = "Auteurs";

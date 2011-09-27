@@ -8,12 +8,14 @@
 	<string>%d TV shows</string>
 	<key>%d artists</key>
 	<string>%d artists</string>
-	<key>%d photos</key>
-	<string>%d photos</string>
 	<key>%d episodes</key>
 	<string>%d episodes</string>
+	<key>%d items</key>
+	<string>%d items</string>
 	<key>%d movies</key>
 	<string>%d movies</string>
+	<key>%d photos</key>
+	<string>%d photos</string>
 	<key>%d tracks</key>
 	<string>%d tracks</string>
 	<key>%d tracks, %@ total time, %@</key>
@@ -24,12 +26,14 @@
 	<string>1 TV show</string>
 	<key>1 artist</key>
 	<string>1 artist</string>
-	<key>1 photo</key>
-	<string>1 photo</string>
 	<key>1 episode</key>
 	<string>1 episode</string>
+	<key>1 item</key>
+	<string>1 item</string>
 	<key>1 movie</key>
 	<string>1 movie</string>
+	<key>1 photo</key>
+	<string>1 photo</string>
 	<key>1 track</key>
 	<string>1 track</string>
 	<key>1 track, %@ total time, %@</key>
@@ -54,8 +58,12 @@
 	<string>&gt; TV show posters and art</string>
 	<key>&gt; Thumbnails for every episode</key>
 	<string>&gt; Thumbnails for every episode</string>
+	<key>ALBUMS</key>
+	<string>ALBUMS</string>
 	<key>AM</key>
 	<string>AM</string>
+	<key>ARTISTS</key>
+	<string>ARTISTS</string>
 	<key>Add Home Movies Section</key>
 	<string>Add Home Movies Section</string>
 	<key>Add Movies Section</key>
@@ -70,8 +78,14 @@
 	<string>Add the folders containing media for this section below. Any media files found inside these folders will be scanned into your library using the above settings.</string>
 	<key>Advanced</key>
 	<string>Advanced</string>
+	<key>Agent Settings Save Error</key>
+	<string>Agent Settings Save Error</string>
+	<key>Agents</key>
+	<string>Agents</string>
 	<key>All deleted items will be permanently removed from your library. No files on your computer will be removed.</key>
 	<string>All deleted items will be permanently removed from your library. No files on your computer will be removed.</string>
+	<key>Allow clients to delete media</key>
+	<string>Allow clients to delete media</string>
 	<key>Always enabled</key>
 	<string>Always enabled</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
@@ -82,6 +96,8 @@
 	<string>Are you sure you want to disable secure access to your server?</string>
 	<key>Are you sure you want to empty the trash in "%@"?</key>
 	<string>Are you sure you want to empty the trash in "%@"?</string>
+	<key>Are you sure you want to remove the collection named "%@"?</key>
+	<string>Are you sure you want to remove the collection named "%@"?</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
 	<string>Are you sure you want to remove the section named "%@"?</string>
 	<key>Artist</key>
@@ -120,8 +136,14 @@
 	<string>Choose Season Thumbnail</string>
 	<key>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</key>
 	<string>Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.</string>
+	<key>Clients will have the ability to request deletion of media files from the hard drive.</key>
+	<string>Clients will have the ability to request deletion of media files from the hard drive.</string>
 	<key>Collections</key>
 	<string>Collections</string>
+	<key>Collections...</key>
+	<string>Collections...</string>
+	<key>Confirm password:</key>
+	<string>Confirm password:</string>
 	<key>Connecting to Plex Media Server failed with this error: %@.
 
 Are you sure it's running?</key>
@@ -130,6 +152,8 @@ Are you sure it's running?</key>
 Are you sure it's running?</string>
 	<key>Content Rating</key>
 	<string>Content Rating</string>
+	<key>Create</key>
+	<string>Create</string>
 	<key>Current Password:</key>
 	<string>Current Password:</string>
 	<key>Custom Search</key>
@@ -142,6 +166,10 @@ Are you sure it's running?</string>
 	<string>Disable Secure Access</string>
 	<key>Disable capability checking</key>
 	<string>Disable capability checking</string>
+	<key>Disabled</key>
+	<string>Disabled</string>
+	<key>Don't have an account? It's easy to sign up!</key>
+	<string>Don't have an account? It's easy to sign up!</string>
 	<key>Done</key>
 	<string>Done</string>
 	<key>Drag folders into the list, or click the '+' button to browse.</key>
@@ -152,6 +180,8 @@ Are you sure it's running?</string>
 	<string>Edit Metadata...</string>
 	<key>Edit Section</key>
 	<string>Edit Section</string>
+	<key>Email:</key>
+	<string>Email:</string>
 	<key>Empty Trash</key>
 	<string>Empty Trash</string>
 	<key>Empty trash automatically after every scan</key>
@@ -164,12 +194,18 @@ Are you sure it's running?</string>
 	<string>Enable Dolby® Digital during AirPlay</string>
 	<key>Enable Secure Access</key>
 	<string>Enable Secure Access</string>
+	<key>Enable this if your router doesn't support automatic configuration.</key>
+	<string>Enable this if your router doesn't support automatic configuration.</string>
 	<key>Enter a password to enable secure access to your server:</key>
 	<string>Enter a password to enable secure access to your server:</string>
 	<key>Enter your current password to authenticate, then enter and verify your new password.</key>
 	<string>Enter your current password to authenticate, then enter and verify your new password.</string>
 	<key>Episode %d: %@</key>
 	<string>Episode %1$d: %2$@</string>
+	<key>Failed to map ports</key>
+	<string>Failed to map ports</string>
+	<key>Failed to map ports: %@</key>
+	<string>Failed to map ports: %@</string>
 	<key>Fix Incorrect Match...</key>
 	<string>Fix Incorrect Match...</string>
 	<key>Fix incorrect match</key>
@@ -184,10 +220,14 @@ Are you sure it's running?</string>
 	<string>Genres</string>
 	<key>Got this error: %@. Are you sure Plex Media Server is running?</key>
 	<string>Got this error: %@. Are you sure Plex Media Server is running?</string>
+	<key>Have a myPlex or forums account?</key>
+	<string>Have a myPlex or forums account?</string>
 	<key>If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.</key>
 	<string>If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.</string>
 	<key>Include music sections in automatic updates</key>
 	<string>Include music sections in automatic updates</string>
+	<key>Invalid email, username, or password</key>
+	<string>Invalid email, username, or password</string>
 	<key>LIBRARY SECTIONS</key>
 	<string>LIBRARY SECTIONS</string>
 	<key>Language:</key>
@@ -202,12 +242,18 @@ Are you sure it's running?</string>
 	<string>Library</string>
 	<key>Loading metadata for '%@'</key>
 	<string>Loading metadata for '%@'</string>
+	<key>Loading...</key>
+	<string>Loading...</string>
 	<key>MEDIA MANAGER</key>
 	<string>MEDIA MANAGER</string>
+	<key>MOVIES</key>
+	<string>MOVIES</string>
 	<key>Manual Entry</key>
 	<string>Manual Entry</string>
 	<key>Manually selected</key>
 	<string>Manually selected</string>
+	<key>Manually specify port</key>
+	<string>Manually specify port</string>
 	<key>Match Using</key>
 	<string>Match Using</string>
 	<key>Matching '%@'</key>
@@ -232,12 +278,16 @@ Are you sure it's running?</string>
 	<string>My Movies</string>
 	<key>My Music</key>
 	<string>My Music</string>
+	<key>My Photos</key>
+	<string>My Photos</string>
 	<key>My TV Shows</key>
 	<string>My TV Shows</string>
 	<key>Name</key>
 	<string>Name</string>
 	<key>Name:</key>
 	<string>Name:</string>
+	<key>New Collection...</key>
+	<string>New Collection...</string>
 	<key>New Password:</key>
 	<string>New Password:</string>
 	<key>No Match Found</key>
@@ -250,6 +300,8 @@ Are you sure it's running?</string>
 	<string>Original Title</string>
 	<key>Originally Available</key>
 	<string>Originally Available</string>
+	<key>PHOTOS</key>
+	<string>PHOTOS</string>
 	<key>PM</key>
 	<string>PM</string>
 	<key>Password</key>
@@ -258,6 +310,8 @@ Are you sure it's running?</string>
 	<string>Password:</string>
 	<key>Path of the directory you'd like to add:</key>
 	<string>Path of the directory you'd like to add:</string>
+	<key>Photos</key>
+	<string>Photos</string>
 	<key>Plex Media Server requires a username and password:</key>
 	<string>Plex Media Server requires a username and password:</string>
 	<key>Prefer audio tracks in:</key>
@@ -268,6 +322,10 @@ Are you sure it's running?</string>
 	<string>Preferences</string>
 	<key>Primary metadata agent:</key>
 	<string>Primary metadata agent:</string>
+	<key>Publish server to myPlex</key>
+	<string>Publish server to myPlex</string>
+	<key>Publishing state is unknown</key>
+	<string>Publishing state is unknown</string>
 	<key>Rating</key>
 	<string>Rating</string>
 	<key>Refresh Metadata</key>
@@ -278,6 +336,8 @@ Are you sure it's running?</string>
 	<string>Refreshing info for one item</string>
 	<key>Remember me on this computer</key>
 	<string>Remember me on this computer</string>
+	<key>Remove Collection</key>
+	<string>Remove Collection</string>
 	<key>Remove Section</key>
 	<string>Remove Section</string>
 	<key>Requesting metadata for '%@'</key>
@@ -310,20 +370,40 @@ Are you sure it's running?</string>
 	<string>Select Image</string>
 	<key>Select a directory for this section:</key>
 	<string>Select a directory for this section:</string>
+	<key>Select a path for this section:</key>
+	<string>Select a path for this section:</string>
 	<key>Select the correct TV show from the list below:</key>
 	<string>Select the correct TV show from the list below:</string>
 	<key>Select the correct artist from the list below:</key>
 	<string>Select the correct artist from the list below:</string>
 	<key>Select the correct movie from the list below:</key>
 	<string>Select the correct movie from the list below:</string>
+	<key>Select which additional agents should contribute to metadata from %@, and drag them to change the order of preference.</key>
+	<string>Select which additional agents should contribute to metadata from %@, and drag them to change the order of preference.</string>
 	<key>Send anonymous usage data to Plex</key>
 	<string>Send anonymous usage data to Plex</string>
+	<key>Server is mapped to port %i</key>
+	<string>Server is mapped to port %i</string>
+	<key>Server is mapped to port %i (%s)</key>
+	<string>Server is mapped to port %i (%s)</string>
 	<key>Sharing</key>
 	<string>Sharing</string>
 	<key>Show</key>
 	<string>Show</string>
 	<key>Shown with foreign audio</key>
 	<string>Shown with foreign audio</string>
+	<key>Sign In</key>
+	<string>Sign In</string>
+	<key>Sign Out</key>
+	<string>Sign Out</string>
+	<key>Sign Up</key>
+	<string>Sign Up</string>
+	<key>Sign in to myPlex</key>
+	<string>Sign in to myPlex</string>
+	<key>Sign up to myPlex</key>
+	<string>Sign up to myPlex</string>
+	<key>Signed in as %@</key>
+	<string>Signed in as %@</string>
 	<key>Sort Title</key>
 	<string>Sort Title</string>
 	<key>Studio</key>
@@ -334,10 +414,18 @@ Are you sure it's running?</string>
 	<string>Summary</string>
 	<key>Sunday</key>
 	<string>Sunday</string>
+	<key>TV SHOWS</key>
+	<string>TV SHOWS</string>
 	<key>TV Shows</key>
 	<string>TV Shows</string>
 	<key>Tagline</key>
 	<string>Tagline</string>
+	<key>The collection will be removed. The media inside the collection will not be touched.</key>
+	<string>The collection will be removed. The media inside the collection will not be touched.</string>
+	<key>There was a problem saving your changes to the agent settings. Make sure Plex Media Server is running and try again.</key>
+	<string>There was a problem saving your changes to the agent settings. Make sure Plex Media Server is running and try again.</string>
+	<key>There was an error publishing the connection</key>
+	<string>There was an error publishing the connection</string>
 	<key>There was no acceptable match using the specified agent.</key>
 	<string>There was no acceptable match using the specified agent.</string>
 	<key>This helps us improve your experience (for example, to help us match movies and TV shows).</key>
@@ -356,6 +444,8 @@ Are you sure it's running?</string>
 	<string>Tuesday</string>
 	<key>Turning off secure server access will allow incoming connections from any computer.</key>
 	<string>Turning off secure server access will allow incoming connections from any computer.</string>
+	<key>Unable to authenticate</key>
+	<string>Unable to authenticate</string>
 	<key>Unable to connect to Plex Media Server</key>
 	<string>Unable to connect to Plex Media Server</string>
 	<key>Unable to create library section</key>
@@ -364,6 +454,8 @@ Are you sure it's running?</string>
 	<string>Unable to remove section "%@"</string>
 	<key>Unable to update library section</key>
 	<string>Unable to update library section</string>
+	<key>Unknown sign in state</key>
+	<string>Unknown sign in state</string>
 	<key>Unmatch</key>
 	<string>Unmatch</string>
 	<key>Update Section</key>
@@ -378,8 +470,12 @@ Are you sure it's running?</string>
 	<string>Username:</string>
 	<key>Verify:</key>
 	<string>Verify:</string>
+	<key>Waiting for a valid mapping...</key>
+	<string>Waiting for a valid mapping...</string>
 	<key>Wednesday</key>
 	<string>Wednesday</string>
+	<key>What would you like to call this collection?</key>
+	<string>What would you like to call this collection?</string>
 	<key>When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to "On" in the Audio &amp; Video menu.</key>
 	<string>When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to "On" in the Audio &amp; Video menu.</string>
 	<key>Writers</key>
@@ -414,18 +510,30 @@ Are you sure it's running?</string>
 	<string>iTunes Sharing Enabled</string>
 	<key>movie</key>
 	<string>movie</string>
+	<key>myPlex</key>
+	<string>myPlex</string>
+	<key>myPlex appears to be offline</key>
+	<string>myPlex appears to be offline</string>
+	<key>myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media.</key>
+	<string>myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media.</string>
+	<key>myPlex was unable to connect to your Server</key>
+	<string>myPlex was unable to connect to your Server</string>
 	<key>no TV shows</key>
 	<string>no TV shows</string>
 	<key>no artists</key>
 	<string>no artists</string>
-	<key>no photos</key>
-	<string>no photos</string>
 	<key>no episodes</key>
 	<string>no episodes</string>
+	<key>no items</key>
+	<string>no items</string>
 	<key>no movies</key>
 	<string>no movies</string>
+	<key>no photos</key>
+	<string>no photos</string>
 	<key>no tracks</key>
 	<string>no tracks</string>
+	<key>photo</key>
+	<string>photo</string>
 	<key>season</key>
 	<string>season</string>
 	<key>show</key>

@@ -33,6 +33,9 @@
 /* Status label value for when there is one movie */
 "1 movie" = "1 film";
 
+/* Status label value for when there is one photo */
+"1 photo" = "1 foto";
+
 /* Subtitle for a album thumbnail on an artist detail view */
 "1 track" = "1 nummer";
 
@@ -44,9 +47,6 @@
 
 /* First-run help item */
 "> Add posters, custom genres and more" = "> Voeg posters, genres en meer toe";
-
-/* First-run help item */
-"> Album reviews" = "> Album reviews";
 
 /* First-run help item */
 "> Artist biographies and artwork" = "> Artiestenbiografieën en artwork";
@@ -96,11 +96,11 @@
 /* A recording album */
 "album" = "album";
 
-/* Explanation text for the empty trash confirmation dialog */
-"All deleted items will be permanently removed from your library. No files on your computer will be removed." = "All deleted items will be permanently removed from your library. No files on your computer will be removed.";
+/* Agent settings title for music albums */
+"ALBUMS" = "ALBUMS";
 
-/* Language preference pane subtitle mode option */
-"Always enabled" = "Always enabled";
+/* Explanation text for the empty trash confirmation dialog */
+"All deleted items will be permanently removed from your library. No files on your computer will be removed." = "Alle verwijderde onderdelen zullen permanent uit uw bibliotheek worden verwijderd. Er worden geen bestanden van je computer gewist.";
 
 /* AnteMeridiem */
 "AM" = "AM";
@@ -112,7 +112,7 @@
 "Aperture Sharing Enabled" = "Aperture Delen ingeschakeld";
 
 /* Disable secure server access confirmation */
-"Are you sure you want to disable secure access to your server?" = "Are you sure you want to disable secure access to your server?";
+"Are you sure you want to disable secure access to your server?" = "Weet je zeker dat je veilige servertoegang wilt uitschakelen?";
 
 /* Confirmation text for the empty trash confirmation dialog */
 "Are you sure you want to empty the trash in \"%@\"?" = "Are you sure you want to empty the trash in \"%@\"?";
@@ -120,14 +120,11 @@
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "Weet je zeker dat je de sectie  \"%@\" wilt verwijderen?";
 
-/* Artist */
-"Artist" = "Artiest";
-
 /* A musical artist */
 "artist" = "artiest";
 
-/* Authenticate */
-"Authenticate" = "Authenticate";
+/* Artist */
+"Artist" = "Artiest";
 
 /* Login prompt title */
 "Authentication Required" = "Authentication Required";
@@ -135,23 +132,20 @@
 /* Cancel */
 "Cancel" = "Annuleer";
 
-/* Preference window setting detail */
-"Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.";
-
 /* Change */
-"Change" = "Change";
+"Change" = "Verander";
 
 /* Change Artwork */
 "Change Artwork" = "Verander Artwork";
 
 /* Security preferences button to change the main account password */
-"Change Password" = "Change Password";
+"Change Password" = "Verander wachtwoord";
 
 /* Security preferences button to change the main account username */
 "Change Username" = "Change Username";
 
 /* Change username prompt message */
-"Change your username, and enter your password to authenticate." = "Change your username, and enter your password to authenticate.";
+"Change your username, and enter your password to authenticate." = "Verander je gebruikersnaam en vul je wachtwoord ter authenticatie in.";
 
 /* Choose Album Thumbnail menu item */
 "Choose Album Thumbnail" = "Kies Album Thumbnail";
@@ -187,7 +181,7 @@
 "Content Rating" = "Beoordeling";
 
 /* Password label */
-"Current Password:" = "Current Password:";
+"Current Password:" = "Huidig wachtwoord:";
 
 /* Custom Search */
 "Custom Search" = "Aangepast zoeken";
@@ -205,7 +199,7 @@
 "Disable capability checking" = "Schakel Compatibiliteitscontrole uit";
 
 /* Disable secure server confirmation button */
-"Disable Secure Access" = "Disable Secure Access";
+"Disable Secure Access" = "Schakel Veilige Toegang uit";
 
 /* Done */
 "Done" = "Klaar";
@@ -223,25 +217,25 @@
 "Edit Section" = "Bewerk Sectie";
 
 /* Confirmation button for the empty trash confirmation dialog */
-"Empty Trash" = "Empty Trash";
+"Empty Trash" = "Leeg prullenmand";
 
 /* Preference window setting */
-"Empty trash automatically after every scan" = "Empty trash automatically after every scan";
+"Empty trash automatically after every scan" = "Gooi prullenmand automatisch leeg na iedere scan";
 
 /* Enable */
-"Enable" = "Enable";
+"Enable" = "Inschakelen";
 
 /* Preference window setting */
 "Enable Dolby® Digital during AirPlay" = "Enable Dolby® Digital during AirPlay";
 
 /* Preference window setting */
-"Enable DTS mix-down for Media Link clients" = "Enable DTS mix-down for Media Link clients";
+"Enable DTS mix-down for Media Link clients" = "Schakel DTS mixdown voor Media Link apparaten in";
 
 /* Check box label to enable secure server access */
 "Enable Secure Access" = "Enable Secure Access";
 
 /* Enable security prompt message */
-"Enter a password to enable secure access to your server:" = "Enter a password to enable secure access to your server:";
+"Enter a password to enable secure access to your server:" = "Voer een wachtwoord in om veilige toegang naar uw server in te schakelen:";
 
 /* Change password prompt message */
 "Enter your current password to authenticate, then enter and verify your new password." = "Enter your current password to authenticate, then enter and verify your new password.";
@@ -292,7 +286,7 @@
 "hourly" = "ieder uur";
 
 /* Security preference pane explanation */
-"If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server." = "If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.";
+"If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server." = "Als je je media wilt delen via internet, kun je Veilige Toegang inschakelen om ongeautoriseerde toegang to je server te voorkomen.";
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Update ook muzieksecties tijdens automatische updates";
@@ -305,9 +299,6 @@
 
 /* Language label */
 "Language:" = "Taal:";
-
-/* Languages */
-"Languages" = "Languages";
 
 /* Preference window setting */
 "Large music sections may take a long time to scan" = "Een scan van grote muzieksecties kan geruime tijd duren";
@@ -328,13 +319,10 @@
 "Manual Entry" = "Handmatige invoer";
 
 /* Language preference pane subtitle mode option */
-"Manually selected" = "Manually selected";
+"Manually selected" = "Handmatig geselecteerd";
 
 /* Context menu item for metadata items */
 "Match Using" = "Match Using";
-
-/* Metadata item status message when it is being matched to a canonical item */
-"Matching '%@'" = "Matching '%@'";
 
 /* Metadata item status message when it is being read */
 "Media analysis on '%@'" = "Media-analyse van '%@'";
@@ -343,7 +331,7 @@
 "Media file: " = "Mediabestand: ";
 
 /* Preference window setting detail */
-"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.";
+"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "Media Link ondersteunt niet in alle regio's DTS audio. De Plex Media Server kan DTS automatisch naar stereo converteren zodat het alsnog kan worden afgespeeld.";
 
 /* Header title */
 "MEDIA MANAGER" = "MEDIA MANAGER";
@@ -372,6 +360,9 @@
 /* Music section name placeholder */
 "My Music" = "Mijn Muziek";
 
+/* Photo section name placeholder */
+"My Photos" = "Mijn Foto's";
+
 /* TV Shows section name placeholder */
 "My TV Shows" = "Mijn TV Series";
 
@@ -382,7 +373,7 @@
 "Name:" = "Naam:";
 
 /* Password label */
-"New Password:" = "New Password:";
+"New Password:" = "Nieuw Wachtwoord:";
 
 /* Status label value when there are no musical artists */
 "no artists" = "geen artiesten";
@@ -390,9 +381,6 @@
 /* Status for list of episodes when there are none
    Subtitle for a season thumbnail on a TV Show detail view */
 "no episodes" = "geen afleveringen";
-
-/* 'Match Using' error title */
-"No Match Found" = "No Match Found";
 
 /* Status label value for when there are no movies */
 "no movies" = "geen films";
@@ -413,26 +401,17 @@
 /* Original Title */
 "Original Title" = "Originele Titel";
 
-/* Originally Available */
-"Originally Available" = "Originally Available";
-
 /* Password field placeholder */
 "Password" = "Password";
 
 /* Password label */
-"Password:" = "Password:";
+"Password:" = "Wachtwoord:";
 
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "Pad van de directory die je wilt toevoegen:";
 
-/* Login prompt message */
-"Plex Media Server requires a username and password:" = "Plex Media Server requires a username and password:";
-
 /* PostMeridiem */
 "PM" = "PM";
-
-/* Language preference pane audio checkbox label */
-"Prefer audio tracks in:" = "Prefer audio tracks in:";
 
 /* Languages preference pane default subtitle language label */
 "Prefer subtitles in:" = "Prefer subtitles in:";
@@ -456,7 +435,7 @@
 "Refreshing info for one item" = "Ververs info voor één item";
 
 /* Check box label for the login prompt */
-"Remember me on this computer" = "Remember me on this computer";
+"Remember me on this computer" = "Onthoud mij op deze computer";
 
 /* Remove section confirmation button */
 "Remove Section" = "Verwijder Sectie";
@@ -489,7 +468,7 @@
 "Section type:" = "Sectietype:";
 
 /* Security preference pane title */
-"Secure Server Access" = "Secure Server Access";
+"Secure Server Access" = "Veilige Servertoegang";
 
 /* Security */
 "Security" = "Beveiliging";
@@ -530,14 +509,8 @@
 /* A TV Show */
 "show" = "serie";
 
-/* Language preference pane subtitle mode option */
-"Shown with foreign audio" = "Shown with foreign audio";
-
 /* Sort Title */
 "Sort Title" = "Sorteer Titel";
-
-/* Studio */
-"Studio" = "Studio";
 
 /* Languages preference pane subtitle mode label */
 "Subtitle mode:" = "Subtitle mode:";
@@ -547,9 +520,6 @@
 
 /* Sunday */
 "Sunday" = "Zondag";
-
-/* Tagline */
-"Tagline" = "Tagline";
 
 /* 'Match Using' error message */
 "There was no acceptable match using the specified agent." = "There was no acceptable match using the specified agent.";
@@ -582,7 +552,7 @@
 "Tuesday" = "Dinsdag";
 
 /* Disable secure server access confirmation info */
-"Turning off secure server access will allow incoming connections from any computer." = "Turning off secure server access will allow incoming connections from any computer.";
+"Turning off secure server access will allow incoming connections from any computer." = "Wanneer veilige servertoegang is uitgeschakeld kan vanaf iedere computer toegang verkregen worden.";
 
 /* TV Shows */
 "TV Shows" = "TV Series";
@@ -599,9 +569,6 @@
 /* Unable to update library section */
 "Unable to update library section" = "Kan de bibliotheeksectie niet bijwerken";
 
-/* Context menu item for metadata items */
-"Unmatch" = "Unmatch";
-
 /* Preference window setting - will have frequencies after it e.g. Update my library every two hours */
 "Update my library" = "Werk mijn bibliotheek bij";
 
@@ -612,19 +579,13 @@
 "Update Section" = "Sectie bijwerken";
 
 /* Username field placeholder */
-"Username" = "Username";
+"Username" = "Gebruikersnaam";
 
 /* Username label */
 "Username:" = "Username:";
 
-/* Verify password label */
-"Verify:" = "Verify:";
-
 /* Wednesday */
 "Wednesday" = "Woensdag";
-
-/* Preference window setting detail */
-"When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu.";
 
 /* Writers */
 "Writers" = "Schrijvers";

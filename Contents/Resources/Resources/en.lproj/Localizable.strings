@@ -8,8 +8,14 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "%d episodes" = "%d episodes";
 
+/* Status label value for unknown type for when there is more than one */
+"%d items" = "%d items";
+
 /* Status label value for when there is more than one movie */
 "%d movies" = "%d movies";
+
+/* Status label value for when there is more than one */
+"%d photos" = "%d photos";
 
 /* Subtitle for a album thumbnail on an artist detail view */
 "%d tracks" = "%d tracks";
@@ -30,8 +36,14 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "1 episode" = "1 episode";
 
+/* Status label value for unknown type for when there is one */
+"1 item" = "1 item";
+
 /* Status label value for when there is one movie */
 "1 movie" = "1 movie";
+
+/* Status label value for when there is one photo */
+"1 photo" = "1 photo";
 
 /* Subtitle for a album thumbnail on an artist detail view */
 "1 track" = "1 track";
@@ -93,11 +105,23 @@
 /* Advanced */
 "Advanced" = "Advanced";
 
+/* Error title for problems saving agent settings */
+"Agent Settings Save Error" = "Agent Settings Save Error";
+
+/* Agents */
+"Agents" = "Agents";
+
 /* A recording album */
 "album" = "album";
 
+/* Agent settings title for music albums */
+"ALBUMS" = "ALBUMS";
+
 /* Explanation text for the empty trash confirmation dialog */
 "All deleted items will be permanently removed from your library. No files on your computer will be removed." = "All deleted items will be permanently removed from your library. No files on your computer will be removed.";
+
+/* Preference window setting */
+"Allow clients to delete media" = "Allow clients to delete media";
 
 /* Language preference pane subtitle mode option */
 "Always enabled" = "Always enabled";
@@ -117,6 +141,9 @@
 /* Confirmation text for the empty trash confirmation dialog */
 "Are you sure you want to empty the trash in \"%@\"?" = "Are you sure you want to empty the trash in \"%@\"?";
 
+/* Confirmation message for removing a collection */
+"Are you sure you want to remove the collection named \"%@\"?" = "Are you sure you want to remove the collection named \"%@\"?";
+
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "Are you sure you want to remove the section named \"%@\"?";
 
@@ -125,6 +152,9 @@
 
 /* Artist */
 "Artist" = "Artist";
+
+/* Agent settings title for musical artists */
+"ARTISTS" = "ARTISTS";
 
 /* Authenticate */
 "Authenticate" = "Authenticate";
@@ -177,14 +207,26 @@
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices.";
 
+/* Preference window setting */
+"Clients will have the ability to request deletion of media files from the hard drive." = "Clients will have the ability to request deletion of media files from the hard drive.";
+
 /* Collections */
 "Collections" = "Collections";
+
+/* Context menu item for adding to collections */
+"Collections..." = "Collections...";
+
+/* Confirm password label */
+"Confirm password:" = "Confirm password:";
 
 /* Error message for when we cannot connect to PMS or when the response is invalid */
 "Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?";
 
 /* Content Rating */
 "Content Rating" = "Content Rating";
+
+/* Create */
+"Create" = "Create";
 
 /* Password label */
 "Current Password:" = "Current Password:";
@@ -207,6 +249,12 @@
 /* Disable secure server confirmation button */
 "Disable Secure Access" = "Disable Secure Access";
 
+/* Disabled status message for the myPlex preference pane */
+"Disabled" = "Disabled";
+
+/* Sign up button help label */
+"Don't have an account? It's easy to sign up!" = "Don't have an account? It's easy to sign up!";
+
 /* Done */
 "Done" = "Done";
 
@@ -221,6 +269,9 @@
 
 /* Edit Section */
 "Edit Section" = "Edit Section";
+
+/* Email label */
+"Email:" = "Email:";
 
 /* Confirmation button for the empty trash confirmation dialog */
 "Empty Trash" = "Empty Trash";
@@ -239,6 +290,9 @@
 
 /* Check box label to enable secure server access */
 "Enable Secure Access" = "Enable Secure Access";
+
+/* Description of manual mapping in the myPlex prefpane */
+"Enable this if your router doesn't support automatic configuration." = "Enable this if your router doesn't support automatic configuration.";
 
 /* Enable security prompt message */
 "Enter a password to enable secure access to your server:" = "Enter a password to enable secure access to your server:";
@@ -267,6 +321,12 @@
 /* Library scan interval (i.e. Update my library every 6 hours) */
 "every 6 hours" = "every 6 hours";
 
+/* myPlex prefpane mapping status message */
+"Failed to map ports" = "Failed to map ports";
+
+/* myPlex prefpane mapping status message */
+"Failed to map ports: %@" = "Failed to map ports: %@";
+
 /* Fix incorrect match */
 "Fix incorrect match" = "Fix incorrect match";
 
@@ -288,6 +348,9 @@
 /* Error message for when we cannot remove a library section */
 "Got this error: %@. Are you sure Plex Media Server is running?" = "Got this error: %@. Are you sure Plex Media Server is running?";
 
+/* Sign in button help label */
+"Have a myPlex or forums account?" = "Have a myPlex or forums account?";
+
 /* Library scan interval (i.e. Update my library hourly) */
 "hourly" = "hourly";
 
@@ -296,6 +359,9 @@
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Include music sections in automatic updates";
+
+/* myPlex preference pane invalid credential message */
+"Invalid email, username, or password" = "Invalid email, username, or password";
 
 /* Preference window setting */
 "iPhoto Sharing Enabled" = "iPhoto Sharing Enabled";
@@ -324,11 +390,17 @@
 /* Metadata item status message when its data is importing */
 "Loading metadata for '%@'" = "Loading metadata for '%@'";
 
+/* Text-based loading indicator */
+"Loading..." = "Loading...";
+
 /* Button text for the directory browser to allow the user to type in a path manually */
 "Manual Entry" = "Manual Entry";
 
 /* Language preference pane subtitle mode option */
 "Manually selected" = "Manually selected";
+
+/* Check box option to allow choosing a port manually */
+"Manually specify port" = "Manually specify port";
 
 /* Context menu item for metadata items */
 "Match Using" = "Match Using";
@@ -363,6 +435,9 @@
 /* Movies */
 "Movies" = "Movies";
 
+/* Agent settings title for movies */
+"MOVIES" = "MOVIES";
+
 /* Music */
 "Music" = "Music";
 
@@ -378,11 +453,26 @@
 /* TV Shows section name placeholder */
 "My TV Shows" = "My TV Shows";
 
+/* myPlex */
+"myPlex" = "myPlex";
+
+/* myPlex prefpane myPlex status message */
+"myPlex appears to be offline" = "myPlex appears to be offline";
+
+/* myPlex preference panel description */
+"myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media." = "myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media.";
+
+/* myPlex prefpane myPlex status message */
+"myPlex was unable to connect to your Server" = "myPlex was unable to connect to your Server";
+
 /* Name */
 "Name" = "Name";
 
 /* Name label */
 "Name:" = "Name:";
+
+/* Context menu item title for adding a new collection */
+"New Collection..." = "New Collection...";
 
 /* Password label */
 "New Password:" = "New Password:";
@@ -394,11 +484,17 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "no episodes" = "no episodes";
 
+/* Status label value for unknown type when there are none */
+"no items" = "no items";
+
 /* 'Match Using' error title */
 "No Match Found" = "No Match Found";
 
 /* Status label value for when there are no movies */
 "no movies" = "no movies";
+
+/* Status label value when there are no photos */
+"no photos" = "no photos";
 
 /* Status label for when there are no tracks in an album
    Subtitle for a album thumbnail on an artist detail view */
@@ -428,6 +524,15 @@
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "Path of the directory you'd like to add:";
 
+/* A photo */
+"photo" = "photo";
+
+/* Photos */
+"Photos" = "Photos";
+
+/* Agent settings title for photos */
+"PHOTOS" = "PHOTOS";
+
 /* Login prompt message */
 "Plex Media Server requires a username and password:" = "Plex Media Server requires a username and password:";
 
@@ -446,6 +551,12 @@
 /* Primary metadata agent label */
 "Primary metadata agent:" = "Primary metadata agent:";
 
+/* Check box option on the myPlex prefpane */
+"Publish server to myPlex" = "Publish server to myPlex";
+
+/* myPlex prefpane mapping status message */
+"Publishing state is unknown" = "Publishing state is unknown";
+
 /* Rating */
 "Rating" = "Rating";
 
@@ -460,6 +571,9 @@
 
 /* Check box label for the login prompt */
 "Remember me on this computer" = "Remember me on this computer";
+
+/* Remove collection confirmation button */
+"Remove Collection" = "Remove Collection";
 
 /* Remove section confirmation button */
 "Remove Section" = "Remove Section";
@@ -506,6 +620,9 @@
 /* Directory-browser title when adding/editing sections */
 "Select a directory for this section:" = "Select a directory for this section:";
 
+/* Path-browser title when adding/editing sections */
+"Select a path for this section:" = "Select a path for this section:";
+
 /* Select Folder */
 "Select Folder" = "Select Folder";
 
@@ -521,8 +638,17 @@
 /* Fix Incorrect Match title for TV show sections */
 "Select the correct TV show from the list below:" = "Select the correct TV show from the list below:";
 
+/* Instructions on the Agent preferences panel */
+"Select which additional agents should contribute to metadata from %@, and drag them to change the order of preference." = "Select which additional agents should contribute to metadata from %@, and drag them to change the order of preference.";
+
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Send anonymous usage data to Plex";
+
+/* myPlex prefpane mapping status message */
+"Server is mapped to port %i" = "Server is mapped to port %i";
+
+/* myPlex prefpane mapping status message */
+"Server is mapped to port %i (%s)" = "Server is mapped to port %i (%s)";
 
 /* Sharing */
 "Sharing" = "Sharing";
@@ -535,6 +661,24 @@
 
 /* Language preference pane subtitle mode option */
 "Shown with foreign audio" = "Shown with foreign audio";
+
+/* Sign in button on myPlex preference panel */
+"Sign In" = "Sign In";
+
+/* myPlex sign in sheet title */
+"Sign in to myPlex" = "Sign in to myPlex";
+
+/* Sign out button on myPlex preference panel */
+"Sign Out" = "Sign Out";
+
+/* Sign up button on myPlex preference panel */
+"Sign Up" = "Sign Up";
+
+/* myPlex sign up sheet title */
+"Sign up to myPlex" = "Sign up to myPlex";
+
+/* myPlex preference pane successfully authenticated string */
+"Signed in as %@" = "Signed in as %@";
 
 /* Sort Title */
 "Sort Title" = "Sort Title";
@@ -553,6 +697,15 @@
 
 /* Tagline */
 "Tagline" = "Tagline";
+
+/* Informative text for removing a collection */
+"The collection will be removed. The media inside the collection will not be touched." = "The collection will be removed. The media inside the collection will not be touched.";
+
+/* Error message for problems saving agent settings */
+"There was a problem saving your changes to the agent settings. Make sure Plex Media Server is running and try again." = "There was a problem saving your changes to the agent settings. Make sure Plex Media Server is running and try again.";
+
+/* myPlex prefpane myPlex status message */
+"There was an error publishing the connection" = "There was an error publishing the connection";
 
 /* 'Match Using' error message */
 "There was no acceptable match using the specified agent." = "There was no acceptable match using the specified agent.";
@@ -587,8 +740,14 @@
 /* Disable secure server access confirmation info */
 "Turning off secure server access will allow incoming connections from any computer." = "Turning off secure server access will allow incoming connections from any computer.";
 
+/* Agent settings title for TV shows */
+"TV SHOWS" = "TV SHOWS";
+
 /* TV Shows */
 "TV Shows" = "TV Shows";
+
+/* myPlex prefpane myPlex status message */
+"Unable to authenticate" = "Unable to authenticate";
 
 /* Error title for when we cannot connect to PMS or when the response is invalid */
 "Unable to connect to Plex Media Server" = "Unable to connect to Plex Media Server";
@@ -601,6 +760,9 @@
 
 /* Unable to update library section */
 "Unable to update library section" = "Unable to update library section";
+
+/* myPlex preference pane unknown sign in state message */
+"Unknown sign in state" = "Unknown sign in state";
 
 /* Context menu item for metadata items */
 "Unmatch" = "Unmatch";
@@ -623,8 +785,14 @@
 /* Verify password label */
 "Verify:" = "Verify:";
 
+/* myPlex prefpane mapping status message */
+"Waiting for a valid mapping..." = "Waiting for a valid mapping...";
+
 /* Wednesday */
 "Wednesday" = "Wednesday";
+
+/* Context menu item title for creating a new collection */
+"What would you like to call this collection?" = "What would you like to call this collection?";
 
 /* Preference window setting detail */
 "When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu.";

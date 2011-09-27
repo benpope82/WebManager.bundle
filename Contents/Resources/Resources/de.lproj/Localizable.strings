@@ -8,8 +8,14 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "%d episodes" = "%d Episoden";
 
+/* Status label value for unknown type for when there is more than one */
+"%d items" = "%d Einträge";
+
 /* Status label value for when there is more than one movie */
 "%d movies" = "%d Filme";
+
+/* Status label value for when there is more than one */
+"%d photos" = "%d Fotos";
 
 /* Subtitle for a album thumbnail on an artist detail view */
 "%d tracks" = "%d Titel";
@@ -30,8 +36,14 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "1 episode" = "1 Episode";
 
+/* Status label value for unknown type for when there is one */
+"1 item" = "1 Eintrag";
+
 /* Status label value for when there is one movie */
 "1 movie" = "1 Film";
+
+/* Status label value for when there is one photo */
+"1 photo" = "1 Foto";
 
 /* Subtitle for a album thumbnail on an artist detail view */
 "1 track" = "1 Titel";
@@ -64,7 +76,7 @@
 "> Movie posters and art" = "> Filmposter und Bilder";
 
 /* First-run help item */
-"> Organize movies into collections" = "> Organisieren von Filmen in Sammlungen";
+"> Organize movies into collections" = "> Organisieren von Filmen in Kollektionen";
 
 /* First-run help item */
 "> Thumbnails for every episode" = "> Vorschaubilder für jede Episode";
@@ -93,14 +105,26 @@
 /* Advanced */
 "Advanced" = "Erweitert";
 
+/* Error title for problems saving agent settings */
+"Agent Settings Save Error" = "Fehler beim Speichern der Agenten Einstellungen";
+
+/* Agents */
+"Agents" = "Agenten";
+
 /* A recording album */
 "album" = "Album";
+
+/* Agent settings title for music albums */
+"ALBUMS" = "ALBUMS";
 
 /* Explanation text for the empty trash confirmation dialog */
 "All deleted items will be permanently removed from your library. No files on your computer will be removed." = "Alle gelöschten Daten werden aus der Mediathek entfernt. Die Mediendateien auf Ihrem Rechner werden nicht gelöscht.";
 
+/* Preference window setting */
+"Allow clients to delete media" = "Erlaube Clients das Löschen von Medien";
+
 /* Language preference pane subtitle mode option */
-"Always enabled" = "Always enabled";
+"Always enabled" = "Immer Aktiv";
 
 /* AnteMeridiem */
 "AM" = "AM";
@@ -117,14 +141,20 @@
 /* Confirmation text for the empty trash confirmation dialog */
 "Are you sure you want to empty the trash in \"%@\"?" = "Soll der Papierkorb in der Sektion \"%@\" wirklich geleert werden?";
 
+/* Confirmation message for removing a collection */
+"Are you sure you want to remove the collection named \"%@\"?" = "Wollen Sie die Kollektion \"%@\" wirklich löschen?";
+
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "Wollen Sie die Sektion \"%@\" wirklich löschen?";
+
+/* A musical artist */
+"artist" = "Interpret";
 
 /* Artist */
 "Artist" = "Interpret";
 
-/* A musical artist */
-"artist" = "Interpret";
+/* Agent settings title for musical artists */
+"ARTISTS" = "INTERPRETEN";
 
 /* Authenticate */
 "Authenticate" = "Anmeldung";
@@ -151,7 +181,7 @@
 "Change Username" = "Benutzername ändern";
 
 /* Change username prompt message */
-"Change your username, and enter your password to authenticate." = "Ändere den Benutzername und Passwort zum Anmelden.";
+"Change your username, and enter your password to authenticate." = "Ändern Sie ihren Benutzernamen und geben Sie ihr Passwort zur Authentifizierung ein.";
 
 /* Choose Album Thumbnail menu item */
 "Choose Album Thumbnail" = "Album Vorschaubild auswählen";
@@ -177,14 +207,26 @@
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Klicken sie auf die Einträge unten, um in der Mediathek Sektionen für Ihre Mediendaten zu erstellen, die dann mit PLEX-kompatiblen Geräten und Programmen benutzt werden können.";
 
+/* Preference window setting */
+"Clients will have the ability to request deletion of media files from the hard drive." = "Clients werden die Möglichkeit haben Anforderungen zum Löschen von Media Dateien auf der Festplatte zu stellen.";
+
 /* Collections */
-"Collections" = "Sammlungen";
+"Collections" = "Kollektionen";
+
+/* Context menu item for adding to collections */
+"Collections..." = "Kollektionen...";
+
+/* Confirm password label */
+"Confirm password:" = "Passwort bestätigen:";
 
 /* Error message for when we cannot connect to PMS or when the response is invalid */
 "Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "Die Verbindung mit dem Plex Media Server ist fehlgeschlagen: %@.\n\nStellen Sie sicher, dass der Server läuft.";
 
 /* Content Rating */
 "Content Rating" = "Altersfreigabe";
+
+/* Create */
+"Create" = "Erstellen";
 
 /* Password label */
 "Current Password:" = "Aktuelles Passwort:";
@@ -207,6 +249,12 @@
 /* Disable secure server confirmation button */
 "Disable Secure Access" = "Deaktivere Sicheren Zugang";
 
+/* Disabled status message for the myPlex preference pane */
+"Disabled" = "Deaktiviert";
+
+/* Sign up button help label */
+"Don't have an account? It's easy to sign up!" = "Sie haben noch keinen Account? Die Registrierung ist ganz einfach!";
+
 /* Done */
 "Done" = "Fertig";
 
@@ -222,23 +270,29 @@
 /* Edit Section */
 "Edit Section" = "Sektion bearbeiten";
 
+/* Email label */
+"Email:" = "Email:";
+
 /* Confirmation button for the empty trash confirmation dialog */
 "Empty Trash" = "Papierkorb leeren";
 
 /* Preference window setting */
-"Empty trash automatically after every scan" = "Papierkorb nach jeder Metadaten aktualisierung leeren";
+"Empty trash automatically after every scan" = "Papierkorb nach jeder Aktualisierung leeren";
 
 /* Enable */
 "Enable" = "Aktivieren";
 
 /* Preference window setting */
-"Enable Dolby® Digital during AirPlay" = "Enable Dolby® Digital during AirPlay";
+"Enable Dolby® Digital during AirPlay" = "Dolby® Digital für AirPlay aktivieren";
 
 /* Preference window setting */
-"Enable DTS mix-down for Media Link clients" = "Enable DTS mix-down for Media Link clients";
+"Enable DTS mix-down for Media Link clients" = "Aktiviere DTS mix-down für Media Link Clients";
 
 /* Check box label to enable secure server access */
 "Enable Secure Access" = "Sicheren Zugang aktivieren";
+
+/* Description of manual mapping in the myPlex prefpane */
+"Enable this if your router doesn't support automatic configuration." = "Dieses aktivieren wenn der Router keine automatische Konfiguration unterstützt.";
 
 /* Enable security prompt message */
 "Enter a password to enable secure access to your server:" = "Gib ein Passwort zum aktivieren des Sicheren Zugangs ein:";
@@ -267,6 +321,12 @@
 /* Library scan interval (i.e. Update my library every 6 hours) */
 "every 6 hours" = "alle 6 Stunden";
 
+/* myPlex prefpane mapping status message */
+"Failed to map ports" = "Fehler bei Port Zuordnung";
+
+/* myPlex prefpane mapping status message */
+"Failed to map ports: %@" = "Fehler bei Zuordnung der Ports: %@";
+
 /* Fix incorrect match */
 "Fix incorrect match" = "Fehlerhaften Eintrag korrigieren";
 
@@ -283,10 +343,13 @@
 "General" = "Allgemein";
 
 /* Genres */
-"Genres" = "Genres";
+"Genres" = "Genre";
 
 /* Error message for when we cannot remove a library section */
 "Got this error: %@. Are you sure Plex Media Server is running?" = "Fehler: %@. Stellen Sie sicher, dass der Plex Media Server läuft.";
+
+/* Sign in button help label */
+"Have a myPlex or forums account?" = "Besteht ein myPlex oder Forum Account?";
 
 /* Library scan interval (i.e. Update my library hourly) */
 "hourly" = "Stündlich";
@@ -296,6 +359,9 @@
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Musikbereich in automatische Updates einbeziehen";
+
+/* myPlex preference pane invalid credential message */
+"Invalid email, username, or password" = "Falsche Email, Benutzer oder Passwort";
 
 /* Preference window setting */
 "iPhoto Sharing Enabled" = "iPhoto Freigabe aktivieren";
@@ -307,7 +373,7 @@
 "Language:" = "Sprache:";
 
 /* Languages */
-"Languages" = "Languages";
+"Languages" = "Sprachen";
 
 /* Preference window setting */
 "Large music sections may take a long time to scan" = "Die Aktualisierung großer Musik Sektionen kann lange dauern.";
@@ -324,11 +390,17 @@
 /* Metadata item status message when its data is importing */
 "Loading metadata for '%@'" = "Lade Metadaten für '%@'";
 
+/* Text-based loading indicator */
+"Loading..." = "Lade...";
+
 /* Button text for the directory browser to allow the user to type in a path manually */
 "Manual Entry" = "Manueller Eintrag";
 
 /* Language preference pane subtitle mode option */
-"Manually selected" = "Manually selected";
+"Manually selected" = "Manuell ausgewählt";
+
+/* Check box option to allow choosing a port manually */
+"Manually specify port" = "Port manuell eingeben";
 
 /* Context menu item for metadata items */
 "Match Using" = "Abgleichen mit";
@@ -343,7 +415,7 @@
 "Media file: " = "Mediendatei: ";
 
 /* Preference window setting detail */
-"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.";
+"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "DTS Audio wird in verschiedenen Regionen von Media Link nicht unterstützt. Der Plex Media Server kann DTS automatisch in Stereo umwandeln.";
 
 /* Header title */
 "MEDIA MANAGER" = "MEDIA MANAGER";
@@ -360,6 +432,9 @@
 /* A movie */
 "movie" = "Film";
 
+/* Agent settings title for movies */
+"MOVIES" = "FILME";
+
 /* Movies */
 "Movies" = "Filme";
 
@@ -372,14 +447,32 @@
 /* Music section name placeholder */
 "My Music" = "Meine Musik";
 
+/* Photo section name placeholder */
+"My Photos" = "Meine Fotos";
+
 /* TV Shows section name placeholder */
 "My TV Shows" = "Meine Serien";
+
+/* myPlex */
+"myPlex" = "myPlex";
+
+/* myPlex prefpane myPlex status message */
+"myPlex appears to be offline" = "myPlex scheint Off-Line zu sein";
+
+/* myPlex preference panel description */
+"myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media." = "myPlex verbindet alle Ihre Clients und Server um die Kommunikation zwischen Ihren Geräten zu vereinfachen sowie Einstellungen und Medien freizugeben.";
+
+/* myPlex prefpane myPlex status message */
+"myPlex was unable to connect to your Server" = "myPlex konnte sich mit Ihrem Server nicht verbinden";
 
 /* Name */
 "Name" = "Name";
 
 /* Name label */
 "Name:" = "Name:";
+
+/* Context menu item title for adding a new collection */
+"New Collection..." = "Neue Kollektion...";
 
 /* Password label */
 "New Password:" = "Neues Passwort:";
@@ -391,11 +484,17 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "no episodes" = "keine Episoden";
 
+/* Status label value for unknown type when there are none */
+"no items" = "kein Eintrag";
+
 /* 'Match Using' error title */
 "No Match Found" = "Keine Übereinstimmung gefunden";
 
 /* Status label value for when there are no movies */
 "no movies" = "keine Filme";
+
+/* Status label value when there are no photos */
+"no photos" = "keine Fotos";
 
 /* Status label for when there are no tracks in an album
    Subtitle for a album thumbnail on an artist detail view */
@@ -425,17 +524,26 @@
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "Pfad des hinzuzufügenden Ordners:";
 
+/* A photo */
+"photo" = "Foto";
+
+/* Agent settings title for photos */
+"PHOTOS" = "FOTOS";
+
+/* Photos */
+"Photos" = "Fotos";
+
 /* Login prompt message */
-"Plex Media Server requires a username and password:" = "Plex Media Server braucht einen Benutzernamen und Passwort:";
+"Plex Media Server requires a username and password:" = "Plex Media Server benötigt einen Benutzernamen und Passwort:";
 
 /* PostMeridiem */
 "PM" = "PM";
 
 /* Language preference pane audio checkbox label */
-"Prefer audio tracks in:" = "Prefer audio tracks in:";
+"Prefer audio tracks in:" = "Bevorzugte Audio Ausgabe in:";
 
 /* Languages preference pane default subtitle language label */
-"Prefer subtitles in:" = "Prefer subtitles in:";
+"Prefer subtitles in:" = "Bevorzuge Untertitel in:";
 
 /* Preferences button in top-right */
 "Preferences" = "Einstellungen";
@@ -443,11 +551,17 @@
 /* Primary metadata agent label */
 "Primary metadata agent:" = "Primärer Metadaten Agent:";
 
+/* Check box option on the myPlex prefpane */
+"Publish server to myPlex" = "Publiziere Server zu myPlex";
+
+/* myPlex prefpane mapping status message */
+"Publishing state is unknown" = "Status der Publizierung unbekannt";
+
 /* Rating */
 "Rating" = "Bewertung";
 
 /* Context menu item for metadata items */
-"Refresh Metadata" = "Informationen aktualisieren";
+"Refresh Metadata" = "Metadaten aktualisieren";
 
 /* Status label for refreshing sections */
 "Refreshing info for %d items" = "Aktualisiere Informationen für %d Einträge";
@@ -456,7 +570,10 @@
 "Refreshing info for one item" = "Aktualisiere Informationen für einen Eintrag";
 
 /* Check box label for the login prompt */
-"Remember me on this computer" = "Angemeldet bleiben";
+"Remember me on this computer" = "Auf diesem Computer angemeldet bleiben";
+
+/* Remove collection confirmation button */
+"Remove Collection" = "Kollektion entfernen";
 
 /* Remove section confirmation button */
 "Remove Section" = "Sektion entfernen";
@@ -503,6 +620,9 @@
 /* Directory-browser title when adding/editing sections */
 "Select a directory for this section:" = "Wählen Sie einen Ordner für diese Sektion:";
 
+/* Path-browser title when adding/editing sections */
+"Select a path for this section:" = "Wählen Sie den Pfad für diese Sektion:";
+
 /* Select Folder */
 "Select Folder" = "Ordner auswählen";
 
@@ -518,8 +638,17 @@
 /* Fix Incorrect Match title for TV show sections */
 "Select the correct TV show from the list below:" = "Wählen Sie die gewünschte Serie aus der folgenden Liste:";
 
+/* Instructions on the Agent preferences panel */
+"Select which additional agents should contribute to metadata from %@, and drag them to change the order of preference." = "Wählen Sie die zusätzlichen Agenten aus die weitere Metadaten für %@ laden und bringen Sie diese in die gewünschte Reihenfolge.";
+
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Anonyme Benutzungsdaten an Plex senden";
+
+/* myPlex prefpane mapping status message */
+"Server is mapped to port %i" = "Server ist Port %i zugeordnet";
+
+/* myPlex prefpane mapping status message */
+"Server is mapped to port %i (%s)" = "Server ist Port %i (%s) zugeordnet";
 
 /* Sharing */
 "Sharing" = "Freigabe";
@@ -531,7 +660,25 @@
 "show" = "Serie";
 
 /* Language preference pane subtitle mode option */
-"Shown with foreign audio" = "Shown with foreign audio";
+"Shown with foreign audio" = "Mit Fremdsprache gezeigt";
+
+/* Sign in button on myPlex preference panel */
+"Sign In" = "Anmelden";
+
+/* myPlex sign in sheet title */
+"Sign in to myPlex" = "An myPlex anmelden";
+
+/* Sign out button on myPlex preference panel */
+"Sign Out" = "Abmelden";
+
+/* Sign up button on myPlex preference panel */
+"Sign Up" = "Registrierung";
+
+/* myPlex sign up sheet title */
+"Sign up to myPlex" = "Registrierung für myPlex";
+
+/* myPlex preference pane successfully authenticated string */
+"Signed in as %@" = "Angemeldet als %@";
 
 /* Sort Title */
 "Sort Title" = "Titel (Sortierung)";
@@ -540,7 +687,7 @@
 "Studio" = "Studio";
 
 /* Languages preference pane subtitle mode label */
-"Subtitle mode:" = "Subtitle mode:";
+"Subtitle mode:" = "Untertitel-Modus:";
 
 /* Summary */
 "Summary" = "Zusammenfassung";
@@ -550,6 +697,15 @@
 
 /* Tagline */
 "Tagline" = "Aufmacher";
+
+/* Informative text for removing a collection */
+"The collection will be removed. The media inside the collection will not be touched." = "Die Kollektion wird entfernt. Die Dateien der Kollektion bleiben erhalten.";
+
+/* Error message for problems saving agent settings */
+"There was a problem saving your changes to the agent settings. Make sure Plex Media Server is running and try again." = "Beim Sichern der Agenten Einstellungen ist ein Problem aufgetreten. Stellen Sie sicher dass der Plex Media Server aktiv ist und versuchen Sie es erneut.";
+
+/* myPlex prefpane myPlex status message */
+"There was an error publishing the connection" = "Beim Veröffentlichen der Kollektion ist ein Fehler aufgetreten";
 
 /* 'Match Using' error message */
 "There was no acceptable match using the specified agent." = "Mit dem verwendeten Agenten konnte keine passende Übereinstimmung gefunden werden.";
@@ -576,7 +732,7 @@
 "tomorrow" = "Morgen";
 
 /* Transcoding */
-"Transcoding" = "Transcoding";
+"Transcoding" = "Transcodieren";
 
 /* Tuesday */
 "Tuesday" = "Donnerstag";
@@ -586,6 +742,12 @@
 
 /* TV Shows */
 "TV Shows" = "Serien";
+
+/* Agent settings title for TV shows */
+"TV SHOWS" = "SERIEN";
+
+/* myPlex prefpane myPlex status message */
+"Unable to authenticate" = "Kann nicht Authentifizieren";
 
 /* Error title for when we cannot connect to PMS or when the response is invalid */
 "Unable to connect to Plex Media Server" = "Kann nicht zu Plex Media Server verbinden";
@@ -598,6 +760,9 @@
 
 /* Unable to update library section */
 "Unable to update library section" = "Konnte Sektion nicht aktualisieren";
+
+/* myPlex preference pane unknown sign in state message */
+"Unknown sign in state" = "Unbekanner Anmeldestatus";
 
 /* Context menu item for metadata items */
 "Unmatch" = "Metadaten verwerfen";
@@ -620,11 +785,17 @@
 /* Verify password label */
 "Verify:" = "Passwortbestätigung:";
 
+/* myPlex prefpane mapping status message */
+"Waiting for a valid mapping..." = "Warte auf eine gültige Zuordnung...";
+
 /* Wednesday */
 "Wednesday" = "Mittwoch";
 
+/* Context menu item title for creating a new collection */
+"What would you like to call this collection?" = "Wollen Sie diese Kollektion aufrufen?";
+
 /* Preference window setting detail */
-"When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu.";
+"When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "Um Dolby® Digital Ton bei Wiedergabe eines Videos über AirPlay auf einem Apple TV zu nutzen, müssen Sie im Audio & Video Menü des Apple TV Dolby Digital auf \"ON\" stellen.";
 
 /* Writers */
 "Writers" = "Autoren";

@@ -93,15 +93,6 @@
 /* Advanced */
 "Advanced" = "Avanzado";
 
-/* A recording album */
-"album" = "album";
-
-/* Explanation text for the empty trash confirmation dialog */
-"All deleted items will be permanently removed from your library. No files on your computer will be removed." = "All deleted items will be permanently removed from your library. No files on your computer will be removed.";
-
-/* Language preference pane subtitle mode option */
-"Always enabled" = "Always enabled";
-
 /* AnteMeridiem */
 "AM" = "AM";
 
@@ -110,12 +101,6 @@
 
 /* Preference window setting */
 "Aperture Sharing Enabled" = "Compartir con Aperture Activado";
-
-/* Disable secure server access confirmation */
-"Are you sure you want to disable secure access to your server?" = "Are you sure you want to disable secure access to your server?";
-
-/* Confirmation text for the empty trash confirmation dialog */
-"Are you sure you want to empty the trash in \"%@\"?" = "Are you sure you want to empty the trash in \"%@\"?";
 
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "¿Está seguro de que quiere eliminar la sección llamada \"%@\"?";
@@ -126,32 +111,14 @@
 /* A musical artist */
 "artist" = "artista";
 
-/* Authenticate */
-"Authenticate" = "Authenticate";
-
-/* Login prompt title */
-"Authentication Required" = "Authentication Required";
-
 /* Cancel */
 "Cancel" = "Cancelar";
 
 /* Preference window setting detail */
 "Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications." = "La comprobación de compatibilidad asegura que los plug-ins incompatibles con esta versión del servidor o con la actual aplicación cliente permanecen ocultos. Desactivar la comprobación de compatibilidad es útil para el desarrollo, pero permitirá el acceso a plug-ins que pueden funcionar de forma inestable con determinadas aplicaciones cliente.";
 
-/* Change */
-"Change" = "Change";
-
 /* Change Artwork */
 "Change Artwork" = "Cambiar Ilustraciones";
-
-/* Security preferences button to change the main account password */
-"Change Password" = "Change Password";
-
-/* Security preferences button to change the main account username */
-"Change Username" = "Change Username";
-
-/* Change username prompt message */
-"Change your username, and enter your password to authenticate." = "Change your username, and enter your password to authenticate.";
 
 /* Choose Album Thumbnail menu item */
 "Choose Album Thumbnail" = "Escoger Miniatura del Album";
@@ -186,9 +153,6 @@
 /* Content Rating */
 "Content Rating" = "Calificación del Contenido";
 
-/* Password label */
-"Current Password:" = "Current Password:";
-
 /* Custom Search */
 "Custom Search" = "Búsqueda Personalizada";
 
@@ -204,9 +168,6 @@
 /* Preference window setting */
 "Disable capability checking" = "Desactivar comprobación de compatibilidad";
 
-/* Disable secure server confirmation button */
-"Disable Secure Access" = "Disable Secure Access";
-
 /* Done */
 "Done" = "Hecho";
 
@@ -221,30 +182,6 @@
 
 /* Edit Section */
 "Edit Section" = "Editar Sección";
-
-/* Confirmation button for the empty trash confirmation dialog */
-"Empty Trash" = "Empty Trash";
-
-/* Preference window setting */
-"Empty trash automatically after every scan" = "Empty trash automatically after every scan";
-
-/* Enable */
-"Enable" = "Enable";
-
-/* Preference window setting */
-"Enable Dolby® Digital during AirPlay" = "Enable Dolby® Digital during AirPlay";
-
-/* Preference window setting */
-"Enable DTS mix-down for Media Link clients" = "Enable DTS mix-down for Media Link clients";
-
-/* Check box label to enable secure server access */
-"Enable Secure Access" = "Enable Secure Access";
-
-/* Enable security prompt message */
-"Enter a password to enable secure access to your server:" = "Enter a password to enable secure access to your server:";
-
-/* Change password prompt message */
-"Enter your current password to authenticate, then enter and verify your new password." = "Enter your current password to authenticate, then enter and verify your new password.";
 
 /* A TV Show episode */
 "episode" = "episodio";
@@ -279,9 +216,6 @@
 /* Friendly name label */
 "Friendly name:" = "Nombre amigable:";
 
-/* General */
-"General" = "General";
-
 /* Genres */
 "Genres" = "Géneros";
 
@@ -290,9 +224,6 @@
 
 /* Library scan interval (i.e. Update my library hourly) */
 "hourly" = "cada hora";
-
-/* Security preference pane explanation */
-"If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server." = "If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.";
 
 /* Preference window setting */
 "Include music sections in automatic updates" = "Incluir secciones de música en las actualizaciones automáticas";
@@ -306,15 +237,6 @@
 /* Language label */
 "Language:" = "Idioma:";
 
-/* Languages */
-"Languages" = "Languages";
-
-/* Preference window setting */
-"Large music sections may take a long time to scan" = "Large music sections may take a long time to scan";
-
-/* Status label for media items */
-"Last refreshed %@ at %@" = "Last refreshed %1$@ at %2$@";
-
 /* Library */
 "Library" = "Biblioteca";
 
@@ -327,12 +249,6 @@
 /* Button text for the directory browser to allow the user to type in a path manually */
 "Manual Entry" = "Introducción Manual";
 
-/* Language preference pane subtitle mode option */
-"Manually selected" = "Manually selected";
-
-/* Context menu item for metadata items */
-"Match Using" = "Match Using";
-
 /* Metadata item status message when it is being matched to a canonical item */
 "Matching '%@'" = "Buscando correspondencia para '%@'";
 
@@ -341,12 +257,6 @@
 
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "Archivo multimedia: ";
-
-/* Preference window setting detail */
-"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.";
-
-/* Header title */
-"MEDIA MANAGER" = "MEDIA MANAGER";
 
 /* Media scanner label */
 "Media scanner:" = "Escáner de archivos:";
@@ -381,18 +291,12 @@
 /* Name label */
 "Name:" = "Nombre:";
 
-/* Password label */
-"New Password:" = "New Password:";
-
 /* Status label value when there are no musical artists */
 "no artists" = "no hay artistas";
 
 /* Status for list of episodes when there are none
    Subtitle for a season thumbnail on a TV Show detail view */
 "no episodes" = "no hay episodios";
-
-/* 'Match Using' error title */
-"No Match Found" = "No Match Found";
 
 /* Status label value for when there are no movies */
 "no movies" = "no hay películas";
@@ -407,35 +311,14 @@
 /* Preference window setting */
 "Offer higher bitrates over 3G connections" = "Permitir velocidades de bit mayores en conexiones 3G";
 
-/* OK */
-"OK" = "OK";
-
 /* Original Title */
 "Original Title" = "Título Original";
 
 /* Originally Available */
 "Originally Available" = "Disponible Originalmente";
 
-/* Password field placeholder */
-"Password" = "Password";
-
-/* Password label */
-"Password:" = "Password:";
-
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "Ruta del directorio que desea añadir:";
-
-/* Login prompt message */
-"Plex Media Server requires a username and password:" = "Plex Media Server requires a username and password:";
-
-/* PostMeridiem */
-"PM" = "PM";
-
-/* Language preference pane audio checkbox label */
-"Prefer audio tracks in:" = "Prefer audio tracks in:";
-
-/* Languages preference pane default subtitle language label */
-"Prefer subtitles in:" = "Prefer subtitles in:";
 
 /* Preferences button in top-right */
 "Preferences" = "Ajustes";
@@ -454,9 +337,6 @@
 
 /* Status label for refreshing sections with one remaining item */
 "Refreshing info for one item" = "Refrescando información para un item";
-
-/* Check box label for the login prompt */
-"Remember me on this computer" = "Remember me on this computer";
 
 /* Remove section confirmation button */
 "Remove Section" = "Eliminar Sección";
@@ -487,9 +367,6 @@
 
 /* Section type label */
 "Section type:" = "Tipo de sección:";
-
-/* Security preference pane title */
-"Secure Server Access" = "Secure Server Access";
 
 /* Security */
 "Security" = "Seguridad";
@@ -530,29 +407,17 @@
 /* A TV Show */
 "show" = "serie";
 
-/* Language preference pane subtitle mode option */
-"Shown with foreign audio" = "Shown with foreign audio";
-
 /* Sort Title */
 "Sort Title" = "Ordenar título";
 
 /* Studio */
 "Studio" = "Estudio";
 
-/* Languages preference pane subtitle mode label */
-"Subtitle mode:" = "Subtitle mode:";
-
 /* Summary */
 "Summary" = "Sinópsis";
 
 /* Sunday */
 "Sunday" = "Domingo";
-
-/* Tagline */
-"Tagline" = "Tagline";
-
-/* 'Match Using' error message */
-"There was no acceptable match using the specified agent." = "There was no acceptable match using the specified agent.";
 
 /* Summary info for collecting usage data */
 "This helps us improve your experience (for example, to help us match movies and TV shows)." = "Esto nos ayuda a mejorar su experiencia de uso (p.e. en las correspondencias de películas y series).";
@@ -581,9 +446,6 @@
 /* Tuesday */
 "Tuesday" = "Martes";
 
-/* Disable secure server access confirmation info */
-"Turning off secure server access will allow incoming connections from any computer." = "Turning off secure server access will allow incoming connections from any computer.";
-
 /* TV Shows */
 "TV Shows" = "Series";
 
@@ -599,9 +461,6 @@
 /* Unable to update library section */
 "Unable to update library section" = "Imposible actualizar la sección de la librería";
 
-/* Context menu item for metadata items */
-"Unmatch" = "Unmatch";
-
 /* Preference window setting - will have frequencies after it e.g. Update my library every two hours */
 "Update my library" = "Actualizar mi librería";
 
@@ -611,20 +470,8 @@
 /* Update section confirm button text */
 "Update Section" = "Actualizar Sección";
 
-/* Username field placeholder */
-"Username" = "Username";
-
-/* Username label */
-"Username:" = "Username:";
-
-/* Verify password label */
-"Verify:" = "Verify:";
-
 /* Wednesday */
 "Wednesday" = "Miércoles";
-
-/* Preference window setting detail */
-"When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu.";
 
 /* Writers */
 "Writers" = "Guionistas";

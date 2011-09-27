@@ -275,7 +275,7 @@ _11.unshift(_12);
 return objj_msgSend(_11,"componentsJoinedByString:",",");
 }
 })]);
-p;15;AppController.jt;4590;@STATIC;1.0;I;21;Foundation/CPObject.ji;44;LPLocationController-setLocationForObjects.ji;33;Controllers/MMManagerController.jt;4458;
+p;15;AppController.jt;4607;@STATIC;1.0;I;21;Foundation/CPObject.ji;44;LPLocationController-setLocationForObjects.ji;33;Controllers/MMManagerController.jt;4475;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("LPLocationController-setLocationForObjects.j",YES);
 objj_executeFile("Controllers/MMManagerController.j",YES);
@@ -285,16 +285,18 @@ objj_registerClassPair(_1);
 class_addMethods(_1,[new objj_method(sel_getUid("applicationDidFinishLaunching:"),function(_3,_4,_5){
 with(_3){
 CPLog.trace("[%@ -applicationDidFinishLaunching:] START",objj_msgSend(_3,"class"));
-var _6=window.location.search,_7=_6&&_6.replace(/^.*X-Plex-Token=([^&]+)/i,"$1");
+var _6=window.location.search,_7;
+var _8=_6&&_6.match(/^.*X-Plex-Token=([^&]+)/i);
+_7=_8&&_8[1];
 if(_7){
-var _8=objj_msgSend(PMSSecurity,"sharedSecurity");
-objj_msgSend(_8,"setShouldPersistCredentials:",YES);
-objj_msgSend(_8,"setToken:",_7);
-var _9=window.location.href.replace(/[?&]X-Plex-Token=[^&]+/i,"");
+var _9=objj_msgSend(PMSSecurity,"sharedSecurity");
+objj_msgSend(_9,"setShouldPersistCredentials:",YES);
+objj_msgSend(_9,"setToken:",_7);
+var _a=window.location.href.replace(/[?&]X-Plex-Token=[^&]+/i,"");
 if(window.history.replaceState){
-window.history.replaceState({},null,_9);
+window.history.replaceState({},null,_a);
 }else{
-window.location.replace(_9);
+window.location.replace(_a);
 return;
 }
 }
@@ -310,40 +312,40 @@ objj_msgSend(CPTimer,"scheduledTimerWithTimeInterval:target:selector:userInfo:re
 }
 CPLog.trace("[%@ -applicationDidFinishLaunching:] END",objj_msgSend(_3,"class"));
 }
-}),new objj_method(sel_getUid("issueInternetExplorerWarning"),function(_a,_b){
-with(_a){
-var _c=objj_msgSend(MMInternetExplorerNotificationBar,"installBarWithTitle:aboveView:animated:",CPLocalizedString("This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.","Warning for IE users"),objj_msgSend(managerController,"view"),YES);
-objj_msgSend(_c,"setTarget:",_a);
-objj_msgSend(_c,"setAction:",sel_getUid("installGoogleChromeFrame:"));
-objj_msgSend(_c,"setDismissAction:",sel_getUid("dismissInternetExplorerWarning:"));
+}),new objj_method(sel_getUid("issueInternetExplorerWarning"),function(_b,_c){
+with(_b){
+var _d=objj_msgSend(MMInternetExplorerNotificationBar,"installBarWithTitle:aboveView:animated:",CPLocalizedString("This site does not support Internet Explorer. For the best experience, click here to install Google Chrome Frame.","Warning for IE users"),objj_msgSend(managerController,"view"),YES);
+objj_msgSend(_d,"setTarget:",_b);
+objj_msgSend(_d,"setAction:",sel_getUid("installGoogleChromeFrame:"));
+objj_msgSend(_d,"setDismissAction:",sel_getUid("dismissInternetExplorerWarning:"));
 }
-}),new objj_method(sel_getUid("installGoogleChromeFrame:"),function(_d,_e,_f){
-with(_d){
-objj_msgSend(_d,"hideInternetExplorerWarning:",_f);
+}),new objj_method(sel_getUid("installGoogleChromeFrame:"),function(_e,_f,_10){
+with(_e){
+objj_msgSend(_e,"hideInternetExplorerWarning:",_10);
 CFInstall.check({mode:"overlay",destination:objj_msgSend(objj_msgSend(PMSURL,"URLWithPath:","/manage"),"absoluteString")});
 }
-}),new objj_method(sel_getUid("dismissInternetExplorerWarning:"),function(_10,_11,_12){
-with(_10){
-objj_msgSend(_10,"hideInternetExplorerWarning:",_12);
+}),new objj_method(sel_getUid("dismissInternetExplorerWarning:"),function(_11,_12,_13){
+with(_11){
+objj_msgSend(_11,"hideInternetExplorerWarning:",_13);
 objj_msgSend(objj_msgSend(objj_msgSend(CPCookie,"alloc"),"initWithName:","suppress-ie-warning"),"setValue:expires:domain:","YES",objj_msgSend(CPDate,"distantFuture"),nil);
 }
-}),new objj_method(sel_getUid("hideInternetExplorerWarning:"),function(_13,_14,_15){
-with(_13){
-objj_msgSend(_15,"removeFromSuperview");
+}),new objj_method(sel_getUid("hideInternetExplorerWarning:"),function(_14,_15,_16){
+with(_14){
+objj_msgSend(_16,"removeFromSuperview");
 objj_msgSend(objj_msgSend(managerController,"view"),"setFrame:",objj_msgSend(objj_msgSend(appWindow,"contentView"),"bounds"));
 }
 })]);
-class_addMethods(_2,[new objj_method(sel_getUid("notifyUserOfError:withTitle:"),function(_16,_17,_18,_19){
-with(_16){
-var _1a=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
-objj_msgSend(_1a,"setAlertStyle:",CPCriticalAlertStyle);
-objj_msgSend(_1a,"setTitle:",_19);
-objj_msgSend(_1a,"setMessageText:",_18);
-objj_msgSend(_1a,"runModal");
+class_addMethods(_2,[new objj_method(sel_getUid("notifyUserOfError:withTitle:"),function(_17,_18,_19,_1a){
+with(_17){
+var _1b=objj_msgSend(objj_msgSend(CPAlert,"alloc"),"init");
+objj_msgSend(_1b,"setAlertStyle:",CPCriticalAlertStyle);
+objj_msgSend(_1b,"setTitle:",_1a);
+objj_msgSend(_1b,"setMessageText:",_19);
+objj_msgSend(_1b,"runModal");
 }
-}),new objj_method(sel_getUid("notifyUserOfConnectionError:"),function(_1b,_1c,_1d){
-with(_1b){
-objj_msgSend(_1b,"notifyUserOfError:withTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?","Error message for when we cannot connect to PMS or when the response is invalid"),_1d),CPLocalizedString("Unable to connect to Plex Media Server","Error title for when we cannot connect to PMS or when the response is invalid"));
+}),new objj_method(sel_getUid("notifyUserOfConnectionError:"),function(_1c,_1d,_1e){
+with(_1c){
+objj_msgSend(_1c,"notifyUserOfError:withTitle:",objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?","Error message for when we cannot connect to PMS or when the response is invalid"),_1e),CPLocalizedString("Unable to connect to Plex Media Server","Error title for when we cannot connect to PMS or when the response is invalid"));
 }
 })]);
 p;44;LPLocationController-setLocationForObjects.jt;900;@STATIC;1.0;I;28;LPKit/LPLocationController.jt;849;
@@ -14380,7 +14382,7 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesLibraryPanel,"alloc"),"initWithFrame:",CGRectMakeZero()));
 }
 })]);
-p;33;Views/MMPreferencesLibraryPanel.jt;6694;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;6623;
+p;33;Views/MMPreferencesLibraryPanel.jt;7001;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;6930;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Models/PMSCapabilities.j",YES);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesLibraryPanel"),_2=_1.isa;
@@ -14443,7 +14445,11 @@ objj_msgSend(_11,"setFrameOrigin:",CGPointMake(0,_6));
 objj_msgSend(_11,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.allowMediaDeletion",nil);
 objj_msgSend(_3,"addSubview:",_11);
 var _12=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Clients will have the ability to request deletion of media files from the hard drive.","Preference window setting"));
+objj_msgSend(_12,"setLineBreakMode:",CPLineBreakByWordWrapping);
 objj_msgSend(_12,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(_11,"frame"))));
+var _13=objj_msgSend(objj_msgSend(_12,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(_12,"font"),CGRectGetWidth(objj_msgSend(_3,"frame"))-2*CGRectGetMinX(objj_msgSend(_12,"frame")));
+_13.height+=5;
+objj_msgSend(_12,"setFrameSize:",_13);
 objj_msgSend(_3,"addSubview:",_12);
 _6=CGRectGetMaxY(objj_msgSend(_12,"frame"))+10;
 }
@@ -14451,21 +14457,21 @@ objj_msgSend(_3,"sizeToFit");
 }
 return _3;
 }
-}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_13,_14,_15,_16,_17,_18){
-with(_13){
-if(objj_msgSend(_15,"isEqualToString:","selectedTag")&&objj_msgSend(_16,"isKindOfClass:",objj_msgSend(CPPopUpButton,"class"))){
-var _19=objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"values"),key="ScheduledLibraryUpdateInterval",_1a=objj_msgSend(_17,"objectForKey:",CPKeyValueChangeNewKey),_1b=objj_msgSend(_19,"valueForKey:",key);
-if(_1a!==_1b){
-objj_msgSend(_19,"setValue:forKey:",_1a,key);
+}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_14,_15,_16,_17,_18,_19){
+with(_14){
+if(objj_msgSend(_16,"isEqualToString:","selectedTag")&&objj_msgSend(_17,"isKindOfClass:",objj_msgSend(CPPopUpButton,"class"))){
+var _1a=objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"values"),key="ScheduledLibraryUpdateInterval",_1b=objj_msgSend(_18,"objectForKey:",CPKeyValueChangeNewKey),_1c=objj_msgSend(_1a,"valueForKey:",key);
+if(_1b!==_1c){
+objj_msgSend(_1a,"setValue:forKey:",_1b,key);
 }
 }
 }
-}),new objj_method(sel_getUid("_periodTitles"),function(_1c,_1d){
-with(_1c){
+}),new objj_method(sel_getUid("_periodTitles"),function(_1d,_1e){
+with(_1d){
 return [CPLocalizedString("every 15 minutes","Library scan interval (i.e. Update my library every 15 minutes)"),CPLocalizedString("every 30 minutes","Library scan interval (i.e. Update my library every 30 minutes)"),CPLocalizedString("hourly","Library scan interval (i.e. Update my library hourly)"),CPLocalizedString("every 2 hours","Library scan interval (i.e. Update my library every 2 hours)"),CPLocalizedString("every 6 hours","Library scan interval (i.e. Update my library every 6 hours)"),CPLocalizedString("every 12 hours","Library scan interval (i.e. Update my library every 12 hours)"),CPLocalizedString("daily","Library scan interval (i.e. Update my library daily")];
 }
-}),new objj_method(sel_getUid("_periodValues"),function(_1e,_1f){
-with(_1e){
+}),new objj_method(sel_getUid("_periodValues"),function(_1f,_20){
+with(_1f){
 return [15*60,30*60,60*60,2*60*60,6*60*60,12*60*60,24*60*60];
 }
 })]);
@@ -15424,9 +15430,9 @@ switch(objj_msgSend(objj_msgSend(MMMyPlexStatus,"sharedStatus"),"mappingError"))
 case MMMyPlexMappingErrorBadAuth:
 return CPLocalizedString("Unable to authenticate","myPlex prefpane myPlex status message");
 case MMMyPlexMappingErrorUnreachable:
-return CPLocalizedString("MyPlex was unable to connect to your Server","myPlex prefpane myPlex status message");
+return CPLocalizedString("myPlex was unable to connect to your Server","myPlex prefpane myPlex status message");
 case MMMyPlexMappingErrorMyPlexGone:
-return CPLocalizedString("MyPlex appears to be offline","myPlex prefpane myPlex status message");
+return CPLocalizedString("myPlex appears to be offline","myPlex prefpane myPlex status message");
 case MMMyPlexMappingErrorNotPublished:
 return CPLocalizedString("There was an error publishing the connection","myPlex prefpane myPlex status message");
 default:
@@ -16307,7 +16313,7 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesAdvancedPanel,"alloc"),"initWithFrame:",CGRectMake(0,0,485,120)));
 }
 })]);
-p;34;Views/MMPreferencesAdvancedPanel.jt;4337;@STATIC;1.0;I;15;AppKit/CPView.jt;4298;
+p;34;Views/MMPreferencesAdvancedPanel.jt;4324;@STATIC;1.0;I;15;AppKit/CPView.jt;4285;
 objj_executeFile("AppKit/CPView.j",NO);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesAdvancedPanel"),_2=_1.isa;
 class_addIvars(_1,[new objj_ivar("disableCapabilityCheckingCheckBox"),new objj_ivar("disableCapabilityCheckingLabel"),new objj_ivar("dtsMixdownCheckbox"),new objj_ivar("dtsMixdownLabel")]);
@@ -16352,7 +16358,7 @@ objj_msgSend(disableCapabilityCheckingLabel,"setFrameOrigin:",CGPointMake(_b,CGR
 objj_msgSend(disableCapabilityCheckingLabel,"setFrameSize:",_e);
 if(dtsMixdownCheckbox){
 objj_msgSend(dtsMixdownCheckbox,"setFrameOrigin:",CGPointMake(CGRectGetMinX(objj_msgSend(disableCapabilityCheckingCheckBox,"frame")),CGRectGetMaxY(objj_msgSend(disableCapabilityCheckingLabel,"frame"))+10));
-var _f=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(dtsMixdownLabel,"stringValue"),objj_msgSend(dtsMixdownLabel,"font"),dtsMixdownLabel);
+var _f=objj_msgSend(CPPlatformString,"sizeOfString:withFont:forWidth:",objj_msgSend(dtsMixdownLabel,"stringValue"),objj_msgSend(dtsMixdownLabel,"font"),_d);
 _f.height+=5;
 objj_msgSend(dtsMixdownLabel,"setFrameOrigin:",CGPointMake(_b,CGRectGetMaxY(objj_msgSend(dtsMixdownCheckbox,"frame"))));
 objj_msgSend(dtsMixdownLabel,"setFrameSize:",_f);

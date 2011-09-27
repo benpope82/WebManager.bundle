@@ -26,14 +26,14 @@
 	<string>1 aflevering</string>
 	<key>1 movie</key>
 	<string>1 film</string>
+	<key>1 photo</key>
+	<string>1 foto</string>
 	<key>1 track</key>
 	<string>1 nummer</string>
 	<key>1 track, %@ total time, %@</key>
 	<string>1 nummer, %1$@ totale tijd, %2$@</string>
 	<key>&gt; Add posters, custom genres and more</key>
 	<string>&gt; Voeg posters, genres en meer toe</string>
-	<key>&gt; Album reviews</key>
-	<string>&gt; Album reviews</string>
 	<key>&gt; Artist biographies and artwork</key>
 	<string>&gt; Artiestenbiografieën en artwork</string>
 	<key>&gt; Automatic theme music for TV shows</key>
@@ -50,6 +50,8 @@
 	<string>&gt; Posters en achtergronden voor TV series</string>
 	<key>&gt; Thumbnails for every episode</key>
 	<string>&gt; Thumbnails voor iedere aflevering</string>
+	<key>ALBUMS</key>
+	<string>ALBUMS</string>
 	<key>AM</key>
 	<string>AM</string>
 	<key>Add Home Movies Section</key>
@@ -67,39 +69,33 @@
 	<key>Advanced</key>
 	<string>Geavanceerd</string>
 	<key>All deleted items will be permanently removed from your library. No files on your computer will be removed.</key>
-	<string>All deleted items will be permanently removed from your library. No files on your computer will be removed.</string>
-	<key>Always enabled</key>
-	<string>Always enabled</string>
+	<string>Alle verwijderde onderdelen zullen permanent uit uw bibliotheek worden verwijderd. Er worden geen bestanden van je computer gewist.</string>
 	<key>Any content in this section will no longer be available in your library. The files on your computer will not be removed.</key>
 	<string>Alle inhoud van deze sectie zal niet langer beschikbaar zijn in de bibliotheek. De bestanden zelf worden niet verwijderd.</string>
 	<key>Aperture Sharing Enabled</key>
 	<string>Aperture Delen ingeschakeld</string>
 	<key>Are you sure you want to disable secure access to your server?</key>
-	<string>Are you sure you want to disable secure access to your server?</string>
+	<string>Weet je zeker dat je veilige servertoegang wilt uitschakelen?</string>
 	<key>Are you sure you want to empty the trash in "%@"?</key>
 	<string>Are you sure you want to empty the trash in "%@"?</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
 	<string>Weet je zeker dat je de sectie  "%@" wilt verwijderen?</string>
 	<key>Artist</key>
 	<string>Artiest</string>
-	<key>Authenticate</key>
-	<string>Authenticate</string>
 	<key>Authentication Required</key>
 	<string>Authentication Required</string>
 	<key>Cancel</key>
 	<string>Annuleer</string>
-	<key>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</key>
-	<string>Capability checking ensures that plug-ins that are incompatible with this version of the server or the current client application you are using are hidden. Disabling capability checking is useful during development, but will enable access to plug-ins that may perform unreliably with certain client applications.</string>
 	<key>Change</key>
-	<string>Change</string>
+	<string>Verander</string>
 	<key>Change Artwork</key>
 	<string>Verander Artwork</string>
 	<key>Change Password</key>
-	<string>Change Password</string>
+	<string>Verander wachtwoord</string>
 	<key>Change Username</key>
 	<string>Change Username</string>
 	<key>Change your username, and enter your password to authenticate.</key>
-	<string>Change your username, and enter your password to authenticate.</string>
+	<string>Verander je gebruikersnaam en vul je wachtwoord ter authenticatie in.</string>
 	<key>Choose Album Thumbnail</key>
 	<string>Kies Album Thumbnail</string>
 	<key>Choose Background Art</key>
@@ -127,7 +123,7 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Content Rating</key>
 	<string>Beoordeling</string>
 	<key>Current Password:</key>
-	<string>Current Password:</string>
+	<string>Huidig wachtwoord:</string>
 	<key>Custom Search</key>
 	<string>Aangepast zoeken</string>
 	<key>Customize Section</key>
@@ -135,7 +131,7 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Directors</key>
 	<string>Regisseurs</string>
 	<key>Disable Secure Access</key>
-	<string>Disable Secure Access</string>
+	<string>Schakel Veilige Toegang uit</string>
 	<key>Disable capability checking</key>
 	<string>Schakel Compatibiliteitscontrole uit</string>
 	<key>Done</key>
@@ -149,19 +145,19 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Edit Section</key>
 	<string>Bewerk Sectie</string>
 	<key>Empty Trash</key>
-	<string>Empty Trash</string>
+	<string>Leeg prullenmand</string>
 	<key>Empty trash automatically after every scan</key>
-	<string>Empty trash automatically after every scan</string>
+	<string>Gooi prullenmand automatisch leeg na iedere scan</string>
 	<key>Enable</key>
-	<string>Enable</string>
+	<string>Inschakelen</string>
 	<key>Enable DTS mix-down for Media Link clients</key>
-	<string>Enable DTS mix-down for Media Link clients</string>
+	<string>Schakel DTS mixdown voor Media Link apparaten in</string>
 	<key>Enable Dolby® Digital during AirPlay</key>
 	<string>Enable Dolby® Digital during AirPlay</string>
 	<key>Enable Secure Access</key>
 	<string>Enable Secure Access</string>
 	<key>Enter a password to enable secure access to your server:</key>
-	<string>Enter a password to enable secure access to your server:</string>
+	<string>Voer een wachtwoord in om veilige toegang naar uw server in te schakelen:</string>
 	<key>Enter your current password to authenticate, then enter and verify your new password.</key>
 	<string>Enter your current password to authenticate, then enter and verify your new password.</string>
 	<key>Episode %d: %@</key>
@@ -181,15 +177,13 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Got this error: %@. Are you sure Plex Media Server is running?</key>
 	<string>Krijg deze foutmelding: %@. Weet je zeker dat de Plex Media Server aan staat?</string>
 	<key>If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.</key>
-	<string>If you want to share your media over the Internet, you can turn on Secure Server Access to prevent unauthorized access to your server.</string>
+	<string>Als je je media wilt delen via internet, kun je Veilige Toegang inschakelen om ongeautoriseerde toegang to je server te voorkomen.</string>
 	<key>Include music sections in automatic updates</key>
 	<string>Update ook muzieksecties tijdens automatische updates</string>
 	<key>LIBRARY SECTIONS</key>
 	<string>BIBLIOTHEEKSECTIES</string>
 	<key>Language:</key>
 	<string>Taal:</string>
-	<key>Languages</key>
-	<string>Languages</string>
 	<key>Large music sections may take a long time to scan</key>
 	<string>Een scan van grote muzieksecties kan geruime tijd duren</string>
 	<key>Last refreshed %@ at %@</key>
@@ -203,13 +197,11 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Manual Entry</key>
 	<string>Handmatige invoer</string>
 	<key>Manually selected</key>
-	<string>Manually selected</string>
+	<string>Handmatig geselecteerd</string>
 	<key>Match Using</key>
 	<string>Match Using</string>
-	<key>Matching '%@'</key>
-	<string>Matching '%@'</string>
 	<key>Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.</key>
-	<string>Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play.</string>
+	<string>Media Link ondersteunt niet in alle regio's DTS audio. De Plex Media Server kan DTS automatisch naar stereo converteren zodat het alsnog kan worden afgespeeld.</string>
 	<key>Media analysis on '%@'</key>
 	<string>Media-analyse van '%@'</string>
 	<key>Media file: </key>
@@ -228,6 +220,8 @@ Weet je zeker dat PMS aan staat?</string>
 	<string>Mijn Films</string>
 	<key>My Music</key>
 	<string>Mijn Muziek</string>
+	<key>My Photos</key>
+	<string>Mijn Foto's</string>
 	<key>My TV Shows</key>
 	<string>Mijn TV Series</string>
 	<key>Name</key>
@@ -235,29 +229,21 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Name:</key>
 	<string>Naam:</string>
 	<key>New Password:</key>
-	<string>New Password:</string>
-	<key>No Match Found</key>
-	<string>No Match Found</string>
+	<string>Nieuw Wachtwoord:</string>
 	<key>OK</key>
 	<string>OK</string>
 	<key>Offer higher bitrates over 3G connections</key>
 	<string>Verhoog bitrates over 3G connecties</string>
 	<key>Original Title</key>
 	<string>Originele Titel</string>
-	<key>Originally Available</key>
-	<string>Originally Available</string>
 	<key>PM</key>
 	<string>PM</string>
 	<key>Password</key>
 	<string>Password</string>
 	<key>Password:</key>
-	<string>Password:</string>
+	<string>Wachtwoord:</string>
 	<key>Path of the directory you'd like to add:</key>
 	<string>Pad van de directory die je wilt toevoegen:</string>
-	<key>Plex Media Server requires a username and password:</key>
-	<string>Plex Media Server requires a username and password:</string>
-	<key>Prefer audio tracks in:</key>
-	<string>Prefer audio tracks in:</string>
 	<key>Prefer subtitles in:</key>
 	<string>Prefer subtitles in:</string>
 	<key>Preferences</key>
@@ -273,7 +259,7 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Refreshing info for one item</key>
 	<string>Ververs info voor één item</string>
 	<key>Remember me on this computer</key>
-	<string>Remember me on this computer</string>
+	<string>Onthoud mij op deze computer</string>
 	<key>Remove Section</key>
 	<string>Verwijder Sectie</string>
 	<key>Requesting metadata for '%@'</key>
@@ -293,7 +279,7 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Section type:</key>
 	<string>Sectietype:</string>
 	<key>Secure Server Access</key>
-	<string>Secure Server Access</string>
+	<string>Veilige Servertoegang</string>
 	<key>Security</key>
 	<string>Beveiliging</string>
 	<key>Select</key>
@@ -318,12 +304,8 @@ Weet je zeker dat PMS aan staat?</string>
 	<string>Delen</string>
 	<key>Show</key>
 	<string>Serie</string>
-	<key>Shown with foreign audio</key>
-	<string>Shown with foreign audio</string>
 	<key>Sort Title</key>
 	<string>Sorteer Titel</string>
-	<key>Studio</key>
-	<string>Studio</string>
 	<key>Subtitle mode:</key>
 	<string>Subtitle mode:</string>
 	<key>Summary</key>
@@ -332,8 +314,6 @@ Weet je zeker dat PMS aan staat?</string>
 	<string>Zondag</string>
 	<key>TV Shows</key>
 	<string>TV Series</string>
-	<key>Tagline</key>
-	<string>Tagline</string>
 	<key>There was no acceptable match using the specified agent.</key>
 	<string>There was no acceptable match using the specified agent.</string>
 	<key>This helps us improve your experience (for example, to help us match movies and TV shows).</key>
@@ -351,7 +331,7 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Tuesday</key>
 	<string>Dinsdag</string>
 	<key>Turning off secure server access will allow incoming connections from any computer.</key>
-	<string>Turning off secure server access will allow incoming connections from any computer.</string>
+	<string>Wanneer veilige servertoegang is uitgeschakeld kan vanaf iedere computer toegang verkregen worden.</string>
 	<key>Unable to connect to Plex Media Server</key>
 	<string>Kan geen verbinding maken met de Plex Media Server</string>
 	<key>Unable to create library section</key>
@@ -360,8 +340,6 @@ Weet je zeker dat PMS aan staat?</string>
 	<string>Kan "%@" niet verwijderen</string>
 	<key>Unable to update library section</key>
 	<string>Kan de bibliotheeksectie niet bijwerken</string>
-	<key>Unmatch</key>
-	<string>Unmatch</string>
 	<key>Update Section</key>
 	<string>Sectie bijwerken</string>
 	<key>Update my library</key>
@@ -369,15 +347,11 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Update my library when changes to my folders are detected</key>
 	<string>Werk mijn bibliotheek bij wanneer wijzigingen in deze mappen worden gedetecteerd</string>
 	<key>Username</key>
-	<string>Username</string>
+	<string>Gebruikersnaam</string>
 	<key>Username:</key>
 	<string>Username:</string>
-	<key>Verify:</key>
-	<string>Verify:</string>
 	<key>Wednesday</key>
 	<string>Woensdag</string>
-	<key>When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to "On" in the Audio &amp; Video menu.</key>
-	<string>When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to "On" in the Audio &amp; Video menu.</string>
 	<key>Writers</key>
 	<string>Schrijvers</string>
 	<key>Year</key>
