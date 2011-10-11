@@ -139,7 +139,7 @@
 "Are you sure you want to disable secure access to your server?" = "Är du säker att du vill slå av \"Säker åtkomst\" för din server?";
 
 /* Confirmation text for the empty trash confirmation dialog */
-"Are you sure you want to empty the trash in \"%@\"?" = "Are you sure you want to empty the trash in \"%@\"?";
+"Are you sure you want to empty the trash in \"%@\"?" = "Är du säker att du vill tömma papperskorgen för \"%@\"?";
 
 /* Confirmation message for removing a collection */
 "Are you sure you want to remove the collection named \"%@\"?" = "Är du säker att du vill ta bort samlingen \"%@\"?";
@@ -172,7 +172,7 @@
 "Change" = "Ändra";
 
 /* Change Artwork */
-"Change Artwork" = "Ändra konstverk";
+"Change Artwork" = "Ändra bilder/omslag";
 
 /* Security preferences button to change the main account password */
 "Change Password" = "Ändra lösenord";

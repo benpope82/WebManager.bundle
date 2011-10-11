@@ -115,7 +115,7 @@
 "Are you sure you want to disable secure access to your server?" = "Weet je zeker dat je veilige servertoegang wilt uitschakelen?";
 
 /* Confirmation text for the empty trash confirmation dialog */
-"Are you sure you want to empty the trash in \"%@\"?" = "Are you sure you want to empty the trash in \"%@\"?";
+"Are you sure you want to empty the trash in \"%@\"?" = "Weet je zeker dat je de prullenmand wilt legen in \"%@\"?";
 
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "Weet je zeker dat je de sectie  \"%@\" wilt verwijderen?";
@@ -142,7 +142,7 @@
 "Change Password" = "Verander wachtwoord";
 
 /* Security preferences button to change the main account username */
-"Change Username" = "Change Username";
+"Change Username" = "Verander gebruikersnaam";
 
 /* Change username prompt message */
 "Change your username, and enter your password to authenticate." = "Verander je gebruikersnaam en vul je wachtwoord ter authenticatie in.";
@@ -226,19 +226,19 @@
 "Enable" = "Inschakelen";
 
 /* Preference window setting */
-"Enable Dolby® Digital during AirPlay" = "Enable Dolby® Digital during AirPlay";
+"Enable Dolby® Digital during AirPlay" = "Gebruik Dolby® Digital tijdens AirPlay";
 
 /* Preference window setting */
 "Enable DTS mix-down for Media Link clients" = "Schakel DTS mixdown voor Media Link apparaten in";
 
 /* Check box label to enable secure server access */
-"Enable Secure Access" = "Enable Secure Access";
+"Enable Secure Access" = "Schakel Veilige Toegang in";
 
 /* Enable security prompt message */
 "Enter a password to enable secure access to your server:" = "Voer een wachtwoord in om veilige toegang naar uw server in te schakelen:";
 
 /* Change password prompt message */
-"Enter your current password to authenticate, then enter and verify your new password." = "Enter your current password to authenticate, then enter and verify your new password.";
+"Enter your current password to authenticate, then enter and verify your new password." = "Voer eerst het huidige wachtwoord in en daarna twee maal het nieuwe ter verificatie.";
 
 /* A TV Show episode */
 "episode" = "aflevering";

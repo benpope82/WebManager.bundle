@@ -197,7 +197,7 @@ Stellen Sie sicher, dass der Server läuft.</string>
 	<key>Enable this if your router doesn't support automatic configuration.</key>
 	<string>Dieses aktivieren wenn der Router keine automatische Konfiguration unterstützt.</string>
 	<key>Enter a password to enable secure access to your server:</key>
-	<string>Gib ein Passwort zum aktivieren des Sicheren Zugangs ein:</string>
+	<string>Gib ein Passwort zum Aktivieren des Sicheren Zugangs ein:</string>
 	<key>Enter your current password to authenticate, then enter and verify your new password.</key>
 	<string>Bitte zuerst bestehendes Passwort und anschließend neues Passwort sowie Passwortbestätigung eingeben.</string>
 	<key>Episode %d: %@</key>
@@ -443,7 +443,7 @@ Stellen Sie sicher, dass der Server läuft.</string>
 	<key>Tuesday</key>
 	<string>Donnerstag</string>
 	<key>Turning off secure server access will allow incoming connections from any computer.</key>
-	<string>Die Deaktivierung des Sicheren Zugangs erlaubt eingehende Verbindungen für jeden Computer.</string>
+	<string>Durch die Deaktivierung des Sicheren Zugangs kann von jedem Computer eine eingehende Verbindung hergestellt werden.</string>
 	<key>Unable to authenticate</key>
 	<string>Kann nicht Authentifizieren</string>
 	<key>Unable to connect to Plex Media Server</key>

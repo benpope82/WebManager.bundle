@@ -95,7 +95,7 @@
 	<key>Are you sure you want to disable secure access to your server?</key>
 	<string>Är du säker att du vill slå av "Säker åtkomst" för din server?</string>
 	<key>Are you sure you want to empty the trash in "%@"?</key>
-	<string>Are you sure you want to empty the trash in "%@"?</string>
+	<string>Är du säker att du vill tömma papperskorgen för "%@"?</string>
 	<key>Are you sure you want to remove the collection named "%@"?</key>
 	<string>Är du säker att du vill ta bort samlingen "%@"?</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
@@ -113,7 +113,7 @@
 	<key>Change</key>
 	<string>Ändra</string>
 	<key>Change Artwork</key>
-	<string>Ändra konstverk</string>
+	<string>Ändra bilder/omslag</string>
 	<key>Change Password</key>
 	<string>Ändra lösenord</string>
 	<key>Change Username</key>

@@ -77,7 +77,7 @@
 	<key>Are you sure you want to disable secure access to your server?</key>
 	<string>Weet je zeker dat je veilige servertoegang wilt uitschakelen?</string>
 	<key>Are you sure you want to empty the trash in "%@"?</key>
-	<string>Are you sure you want to empty the trash in "%@"?</string>
+	<string>Weet je zeker dat je de prullenmand wilt legen in "%@"?</string>
 	<key>Are you sure you want to remove the section named "%@"?</key>
 	<string>Weet je zeker dat je de sectie  "%@" wilt verwijderen?</string>
 	<key>Artist</key>
@@ -93,7 +93,7 @@
 	<key>Change Password</key>
 	<string>Verander wachtwoord</string>
 	<key>Change Username</key>
-	<string>Change Username</string>
+	<string>Verander gebruikersnaam</string>
 	<key>Change your username, and enter your password to authenticate.</key>
 	<string>Verander je gebruikersnaam en vul je wachtwoord ter authenticatie in.</string>
 	<key>Choose Album Thumbnail</key>
@@ -153,13 +153,13 @@ Weet je zeker dat PMS aan staat?</string>
 	<key>Enable DTS mix-down for Media Link clients</key>
 	<string>Schakel DTS mixdown voor Media Link apparaten in</string>
 	<key>Enable Dolby® Digital during AirPlay</key>
-	<string>Enable Dolby® Digital during AirPlay</string>
+	<string>Gebruik Dolby® Digital tijdens AirPlay</string>
 	<key>Enable Secure Access</key>
-	<string>Enable Secure Access</string>
+	<string>Schakel Veilige Toegang in</string>
 	<key>Enter a password to enable secure access to your server:</key>
 	<string>Voer een wachtwoord in om veilige toegang naar uw server in te schakelen:</string>
 	<key>Enter your current password to authenticate, then enter and verify your new password.</key>
-	<string>Enter your current password to authenticate, then enter and verify your new password.</string>
+	<string>Voer eerst het huidige wachtwoord in en daarna twee maal het nieuwe ter verificatie.</string>
 	<key>Episode %d: %@</key>
 	<string>Aflevering %1$d: %2$@</string>
 	<key>Fix Incorrect Match...</key>

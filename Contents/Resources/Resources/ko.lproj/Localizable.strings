@@ -8,8 +8,14 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "%d episodes" = "에피소드 %d개";
 
+/* Status label value for unknown type for when there is more than one */
+"%d items" = "아이템 %d개";
+
 /* Status label value for when there is more than one movie */
 "%d movies" = "영화 %d개";
+
+/* Status label value for when there is more than one */
+"%d photos" = "%d 사진";
 
 /* Subtitle for a album thumbnail on an artist detail view */
 "%d tracks" = "트랙 %d개";
@@ -135,14 +141,20 @@
 /* Confirmation text for the empty trash confirmation dialog */
 "Are you sure you want to empty the trash in \"%@\"?" = "휴지통을 비우시겠습니까?";
 
+/* Confirmation message for removing a collection */
+"Are you sure you want to remove the collection named \"%@\"?" = "지정한 컬렉션을 삭제 하시겠습니까?";
+
 /* Confirmation message for removing a section */
 "Are you sure you want to remove the section named \"%@\"?" = "\"%@\" 섹션을 삭제하시겠습니까?";
+
+/* Artist */
+"Artist" = "아티스트";
 
 /* A musical artist */
 "artist" = "아티스트";
 
-/* Artist */
-"Artist" = "아티스트";
+/* Agent settings title for musical artists */
+"ARTISTS" = "작가";
 
 /* Authenticate */
 "Authenticate" = "승인";
@@ -195,14 +207,26 @@
 /* First-run help title */
 "Click the titles below to create library sections for your media and have it served to your Plex-enabled devices." = "Plex가 장착된 디바이스에서 재생되도록 라이브러리 섹션을 생성하세요.";
 
+/* Preference window setting */
+"Clients will have the ability to request deletion of media files from the hard drive." = "하드디스크에 있는 미디어 파일 삭제 요청이 가능하게 됩니다.";
+
 /* Collections */
 "Collections" = "컬렉션";
+
+/* Context menu item for adding to collections */
+"Collections..." = "컬렉션";
+
+/* Confirm password label */
+"Confirm password:" = "비밀번호 확인";
 
 /* Error message for when we cannot connect to PMS or when the response is invalid */
 "Connecting to Plex Media Server failed with this error: %@.\n\nAre you sure it's running?" = "다음과 같은 에러로 인하여 Plex Media Server에 접속하지 못했습니다.: %@.\n\nPlex Media Server가 실행 중인지 확인하세요.";
 
 /* Content Rating */
 "Content Rating" = "등급";
+
+/* Create */
+"Create" = "생성";
 
 /* Password label */
 "Current Password:" = "현재 비밀번호:";
@@ -225,6 +249,12 @@
 /* Disable secure server confirmation button */
 "Disable Secure Access" = "비활성화";
 
+/* Disabled status message for the myPlex preference pane */
+"Disabled" = "비활성화";
+
+/* Sign up button help label */
+"Don't have an account? It's easy to sign up!" = "계정이 없으시면 등록하시기 바랍니다.";
+
 /* Done */
 "Done" = "완료";
 
@@ -240,11 +270,29 @@
 /* Edit Section */
 "Edit Section" = "섹션 편집";
 
+/* Email label */
+"Email:" = "이메일:";
+
+/* Confirmation button for the empty trash confirmation dialog */
+"Empty Trash" = "휴지통 비우기";
+
+/* Preference window setting */
+"Empty trash automatically after every scan" = "스캔 후에 자동 휴지통 비우기";
+
 /* Enable */
 "Enable" = "활성화";
 
+/* Preference window setting */
+"Enable Dolby® Digital during AirPlay" = "에어플래이 중에 돌비(R) 디지탈 가능";
+
+/* Preference window setting */
+"Enable DTS mix-down for Media Link clients" = "미디어링크 클라이언트를 위한 DTS 처리 가능";
+
 /* Check box label to enable secure server access */
 "Enable Secure Access" = "보안 서버 활성화";
+
+/* Description of manual mapping in the myPlex prefpane */
+"Enable this if your router doesn't support automatic configuration." = "사용 중인 라우터가 자동 설정 되지 않으면, 본 설정을 사용하십시요.";
 
 /* Enable security prompt message */
 "Enter a password to enable secure access to your server:" = "보안 서버를 활성화 하기 위해 비밀번호를 입력하세요:";
@@ -273,6 +321,12 @@
 /* Library scan interval (i.e. Update my library every 6 hours) */
 "every 6 hours" = "6시간 마다";
 
+/* myPlex prefpane mapping status message */
+"Failed to map ports" = "포트 설정이 되지 않았습니다.";
+
+/* myPlex prefpane mapping status message */
+"Failed to map ports: %@" = "이 포트 설정은 되지 않았습니다.";
+
 /* Fix incorrect match */
 "Fix incorrect match" = "다시 선택";
 
@@ -294,6 +348,9 @@
 /* Error message for when we cannot remove a library section */
 "Got this error: %@. Are you sure Plex Media Server is running?" = "에러 발생: %@. Plex Media Server가 실행 중인지 확인하세요.";
 
+/* Sign in button help label */
+"Have a myPlex or forums account?" = "마이플렉스 또는 포럼 계정을 가지고 있습니까?";
+
 /* Library scan interval (i.e. Update my library hourly) */
 "hourly" = "1시간 마다";
 
@@ -303,8 +360,20 @@
 /* Preference window setting */
 "Include music sections in automatic updates" = "자동 업데이트에 음악 섹션 포함";
 
+/* myPlex preference pane invalid credential message */
+"Invalid email, username, or password" = "유용하지 않은 이메일, 사용자이름 또는 비밀번호 입니다";
+
+/* Preference window setting */
+"iPhoto Sharing Enabled" = "아이포토 (iPhoto) 공유 가능";
+
+/* Preference window setting */
+"iTunes Sharing Enabled" = "아이튠 (iTunes) 공유 가능";
+
 /* Language label */
 "Language:" = "언어:";
+
+/* Languages */
+"Languages" = "언어";
 
 /* Preference window setting */
 "Large music sections may take a long time to scan" = "용량이 큰 음악 섹션은 탐색 시간이 오래 걸릴 수 있습니다";
@@ -321,8 +390,17 @@
 /* Metadata item status message when its data is importing */
 "Loading metadata for '%@'" = "%@' 메타데이타 로딩중";
 
+/* Text-based loading indicator */
+"Loading..." = "로딩...";
+
 /* Button text for the directory browser to allow the user to type in a path manually */
 "Manual Entry" = "직접 입력";
+
+/* Language preference pane subtitle mode option */
+"Manually selected" = "수동 선택됨";
+
+/* Check box option to allow choosing a port manually */
+"Manually specify port" = "수동 포트 지정";
 
 /* Context menu item for metadata items */
 "Match Using" = "에이전트 변경";
@@ -336,6 +414,9 @@
 /* Label for the path to the file whose match is being fixed */
 "Media file: " = "파일 위치: ";
 
+/* Preference window setting detail */
+"Media Link does not support DTS audio in certain regions. The Plex Media Server can automatically convert DTS to stereo so that it will play." = "미디어링크는 특정 지역에서 DTS 오디오를 지원하지 않습니다.  플랙스 미디어 서버는 자동으로 DTS를 스테리오로 변환 시켜서 재생이 되도록 하고 있습니다.";
+
 /* Header title */
 "MEDIA MANAGER" = "미디어 매니저";
 
@@ -345,14 +426,17 @@
 /* Monday */
 "Monday" = "월요일";
 
-/* A movie */
-"movie" = "영화";
-
 /* Movie */
 "Movie" = "영화";
 
+/* A movie */
+"movie" = "영화";
+
 /* Movies */
 "Movies" = "영화";
+
+/* Agent settings title for movies */
+"MOVIES" = "영화";
 
 /* Music */
 "Music" = "음악";
@@ -363,14 +447,32 @@
 /* Music section name placeholder */
 "My Music" = "나의 음악";
 
+/* Photo section name placeholder */
+"My Photos" = "나의 사진";
+
 /* TV Shows section name placeholder */
 "My TV Shows" = "나의 TV 프로그램";
+
+/* myPlex */
+"myPlex" = "마이플렉스";
+
+/* myPlex prefpane myPlex status message */
+"myPlex appears to be offline" = "마이플렉스가 오프라인 된 것 같습니다.";
+
+/* myPlex preference panel description */
+"myPlex ties all your Plex clients and servers together, making it easy for your devices to communicate with each other and share settings and media." = "마이플렉스는 고객님의 플렉스 클라이언트와 서버에 연결되어 미디어 간의 통신을 쉽게 합니다.";
+
+/* myPlex prefpane myPlex status message */
+"myPlex was unable to connect to your Server" = "마이플렉스가 고객님의 서버에 접속되지 않습니다.";
 
 /* Name */
 "Name" = "제목";
 
 /* Name label */
 "Name:" = "제목:";
+
+/* Context menu item title for adding a new collection */
+"New Collection..." = "새로운 컬렉션...";
 
 /* Password label */
 "New Password:" = "새 비밀번호:";
@@ -382,11 +484,17 @@
    Subtitle for a season thumbnail on a TV Show detail view */
 "no episodes" = "에피소드 없음";
 
+/* Status label value for unknown type when there are none */
+"no items" = "아이템 없음";
+
 /* 'Match Using' error title */
 "No Match Found" = "일치 항목 없음";
 
 /* Status label value for when there are no movies */
 "no movies" = "영화 없음";
+
+/* Status label value when there are no photos */
+"no photos" = "사진 없음";
 
 /* Status label for when there are no tracks in an album
    Subtitle for a album thumbnail on an artist detail view */
@@ -397,6 +505,9 @@
 
 /* Preference window setting */
 "Offer higher bitrates over 3G connections" = "3G 연결에서 하이 비트레이트 제공";
+
+/* OK */
+"OK" = "OK";
 
 /* Original Title */
 "Original Title" = "원제";
@@ -413,14 +524,38 @@
 /* Instruction text for the prompt to add directories manually */
 "Path of the directory you'd like to add:" = "추가하고자 하는 디렉토리 경로:";
 
+/* A photo */
+"photo" = "사진";
+
+/* Photos */
+"Photos" = "사진";
+
+/* Agent settings title for photos */
+"PHOTOS" = "사진";
+
 /* Login prompt message */
 "Plex Media Server requires a username and password:" = "Plex Media Server는 계정과 비밀번호를 요구합니다:";
+
+/* PostMeridiem */
+"PM" = "오후";
+
+/* Language preference pane audio checkbox label */
+"Prefer audio tracks in:" = "선호 오디오 트랙:";
+
+/* Languages preference pane default subtitle language label */
+"Prefer subtitles in:" = "선호 자막:";
 
 /* Preferences button in top-right */
 "Preferences" = "설정";
 
 /* Primary metadata agent label */
 "Primary metadata agent:" = "메타데이타 에이전트:";
+
+/* Check box option on the myPlex prefpane */
+"Publish server to myPlex" = "서버를 마이플렉스에 게재";
+
+/* myPlex prefpane mapping status message */
+"Publishing state is unknown" = "작성 상태를 알 수 없습니다.";
 
 /* Rating */
 "Rating" = "평점";
@@ -433,6 +568,12 @@
 
 /* Status label for refreshing sections with one remaining item */
 "Refreshing info for one item" = "아이템의 정보를 갱신하고 있습니다.";
+
+/* Check box label for the login prompt */
+"Remember me on this computer" = "이 컴퓨터에서 로그인 기억하기";
+
+/* Remove collection confirmation button */
+"Remove Collection" = "컬렉션 삭제";
 
 /* Remove section confirmation button */
 "Remove Section" = "섹션 삭제";
@@ -479,6 +620,9 @@
 /* Directory-browser title when adding/editing sections */
 "Select a directory for this section:" = "해당 섹션의 폴더 선택:";
 
+/* Path-browser title when adding/editing sections */
+"Select a path for this section:" = "이 섹션을 위한 패스 선택";
+
 /* Select Folder */
 "Select Folder" = "폴더 선택";
 
@@ -494,8 +638,17 @@
 /* Fix Incorrect Match title for TV show sections */
 "Select the correct TV show from the list below:" = "다음 목록에서 일치하는 TV 프로그램을 선택하세요:";
 
+/* Instructions on the Agent preferences panel */
+"Select which additional agents should contribute to metadata from %@, and drag them to change the order of preference." = "메타데이터에 기여하는 추가 에이전트를 선택하고, 드래그 하여 선호순서를 변경";
+
 /* Send anonymous usage data to Plex */
 "Send anonymous usage data to Plex" = "Plex에 익명으로 사용 정보를 보냅니다.";
+
+/* myPlex prefpane mapping status message */
+"Server is mapped to port %i" = "서버는 포트 %i 에 매핑되어 있음";
+
+/* myPlex prefpane mapping status message */
+"Server is mapped to port %i (%s)" = "서버는 포트 %i 에 매핑되어 있음";
 
 /* Sharing */
 "Sharing" = "공유";
@@ -506,11 +659,35 @@
 /* Show */
 "Show" = "프로그램";
 
+/* Language preference pane subtitle mode option */
+"Shown with foreign audio" = "외국어 오디오와 같이 보여짐";
+
+/* Sign in button on myPlex preference panel */
+"Sign In" = "등록";
+
+/* myPlex sign in sheet title */
+"Sign in to myPlex" = "마이플렉스에 등록함";
+
+/* Sign out button on myPlex preference panel */
+"Sign Out" = "사인 아웃";
+
+/* Sign up button on myPlex preference panel */
+"Sign Up" = "사인 업";
+
+/* myPlex sign up sheet title */
+"Sign up to myPlex" = "마이플렉스에 사인 업";
+
+/* myPlex preference pane successfully authenticated string */
+"Signed in as %@" = "등록됨";
+
 /* Sort Title */
 "Sort Title" = "기타 제목";
 
 /* Studio */
 "Studio" = "제작사";
+
+/* Languages preference pane subtitle mode label */
+"Subtitle mode:" = "자막 모드:";
 
 /* Summary */
 "Summary" = "요약";
@@ -520,6 +697,15 @@
 
 /* Tagline */
 "Tagline" = "태그라인";
+
+/* Informative text for removing a collection */
+"The collection will be removed. The media inside the collection will not be touched." = "이 컬렉션을 삭제될 것 입니다.  이 컬렉션에 있던 미디어는 사용할 수 없게 됩니다";
+
+/* Error message for problems saving agent settings */
+"There was a problem saving your changes to the agent settings. Make sure Plex Media Server is running and try again." = "에이전트 설정 변경을 저장할 수 없습니다. 플렉스 미디어 서버가 동작하는지 확인하여 주십시요.";
+
+/* myPlex prefpane myPlex status message */
+"There was an error publishing the connection" = "접속 에러가 있습니다";
 
 /* 'Match Using' error message */
 "There was no acceptable match using the specified agent." = "선택한 에이전트에는 일치하는 항목이 없습니다.";
@@ -557,6 +743,12 @@
 /* TV Shows */
 "TV Shows" = "TV 프로그램";
 
+/* Agent settings title for TV shows */
+"TV SHOWS" = "TV 쇼";
+
+/* myPlex prefpane myPlex status message */
+"Unable to authenticate" = "인증되지 않습니다";
+
 /* Error title for when we cannot connect to PMS or when the response is invalid */
 "Unable to connect to Plex Media Server" = "Plex Media Server에 연결할 수 없습니다.";
 
@@ -568,6 +760,9 @@
 
 /* Unable to update library section */
 "Unable to update library section" = "라이브러리 섹션을 업데이트할 수 없습니다.";
+
+/* myPlex preference pane unknown sign in state message */
+"Unknown sign in state" = "알 수 없는 사인";
 
 /* Context menu item for metadata items */
 "Unmatch" = "매칭 취소";
@@ -590,8 +785,17 @@
 /* Verify password label */
 "Verify:" = "다시 입력:";
 
+/* myPlex prefpane mapping status message */
+"Waiting for a valid mapping..." = "유효 매핑을 기다립니다...";
+
 /* Wednesday */
 "Wednesday" = "수요일";
+
+/* Context menu item title for creating a new collection */
+"What would you like to call this collection?" = "이 컬렉션을 사용하겠습니까?";
+
+/* Preference window setting detail */
+"When playing video with AirPlay on an Apple TV, allow Dolby® Digital audio to play. You must go to Settings on the Apple TV and set Dolby Digital Out to \"On\" in the Audio & Video menu." = "애플 TV에서 에어플레이를 사용하여 비디오를 재생할 때, 돌비(R) 디지탈 오디오를 사용할려면,  돌비(R) 디지털 출력을 \"On\" 으로 설정하여야 합니다.";
 
 /* Writers */
 "Writers" = "작가";

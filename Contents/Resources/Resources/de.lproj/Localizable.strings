@@ -295,7 +295,7 @@
 "Enable this if your router doesn't support automatic configuration." = "Dieses aktivieren wenn der Router keine automatische Konfiguration unterstützt.";
 
 /* Enable security prompt message */
-"Enter a password to enable secure access to your server:" = "Gib ein Passwort zum aktivieren des Sicheren Zugangs ein:";
+"Enter a password to enable secure access to your server:" = "Gib ein Passwort zum Aktivieren des Sicheren Zugangs ein:";
 
 /* Change password prompt message */
 "Enter your current password to authenticate, then enter and verify your new password." = "Bitte zuerst bestehendes Passwort und anschließend neues Passwort sowie Passwortbestätigung eingeben.";
@@ -738,7 +738,7 @@
 "Tuesday" = "Donnerstag";
 
 /* Disable secure server access confirmation info */
-"Turning off secure server access will allow incoming connections from any computer." = "Die Deaktivierung des Sicheren Zugangs erlaubt eingehende Verbindungen für jeden Computer.";
+"Turning off secure server access will allow incoming connections from any computer." = "Durch die Deaktivierung des Sicheren Zugangs kann von jedem Computer eine eingehende Verbindung hergestellt werden.";
 
 /* TV Shows */
 "TV Shows" = "Serien";
