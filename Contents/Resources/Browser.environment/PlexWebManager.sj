@@ -5208,7 +5208,7 @@ objj_msgSend(_63,"setState:",PMCBaseObjectStateMatching);
 objj_msgSend(matchesDataSource,"refreshRecordsForMetadataItem:title:agent:language:year:manual:",_63,nil,_62,objj_msgSend(_63,"language"),nil,NO);
 }
 })]);
-p;37;Controllers/MMMatchPickerController.jt;30488;@STATIC;1.0;I;20;Foundation/CPArray.jI;21;Foundation/CPString.jI;22;Foundation/CPRunLoop.jI;33;Foundation/CPNotificationCenter.jI;20;AppKit/CPAnimation.jI;22;AppKit/CPApplication.jI;17;AppKit/CPButton.jI;16;AppKit/CPImage.jI;22;AppKit/CPPopUpButton.jI;21;AppKit/CPScrollView.jI;20;AppKit/CPTableView.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.jI;25;AppKit/CPViewController.ji;23;../Models/MMMediaItem.ji;26;../Models/MMMetadataItem.ji;41;../DataSources/MMMediaMatchesDataSource.ji;34;../DataSources/MMAgentDataSource.jt;29960;
+p;37;Controllers/MMMatchPickerController.jt;30528;@STATIC;1.0;I;20;Foundation/CPArray.jI;21;Foundation/CPString.jI;22;Foundation/CPRunLoop.jI;33;Foundation/CPNotificationCenter.jI;20;AppKit/CPAnimation.jI;22;AppKit/CPApplication.jI;17;AppKit/CPButton.jI;16;AppKit/CPImage.jI;22;AppKit/CPPopUpButton.jI;21;AppKit/CPScrollView.jI;20;AppKit/CPTableView.jI;20;AppKit/CPTextField.jI;15;AppKit/CPView.jI;25;AppKit/CPViewController.ji;23;../Models/MMMediaItem.ji;26;../Models/MMMetadataItem.ji;41;../DataSources/MMMediaMatchesDataSource.ji;34;../DataSources/MMAgentDataSource.jt;30000;
 objj_executeFile("Foundation/CPArray.j",NO);
 objj_executeFile("Foundation/CPString.j",NO);
 objj_executeFile("Foundation/CPRunLoop.j",NO);
@@ -5282,7 +5282,7 @@ objj_msgSend(_sheetPanel,"setContentView:",objj_msgSend(_19,"view"));
 objj_msgSend(CPApp,"beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo:",_sheetPanel,_1b,nil,nil,nil);
 objj_msgSend(objj_msgSend(CPRunLoop,"currentRunLoop"),"performSelector:target:argument:order:modes:",sel_getUid("_resultViewDidActivate"),_19,nil,0,[CPDefaultRunLoopMode]);
 objj_msgSend(objj_msgSend(CPNotificationCenter,"defaultCenter"),"addObserver:selector:name:object:",_19,sel_getUid("_agentsDidLoad:"),MMDataSourceDidReceiveRecords,_agentDataSource);
-objj_msgSend(_agentDataSource,"refreshRecordsWithContextInfo:",objj_msgSend(objj_msgSend(metadataItem,"librarySection"),"type"));
+objj_msgSend(_agentDataSource,"refreshRecordsWithContextInfo:",objj_msgSend(objj_msgSend(objj_msgSend(metadataItem,"librarySection"),"type"),"key"));
 }
 }),new objj_method(sel_getUid("dismissSheet"),function(_1c,_1d){
 with(_1c){
@@ -5562,7 +5562,7 @@ objj_msgSend(_view,"addSubview:",_searchFormView);
 }
 }),new objj_method(sel_getUid("_selectButtonTitle"),function(_60,_61){
 with(_60){
-var _62={artist:CPLocalizedString("Artist","Artist"),movie:CPLocalizedString("Movie","Movie"),show:CPLocalizedString("Show","Show")}[objj_msgSend(objj_msgSend(metadataItem,"librarySection"),"type")];
+var _62={artist:CPLocalizedString("Artist","Artist"),movie:CPLocalizedString("Movie","Movie"),show:CPLocalizedString("Show","Show")}[objj_msgSend(objj_msgSend(objj_msgSend(metadataItem,"librarySection"),"type"),"key")];
 return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Select %@","Confirm button title for selecting"),_62);
 }
 }),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_63,_64,_65,_66,_67,_68){
@@ -7895,158 +7895,27 @@ with(_29){
 CachedNotificationCenter=objj_msgSend(CPNotificationCenter,"defaultCenter");
 }
 })]);
-p;17;Views/MMToolbar.jt;6270;@STATIC;1.0;I;15;AppKit/CPView.jt;6231;
+p;17;Views/MMToolbar.jt;1050;@STATIC;1.0;I;15;AppKit/CPView.jt;1011;
 objj_executeFile("AppKit/CPView.j",NO);
-MMToolbarCocoaStyleTopGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",245/255,1);
-MMToolbarCocoaStyleBottomGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",155/255,1);
-MMToolbarCocoaStyleTopBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",81/255,1);
-MMToolbarCocoaStyleBottomBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",88/255,1);
-MMToolbarCocoaStyleSolidFillColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",192/255,1);
-MMToolbarHUDStyleTopGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",60/255,1);
-MMToolbarHUDStyleBottomGradientColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",0/255,1);
-MMToolbarHUDStyleTopBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",101/255,1);
-MMToolbarHUDStyleBottomBorderColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",0/255,1);
-MMToolbarHUDStyleSolidFillColor=objj_msgSend(CPColor,"colorWithWhite:alpha:",32/255,1);
 MMToolbarCocoaStyle="MMToolbarCocoaStyle";
 MMToolbarHUDStyle="MMToolbarHUDStyle";
 var _1=objj_allocateClassPair(CPView,"MMToolbar"),_2=_1.isa;
-class_addIvars(_1,[new objj_ivar("_topGradientColor"),new objj_ivar("_bottomGradientColor"),new objj_ivar("_topBorderColor"),new objj_ivar("_bottomBorderColor")]);
 objj_registerClassPair(_1);
-class_addMethods(_1,[new objj_method(sel_getUid("topGradientColor"),function(_3,_4){
+class_addMethods(_1,[new objj_method(sel_getUid("initWithFrame:"),function(_3,_4,_5){
 with(_3){
-return _topGradientColor;
+return objj_msgSend(_3,"initWithFrame:style:",_5,MMToolbarCocoaStyle);
 }
-}),new objj_method(sel_getUid("setTopGradientColor:"),function(_5,_6,_7){
-with(_5){
-_topGradientColor=_7;
+}),new objj_method(sel_getUid("initWithFrame:style:"),function(_6,_7,_8,_9){
+with(_6){
+if(_6=objj_msgSendSuper({receiver:_6,super_class:objj_getClass("MMToolbar").super_class},"initWithFrame:",_8)){
+objj_msgSend(_6,"setStyle:",_9);
 }
-}),new objj_method(sel_getUid("bottomGradientColor"),function(_8,_9){
-with(_8){
-return _bottomGradientColor;
+return _6;
 }
-}),new objj_method(sel_getUid("setBottomGradientColor:"),function(_a,_b,_c){
+}),new objj_method(sel_getUid("setStyle:"),function(_a,_b,_c){
 with(_a){
-_bottomGradientColor=_c;
-}
-}),new objj_method(sel_getUid("topBorderColor"),function(_d,_e){
-with(_d){
-return _topBorderColor;
-}
-}),new objj_method(sel_getUid("setTopBorderColor:"),function(_f,_10,_11){
-with(_f){
-_topBorderColor=_11;
-}
-}),new objj_method(sel_getUid("bottomBorderColor"),function(_12,_13){
-with(_12){
-return _bottomBorderColor;
-}
-}),new objj_method(sel_getUid("setBottomBorderColor:"),function(_14,_15,_16){
-with(_14){
-_bottomBorderColor=_16;
-}
-}),new objj_method(sel_getUid("initWithFrame:"),function(_17,_18,_19){
-with(_17){
-return objj_msgSend(_17,"initWithFrame:style:",_19,MMToolbarCocoaStyle);
-}
-}),new objj_method(sel_getUid("initWithFrame:style:"),function(_1a,_1b,_1c,_1d){
-with(_1a){
-if(_1a=objj_msgSendSuper({receiver:_1a,super_class:objj_getClass("MMToolbar").super_class},"initWithFrame:",_1c)){
-objj_msgSend(_1a,"setStyle:",_1d);
-}
-return _1a;
-}
-}),new objj_method(sel_getUid("setStyle:"),function(_1e,_1f,_20){
-with(_1e){
-switch(_20){
-case MMToolbarCocoaStyle:
-objj_msgSend(_1e,"setBackgroundColor:",MMToolbarCocoaStyleSolidFillColor);
-_topGradientColor=MMToolbarCocoaStyleTopGradientColor;
-_bottomGradientColor=MMToolbarCocoaStyleBottomGradientColor;
-_topBorderColor=MMToolbarCocoaStyleTopBorderColor;
-_bottomBorderColor=MMToolbarCocoaStyleBottomBorderColor;
-break;
-case MMToolbarHUDStyle:
-objj_msgSend(_1e,"setBackgroundColor:",MMToolbarHUDStyleSolidFillColor);
-_topGradientColor=MMToolbarHUDStyleTopGradientColor;
-_bottomGradientColor=MMToolbarHUDStyleBottomGradientColor;
-_topBorderColor=MMToolbarHUDStyleTopBorderColor;
-_bottomBorderColor=MMToolbarHUDStyleBottomBorderColor;
-break;
-default:
-objj_msgSend(CPException,"raise:reason:",CPInvalidArgumentException,objj_msgSend(CPString,"stringWithFormat:","%@ is not a valid toolbar style",_20));
-}
-}
-}),new objj_method(sel_getUid("setTopGradientColor:"),function(_21,_22,_23){
-with(_21){
-if(objj_msgSend(_23,"isEqual:",_topGradientColor)){
-return;
-}
-_topGradientColor=_23;
-objj_msgSend(_21,"setNeedsDisplay:",YES);
-}
-}),new objj_method(sel_getUid("setBottomGradientColor:"),function(_24,_25,_26){
-with(_24){
-if(objj_msgSend(_26,"isEqual:",_bottomGradientColor)){
-return;
-}
-_bottomGradientColor=_26;
-objj_msgSend(_24,"setNeedsDisplay:",YES);
-}
-}),new objj_method(sel_getUid("setTopBorderColor:"),function(_27,_28,_29){
-with(_27){
-if(objj_msgSend(_29,"isEqual:",_topBorderColor)){
-return;
-}
-_topBorderColor=_29;
-objj_msgSend(_27,"setNeedsDisplay:",YES);
-}
-}),new objj_method(sel_getUid("setBottomBorderColor:"),function(_2a,_2b,_2c){
-with(_2a){
-if(objj_msgSend(_2c,"isEqual:",_bottomBorderColor)){
-return;
-}
-_bottomBorderColor=_2c;
-objj_msgSend(_2a,"setNeedsDisplay:",YES);
-}
-}),new objj_method(sel_getUid("drawRect:"),function(_2d,_2e,_2f){
-with(_2d){
-if(!CPFeatureIsCompatible(CPHTMLCanvasFeature)){
-objj_msgSendSuper({receiver:_2d,super_class:objj_getClass("MMToolbar").super_class},"drawRect:",_2f);
-return;
-}
-var _30=objj_msgSend(_2d,"bounds"),_31=objj_msgSend(objj_msgSend(CPGraphicsContext,"currentContext"),"graphicsPort");
-CGContextBeginPath(_31);
-CGContextSetFillColor(_31,_topGradientColor);
-CGContextMoveToPoint(_31,CGRectGetMinX(_30),CGRectGetMinY(_30));
-CGContextAddLineToPoint(_31,CGRectGetMinX(_30),CGRectGetMaxY(_30));
-CGContextAddLineToPoint(_31,CGRectGetMaxX(_30),CGRectGetMaxY(_30));
-CGContextAddLineToPoint(_31,CGRectGetMaxX(_30),CGRectGetMinY(_30));
-CGContextAddLineToPoint(_31,CGRectGetMinX(_30),CGRectGetMinY(_30));
-CGContextClosePath(_31);
-CGContextFillPath(_31);
-var _32;
-var _33;
-var _34=2;
-var _35=[0,1];
-var _36=[].concat(objj_msgSend(_topGradientColor,"components")).concat(objj_msgSend(_bottomGradientColor,"components"));
-_33=CGColorSpaceCreateDeviceRGB();
-_32=CGGradientCreateWithColorComponents(_33,_36,_35,_34);
-var _37=CGPointMake(0,CGRectGetMinY(_30)),_38=CGPointMake(0,CGRectGetMaxY(_30));
-CGContextClip(_31);
-CGContextDrawLinearGradient(_31,_32,_37,_38,0);
-CGContextBeginPath(_31);
-CGContextSetStrokeColor(_31,_topBorderColor);
-CGContextMoveToPoint(_31,CGRectGetMinX(_30),CGRectGetMinY(_30)+0.5);
-CGContextAddLineToPoint(_31,CGRectGetMaxX(_30),CGRectGetMinY(_30)+0.5);
-CGContextClosePath(_31);
-CGContextStrokePath(_31);
-CGContextBeginPath(_31);
-CGContextSetStrokeColor(_31,_bottomBorderColor);
-CGContextMoveToPoint(_31,CGRectGetMinX(_30),CGRectGetMaxY(_30)-0.5);
-CGContextAddLineToPoint(_31,CGRectGetMaxX(_30),CGRectGetMaxY(_30)-0.5);
-CGContextClosePath(_31);
-CGContextStrokePath(_31);
-objj_msgSendSuper({receiver:_2d,super_class:objj_getClass("MMToolbar").super_class},"drawRect:",_2f);
+var _d=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:",objj_msgSend(CPString,"stringWithFormat:","%@Background.png",_c)));
+objj_msgSend(_a,"setBackgroundColor:",objj_msgSend(CPColor,"colorWithPatternImage:",_d));
 }
 })]);
 p;17;Views/HUDButton.jt;382;@STATIC;1.0;I;17;AppKit/CPButton.jt;342;
@@ -10574,7 +10443,7 @@ objj_msgSend(_27,"addObserver:forKeyPath:options:context:",_25,"frame",CPKeyValu
 objj_msgSend(scrollView,"setDocumentView:",_27);
 }
 })]);
-p;45;Controllers/MMMetadataItemToolbarController.jt;12376;@STATIC;1.0;I;25;AppKit/CPViewController.ji;20;../Views/MMToolbar.jt;12301;
+p;45;Controllers/MMMetadataItemToolbarController.jt;12378;@STATIC;1.0;I;25;AppKit/CPViewController.ji;20;../Views/MMToolbar.jt;12303;
 objj_executeFile("AppKit/CPViewController.j",NO);
 objj_executeFile("../Views/MMToolbar.j",YES);
 var _1=objj_allocateClassPair(CPViewController,"MMMetadataItemToolbarController"),_2=_1.isa;
@@ -10655,7 +10524,7 @@ return objj_msgSend(CPString,"stringWithFormat:",CPLocalizedString("Last refresh
 }),new objj_method(sel_getUid("isFixIncorrectMatchEnabled"),function(_1a,_1b){
 with(_1a){
 var _1c=objj_msgSend(objj_msgSend(_1a,"content"),"parent");
-if(!_1c||!objj_msgSend(_1c,"isKindOfClass:",objj_msgSend(MMLibrarySection,"class"))){
+if(!_1c||!objj_msgSend(_1c,"isKindOfClass:",objj_msgSend(PMCDirectoryObject,"class"))){
 return NO;
 }
 if(objj_msgSend(objj_msgSend(_1a,"content"),"isPersonalMedia")){
@@ -14240,48 +14109,17 @@ objj_msgSend(_5,"setValue:forThemeAttribute:",objj_msgSend(objj_msgSend(objj_msg
 return _5;
 }
 })]);
-p;19;Views/MMContainer.jt;1862;@STATIC;1.0;I;15;AppKit/CPView.jt;1823;
+p;19;Views/MMContainer.jt;666;@STATIC;1.0;I;15;AppKit/CPView.jt;628;
 objj_executeFile("AppKit/CPView.j",NO);
-var _1=objj_msgSend(CPColor,"colorWithWhite:alpha:",213/255,1);
-var _2=objj_msgSend(CPColor,"colorWithWhite:alpha:",167/255,1);
-var _3=objj_msgSend(CPColor,"colorWithWhite:alpha:",153/255,1);
-var _4=89;
-var _5=89;
-var _6=objj_allocateClassPair(CPView,"MMContainer"),_7=_6.isa;
-objj_registerClassPair(_6);
-class_addMethods(_6,[new objj_method(sel_getUid("drawRect:"),function(_8,_9,_a){
-with(_8){
-var _b=objj_msgSend(_8,"bounds"),_c=objj_msgSend(objj_msgSend(CPGraphicsContext,"currentContext"),"graphicsPort");
-CGContextBeginPath(_c);
-CGContextSetFillColor(_c,_2);
-CGContextMoveToPoint(_c,CGRectGetMinX(_b),CGRectGetMinY(_b));
-CGContextAddLineToPoint(_c,CGRectGetMinX(_b),CGRectGetMaxY(_b));
-CGContextAddLineToPoint(_c,CGRectGetMaxX(_b),CGRectGetMaxY(_b));
-CGContextAddLineToPoint(_c,CGRectGetMaxX(_b),CGRectGetMinY(_b));
-CGContextAddLineToPoint(_c,CGRectGetMinX(_b),CGRectGetMinY(_b));
-CGContextClosePath(_c);
-CGContextFillPath(_c);
-if(CPFeatureIsCompatible(CPHTMLCanvasFeature)){
-var _d;
-var _e;
-var _f=2;
-var _10=[0,1];
-var _11=[].concat(objj_msgSend(_1,"components")).concat(objj_msgSend(_2,"components"));
-_e=CGColorSpaceCreateDeviceRGB();
-_d=CGGradientCreateWithColorComponents(_e,_11,_10,_f);
-var _12=CGPointMake(0,CGRectGetMinY(_b)),_13=CGPointMake(0,MIN(_4,CGRectGetHeight(_b)));
-CGContextClip(_c);
-CGContextDrawLinearGradient(_c,_d,_12,_13,0);
-if(_4+_5<CGRectGetHeight(_b)){
-_12=CGPointMake(0,CGRectGetMaxY(_b)-_5);
-_13=CGPointMake(0,CGRectGetMaxY(_b));
-_11=[].concat(objj_msgSend(_2,"components")).concat(objj_msgSend(_3,"components"));
-_d=CGGradientCreateWithColorComponents(_e,_11,_10,_f);
-CGContextClip(_c);
-CGContextDrawLinearGradient(_c,_d,_12,_13,0);
+var _1=objj_msgSend(objj_msgSend(CPImage,"alloc"),"initWithContentsOfFile:",objj_msgSend(objj_msgSend(CPBundle,"mainBundle"),"pathForResource:","MMContainerBackground.png"));
+var _2=objj_allocateClassPair(CPView,"MMContainer"),_3=_2.isa;
+objj_registerClassPair(_2);
+class_addMethods(_2,[new objj_method(sel_getUid("initWithFrame:"),function(_4,_5,_6){
+with(_4){
+if(_4=objj_msgSendSuper({receiver:_4,super_class:objj_getClass("MMContainer").super_class},"initWithFrame:",_6)){
+objj_msgSend(_4,"setBackgroundColor:",objj_msgSend(CPColor,"colorWithPatternImage:",_1));
 }
-}
-objj_msgSendSuper({receiver:_8,super_class:objj_getClass("MMContainer").super_class},"drawRect:",_a);
+return _4;
 }
 })]);
 p;41;Views/MMInternetExplorerNotificationBar.jt;7408;@STATIC;1.0;I;17;AppKit/CPButton.jt;7367;
