@@ -4184,7 +4184,7 @@ _14=Number(_14);
 _size=_14;
 }
 })]);
-p;26;DataSources/MMDataSource.jt;26845;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPURL.ji;20;../MMURLConnection.ji;13;MMDataStore.jt;26733;
+p;26;DataSources/MMDataSource.jt;26918;@STATIC;1.0;I;21;Foundation/CPObject.jI;18;Foundation/CPURL.ji;20;../MMURLConnection.ji;13;MMDataStore.jt;26806;
 objj_executeFile("Foundation/CPObject.j",NO);
 objj_executeFile("Foundation/CPURL.j",NO);
 objj_executeFile("../MMURLConnection.j",YES);
@@ -4532,8 +4532,10 @@ CPLog.trace("[%@ -didFailToUpdateRecord:withError:contextInfo:] END",objj_msgSen
 }
 }),new objj_method(sel_getUid("didCreateRecord:contextInfo:"),function(_bc,_bd,_be,_bf){
 with(_bc){
+if(objj_msgSend(_be,"isKindOfClass:",objj_msgSend(MMRecord,"class"))){
 objj_msgSend(dataStore,"storeRecord:",_be);
 objj_msgSend(_be,"acceptChangedAttributes");
+}
 if(delegateRespondsTo_dataSource_didCreateRecord_contextInfo){
 objj_msgSend(delegate,"dataSource:didCreateRecord:contextInfo:",_bc,_be,_bf);
 }
@@ -15416,7 +15418,7 @@ objj_msgSend(_3,"sizeToFit");
 return _3;
 }
 })]);
-p;48;Controllers/MMPreferencesMyPlexPanelController.jt;16991;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;35;../DataSources/MMMyPlexDataSource.ji;26;../Models/MMMyPlexStatus.ji;35;../Views/MMPreferencesMyPlexPanel.ji;19;../Views/MMPrompt.jt;16797;
+p;48;Controllers/MMPreferencesMyPlexPanelController.jt;17006;@STATIC;1.0;i;34;MMPreferencesBasePanelController.ji;35;../DataSources/MMMyPlexDataSource.ji;26;../Models/MMMyPlexStatus.ji;35;../Views/MMPreferencesMyPlexPanel.ji;19;../Views/MMPrompt.jt;16812;
 objj_executeFile("MMPreferencesBasePanelController.j",YES);
 objj_executeFile("../DataSources/MMMyPlexDataSource.j",YES);
 objj_executeFile("../Models/MMMyPlexStatus.j",YES);
@@ -15485,7 +15487,7 @@ objj_msgSend(signInPrompt,"dismissPrompt"),signInPrompt=nil;
 with(_1e){
 objj_msgSend(signInPrompt,"shake");
 }
-}),new objj_method(sel_getUid("dataSource::contextInfo:"),function(_24,_25,_26,_27,_28){
+}),new objj_method(sel_getUid("dataSource:didCreateRecord:contextInfo:"),function(_24,_25,_26,_27,_28){
 with(_24){
 objj_msgSend(signUpPrompt,"dismissPrompt"),signUpPrompt=nil;
 }
@@ -15712,7 +15714,7 @@ objj_msgSend(_65,"setPassword:",_64);
 objj_msgSend(myPlexDataSource,"updateRecord:",_65);
 }else{
 if(_62===signUpPrompt){
-var _63=objj_msgSend(signInPrompt,"stringValueAtIndex:",0),_64=objj_msgSend(signInPrompt,"stringValueAtIndex:",1),_66=objj_msgSend(signInPrompt,"stringValueAtIndex:",2),_65=objj_msgSend(MMMyPlexStatus,"sharedStatus");
+var _63=objj_msgSend(signUpPrompt,"stringValueAtIndex:",0),_64=objj_msgSend(signUpPrompt,"stringValueAtIndex:",1),_66=objj_msgSend(signUpPrompt,"stringValueAtIndex:",2),_65=objj_msgSend(MMMyPlexStatus,"sharedStatus");
 if(!_63||!_64||!objj_msgSend(_64,"isEqualToString:",_66)){
 objj_msgSend(signUpPrompt,"shake");
 return;
@@ -15724,7 +15726,7 @@ objj_msgSend(myPlexDataSource,"createRecord:",_65);
 }
 }
 })]);
-p;32;DataSources/MMMyPlexDataSource.jt;2340;@STATIC;1.0;i;14;MMDataSource.ji;26;../Models/MMMyPlexStatus.jt;2271;
+p;32;DataSources/MMMyPlexDataSource.jt;2626;@STATIC;1.0;i;14;MMDataSource.ji;26;../Models/MMMyPlexStatus.jt;2557;
 objj_executeFile("MMDataSource.j",YES);
 objj_executeFile("../Models/MMMyPlexStatus.j",YES);
 var _1=objj_allocateClassPair(MMDataSource,"MMMyPlexDataSource"),_2=_1.isa;
@@ -15737,38 +15739,46 @@ return objj_msgSend(PMSURL,"URLWithPath:","/myplex/account");
 with(_7){
 return objj_msgSend(PMSURL,"URLWithPath:params:","/myplex/account",objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",objj_msgSend(_9,"username"),"username",objj_msgSend(_9,"password"),"password"));
 }
-}),new objj_method(sel_getUid("HTTPBodyForUpdatedRecord:contextInfo:"),function(_b,_c,_d,_e){
+}),new objj_method(sel_getUid("URLForNewRecord:contextInfo:"),function(_b,_c,_d,_e){
 with(_b){
+return objj_msgSend(_b,"URLForUpdatedRecord:contextInfo:",_d,_e);
+}
+}),new objj_method(sel_getUid("HTTPBodyForUpdatedRecord:contextInfo:"),function(_f,_10,_11,_12){
+with(_f){
 return "";
 }
-}),new objj_method(sel_getUid("shouldProcessRootElement:contextInfo:"),function(_f,_10,_11,_12){
-with(_f){
+}),new objj_method(sel_getUid("HTTPBodyForNewRecord:contextInfo:"),function(_13,_14,_15,_16){
+with(_13){
+return "";
+}
+}),new objj_method(sel_getUid("shouldProcessRootElement:contextInfo:"),function(_17,_18,_19,_1a){
+with(_17){
 return YES;
 }
-}),new objj_method(sel_getUid("shouldProcessNode:contextInfo:"),function(_13,_14,_15,_16){
-with(_13){
-return _15&&objj_msgSend(String(_15.nodeName),"isEqualToString:","MyPlex");
+}),new objj_method(sel_getUid("shouldProcessNode:contextInfo:"),function(_1b,_1c,_1d,_1e){
+with(_1b){
+return _1d&&objj_msgSend(String(_1d.nodeName),"isEqualToString:","MyPlex");
 }
-}),new objj_method(sel_getUid("recordFromElement:contextInfo:"),function(_17,_18,_19,_1a){
-with(_17){
+}),new objj_method(sel_getUid("recordFromElement:contextInfo:"),function(_1f,_20,_21,_22){
+with(_1f){
 return objj_msgSend(MMMyPlexStatus,"sharedStatus");
 }
-}),new objj_method(sel_getUid("updateRecord:fromElement:contextInfo:"),function(_1b,_1c,_1d,_1e,_1f){
-with(_1b){
-objj_msgSend(_1d,"setMappingState:",_1e.getAttribute("mappingState"));
-objj_msgSend(_1d,"setMappingError:",_1e.getAttribute("mappingError"));
-objj_msgSend(_1d,"setMappingErrorMessage:",_1e.getAttribute("mappingErrorMessage"));
-objj_msgSend(_1d,"setUsername:",_1e.getAttribute("username"));
-objj_msgSend(_1d,"setSignInState:",_1e.getAttribute("signInState"));
-objj_msgSend(_1d,"setAuthToken:",_1e.getAttribute("authToken"));
-objj_msgSend(_1d,"setPublicAddress:",_1e.getAttribute("publicAddress"));
-objj_msgSend(_1d,"setPublicPort:",_1e.getAttribute("publicPort"));
-objj_msgSend(_1d,"setPrivateAddress:",_1e.getAttribute("privateAddress"));
-objj_msgSend(_1d,"setPrivatePort:",_1e.getAttribute("privatePort"));
+}),new objj_method(sel_getUid("updateRecord:fromElement:contextInfo:"),function(_23,_24,_25,_26,_27){
+with(_23){
+objj_msgSend(_25,"setMappingState:",_26.getAttribute("mappingState"));
+objj_msgSend(_25,"setMappingError:",_26.getAttribute("mappingError"));
+objj_msgSend(_25,"setMappingErrorMessage:",_26.getAttribute("mappingErrorMessage"));
+objj_msgSend(_25,"setUsername:",_26.getAttribute("username"));
+objj_msgSend(_25,"setSignInState:",_26.getAttribute("signInState"));
+objj_msgSend(_25,"setAuthToken:",_26.getAttribute("authToken"));
+objj_msgSend(_25,"setPublicAddress:",_26.getAttribute("publicAddress"));
+objj_msgSend(_25,"setPublicPort:",_26.getAttribute("publicPort"));
+objj_msgSend(_25,"setPrivateAddress:",_26.getAttribute("privateAddress"));
+objj_msgSend(_25,"setPrivatePort:",_26.getAttribute("privatePort"));
 }
-}),new objj_method(sel_getUid("connectionDidReceiveAuthenticationChallenge:"),function(_20,_21,_22){
-with(_20){
-objj_msgSend(_20,"connection:didFailWithError:",_22,"invalid credentials");
+}),new objj_method(sel_getUid("connectionDidReceiveAuthenticationChallenge:"),function(_28,_29,_2a){
+with(_28){
+objj_msgSend(_28,"connection:didFailWithError:",_2a,"invalid credentials");
 }
 })]);
 p;23;Models/MMMyPlexStatus.jt;4147;@STATIC;1.0;I;21;Foundation/CPObject.jt;4102;

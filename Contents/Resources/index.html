@@ -24,8 +24,11 @@
                 progressHeight = FLOOR(totalHeight*percent),
                 progressTop = totalHeight-progressHeight;
 
-            progressElement.style.top = ''+progressTop+'px';
-            progressElement.style.height = ''+progressHeight+'px';
+            if (progressElement)
+            {
+              progressElement.style.top = ''+progressTop+'px';
+              progressElement.style.height = ''+progressHeight+'px';
+            }
           };
         </script>
 
