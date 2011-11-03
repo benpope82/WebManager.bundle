@@ -156,7 +156,7 @@ with(_21){
 with(_25){
 }
 })]);
-p;18;CPView+sizeToFit.jt;2257;@STATIC;1.0;I;15;AppKit/CPView.jt;2218;
+p;18;CPView+sizeToFit.jt;2269;@STATIC;1.0;I;15;AppKit/CPView.jt;2230;
 objj_executeFile("AppKit/CPView.j",NO);
 CPViewInsetDefault="CPViewInsetDefault";
 var _1=objj_getClass("CPView");
@@ -215,7 +215,7 @@ _f.height=_18;
 }
 }
 }
-objj_msgSend(_8,"setFrameSize:",CGSizeMake(_f.width+_11.width,_f.height+_11.height));
+objj_msgSend(_8,"setFrameSize:",CGSizeMake(_b?_f.width+_11.width:_d,_c?_f.height+_11.height:_e));
 }
 _f.width+=_11.width+_a.right;
 _f.height+=_11.height+_a.bottom;
@@ -14265,7 +14265,7 @@ objj_msgSend(_30,"setFrame:",_31);
 return bar;
 }
 })]);
-p;26;Views/MMPreferencesPanel.jt;10863;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;54;../Controllers/MMPreferencesLanguagesPanelController.ji;51;../Controllers/MMPreferencesAgentsPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;51;../Controllers/MMPreferencesMyPlexPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;10170;
+p;26;Views/MMPreferencesPanel.jt;10968;@STATIC;1.0;I;20;AppKit/CPResponder.jI;15;AppKit/CPView.ji;42;../Frameworks/LPKit/LPMultiLineTextField.ji;52;../Controllers/MMPreferencesGeneralPanelController.ji;52;../Controllers/MMPreferencesLibraryPanelController.ji;52;../Controllers/MMPreferencesSharingPanelController.ji;54;../Controllers/MMPreferencesLanguagesPanelController.ji;51;../Controllers/MMPreferencesAgentsPanelController.ji;56;../Controllers/MMPreferencesTranscodingPanelController.ji;51;../Controllers/MMPreferencesMyPlexPanelController.ji;53;../Controllers/MMPreferencesSecurityPanelController.ji;53;../Controllers/MMPreferencesAdvancedPanelController.ji;34;../Controllers/MMPrefsController.ji;18;../Models/MMPref.jt;10275;
 objj_executeFile("AppKit/CPResponder.j",NO);
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Frameworks/LPKit/LPMultiLineTextField.j",YES);
@@ -14403,10 +14403,12 @@ var _2c=CGPointCreateCopy(sectionOrigin),_2d=objj_msgSend(_27,"valueForThemeAttr
 if(objj_msgSend(_29,"respondsToSelector:",sel_getUid("contentInset"))){
 _2d=objj_msgSend(_29,"contentInset");
 }
-_2c.x+=_2d.left+((CGRectGetWidth(objj_msgSend(_27,"frame"))-_2d.left-_2d.right)-CGRectGetWidth(objj_msgSend(_2b,"frame")))/2;
+var _2e=CGRectGetWidth(objj_msgSend(_27,"frame"))-_2d.left-_2d.right;
+objj_msgSend(_2b,"setFrameSize:",CGSizeMake(_2e,CGRectGetHeight(objj_msgSend(_2b,"frame"))));
+objj_msgSend(_27,"addSubview:",_2b);
+_2c.x+=_2d.left+(_2e-CGRectGetWidth(objj_msgSend(_2b,"frame")))/2;
 _2c.y+=_2d.top;
 objj_msgSend(_2b,"setFrameOrigin:",_2c);
-objj_msgSend(_27,"addSubview:",_2b);
 }
 _2a=objj_msgSend(sections,"indexOfObject:",_29);
 if(_2a!=CPNotFound){
@@ -14421,24 +14423,24 @@ objj_msgSend(_27,"sizeToFitWithInset:adjustWidth:adjustHeight:",CPViewInsetDefau
 objj_msgSend(_27,"didTransitionFromSubview:toSubview:",nil,_2b);
 }
 }
-}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_2e,_2f,_30,_31){
-with(_2e){
+}),new objj_method(sel_getUid("didTransitionFromSubview:toSubview:"),function(_2f,_30,_31,_32){
+with(_2f){
 objj_msgSend(objj_msgSend(selectedSection,"view"),"setHidden:",YES);
-objj_msgSend(_31,"setHidden:",NO);
-objj_msgSend(objj_msgSend(_2e,"window"),"makeFirstResponder:",objj_msgSend(sectionBeingSelected,"initialFirstResponder"));
+objj_msgSend(_32,"setHidden:",NO);
+objj_msgSend(objj_msgSend(_2f,"window"),"makeFirstResponder:",objj_msgSend(sectionBeingSelected,"initialFirstResponder"));
 objj_msgSend(selectedSection,"viewDidDisappear");
 objj_msgSend(sectionBeingSelected,"viewDidAppear");
 selectedSection=sectionBeingSelected;
 sectionBeingSelected=nil;
 }
-}),new objj_method(sel_getUid("originForSection:"),function(_32,_33,_34){
-with(_32){
-var _35=objj_msgSend(_34,"respondsToSelector:",sel_getUid("inset"))?objj_msgSend(_34,"inset"):objj_msgSend(_32,"valueForThemeAttribute:","content-inset");
-return CGRectOffset(CGRectInset(objj_msgSend(_32,"bounds"),0,_35.top),0,CGRectGetHeight(objj_msgSend(toolbarView,"frame"))).origin;
+}),new objj_method(sel_getUid("originForSection:"),function(_33,_34,_35){
+with(_33){
+var _36=objj_msgSend(_35,"respondsToSelector:",sel_getUid("inset"))?objj_msgSend(_35,"inset"):objj_msgSend(_33,"valueForThemeAttribute:","content-inset");
+return CGRectOffset(CGRectInset(objj_msgSend(_33,"bounds"),0,_36.top),0,CGRectGetHeight(objj_msgSend(toolbarView,"frame"))).origin;
 }
 })]);
-class_addMethods(_3,[new objj_method(sel_getUid("themeAttributes"),function(_36,_37){
-with(_36){
+class_addMethods(_3,[new objj_method(sel_getUid("themeAttributes"),function(_37,_38){
+with(_37){
 return objj_msgSend(CPDictionary,"dictionaryWithObjects:forKeys:",[CGInsetMake(15,15,15,15)],["content-inset"]);
 }
 })]);
@@ -14583,94 +14585,115 @@ with(_7){
 objj_msgSend(_7,"setView:",objj_msgSend(objj_msgSend(MMPreferencesLibraryPanel,"alloc"),"initWithFrame:",CGRectMakeZero()));
 }
 })]);
-p;33;Views/MMPreferencesLibraryPanel.jt;6893;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;6822;
+p;33;Views/MMPreferencesLibraryPanel.jt;9508;@STATIC;1.0;I;15;AppKit/CPView.ji;27;../Models/PMSCapabilities.jt;9437;
 objj_executeFile("AppKit/CPView.j",NO);
 objj_executeFile("../Models/PMSCapabilities.j",YES);
 var _1=objj_allocateClassPair(CPView,"MMPreferencesLibraryPanel"),_2=_1.isa;
+class_addIvars(_1,[new objj_ivar("updateLibraryOnChangesCheckBox"),new objj_ivar("updateLibraryPeriodicallyCheckBox"),new objj_ivar("updateLibraryPeriodPopUp"),new objj_ivar("autoEmptyTrashCheckBox"),new objj_ivar("includeMusicSectionsInAutomaticUpdatesCheckBox"),new objj_ivar("includeMusicSectionsInAutomaticUpdatesLabel"),new objj_ivar("allowMediaDeletionCheckBox"),new objj_ivar("allowMediaDeletionLabel")]);
 objj_registerClassPair(_1);
 class_addMethods(_1,[new objj_method(sel_getUid("initWithFrame:"),function(_3,_4,_5){
 with(_3){
 if(_3=objj_msgSendSuper({receiver:_3,super_class:objj_getClass("MMPreferencesLibraryPanel").super_class},"initWithFrame:",_5)){
-var _6=0;
 if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryChangeWatchingSupported")){
-var _7=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Update my library when changes to my folders are detected","Preference window setting"));
-objj_msgSend(_7,"sizeToFit");
-objj_msgSend(_7,"setFrameOrigin:",CGPointMake(0,_6));
-objj_msgSend(_7,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.FSEventLibraryUpdatesEnabled",nil);
-objj_msgSend(_3,"addSubview:",_7);
-_6=CGRectGetMaxY(objj_msgSend(_7,"frame"))+10;
-}else{
-_6=5;
+updateLibraryOnChangesCheckBox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Update my library when changes to my folders are detected","Preference window setting"));
+objj_msgSend(updateLibraryOnChangesCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.FSEventLibraryUpdatesEnabled",nil);
+objj_msgSend(_3,"addSubview:",updateLibraryOnChangesCheckBox);
 }
 if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryTimedUpdatesSupported")){
-var _8=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Update my library","Preference window setting - will have frequencies after it e.g. Update my library every two hours"));
-objj_msgSend(_8,"sizeToFit");
-objj_msgSend(_8,"setFrameOrigin:",CGPointMake(0,_6));
-objj_msgSend(_8,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdatesEnabled",nil);
-objj_msgSend(_3,"addSubview:",_8);
-var _9=objj_msgSend(CPPopUpButton,"buttonWithTitle:",nil),_a=objj_msgSend(_3,"_periodTitles"),_b=objj_msgSend(_3,"_periodValues");
-for(var i=0,_c=objj_msgSend(_a,"count");i<_c;i++){
-var _d=objj_msgSend(objj_msgSend(CPMenuItem,"alloc"),"initWithTitle:action:keyEquivalent:",_a[i],nil,nil);
-objj_msgSend(_d,"setTag:",_b[i]);
-objj_msgSend(_9,"addItem:",_d);
+updateLibraryPeriodicallyCheckBox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Update my library","Preference window setting - will have frequencies after it e.g. Update my library every two hours"));
+objj_msgSend(updateLibraryPeriodicallyCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdatesEnabled",nil);
+objj_msgSend(_3,"addSubview:",updateLibraryPeriodicallyCheckBox);
+updateLibraryPeriodPopUp=objj_msgSend(CPPopUpButton,"buttonWithTitle:",nil);
+var _6=objj_msgSend(_3,"_periodTitles"),_7=objj_msgSend(_3,"_periodValues");
+for(var i=0,_8=objj_msgSend(_6,"count");i<_8;i++){
+var _9=objj_msgSend(objj_msgSend(CPMenuItem,"alloc"),"initWithTitle:action:keyEquivalent:",_6[i],nil,nil);
+objj_msgSend(_9,"setTag:",_7[i]);
+objj_msgSend(updateLibraryPeriodPopUp,"addItem:",_9);
 }
-objj_msgSend(_9,"sizeToFit");
-objj_msgSend(_9,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(_8,"frame"))+5,CGRectGetMinY(objj_msgSend(_8,"frame"))+(CGRectGetHeight(objj_msgSend(_8,"frame"))-CGRectGetHeight(objj_msgSend(_9,"frame")))/2,140,CGRectGetHeight(objj_msgSend(_9,"frame"))));
-objj_msgSend(_9,"bind:toObject:withKeyPath:options:","enabled",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdatesEnabled",nil);
-objj_msgSend(_9,"bind:toObject:withKeyPath:options:","selectedTag",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdateInterval",nil);
-objj_msgSend(_9,"addObserver:forKeyPath:options:context:",_3,"selectedTag",CPKeyValueObservingOptionNew,nil);
-objj_msgSend(_3,"addSubview:",_9);
-_6=CGRectGetMaxY(objj_msgSend(_8,"frame"))+10;
+objj_msgSend(updateLibraryPeriodPopUp,"bind:toObject:withKeyPath:options:","enabled",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdatesEnabled",nil);
+objj_msgSend(updateLibraryPeriodPopUp,"bind:toObject:withKeyPath:options:","selectedTag",objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.ScheduledLibraryUpdateInterval",nil);
+objj_msgSend(updateLibraryPeriodPopUp,"addObserver:forKeyPath:options:context:",_3,"selectedTag",CPKeyValueObservingOptionNew,nil);
+objj_msgSend(_3,"addSubview:",updateLibraryPeriodPopUp);
 }
-var _e=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Empty trash automatically after every scan","Preference window setting"));
-objj_msgSend(_e,"sizeToFit");
-objj_msgSend(_e,"setFrameOrigin:",CGPointMake(0,_6));
-objj_msgSend(_e,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoEmptyTrash",nil);
-objj_msgSend(_3,"addSubview:",_e);
-_6=CGRectGetMaxY(objj_msgSend(_e,"frame"))+10;
+autoEmptyTrashCheckBox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Empty trash automatically after every scan","Preference window setting"));
+objj_msgSend(autoEmptyTrashCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoEmptyTrash",nil);
+objj_msgSend(_3,"addSubview:",autoEmptyTrashCheckBox);
 if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryChangeWatchingSupported")||objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"libraryTimedUpdatesSupported")){
-var _f=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Include music sections in automatic updates","Preference window setting"));
-objj_msgSend(_f,"sizeToFit");
-objj_msgSend(_f,"setFrameOrigin:",CGPointMake(0,_6));
-objj_msgSend(_f,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoScanMusicSections",nil);
-objj_msgSend(_3,"addSubview:",_f);
-var _10=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Large music sections may take a long time to scan","Preference window setting"));
-objj_msgSend(_10,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(_f,"frame"))));
-objj_msgSend(_3,"addSubview:",_10);
-_6=CGRectGetMaxY(objj_msgSend(_10,"frame"))+10;
+includeMusicSectionsInAutomaticUpdatesCheckBox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Include music sections in automatic updates","Preference window setting"));
+objj_msgSend(includeMusicSectionsInAutomaticUpdatesCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.autoScanMusicSections",nil);
+objj_msgSend(_3,"addSubview:",includeMusicSectionsInAutomaticUpdatesCheckBox);
+includeMusicSectionsInAutomaticUpdatesLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Large music sections may take a long time to scan","Preference window setting"));
+objj_msgSend(_3,"addSubview:",includeMusicSectionsInAutomaticUpdatesLabel);
 }
 if(objj_msgSend(objj_msgSend(PMSCapabilities,"sharedPMSCapabilities"),"allowMediaDeletionSupported")){
-var _11=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Allow clients to delete media","Preference window setting"));
-objj_msgSend(_11,"sizeToFit");
-objj_msgSend(_11,"setFrameOrigin:",CGPointMake(0,_6));
-objj_msgSend(_11,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.allowMediaDeletion",nil);
-objj_msgSend(_3,"addSubview:",_11);
-var _12=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Clients will have the ability to request deletion of media files from the hard drive.","Preference window setting"));
-objj_msgSend(_12,"setLineBreakMode:",CPLineBreakByWordWrapping);
-objj_msgSend(_12,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(_11,"frame"))));
-objj_msgSend(_12,"setFrameSize:",CGSizeMake(CGRectGetWidth(objj_msgSend(_12,"frame")),2*CGRectGetHeight(objj_msgSend(_12,"frame"))));
-objj_msgSend(_3,"addSubview:",_12);
-_6=CGRectGetMaxY(objj_msgSend(_12,"frame"))+10;
+allowMediaDeletionCheckBox=objj_msgSend(CPCheckBox,"checkBoxWithTitle:",CPLocalizedString("Allow clients to delete media","Preference window setting"));
+objj_msgSend(allowMediaDeletionCheckBox,"bind:toObject:withKeyPath:options:",CPValueBinding,objj_msgSend(MMPrefsController,"sharedPrefsController"),"values.allowMediaDeletion",nil);
+objj_msgSend(_3,"addSubview:",allowMediaDeletionCheckBox);
+allowMediaDeletionLabel=objj_msgSend(CPTextField,"labelWithTitle:",CPLocalizedString("Clients will have the ability to request deletion of media files from the hard drive.","Preference window setting"));
+objj_msgSend(allowMediaDeletionLabel,"setLineBreakMode:",CPLineBreakByWordWrapping);
+objj_msgSend(allowMediaDeletionLabel,"sizeToFit");
+objj_msgSend(_3,"addSubview:",allowMediaDeletionLabel);
 }
-objj_msgSend(_3,"sizeToFit");
 }
 return _3;
 }
-}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_13,_14,_15,_16,_17,_18){
-with(_13){
-if(objj_msgSend(_15,"isEqualToString:","selectedTag")&&objj_msgSend(_16,"isKindOfClass:",objj_msgSend(CPPopUpButton,"class"))){
-var _19=objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"values"),key="ScheduledLibraryUpdateInterval",_1a=objj_msgSend(_17,"objectForKey:",CPKeyValueChangeNewKey),_1b=objj_msgSend(_19,"valueForKey:",key);
-if(_1a!==_1b){
-objj_msgSend(_19,"setValue:forKey:",_1a,key);
+}),new objj_method(sel_getUid("viewWillMoveToSuperview:"),function(_a,_b,_c){
+with(_a){
+objj_msgSend(_a,"layoutSubviews");
+objj_msgSend(_a,"sizeToFitWithInset:adjustWidth:adjustHeight:",nil,NO,YES);
+}
+}),new objj_method(sel_getUid("layoutSubviews"),function(_d,_e){
+with(_d){
+var _f=0;
+if(updateLibraryOnChangesCheckBox){
+objj_msgSend(updateLibraryOnChangesCheckBox,"sizeToFit");
+objj_msgSend(updateLibraryOnChangesCheckBox,"setFrameOrigin:",CGPointMake(0,_f));
+_f=CGRectGetMaxY(objj_msgSend(updateLibraryOnChangesCheckBox,"frame"))+10;
+}else{
+_f=5;
+}
+if(updateLibraryPeriodicallyCheckBox){
+objj_msgSend(updateLibraryPeriodicallyCheckBox,"sizeToFit");
+objj_msgSend(updateLibraryPeriodicallyCheckBox,"setFrameOrigin:",CGPointMake(0,_f));
+objj_msgSend(updateLibraryPeriodPopUp,"sizeToFit");
+objj_msgSend(updateLibraryPeriodPopUp,"setFrame:",CGRectMake(CGRectGetMaxX(objj_msgSend(updateLibraryPeriodicallyCheckBox,"frame"))+5,CGRectGetMinY(objj_msgSend(updateLibraryPeriodicallyCheckBox,"frame"))+(CGRectGetHeight(objj_msgSend(updateLibraryPeriodicallyCheckBox,"frame"))-CGRectGetHeight(objj_msgSend(updateLibraryPeriodPopUp,"frame")))/2,140,CGRectGetHeight(objj_msgSend(updateLibraryPeriodPopUp,"frame"))));
+_f=CGRectGetMaxY(objj_msgSend(updateLibraryPeriodicallyCheckBox,"frame"))+10;
+}
+objj_msgSend(autoEmptyTrashCheckBox,"sizeToFit");
+objj_msgSend(autoEmptyTrashCheckBox,"setFrameOrigin:",CGPointMake(0,_f));
+_f=CGRectGetMaxY(objj_msgSend(autoEmptyTrashCheckBox,"frame"))+10;
+if(includeMusicSectionsInAutomaticUpdatesCheckBox){
+objj_msgSend(includeMusicSectionsInAutomaticUpdatesCheckBox,"sizeToFit");
+objj_msgSend(includeMusicSectionsInAutomaticUpdatesCheckBox,"setFrameOrigin:",CGPointMake(0,_f));
+objj_msgSend(includeMusicSectionsInAutomaticUpdatesLabel,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(includeMusicSectionsInAutomaticUpdatesCheckBox,"frame"))));
+_f=CGRectGetMaxY(objj_msgSend(includeMusicSectionsInAutomaticUpdatesLabel,"frame"))+10;
+}
+if(allowMediaDeletionCheckBox){
+objj_msgSend(allowMediaDeletionCheckBox,"sizeToFit");
+objj_msgSend(allowMediaDeletionCheckBox,"setFrameOrigin:",CGPointMake(0,_f));
+objj_msgSend(allowMediaDeletionLabel,"setFrameOrigin:",CGPointMake(17,CGRectGetMaxY(objj_msgSend(allowMediaDeletionCheckBox,"frame"))));
+var _10=CGRectGetWidth(objj_msgSend(_d,"frame"))-CGRectGetMinX(objj_msgSend(allowMediaDeletionLabel,"frame"))*2,_11=objj_msgSend(objj_msgSend(allowMediaDeletionLabel,"stringValue"),"sizeWithFont:inWidth:",objj_msgSend(allowMediaDeletionLabel,"font"),_10);
+_11.height+=5;
+objj_msgSend(allowMediaDeletionLabel,"setFrameSize:",_11);
+_f=CGRectGetMaxY(objj_msgSend(allowMediaDeletionLabel,"frame"))+10;
+}
+objj_msgSendSuper({receiver:_d,super_class:objj_getClass("MMPreferencesLibraryPanel").super_class},"layoutSubviews");
+}
+}),new objj_method(sel_getUid("observeValueForKeyPath:ofObject:change:context:"),function(_12,_13,_14,_15,_16,_17){
+with(_12){
+if(objj_msgSend(_14,"isEqualToString:","selectedTag")&&objj_msgSend(_15,"isKindOfClass:",objj_msgSend(CPPopUpButton,"class"))){
+var _18=objj_msgSend(objj_msgSend(MMPrefsController,"sharedPrefsController"),"values"),key="ScheduledLibraryUpdateInterval",_19=objj_msgSend(_16,"objectForKey:",CPKeyValueChangeNewKey),_1a=objj_msgSend(_18,"valueForKey:",key);
+if(_19!==_1a){
+objj_msgSend(_18,"setValue:forKey:",_19,key);
 }
 }
 }
-}),new objj_method(sel_getUid("_periodTitles"),function(_1c,_1d){
-with(_1c){
+}),new objj_method(sel_getUid("_periodTitles"),function(_1b,_1c){
+with(_1b){
 return [CPLocalizedString("every 15 minutes","Library scan interval (i.e. Update my library every 15 minutes)"),CPLocalizedString("every 30 minutes","Library scan interval (i.e. Update my library every 30 minutes)"),CPLocalizedString("hourly","Library scan interval (i.e. Update my library hourly)"),CPLocalizedString("every 2 hours","Library scan interval (i.e. Update my library every 2 hours)"),CPLocalizedString("every 6 hours","Library scan interval (i.e. Update my library every 6 hours)"),CPLocalizedString("every 12 hours","Library scan interval (i.e. Update my library every 12 hours)"),CPLocalizedString("daily","Library scan interval (i.e. Update my library daily")];
 }
-}),new objj_method(sel_getUid("_periodValues"),function(_1e,_1f){
-with(_1e){
+}),new objj_method(sel_getUid("_periodValues"),function(_1d,_1e){
+with(_1d){
 return [15*60,30*60,60*60,2*60*60,6*60*60,12*60*60,24*60*60];
 }
 })]);
