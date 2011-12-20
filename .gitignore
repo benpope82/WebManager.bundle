@@ -1,4 +1,3 @@
 Build
 .plex
-
-Content/Resources/**/*.png
+*.png
