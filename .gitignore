@@ -2,3 +2,4 @@ Build
 .plex
 *.png
 !Contents/Resources/Frameworks/EKSpinner/Resources/*.png
+*.gif
