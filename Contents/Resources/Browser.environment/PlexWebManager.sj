@@ -1139,7 +1139,7 @@ CGContextClip(_f);
 CGContextDrawLinearGradient(_f,_12,_17,_18,0);
 }
 })]);
-p;22;Models/PMCBaseObject.jt;29194;@STATIC;1.0;i;11;PMCObject.jt;29158;
+p;22;Models/PMCBaseObject.jt;29292;@STATIC;1.0;i;11;PMCObject.jt;29256;
 var _1;
 objj_executeFile("PMCObject.j",YES);
 PMCBaseObjectTagAttributeMap=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:","writer","writers","director","directors","genre","genres","collection","collections");
@@ -1156,6 +1156,7 @@ PMCBaseObjectStateMatching=2;
 PMCBaseObjectStateDownloadingMetadata=3;
 PMCBaseObjectStateLoadingMetadata=4;
 PMCBaseObjectStateIdle=5;
+PMCBaseObjectStateMediaAnalysis=6;
 PMCBaseObjectStateDeleted=9;
 CPLocalizedString("show","A TV Show");
 CPLocalizedString("movie","A movie");
@@ -1838,6 +1839,8 @@ case PMCBaseObjectStateLoadingMetadata:
 return "loading metadata";
 case PMCBaseObjectStateIdle:
 return "idle";
+case PMCBaseObjectStateMediaAnalysis:
+return "media analysis";
 case PMCBaseObjectStateDeleted:
 return "deleted";
 }
@@ -3753,7 +3756,7 @@ objj_msgSend(MMURLConnection,"setClassDelegate:",_1);
 return _1;
 }
 })]);
-p;52;Controllers/MMMetadataItemCollectionViewController.jt;17314;@STATIC;1.0;i;18;MMViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;17037;
+p;52;Controllers/MMMetadataItemCollectionViewController.jt;17358;@STATIC;1.0;i;18;MMViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;17081;
 objj_executeFile("MMViewController.j",YES);
 objj_executeFile("../DataSources/MMLibraryMediaDataSource.j",YES);
 objj_executeFile("../DataSources/MMLibraryTimelineDataSource.j",YES);
@@ -4020,7 +4023,7 @@ updateStatus=_4c;
 }),new objj_method(sel_getUid("showUpdateStatusForItem:"),function(_4d,_4e,_4f){
 with(_4d){
 if(!_1){
-_1=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",CPLocalizedString("Scanning '%@'","Metadata item status message when it is newly scanned/created"),PMCBaseObjectStateCreated,CPLocalizedString("Media analysis on '%@'","Metadata item status message when it is being read"),PMCBaseObjectStateProgress,CPLocalizedString("Matching '%@'","Metadata item status message when it is being matched to a canonical item"),PMCBaseObjectStateMatching,CPLocalizedString("Requesting metadata for '%@'","Metadata item status message when its info is downloading"),PMCBaseObjectStateDownloadingMetadata,CPLocalizedString("Loading metadata for '%@'","Metadata item status message when its data is importing"),PMCBaseObjectStateLoadingMetadata);
+_1=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",CPLocalizedString("Scanning '%@'","Metadata item status message when it is newly scanned/created"),PMCBaseObjectStateCreated||PMCBaseObjectStateProgress,CPLocalizedString("Performing media analysis on '%@'","Metadata item status message when it is being read"),PMCBaseObjectStateMediaAnalysis,CPLocalizedString("Matching '%@'","Metadata item status message when it is being matched to a canonical item"),PMCBaseObjectStateMatching,CPLocalizedString("Requesting metadata for '%@'","Metadata item status message when its info is downloading"),PMCBaseObjectStateDownloadingMetadata,CPLocalizedString("Loading metadata for '%@'","Metadata item status message when its data is importing"),PMCBaseObjectStateLoadingMetadata);
 }
 var _50=objj_msgSend(_1,"objectForKey:",objj_msgSend(_4f,"state"));
 objj_msgSend(_4d,"setUpdateStatus:",_50&&objj_msgSend(CPString,"stringWithFormat:",_50,objj_msgSend(_4f,"title")));
