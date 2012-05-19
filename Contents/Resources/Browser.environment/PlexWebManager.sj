@@ -3756,7 +3756,7 @@ objj_msgSend(MMURLConnection,"setClassDelegate:",_1);
 return _1;
 }
 })]);
-p;52;Controllers/MMMetadataItemCollectionViewController.jt;17358;@STATIC;1.0;i;18;MMViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;17081;
+p;52;Controllers/MMMetadataItemCollectionViewController.jt;17477;@STATIC;1.0;i;18;MMViewController.ji;41;../DataSources/MMLibraryMediaDataSource.ji;44;../DataSources/MMLibraryTimelineDataSource.ji;28;../Models/MMLibrarySection.ji;39;../Views/MMMetadataItemCollectionView.ji;29;../Views/MMMetadataItemCell.ji;23;../Views/MMScrollView.jt;17200;
 objj_executeFile("MMViewController.j",YES);
 objj_executeFile("../DataSources/MMLibraryMediaDataSource.j",YES);
 objj_executeFile("../DataSources/MMLibraryTimelineDataSource.j",YES);
@@ -4023,7 +4023,7 @@ updateStatus=_4c;
 }),new objj_method(sel_getUid("showUpdateStatusForItem:"),function(_4d,_4e,_4f){
 with(_4d){
 if(!_1){
-_1=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",CPLocalizedString("Scanning '%@'","Metadata item status message when it is newly scanned/created"),PMCBaseObjectStateCreated||PMCBaseObjectStateProgress,CPLocalizedString("Performing media analysis on '%@'","Metadata item status message when it is being read"),PMCBaseObjectStateMediaAnalysis,CPLocalizedString("Matching '%@'","Metadata item status message when it is being matched to a canonical item"),PMCBaseObjectStateMatching,CPLocalizedString("Requesting metadata for '%@'","Metadata item status message when its info is downloading"),PMCBaseObjectStateDownloadingMetadata,CPLocalizedString("Loading metadata for '%@'","Metadata item status message when its data is importing"),PMCBaseObjectStateLoadingMetadata);
+_1=objj_msgSend(CPDictionary,"dictionaryWithObjectsAndKeys:",CPLocalizedString("Starting scan on '%@'","Metadata item status message when it is newly scanned/created"),PMCBaseObjectStateCreated,CPLocalizedString("Scanning '%@'","Metadata item status message when it is newly scanned/created"),PMCBaseObjectStateProgress,CPLocalizedString("Performing media analysis on '%@'","Metadata item status message when the media analysis is ongoing"),PMCBaseObjectStateMediaAnalysis,CPLocalizedString("Matching '%@'","Metadata item status message when it is being matched to a canonical item"),PMCBaseObjectStateMatching,CPLocalizedString("Requesting metadata for '%@'","Metadata item status message when its info is downloading"),PMCBaseObjectStateDownloadingMetadata,CPLocalizedString("Loading metadata for '%@'","Metadata item status message when its data is importing"),PMCBaseObjectStateLoadingMetadata);
 }
 var _50=objj_msgSend(_1,"objectForKey:",objj_msgSend(_4f,"state"));
 objj_msgSend(_4d,"setUpdateStatus:",_50&&objj_msgSend(CPString,"stringWithFormat:",_50,objj_msgSend(_4f,"title")));
